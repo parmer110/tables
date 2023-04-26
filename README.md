@@ -20,4 +20,4 @@
     * Database defined as postgresql
 2. 
 ### Notes:
-py manage.py graph_models -a > erd.dot && py manage.py graph_models --pydot -a -g -o erd.png
+1- Create base classes.

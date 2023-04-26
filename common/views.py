@@ -3,4 +3,4 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django import forms
 
 def index(request):
-    return render (request, "treatment/index.html")
+    return render (request, "common/index.html")
