@@ -1,6 +1,6 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
-from utils.crypto import encoder, decoder
+from common.utils.crypto import encoder, decoder
 
 class User(AbstractUser):
     id = models.BigAutoField(primary_key=True)
@@ -25,6 +25,18 @@ class Person(models.Model):
     createddtm = models.DateTimeField(auto_now_add=True)
     updatedtm = models.DateTimeField(auto_now=True)
     deleted = models.DateTimeField()
+
+    @property
+    def firstname(self):
+        return decoder(self._firstname)
+
+    @firstname.setter
+    def firstname(self, value):
+        self._firstname = value
+
+    def save(self, *args, **kwargs):
+        self._firstname=encoder(self._firstname)
+        super(Person, self).save(*args, **kwargs)
 
 class Places(models.Model):
     title = models.CharField(max_length=128)
