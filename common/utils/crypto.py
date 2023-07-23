@@ -7,6 +7,8 @@ import re
 from datetime import datetime, date
 from decimal import Decimal
 from uuid import UUID
+from decimal import InvalidOperation
+
 
 # Generate hash value from plain-text
 def sxtw_encoder(plain):
