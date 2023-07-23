@@ -159,36 +159,36 @@ def encoder(value):
 def decoder(str):
     if str is not None and str[0: 4] == "sxtw" and len(str) % 4 == 0:
         value =  aes_decoder(sxtw_decoder(str))
-        try:
-            value = datetime.fromisoformat(value)
-        except ValueError:
-            try:
-                value = date.fromisoformat(value)
-            except ValueError:
-                try:
-                    value = Decimal(value)
-                except InvalidOperation:
-                    try:
-                        value = int(value)
-                    except ValueError:
-                        try:
-                            if value.lower() == 'true':
-                                value = True
-                            elif value.lower() == 'false':
-                                value = False
-                            else:
-                                raise ValueError
-                        except ValueError:
-                            try:
-                                value = bytes.fromhex(value)
-                            except ValueError:
-                                try:
-                                    value = UUID(value)
-                                except ValueError:
-                                    try:
-                                        value = float(value)
-                                    except ValueError:
-                                        pass
+        # try:
+        #     value = datetime.fromisoformat(value)
+        # except ValueError:
+        #     try:
+        #         value = date.fromisoformat(value)
+        #     except ValueError:
+        #         try:
+        #             value = Decimal(value)
+        #         except InvalidOperation:
+        #             try:
+        #                 value = int(value)
+        #             except ValueError:
+        #                 try:
+        #                     if value.lower() == 'true':
+        #                         value = True
+        #                     elif value.lower() == 'false':
+        #                         value = False
+        #                     else:
+        #                         raise ValueError
+        #                 except ValueError:
+        #                     try:
+        #                         value = bytes.fromhex(value)
+        #                     except ValueError:
+        #                         try:
+        #                             value = UUID(value)
+        #                         except ValueError:
+        #                             try:
+        #                                 value = float(value)
+        #                             except ValueError:
+        #                                 pass
 
         return value
     else:
