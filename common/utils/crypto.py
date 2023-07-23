@@ -4,6 +4,9 @@ from cryptography.hazmat.backends import default_backend
 import base64
 import os
 import re
+from datetime import datetime, date
+from decimal import Decimal
+from uuid import UUID
 
 # Generate hash value from plain-text
 def sxtw_encoder(plain):
@@ -131,11 +134,60 @@ def aes_decoder(encoded_string):
 
 
 
-def encoder(str):
-    return sxtw_encoder(aes_encoder(str))
+def encoder(value):
+    if isinstance(value, date):
+        value = value.isoformat()
+    elif isinstance(value, datetime):
+        value = value.isoformat()
+    elif isinstance(value, Decimal):
+        value = str(value)
+    elif isinstance(value, int):
+        value = str(value)
+    elif isinstance(value, bool):
+        value = str(value)
+    elif isinstance(value, bytes):
+        value = value.hex()
+    elif isinstance(value, UUID):
+        value = str(value)
+    elif isinstance(value, float):
+        value = repr(value)
+
+    return sxtw_encoder(aes_encoder(value))
 
 def decoder(str):
-    if str[0: 4] == "sxtw" and len(str) % 4 == 0:
-        return aes_decoder(sxtw_decoder(str))
+    if str is not None and str[0: 4] == "sxtw" and len(str) % 4 == 0:
+        value =  aes_decoder(sxtw_decoder(str))
+        try:
+            value = datetime.fromisoformat(value)
+        except ValueError:
+            try:
+                value = date.fromisoformat(value)
+            except ValueError:
+                try:
+                    value = Decimal(value)
+                except InvalidOperation:
+                    try:
+                        value = int(value)
+                    except ValueError:
+                        try:
+                            if value.lower() == 'true':
+                                value = True
+                            elif value.lower() == 'false':
+                                value = False
+                            else:
+                                raise ValueError
+                        except ValueError:
+                            try:
+                                value = bytes.fromhex(value)
+                            except ValueError:
+                                try:
+                                    value = UUID(value)
+                                except ValueError:
+                                    try:
+                                        value = float(value)
+                                    except ValueError:
+                                        pass
+
+        return value
     else:
         return str

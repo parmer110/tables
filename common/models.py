@@ -12,18 +12,16 @@ class Person(models.Model):
         ('Female', 'Female'),
     )
     id = models.AutoField(primary_key=True)
-    # job1 = models.ForeignKey()
-    # job_n = models.ForeignKey()
-    firstname = models.CharField(max_length=64, null=True)
+    _firstname = models.CharField(max_length=10000, db_column='firstname', null=True)
     lastname = models.CharField(max_length=80, null=True)
     birthdate = models.DateField(null=True)
     national_code = models.CharField(max_length=10, null=True)
-    pasport_number = models.CharField(max_length=8, null=True)
+    passport_number = models.CharField(max_length=8, null=True)
     sex = models.CharField(max_length=10, choices=SEX, null=True)
     mobile_phone = models.CharField(max_length=15, null=True)
-    address = models.ForeignKey('Places', null=True, on_delete=models.SET_NULL)
-    createddtm = models.DateTimeField(auto_now_add=True)
-    updatedtm = models.DateTimeField(auto_now=True)
+    address = models.CharField(max_length=100, null=True, blank=True)
+    createddtm = models.DateTimeField(auto_now_add=True, null=True, blank=True)
+    updatedtm = models.DateTimeField(auto_now=True,null=True,  blank=True)
     deleted = models.DateTimeField()
 
     @property
@@ -35,7 +33,7 @@ class Person(models.Model):
         self._firstname = value
 
     def save(self, *args, **kwargs):
-        self._firstname=encoder(self._firstname)
+        self.firstname = encoder(self.firstname)
         super(Person, self).save(*args, **kwargs)
 
 class Places(models.Model):
