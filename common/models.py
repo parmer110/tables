@@ -12,16 +12,16 @@ class Person(models.Model):
         ('Female', 'Female'),
     )
     id = models.AutoField(primary_key=True)
-    _firstname = models.TextField(db_column="firstname", null=True) #CharField(max_length=336+16*40, db_column='firstname', null=True)
-    _lastname = models.TextField(db_column="lastname", null=True) #CharField(max_length=336+16*60, db_column="lastname", null=True)
-    _birthdate = models.TextField(db_column="birthdate", null=True) #CharField(max_length=336+16*18, db_column="birthdate", null=True)
-    _national_code = models.TextField(db_column="national_code", null=True) #CharField(max_length=336+16*10, db_column="national_code", null=True)
-    _passport_number = models.TextField(db_column="passport_number", null=True) #CharField(max_length=336+16*10, db_column="passport_number", null=True)
-    _sex = models.CharField(max_length=336+16*10, choices=SEX, db_column="sex", null=True)
-    _mobile_phone = models.TextField(db_column="mobile_phone", null=True) #CharField(max_length=336+16*20, db_column="mobile_phone", null=True)
-    _address = models.TextField(db_column="address", null=True) #CharField(max_length=336+16*100, null=True, db_column="address", blank=True)
-    createddtm = models.DateTimeField(auto_now_add=True, null=True, blank=True)
-    updatedtm = models.DateTimeField(auto_now=True,null=True,  blank=True)
+    _firstname = models.TextField(db_column="firstname", verbose_name="First Name", null=True) #CharField(max_length=336+16*40, db_column='firstname', null=True)
+    _lastname = models.TextField(db_column="lastname", verbose_name="Last Name", null=True) #CharField(max_length=336+16*60, db_column="lastname", null=True)
+    _birthdate = models.TextField(db_column="birthdate", verbose_name="Birthdate", null=True) #CharField(max_length=336+16*18, db_column="birthdate", null=True)
+    _national_code = models.TextField(db_column="national_code", verbose_name="National Code", null=True) #CharField(max_length=336+16*10, db_column="national_code", null=True)
+    _passport_number = models.TextField(db_column="passport_number", verbose_name="Passport Number", null=True) #CharField(max_length=336+16*10, db_column="passport_number", null=True)
+    _sex = models.CharField(max_length=336+16*10, choices=SEX, db_column="sex", verbose_name="Sex", null=True)
+    _mobile_phone = models.TextField(db_column="mobile_phone", verbose_name="Mobile Phone", null=True) #CharField(max_length=336+16*20, db_column="mobile_phone", null=True)
+    _address = models.TextField(db_column="address", verbose_name="Address", null=True) #CharField(max_length=336+16*100, null=True, db_column="address", blank=True)
+    createddtm = models.DateTimeField(auto_now_add=True)
+    updatedtm = models.DateTimeField(auto_now=True)
     deleted = models.DateTimeField()
 
     @property
@@ -95,4 +95,8 @@ class Places(models.Model):
     createddtm = models.DateTimeField(auto_now_add=True)
     updatedtm = models.DateTimeField(auto_now=True)
     deleted = models.DateTimeField()
+
+class SiteManagementsLog(models.Model):
+    date_time=models.DateTimeField(auto_now_add=True)
+    link=models.CharField(max_length=336+16*100)
     

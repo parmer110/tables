@@ -38,3 +38,5 @@
     ### Notes
 
     1- Create base classes in the "common" application.
+        . Using TextField data type in django models for long lenght encoded data will entry, sith setting "admin.widgets.AdminTextareaWidget(attrs={'rows': 1})" class in admin.py for change TextField view in model profile data entry to text box and using Media class to use css settings for it be same the CharField.
+    2- 
