@@ -22,6 +22,7 @@ class User(AbstractUser):
     id = models.BigAutoField(primary_key=True)
     timestamp = models.DateTimeField(auto_now_add=True, null=True)
 
+
 class Person(CommonModel):
     SEX = (
         ('Male', 'Male'),
@@ -63,7 +64,6 @@ class Person(CommonModel):
     @property
     def address(self):
         return decoder(self._address)
-
 
     @firstname.setter
     def firstname(self, value):
@@ -112,6 +112,9 @@ class Places(CommonModel):
     _usage = models.TextField(db_column="usage", verbose_name="Usage", null=True)
     manager = models.ForeignKey(Person, on_delete=models.CASCADE,  db_column="manager", related_name="Places", verbose_name="Manager", null=True)
 
+    def __str__(self):
+        return f"{self.id}- {self.title}"
+    
     @property
     def title(self):
         return decoder(self._title)
@@ -193,7 +196,6 @@ class SiteManagementsLog(CommonModel):
     @property
     def action(self):
         return decoder(self._action)
-
 
     @ip4.setter
     def ip4(self, value):
