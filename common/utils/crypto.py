@@ -156,9 +156,9 @@ def encoder(value):
 
     return sxtw_encoder(aes_encoder(value))
 
-def decoder(str):
-    if str is not None and str[0: 4] == "sxtw" and len(str) % 4 == 0:
-        value =  aes_decoder(sxtw_decoder(str))
+def decoder(stri):
+    if stri is not None and stri[0: 4] == "sxtw" and len(stri) % 4 == 0:
+        value =  aes_decoder(sxtw_decoder(stri))
         # try:
         #     value = datetime.fromisoformat(value)
         # except ValueError:
@@ -192,4 +192,4 @@ def decoder(str):
 
         return value
     else:
-        return str
+        return stri

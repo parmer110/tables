@@ -1,5 +1,6 @@
 #id__firstname, #id__lastname, #id__birthdate, #id__passport_number, #id__mobile_phone, #id__national_code {
     width: 280px;
+    height: 20px;
 }
 #id__address {
     width: 80%;

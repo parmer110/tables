@@ -38,5 +38,10 @@
     ### Notes
 
     1- Create base classes in the "common" application.
+        . Creating an abstract model for inheritance its common fields in all another models.
+        . Make auto_now editable false.
         . Using TextField data type in django models for long lenght encoded data will entry, sith setting "admin.widgets.AdminTextareaWidget(attrs={'rows': 1})" class in admin.py for change TextField view in model profile data entry to text box and using Media class to use css settings for it be same the CharField.
-    2- 
+        . Using @property and setter and getter with save method for auto encoder, decoder data entry or export in database.
+        . Using TextField datatype for encoded fields because has large encoded data with css for admin profile whitch uses to textbox fields in add.
+    2- Developing treatment.models.py
+        . Using direct inheritance from common's model modules.
