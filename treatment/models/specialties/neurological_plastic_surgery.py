@@ -1,9 +1,12 @@
 from django.db import models
+from common.models import Person, Places, CommonModel
 
 name = "Neurological Plastic Surgery"
 
 # مدل بیمار
-class Patient(models.Model):
+class neurological_plastic_surgery_Patient(models.Model):
+    class Meta:
+        db_table = 'neurological_plastic_surgery_Patient'
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
     age = models.IntegerField()
@@ -12,16 +15,18 @@ class Patient(models.Model):
 
 # مدل تخصص جراحی پلاستیک عصبی (Neurological Plastic Surgery)
 class NeurologicalPlasticSurgery(models.Model):
-    patient = models.ForeignKey(Patient, on_delete=models.CASCADE)
+    patient = models.ForeignKey(neurological_plastic_surgery_Patient, on_delete=models.CASCADE)
     nerve_repair_techniques = models.TextField(verbose_name='تکنیک‌های تعمیر عصب')
     cranial_reconstruction_techniques = models.TextField(verbose_name='تکنیک‌های بازسازی مغزی')
     spine_reconstruction_techniques = models.TextField(verbose_name='تکنیک‌های بازسازی اسپینال')
     # دیگر فیلدهای مربوط به تخصص جراحی پلاستیک عصبی
     # ...
 
-# مدل تجویز (Treatment)
-class Treatment(models.Model):
-    patient = models.ForeignKey(Patient, on_delete=models.CASCADE)
+# مدل تجویز (neurological_plastic_surgery_Treatment)
+class neurological_plastic_surgery_Treatment(models.Model):
+    class Meta:
+        db_table = 'neurological_plastic_surgery_Treatment'
+    patient = models.ForeignKey(neurological_plastic_surgery_Patient, on_delete=models.CASCADE)
     description = models.TextField()
     date = models.DateField()
     # دیگر فیلدهای مربوط به تجویز

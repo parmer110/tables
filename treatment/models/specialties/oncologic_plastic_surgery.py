@@ -1,9 +1,12 @@
 from django.db import models
+from common.models import Person, Places, CommonModel
 
 name = "Oncologic Plastic Surgery"
 
 # مدل بیمار
-class Patient(models.Model):
+class oncologic_plastic_surgery_Patient(models.Model):
+    class Meta:
+        db_table = 'oncologic_plastic_surgery_Patient'
     # فیلدهای مربوط به بیمار
     full_name = models.CharField(max_length=100, verbose_name='نام کامل بیمار')
     age = models.PositiveIntegerField(verbose_name='سن')
@@ -17,7 +20,7 @@ class Patient(models.Model):
 
 # مدل تخصص جراحی پلاستیک سرطان (Oncologic Plastic Surgery)
 class OncologicPlasticSurgery(models.Model):
-    patient = models.ForeignKey(Patient, on_delete=models.CASCADE, verbose_name='بیمار')
+    patient = models.ForeignKey(oncologic_plastic_surgery_Patient, on_delete=models.CASCADE, verbose_name='بیمار')
     type_of_cancer = models.CharField(max_length=100, verbose_name='نوع سرطان')
     surgical_approach = models.TextField(verbose_name='روش جراحی')
     reconstruction_technique = models.TextField(verbose_name='تکنیک بازسازی')
@@ -30,9 +33,11 @@ class OncologicPlasticSurgery(models.Model):
     def __str__(self):
         return f"جراحی پلاستیک سرطان برای بیمار {self.patient.full_name}"
 
-# مدل تجویز (Treatment)
-class Treatment(models.Model):
-    patient = models.ForeignKey(Patient, on_delete=models.CASCADE, verbose_name='بیمار')
+# مدل تجویز (oncologic_plastic_surgery_Treatment)
+class oncologic_plastic_surgery_Treatment(models.Model):
+    class Meta:
+        db_table = 'oncologic_plastic_surgery_Treatment'
+    patient = models.ForeignKey(oncologic_plastic_surgery_Patient, on_delete=models.CASCADE, verbose_name='بیمار')
     description = models.TextField(verbose_name='توضیحات تجویز')
     date = models.DateField(verbose_name='تاریخ تجویز')
 

@@ -1,8 +1,11 @@
 from django.db import models
+from common.models import Person, Places, CommonModel
 
 name="Family Medicine"
 
-class Patient(models.Model):
+class family_medicine_Patient(models.Model):
+    class Meta:
+        db_table = 'family_medicine_Patient'
     # فیلدهای مربوط به بیمار
     full_name = models.CharField(max_length=100, verbose_name='نام کامل بیمار')
     age = models.PositiveIntegerField(verbose_name='سن')
@@ -35,9 +38,11 @@ class HealthCheckup(models.Model):
     def __str__(self):
         return f"چک‌آپ سلامتی خانواده در تاریخ {self.date}"
 
-class Treatment(models.Model):
+class family_medicine_Treatment(models.Model):
+    class Meta:
+        db_table = 'family_medicine_Treatment'
     # بیمار مربوط به این روند درمانی
-    patient = models.ForeignKey(Patient, on_delete=models.CASCADE, verbose_name='بیمار')
+    patient = models.ForeignKey(family_medicine_Patient, on_delete=models.CASCADE, verbose_name='بیمار')
 
     # فیلدهای مربوط به روند پزشکی خانواده
     visit_date = models.DateTimeField(verbose_name='تاریخ ویزیت')

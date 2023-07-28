@@ -1,5 +1,6 @@
 from django.db import models
 from common.models import Person, Places, CommonModel
+from common.models import Person, Places, CommonModel
 
 name = "Allergy and Immunology"
 
@@ -7,7 +8,7 @@ class Allergy(models.Model):
     # فیلدهای مربوط به آلرژی
     name = models.CharField(max_length=100, verbose_name='نام آلرژی')
     description = models.TextField(verbose_name='توضیحات آلرژی')
-    #patient = models.ForeignKey(Patient, on_delete=models.CASCADE)
+    #patient = models.ForeignKey(allergy_and_immunology_Patient, on_delete=models.CASCADE)
     diagnosis = models.TextField()
     medications = models.TextField()
 
@@ -19,7 +20,7 @@ class Allergy(models.Model):
 class ImmunologyTest(models.Model):
     # فیلدهای مربوط به آزمایش‌های ایمونولوژی
     name = models.CharField(max_length=100, verbose_name='نام آزمایش')
-    #patient = models.ForeignKey(Patient, on_delete=models.CASCADE)
+    #patient = models.ForeignKey(allergy_and_immunology_Patient, on_delete=models.CASCADE)
     laboratory_tests = models.TextField()
     hospitalization = models.BooleanField()
     surgery = models.BooleanField()
@@ -31,7 +32,9 @@ class ImmunologyTest(models.Model):
     def __str__(self):
         return self.name
 
-class Treatment(models.Model):
+class allergy_and_immunology_Treatment(models.Model):
+    class Meta:
+        db_table = 'allergy_and_immunology_Treatment'
     # بیمار مربوط به این روند درمانی
     patient = models.ForeignKey(Person, on_delete=models.CASCADE, verbose_name='بیمار')
 

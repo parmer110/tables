@@ -1,9 +1,12 @@
 from django.db import models
+from common.models import Person, Places, CommonModel
 
 name = "Subspecialty Neurological Surgery"
 
 # مدل بیمار
-class Patient(models.Model):
+class sub_neurological_surgery_Patient(models.Model):
+    class Meta:
+        db_table = 'sub_neurological_surgery_Patient'
     # فیلدهای مربوط به بیمار
     full_name = models.CharField(max_length=100, verbose_name='نام کامل بیمار')
     age = models.PositiveIntegerField(verbose_name='سن')
@@ -17,7 +20,7 @@ class Patient(models.Model):
 
 # مدل زیرتخصص پزشکی جراحی مغز و اعصاب (Neurological Surgery)
 class NeurologicalSurgery(models.Model):
-    patient = models.ForeignKey(Patient, on_delete=models.CASCADE, verbose_name='بیمار')
+    patient = models.ForeignKey(sub_neurological_surgery_Patient, on_delete=models.CASCADE, verbose_name='بیمار')
     brain_condition = models.TextField(verbose_name='وضعیت مغز')
     neurological_issues = models.TextField(verbose_name='مشکلات عصبی')
     surgical_approach = models.TextField(verbose_name='روش جراحی')
@@ -28,9 +31,11 @@ class NeurologicalSurgery(models.Model):
     def __str__(self):
         return f"زیرتخصص پزشکی جراحی مغز و اعصاب برای بیمار {self.patient.full_name}"
 
-# مدل تجویز (Treatment)
-class Treatment(models.Model):
-    patient = models.ForeignKey(Patient, on_delete=models.CASCADE, verbose_name='بیمار')
+# مدل تجویز (sub_neurological_surgery_Treatment)
+class sub_neurological_surgery_Treatment(models.Model):
+    class Meta:
+        db_table = 'sub_neurological_surgery_Treatment'
+    patient = models.ForeignKey(sub_neurological_surgery_Patient, on_delete=models.CASCADE, verbose_name='بیمار')
     description = models.TextField(verbose_name='توضیحات تجویز')
     date = models.DateField(verbose_name='تاریخ تجویز')
 

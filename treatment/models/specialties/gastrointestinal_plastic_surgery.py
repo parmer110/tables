@@ -1,8 +1,11 @@
 from django.db import models
+from common.models import Person, Places, CommonModel
 
 name = "Subspecialty Gastrointestinal Plastic Surgery"
 
-class Patient(models.Model):
+class gastrointestinal_plastic_surgery_Patient(models.Model):
+    class Meta:
+        db_table = 'gastrointestinal_plastic_surgery_Patient'
     # فیلدهای مربوط به بیمار
     full_name = models.CharField(max_length=100, verbose_name='نام کامل بیمار')
     age = models.PositiveIntegerField(verbose_name='سن بیمار')
@@ -13,7 +16,7 @@ class Patient(models.Model):
 
 class GastrointestinalPlasticSurgery(models.Model):
     # بیمار مربوط به جراحی پلاستیک گوارشی
-    patient = models.ForeignKey(Patient, on_delete=models.CASCADE, verbose_name='بیمار')
+    patient = models.ForeignKey(gastrointestinal_plastic_surgery_Patient, on_delete=models.CASCADE, verbose_name='بیمار')
 
     # نوع جراحی پلاستیک گوارشی
     surgery_type = models.CharField(max_length=100, verbose_name='نوع جراحی پلاستیک گوارشی')
@@ -28,9 +31,11 @@ class GastrointestinalPlasticSurgery(models.Model):
     def __str__(self):
         return f"جراحی پلاستیک گوارشی برای بیمار {self.patient.full_name}"
 
-class Treatment(models.Model):
+class gastrointestinal_plastic_surgery_Treatment(models.Model):
+    class Meta:
+        db_table = 'gastrointestinal_plastic_surgery_Treatment'
     # بیمار مربوط به تجویز
-    patient = models.ForeignKey(Patient, on_delete=models.CASCADE, verbose_name='بیمار')
+    patient = models.ForeignKey(gastrointestinal_plastic_surgery_Patient, on_delete=models.CASCADE, verbose_name='بیمار')
 
     # تاریخ تجویز
     prescription_date = models.DateField(verbose_name='تاریخ تجویز')

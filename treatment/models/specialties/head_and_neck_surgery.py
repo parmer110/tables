@@ -1,8 +1,11 @@
 from django.db import models
+from common.models import Person, Places, CommonModel
 
 name = "Head and Neck Surgery"
 
-class Patient(models.Model):
+class head_and_neck_surgery_Patient(models.Model):
+    class Meta:
+        db_table = 'head_and_neck_surgery_Patient'
     # فیلدهای مربوط به بیمار
     full_name = models.CharField(max_length=100, verbose_name='نام کامل بیمار')
     age = models.PositiveIntegerField(verbose_name='سن')
@@ -34,9 +37,11 @@ class HeadAndNeckSurgeryTest(models.Model):
     def __str__(self):
         return self.name
 
-class Treatment(models.Model):
+class head_and_neck_surgery_Treatment(models.Model):
+    class Meta:
+        db_table = 'head_and_neck_surgery_Treatment'
     # بیمار مربوط به این روند درمانی
-    patient = models.ForeignKey(Patient, on_delete=models.CASCADE, verbose_name='بیمار')
+    patient = models.ForeignKey(head_and_neck_surgery_Patient, on_delete=models.CASCADE, verbose_name='بیمار')
 
     # فیلدهای مربوط به روند جراحی سر و گردن
     visit_date = models.DateTimeField(verbose_name='تاریخ ویزیت')

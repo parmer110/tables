@@ -1,8 +1,11 @@
 from django.db import models
+from common.models import Person, Places, CommonModel
 
 name = "Respiratory Plastic Surgery"
 
-class Patient(models.Model):
+class respiratory_plastic_surgery_Patient(models.Model):
+    class Meta:
+        db_table = 'respiratory_plastic_surgery_Patient'
     # فیلدهای مربوط به بیمار
     full_name = models.CharField(max_length=100, verbose_name='نام کامل بیمار')
     age = models.PositiveIntegerField(verbose_name='سن بیمار')
@@ -22,7 +25,7 @@ class RespiratorySurgeryProcedure(models.Model):
 
 class RespiratorySurgeryHistory(models.Model):
     # بیمار مربوط به تاریخچه‌ی جراحی تنفسی
-    patient = models.ForeignKey(Patient, on_delete=models.CASCADE, verbose_name='بیمار')
+    patient = models.ForeignKey(respiratory_plastic_surgery_Patient, on_delete=models.CASCADE, verbose_name='بیمار')
 
     # روش‌های جراحی تنفسی انجام شده برای بیمار
     respiratory_surgery_procedures = models.ManyToManyField(RespiratorySurgeryProcedure, blank=True, verbose_name='روش‌های جراحی تنفسی')
@@ -37,9 +40,11 @@ class RespiratorySurgeryHistory(models.Model):
     def __str__(self):
         return f"تاریخچه‌ی جراحی تنفسی بیمار {self.patient.full_name}"
 
-class Treatment(models.Model):
+class respiratory_plastic_surgery_Treatment(models.Model):
+    class Meta:
+        db_table = 'respiratory_plastic_surgery_Treatment'
     # بیمار مربوط به درمان
-    patient = models.ForeignKey(Patient, on_delete=models.CASCADE, verbose_name='بیمار')
+    patient = models.ForeignKey(respiratory_plastic_surgery_Patient, on_delete=models.CASCADE, verbose_name='بیمار')
 
     # نام درمان
     name = models.CharField(max_length=100, verbose_name='نام درمان')

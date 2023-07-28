@@ -1,9 +1,12 @@
 from django.db import models
+from common.models import Person, Places, CommonModel
 
 name = "Subspecialty Critical Care Medicine"
 
 # مدل بیمار
-class Patient(models.Model):
+class sub_critical_care_medicine_Patient(models.Model):
+    class Meta:
+        db_table = 'sub_critical_care_medicine_Patient'
     # فیلدهای مربوط به بیمار
     full_name = models.CharField(max_length=100, verbose_name='نام کامل بیمار')
     age = models.PositiveIntegerField(verbose_name='سن')
@@ -17,7 +20,7 @@ class Patient(models.Model):
 
 # مدل تخصص مراقبت‌های وخیم (Critical Care Medicine)
 class CriticalCareMedicine(models.Model):
-    patient = models.ForeignKey(Patient, on_delete=models.CASCADE, verbose_name='بیمار')
+    patient = models.ForeignKey(sub_critical_care_medicine_Patient, on_delete=models.CASCADE, verbose_name='بیمار')
     condition = models.CharField(max_length=100, verbose_name='وضعیت بیماری')
     treatment_plan = models.TextField(verbose_name='طرح درمانی')
     medications = models.TextField(verbose_name='داروها')
@@ -29,9 +32,11 @@ class CriticalCareMedicine(models.Model):
     def __str__(self):
         return f"مراقبت‌های وخیم برای بیمار {self.patient.full_name}"
 
-# مدل تجویز (Treatment)
-class Treatment(models.Model):
-    patient = models.ForeignKey(Patient, on_delete=models.CASCADE, verbose_name='بیمار')
+# مدل تجویز (sub_critical_care_medicine_Treatment)
+class sub_critical_care_medicine_Treatment(models.Model):
+    class Meta:
+        db_table = 'sub_critical_care_medicine_Treatment'
+    patient = models.ForeignKey(sub_critical_care_medicine_Patient, on_delete=models.CASCADE, verbose_name='بیمار')
     description = models.TextField(verbose_name='توضیحات تجویز')
     date = models.DateField(verbose_name='تاریخ تجویز')
 

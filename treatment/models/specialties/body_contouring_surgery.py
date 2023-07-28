@@ -1,8 +1,11 @@
 from django.db import models
+from common.models import Person, Places, CommonModel
 
 name = "Body Contouring Surgery"
 
-class Patient(models.Model):
+class body_contouring_surgery_Patient(models.Model):
+    class Meta:
+        db_table = 'body_contouring_surgery_Patient'
     # فیلدهای مربوط به بیمار
     full_name = models.CharField(max_length=100, verbose_name='نام کامل بیمار')
     age = models.PositiveIntegerField(verbose_name='سن')
@@ -24,9 +27,11 @@ class BodyContouringSurgeryProcedure(models.Model):
     def __str__(self):
         return self.name
 
-class Treatment(models.Model):
+class body_contouring_surgery_Treatment(models.Model):
+    class Meta:
+        db_table = 'body_contouring_surgery_Treatment'
     # بیمار مربوط به این روند درمانی
-    patient = models.ForeignKey(Patient, on_delete=models.CASCADE, verbose_name='بیمار')
+    patient = models.ForeignKey(body_contouring_surgery_Patient, on_delete=models.CASCADE, verbose_name='بیمار')
 
     # فیلدهای مربوط به روند جراحی پلاستیک تناسب اندام
     body_contouring_surgery_procedures = models.ManyToManyField(BodyContouringSurgeryProcedure, blank=True, verbose_name='روش‌های جراحی پلاستیک تناسب اندام')

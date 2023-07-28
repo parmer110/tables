@@ -1,9 +1,12 @@
 from django.db import models
+from common.models import Person, Places, CommonModel
 
 name = "Subspecialty Pediatric Cardiology"
 
 # مدل بیمار
-class Patient(models.Model):
+class sub_pediatric_cardiology_Patient(models.Model):
+    class Meta:
+        db_table = 'sub_pediatric_cardiology_Patient'
     # فیلدهای مربوط به بیمار
     full_name = models.CharField(max_length=100, verbose_name='نام کامل بیمار')
     age = models.PositiveIntegerField(verbose_name='سن')
@@ -17,7 +20,7 @@ class Patient(models.Model):
 
 # مدل زیرتخصص پزشکی قلب و عروق کودکان (Pediatric Cardiology)
 class PediatricCardiology(models.Model):
-    patient = models.ForeignKey(Patient, on_delete=models.CASCADE, verbose_name='بیمار')
+    patient = models.ForeignKey(sub_pediatric_cardiology_Patient, on_delete=models.CASCADE, verbose_name='بیمار')
     congenital_heart_disease = models.TextField(verbose_name='بیماری‌های قلبی خلقی')
     diagnostic_tests = models.TextField(verbose_name='آزمایشات تشخیصی')
     treatment_plan = models.TextField(verbose_name='طرح درمانی')
@@ -28,9 +31,11 @@ class PediatricCardiology(models.Model):
     def __str__(self):
         return f"زیرتخصص پزشکی قلب و عروق کودکان برای بیمار {self.patient.full_name}"
 
-# مدل تجویز (Treatment)
-class Treatment(models.Model):
-    patient = models.ForeignKey(Patient, on_delete=models.CASCADE, verbose_name='بیمار')
+# مدل تجویز (sub_pediatric_cardiology_Treatment)
+class sub_pediatric_cardiology_Treatment(models.Model):
+    class Meta:
+        db_table = 'sub_pediatric_cardiology_Treatment'
+    patient = models.ForeignKey(sub_pediatric_cardiology_Patient, on_delete=models.CASCADE, verbose_name='بیمار')
     description = models.TextField(verbose_name='توضیحات تجویز')
     date = models.DateField(verbose_name='تاریخ تجویز')
 

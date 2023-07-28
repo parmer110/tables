@@ -1,8 +1,11 @@
 from django.db import models
+from common.models import Person, Places, CommonModel
 
 name = "Adult Cardiovascular Surgery"
 
-class Patient(models.Model):
+class adult_cardiovascular_surgery_Patient(CommonModel):
+    class Meta:
+        db_table = 'adult_cardiovascular_surgery_Patient'
     # فیلدهای مربوط به بیمار
     full_name = models.CharField(max_length=100, verbose_name='نام کامل بیمار')
     age = models.PositiveIntegerField(verbose_name='سن')
@@ -34,9 +37,11 @@ class AdultCardiovascularSurgeryTest(models.Model):
     def __str__(self):
         return self.name
 
-class Treatment(models.Model):
+class adult_cardiovascular_surgery_Treatment(models.Model):
+    class Meta:
+        db_table = 'adult_cardiovascular_surgery_Treatment'
     # بیمار مربوط به این روند درمانی
-    patient = models.ForeignKey(Patient, on_delete=models.CASCADE, verbose_name='بیمار')
+    patient = models.ForeignKey(adult_cardiovascular_surgery_Patient, on_delete=models.CASCADE, verbose_name='بیمار')
 
     # فیلدهای مربوط به روند جراحی قلب و عروق بالغین
     visit_date = models.DateTimeField(verbose_name='تاریخ ویزیت')

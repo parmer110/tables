@@ -1,9 +1,12 @@
 from django.db import models
+from common.models import Person, Places, CommonModel
 
 name = "Subspecialty Rheumatology"
 
 # مدل بیمار
-class Patient(models.Model):
+class sub_rheumatology_Patient(models.Model):
+    class Meta:
+        db_table = 'sub_rheumatology_Patient'
     # فیلدهای مربوط به بیمار
     full_name = models.CharField(max_length=100, verbose_name='نام کامل بیمار')
     age = models.PositiveIntegerField(verbose_name='سن')
@@ -17,7 +20,7 @@ class Patient(models.Model):
 
 # مدل زیرتخصص پزشکی روماتولوژی (Rheumatology)
 class Rheumatology(models.Model):
-    patient = models.ForeignKey(Patient, on_delete=models.CASCADE, verbose_name='بیمار')
+    patient = models.ForeignKey(sub_rheumatology_Patient, on_delete=models.CASCADE, verbose_name='بیمار')
     rheumatic_conditions = models.TextField(verbose_name='شرایط روماتولوژیک')
     diagnostic_tests = models.TextField(verbose_name='آزمایش‌های تشخیصی')
     treatment_options = models.TextField(verbose_name='گزینه‌های درمانی')
@@ -30,9 +33,11 @@ class Rheumatology(models.Model):
     def __str__(self):
         return f"زیرتخصص پزشکی روماتولوژی برای بیمار {self.patient.full_name}"
 
-# مدل تجویز (Treatment)
-class Treatment(models.Model):
-    patient = models.ForeignKey(Patient, on_delete=models.CASCADE, verbose_name='بیمار')
+# مدل تجویز (sub_rheumatology_Treatment)
+class sub_rheumatology_Treatment(models.Model):
+    class Meta:
+        db_table = 'sub_rheumatology_Treatment'
+    patient = models.ForeignKey(sub_rheumatology_Patient, on_delete=models.CASCADE, verbose_name='بیمار')
     description = models.TextField(verbose_name='توضیحات تجویز')
     date = models.DateField(verbose_name='تاریخ تجویز')
 

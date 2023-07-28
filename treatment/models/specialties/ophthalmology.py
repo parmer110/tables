@@ -1,8 +1,11 @@
 from django.db import models
+from common.models import Person, Places, CommonModel
 
 name="Ophthalmology"
 
-class Patient(models.Model):
+class ophthalmology_Patient(models.Model):
+    class Meta:
+        db_table = 'ophthalmology_Patient'
     # فیلدهای مربوط به بیمار
     full_name = models.CharField(max_length=100, verbose_name='نام کامل بیمار')
     age = models.PositiveIntegerField(verbose_name='سن')
@@ -34,9 +37,11 @@ class OphthalmologyTest(models.Model):
     def __str__(self):
         return self.name
 
-class Treatment(models.Model):
+class ophthalmology_Treatment(models.Model):
+    class Meta:
+        db_table = 'ophthalmology_Treatment'
     # بیمار مربوط به این روند درمانی
-    patient = models.ForeignKey(Patient, on_delete=models.CASCADE, verbose_name='بیمار')
+    patient = models.ForeignKey(ophthalmology_Patient, on_delete=models.CASCADE, verbose_name='بیمار')
 
     # فیلدهای مربوط به روند چشم پزشکی
     visit_date = models.DateTimeField(verbose_name='تاریخ ویزیت')

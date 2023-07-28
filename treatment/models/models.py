@@ -81,6 +81,9 @@ class Prescribes(CommonModel):
     dose = models.CharField(max_length=255)
 
 class Patient(CommonModel):
+    class Meta:
+        db_table = 'treatment_Patient'
+
     ssn = models.IntegerField(unique=True)
     name = models.CharField(max_length=255)
     address = models.TextField()

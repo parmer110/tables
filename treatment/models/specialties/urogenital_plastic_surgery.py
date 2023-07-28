@@ -1,8 +1,11 @@
 from django.db import models
+from common.models import Person, Places, CommonModel
 
 name = "Urogenital Plastic Surgery"
 
-class Patient(models.Model):
+class urogenital_plastic_surgery_Patient(models.Model):
+    class Meta:
+        db_table = 'urogenital_plastic_surgery_Patient'
     # فیلدهای مربوط به بیمار
     full_name = models.CharField(max_length=100, verbose_name='نام کامل بیمار')
     age = models.PositiveIntegerField(verbose_name='سن بیمار')
@@ -13,7 +16,7 @@ class Patient(models.Model):
 
 class UrogenitalPlasticSurgery(models.Model):
     # بیمار مربوط به جراحی پلاستیک ادراری
-    patient = models.ForeignKey(Patient, on_delete=models.CASCADE, verbose_name='بیمار')
+    patient = models.ForeignKey(urogenital_plastic_surgery_Patient, on_delete=models.CASCADE, verbose_name='بیمار')
 
     # نوع جراحی پلاستیک ادراری
     surgery_type = models.CharField(max_length=100, verbose_name='نوع جراحی پلاستیک ادراری')
@@ -28,9 +31,11 @@ class UrogenitalPlasticSurgery(models.Model):
     def __str__(self):
         return f"جراحی پلاستیک ادراری برای بیمار {self.patient.full_name}"
 
-class Treatment(models.Model):
+class urogenital_plastic_surgery_Treatment(models.Model):
+    class Meta:
+        db_table = 'urogenital_plastic_surgery_Treatment'
     # بیمار مربوط به تجویز
-    patient = models.ForeignKey(Patient, on_delete=models.CASCADE, verbose_name='بیمار')
+    patient = models.ForeignKey(urogenital_plastic_surgery_Patient, on_delete=models.CASCADE, verbose_name='بیمار')
 
     # تاریخ تجویز
     prescription_date = models.DateField(verbose_name='تاریخ تجویز')
