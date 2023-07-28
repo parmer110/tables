@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.db import models
-from .models import User, Person, Places, SiteManagementsLog
+from .models import User, Person, Places, SiteManagementsLog, Translate
 
 class UserAdmin(admin.ModelAdmin):
     list_display = ("id", "username", "email", "timestamp")
@@ -22,7 +22,11 @@ class PlacesAdmin(admin.ModelAdmin):
 class SiteManagementLogAdmin(admin.ModelAdmin):
     list_display=("id", "ip4", "ip6", "person", "link", "action")
 
+class TranslateAdmin(admin.ModelAdmin):
+    list_display=("id", "persian", "english", "arabic", "russian", "chineseTraditional", "spanish")
+
 admin.site.register(User, UserAdmin)
 admin.site.register(Person, PersonAdmin)
 admin.site.register(Places, PlacesAdmin)
 admin.site.register(SiteManagementsLog, SiteManagementLogAdmin)
+admin.site.register(Translate, TranslateAdmin)

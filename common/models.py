@@ -30,7 +30,7 @@ class Person(CommonModel):
     )
     _firstname = models.TextField(db_column="firstname", verbose_name="First Name", null=True) #CharField(max_length=336+16*40, db_column='firstname', null=True)
     _lastname = models.TextField(db_column="lastname", verbose_name="Last Name", null=True) #CharField(max_length=336+16*60, db_column="lastname", null=True)
-    _birthdate = models.TextField(db_column="birthdate", verbose_name="Birthdate", null=True) #CharField(max_length=336+16*18, db_column="birthdate", null=True)
+    _birthdate = models.CharField(max_length=366+16*10, db_column="birthdate", verbose_name="Birthdate", null=True) #CharField(max_length=336+16*18, db_column="birthdate", null=True)
     _national_code = models.TextField(db_column="national_code", verbose_name="National Code", null=True) #CharField(max_length=336+16*10, db_column="national_code", null=True)
     _passport_number = models.TextField(db_column="passport_number", verbose_name="Passport Number", null=True) #CharField(max_length=336+16*10, db_column="passport_number", null=True)
     _sex = models.CharField(max_length=336+16*10, choices=SEX, db_column="sex", verbose_name="Sex", null=True)
@@ -216,3 +216,11 @@ class SiteManagementsLog(CommonModel):
         self.link = encoder(self.link)
         self.action = encoder(self.action)
         super(SiteManagementsLog, self).save(*args, **kwargs)
+
+class Translate(CommonModel):
+    persian = models.TextField(null=True, blank=True)
+    english = models.TextField(null=True, blank=True)
+    arabic = models.TextField(null=True, blank=True)
+    russian = models.TextField(null=True, blank=True)
+    chineseTraditional = models.TextField(null=True, blank=True)
+    spanish = models.TextField(null=True, blank=True)
