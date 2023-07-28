@@ -4,9 +4,9 @@ from common.models import Person, Places, CommonModel
 name = "Subspecialty Pediatric Hematology-Oncology"
 
 # مدل بیمار
-class sub_pediatric_hematology-oncology_Patient(models.Model):
+class sub_pediatric_hematology_oncology_Patient(models.Model):
     class Meta:
-        db_table = 'sub_pediatric_hematology-oncology_Patient'
+        db_table = 'sub_pediatric_hematology_oncology_Patient'
     # فیلدهای مربوط به بیمار
     full_name = models.CharField(max_length=100, verbose_name='نام کامل بیمار')
     age = models.PositiveIntegerField(verbose_name='سن')
@@ -20,7 +20,7 @@ class sub_pediatric_hematology-oncology_Patient(models.Model):
 
 # مدل زیرتخصص پزشکی هماتولوژی و آنکولوژی کودکان (Pediatric Hematology-Oncology)
 class PediatricHematologyOncology(models.Model):
-    patient = models.ForeignKey(sub_pediatric_hematology-oncology_Patient, on_delete=models.CASCADE, verbose_name='بیمار')
+    patient = models.ForeignKey(sub_pediatric_hematology_oncology_Patient, on_delete=models.CASCADE, verbose_name='بیمار')
     type_of_cancer = models.CharField(max_length=100, verbose_name='نوع سرطان')
     blood_disorder = models.TextField(verbose_name='اختلال خونی')
     treatment_plan = models.TextField(verbose_name='طرح درمانی')
@@ -34,10 +34,10 @@ class PediatricHematologyOncology(models.Model):
         return f"زیرتخصص پزشکی هماتولوژی و آنکولوژی کودکان برای بیمار {self.patient.full_name}"
 
 # مدل تجویز (sub_pediatric_hematology-oncology_Treatment)
-class sub_pediatric_hematology-oncology_Treatment(models.Model):
+class sub_pediatric_hematology_oncology_Treatment(models.Model):
     class Meta:
         db_table = 'sub_pediatric_hematology-oncology_Treatment'
-    patient = models.ForeignKey(sub_pediatric_hematology-oncology_Patient, on_delete=models.CASCADE, verbose_name='بیمار')
+    patient = models.ForeignKey(sub_pediatric_hematology_oncology_Patient, on_delete=models.CASCADE, verbose_name='بیمار')
     description = models.TextField(verbose_name='توضیحات تجویز')
     date = models.DateField(verbose_name='تاریخ تجویز')
 
