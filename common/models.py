@@ -10,9 +10,9 @@ from common.utils.crypto import encoder, decoder
     # SiteManagementsLog
 class CommonModel(models.Model):
     id = models.AutoField(primary_key=True)
-    createddtm = models.DateTimeField(auto_now_add=True, editable=False)
-    updatedtm = models.DateTimeField(auto_now=True, editable=False)
-    deleted = models.DateTimeField(null=True, editable=False)
+    createddtm = models.DateTimeField(auto_now_add=True, editable=False, null=True)
+    updatedtm = models.DateTimeField(auto_now=True, editable=False, null=True)
+    deleted = models.DateTimeField(editable=False, null=True)
 
     class Meta:
         abstract = True

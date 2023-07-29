@@ -24,6 +24,14 @@ class SiteManagementLogAdmin(admin.ModelAdmin):
 
 class TranslateAdmin(admin.ModelAdmin):
     list_display=("id", "persian", "english", "arabic", "russian", "chineseTraditional", "spanish")
+    # list_editable=("persian", "english", "arabic", "russian", "chineseTraditional", "spanish")
+    formfield_overrides = {
+        models.TextField: {'widget': admin.widgets.AdminTextareaWidget(attrs={'rows': 1})},
+    }
+    class Media:
+        css = {
+            'all': ('css/custom_admin.css',),
+        }
 
 admin.site.register(User, UserAdmin)
 admin.site.register(Person, PersonAdmin)

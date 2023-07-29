@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'administration',
     'food',
     'nursing',
     'shopping',
@@ -39,6 +40,7 @@ INSTALLED_APPS = [
     'transportation',
     'treatment',
     'common',
+    'django_extensions',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

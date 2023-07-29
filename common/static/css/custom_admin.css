@@ -5,3 +5,8 @@
 #id__address {
     width: 80%;
 }
+
+.vLargeTextField {
+    width: 280px;
+    height: 20px;    
+}
