@@ -15,7 +15,7 @@
     ### Files content
 
         * crypto, (common/utils/crypto.py): encryption functions and decryption ones.
-        * Dynamyc code change (common/utils/codehelp.py): Functions are dinamically changes group of modules inside.
+        * Dynamic code change (common/utils/codehelp.py): Functions are dinamically changes group of modules programatcally using Regular Exprssion.
 
     ### Running
 
