@@ -3,7 +3,7 @@ from common.models import Person, Places, CommonModel
 
 name = "Physical Medicine and Rehabilitation"
 
-class physical_medicine_and_rehabilitation_Patient(models.Model):
+class physical_medicine_and_rehabilitation_Patient(CommonModel):
     class Meta:
         db_table = 'physical_medicine_and_rehabilitation_Patient'
     # فیلدهای مربوط به بیمار
@@ -17,7 +17,7 @@ class physical_medicine_and_rehabilitation_Patient(models.Model):
     def __str__(self):
         return self.full_name
 
-class PhysicalRehabilitationProcedure(models.Model):
+class PhysicalRehabilitationProcedure(CommonModel):
     # فیلدهای مربوط به روش‌های پزشکی فیزیکال و توانبخشی
     name = models.CharField(max_length=100, verbose_name='نام روش پزشکی فیزیکال و توانبخشی')
     description = models.TextField(verbose_name='توضیحات روش پزشکی فیزیکال و توانبخشی')
@@ -27,7 +27,7 @@ class PhysicalRehabilitationProcedure(models.Model):
     def __str__(self):
         return self.name
 
-class RehabilitationTest(models.Model):
+class RehabilitationTest(CommonModel):
     # فیلدهای مربوط به آزمایش‌های پزشکی فیزیکال و توانبخشی
     name = models.CharField(max_length=100, verbose_name='نام آزمایش پزشکی فیزیکال و توانبخشی')
     description = models.TextField(verbose_name='توضیحات آزمایش پزشکی فیزیکال و توانبخشی')
@@ -37,7 +37,7 @@ class RehabilitationTest(models.Model):
     def __str__(self):
         return self.name
 
-class physical_medicine_and_rehabilitation_Treatment(models.Model):
+class physical_medicine_and_rehabilitation_Treatment(CommonModel):
     class Meta:
         db_table = 'physical_medicine_and_rehabilitation_Treatment'
     # بیمار مربوط به این روند درمانی

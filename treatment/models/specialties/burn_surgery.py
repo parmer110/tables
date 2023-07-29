@@ -3,7 +3,7 @@ from common.models import Person, Places, CommonModel
 
 name = "Burn Surgery"
 
-class burn_surgery_Patient(models.Model):
+class burn_surgery_Patient(CommonModel):
     class Meta:
         db_table = 'burn_surgery_Patient'
     # فیلدهای مربوط به بیمار
@@ -17,7 +17,7 @@ class burn_surgery_Patient(models.Model):
     def __str__(self):
         return self.full_name
 
-class BurnSeverity(models.Model):
+class BurnSeverity(CommonModel):
     # فیلدهای مربوط به شدت سوختگی
     name = models.CharField(max_length=100, verbose_name='نام شدت سوختگی')
     description = models.TextField(verbose_name='توضیحات شدت سوختگی')
@@ -27,7 +27,7 @@ class BurnSeverity(models.Model):
     def __str__(self):
         return self.name
 
-class BurnSurgeryProcedure(models.Model):
+class BurnSurgeryProcedure(CommonModel):
     # فیلدهای مربوط به روش‌های جراحی پلاستیک سوختگی
     name = models.CharField(max_length=100, verbose_name='نام روش جراحی پلاستیک سوختگی')
     description = models.TextField(verbose_name='توضیحات روش جراحی پلاستیک سوختگی')
@@ -37,7 +37,7 @@ class BurnSurgeryProcedure(models.Model):
     def __str__(self):
         return self.name
 
-class burn_surgery_Treatment(models.Model):
+class burn_surgery_Treatment(CommonModel):
     class Meta:
         db_table = 'burn_surgery_Treatment'
     # بیمار مربوط به این روند درمانی

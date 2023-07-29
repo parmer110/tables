@@ -3,7 +3,7 @@ from common.models import Person, Places, CommonModel
 
 name="Ophthalmology"
 
-class ophthalmology_Patient(models.Model):
+class ophthalmology_Patient(CommonModel):
     class Meta:
         db_table = 'ophthalmology_Patient'
     # فیلدهای مربوط به بیمار
@@ -17,7 +17,7 @@ class ophthalmology_Patient(models.Model):
     def __str__(self):
         return self.full_name
 
-class EyeCondition(models.Model):
+class EyeCondition(CommonModel):
     # فیلدهای مربوط به شرایط چشمی
     name = models.CharField(max_length=100, verbose_name='نام شرایط چشمی')
     description = models.TextField(verbose_name='توضیحات شرایط چشمی')
@@ -27,7 +27,7 @@ class EyeCondition(models.Model):
     def __str__(self):
         return self.name
 
-class OphthalmologyTest(models.Model):
+class OphthalmologyTest(CommonModel):
     # فیلدهای مربوط به آزمایش‌های چشم پزشکی
     name = models.CharField(max_length=100, verbose_name='نام آزمایش چشم پزشکی')
     description = models.TextField(verbose_name='توضیحات آزمایش چشم پزشکی')
@@ -37,7 +37,7 @@ class OphthalmologyTest(models.Model):
     def __str__(self):
         return self.name
 
-class ophthalmology_Treatment(models.Model):
+class ophthalmology_Treatment(CommonModel):
     class Meta:
         db_table = 'ophthalmology_Treatment'
     # بیمار مربوط به این روند درمانی

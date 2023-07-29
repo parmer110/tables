@@ -3,7 +3,7 @@ from common.models import Person, Places, CommonModel
 
 name = "Anesthesiology"
 
-class dermatology_Patient(models.Model):
+class dermatology_Patient(CommonModel):
     class Meta:
         db_table = 'dermatology_Patient'
     # فیلدهای مربوط به بیمار
@@ -17,7 +17,7 @@ class dermatology_Patient(models.Model):
     def __str__(self):
         return self.full_name
 
-class SkinCondition(models.Model):
+class SkinCondition(CommonModel):
     # فیلدهای مربوط به بیماری‌های پوستی
     name = models.CharField(max_length=100, verbose_name='نام بیماری')
     description = models.TextField(verbose_name='توضیحات بیماری')
@@ -27,7 +27,7 @@ class SkinCondition(models.Model):
     def __str__(self):
         return self.name
 
-class Prescription(models.Model):
+class Prescription(CommonModel):
     # فیلدهای مربوط به نسخه داروها
     medication = models.CharField(max_length=100, verbose_name='نام دارو')
     dosage = models.CharField(max_length=50, verbose_name='مقدار دوز دارو')
@@ -38,7 +38,7 @@ class Prescription(models.Model):
     def __str__(self):
         return self.medication
 
-class dermatology_Treatment(models.Model):
+class dermatology_Treatment(CommonModel):
     class Meta:
         db_table = 'dermatology_Treatment'
     # بیمار مربوط به این روند درمانی

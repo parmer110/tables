@@ -3,7 +3,7 @@ from common.models import Person, Places, CommonModel
 
 name="Medical Genetics"
 
-class medical_genetics_Patient(models.Model):
+class medical_genetics_Patient(CommonModel):
     class Meta:
         db_table = 'medical_genetics_Patient'
     # فیلدهای مربوط به بیمار
@@ -17,7 +17,7 @@ class medical_genetics_Patient(models.Model):
     def __str__(self):
         return self.full_name
 
-class GeneticDisorder(models.Model):
+class GeneticDisorder(CommonModel):
     # فیلدهای مربوط به اختلالات ژنتیکی
     name = models.CharField(max_length=100, verbose_name='نام اختلال ژنتیکی')
     description = models.TextField(verbose_name='توضیحات اختلال ژنتیکی')
@@ -27,7 +27,7 @@ class GeneticDisorder(models.Model):
     def __str__(self):
         return self.name
 
-class GeneticTest(models.Model):
+class GeneticTest(CommonModel):
     # فیلدهای مربوط به آزمایشات ژنتیکی
     name = models.CharField(max_length=100, verbose_name='نام آزمایش ژنتیکی')
     description = models.TextField(verbose_name='توضیحات آزمایش ژنتیکی')
@@ -37,7 +37,7 @@ class GeneticTest(models.Model):
     def __str__(self):
         return self.name
 
-class medical_genetics_Treatment(models.Model):
+class medical_genetics_Treatment(CommonModel):
     class Meta:
         db_table = 'medical_genetics_Treatment'
     # بیمار مربوط به این روند درمانی

@@ -3,7 +3,7 @@ from common.models import Person, Places, CommonModel
 
 name = "Hand Surgery"
 
-class hand_surgery_Patient(models.Model):
+class hand_surgery_Patient(CommonModel):
     class Meta:
         db_table = 'hand_surgery_Patient'
     # فیلدهای مربوط به بیمار
@@ -17,7 +17,7 @@ class hand_surgery_Patient(models.Model):
     def __str__(self):
         return self.full_name
 
-class HandSurgeryProcedure(models.Model):
+class HandSurgeryProcedure(CommonModel):
     # فیلدهای مربوط به روش‌های جراحی دست
     name = models.CharField(max_length=100, verbose_name='نام روش جراحی دست')
     description = models.TextField(verbose_name='توضیحات روش جراحی دست')
@@ -27,7 +27,7 @@ class HandSurgeryProcedure(models.Model):
     def __str__(self):
         return self.name
 
-class HandSurgeryTest(models.Model):
+class HandSurgeryTest(CommonModel):
     # فیلدهای مربوط به آزمایش‌های جراحی دست
     name = models.CharField(max_length=100, verbose_name='نام آزمایش جراحی دست')
     description = models.TextField(verbose_name='توضیحات آزمایش جراحی دست')
@@ -37,7 +37,7 @@ class HandSurgeryTest(models.Model):
     def __str__(self):
         return self.name
 
-class hand_surgery_Treatment(models.Model):
+class hand_surgery_Treatment(CommonModel):
     class Meta:
         db_table = 'hand_surgery_Treatment'
     # بیمار مربوط به این روند درمانی

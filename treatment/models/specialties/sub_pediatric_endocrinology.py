@@ -4,7 +4,7 @@ from common.models import Person, Places, CommonModel
 name = "Subspecialty Pediatric Endocrinology"
 
 # مدل بیمار
-class sub_pediatric_endocrinology_Patient(models.Model):
+class sub_pediatric_endocrinology_Patient(CommonModel):
     class Meta:
         db_table = 'sub_pediatric_endocrinology_Patient'
     # فیلدهای مربوط به بیمار
@@ -19,7 +19,7 @@ class sub_pediatric_endocrinology_Patient(models.Model):
         return self.full_name
 
 # مدل زیرتخصص پزشکی غدد کودکان (Pediatric Endocrinology)
-class PediatricEndocrinology(models.Model):
+class PediatricEndocrinology(CommonModel):
     patient = models.ForeignKey(sub_pediatric_endocrinology_Patient, on_delete=models.CASCADE, verbose_name='بیمار')
     endocrine_disorder = models.TextField(verbose_name='اختلال غدد')
     treatment_plan = models.TextField(verbose_name='طرح درمانی')
@@ -33,7 +33,7 @@ class PediatricEndocrinology(models.Model):
         return f"زیرتخصص پزشکی غدد کودکان برای بیمار {self.patient.full_name}"
 
 # مدل تجویز (sub_pediatric_endocrinology_Treatment)
-class sub_pediatric_endocrinology_Treatment(models.Model):
+class sub_pediatric_endocrinology_Treatment(CommonModel):
     class Meta:
         db_table = 'sub_pediatric_endocrinology_Treatment'
     patient = models.ForeignKey(sub_pediatric_endocrinology_Patient, on_delete=models.CASCADE, verbose_name='بیمار')

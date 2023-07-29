@@ -3,7 +3,7 @@ from common.models import Person, Places, CommonModel
 
 name = "Pediatric Endocrinology"
 
-class pediatric_endocrinology_Patient(models.Model):
+class pediatric_endocrinology_Patient(CommonModel):
     class Meta:
         db_table = 'pediatric_endocrinology_Patient'
     # فیلدهای مربوط به بیمار
@@ -17,7 +17,7 @@ class pediatric_endocrinology_Patient(models.Model):
     def __str__(self):
         return self.full_name
 
-class PediatricEndocrinologyProcedure(models.Model):
+class PediatricEndocrinologyProcedure(CommonModel):
     # فیلدهای مربوط به روش‌های غدد کودکان
     name = models.CharField(max_length=100, verbose_name='نام روش غدد کودکان')
     description = models.TextField(verbose_name='توضیحات روش غدد کودکان')
@@ -27,7 +27,7 @@ class PediatricEndocrinologyProcedure(models.Model):
     def __str__(self):
         return self.name
 
-class PediatricEndocrinologyTest(models.Model):
+class PediatricEndocrinologyTest(CommonModel):
     # فیلدهای مربوط به آزمایش‌های غدد کودکان
     name = models.CharField(max_length=100, verbose_name='نام آزمایش غدد کودکان')
     description = models.TextField(verbose_name='توضیحات آزمایش غدد کودکان')
@@ -37,7 +37,7 @@ class PediatricEndocrinologyTest(models.Model):
     def __str__(self):
         return self.name
 
-class pediatric_endocrinology_Treatment(models.Model):
+class pediatric_endocrinology_Treatment(CommonModel):
     class Meta:
         db_table = 'pediatric_endocrinology_Treatment'
     # بیمار مربوط به این روند درمانی

@@ -3,7 +3,7 @@ from common.models import Person, Places, CommonModel
 
 name = "Anesthesiology"
 
-class anesthesiology_Patient(models.Model):
+class anesthesiology_Patient(CommonModel):
     class Meta:
         db_table = 'anesthesiology_Patient'
     # فیلدهای مربوط به بیمار
@@ -17,7 +17,7 @@ class anesthesiology_Patient(models.Model):
     def __str__(self):
         return self.full_name
 
-class AnesthesiaType(models.Model):
+class AnesthesiaType(CommonModel):
     # فیلدهای مربوط به نوع بیهوشی
     name = models.CharField(max_length=100, verbose_name='نوع بیهوشی')
     description = models.TextField(verbose_name='توضیحات نوع بیهوشی')
@@ -27,7 +27,7 @@ class AnesthesiaType(models.Model):
     def __str__(self):
         return self.name
 
-class AnesthesiaComplication(models.Model):
+class AnesthesiaComplication(CommonModel):
     # فیلدهای مربوط به عوارض بیهوشی
     name = models.CharField(max_length=100, verbose_name='نام عارضه')
     description = models.TextField(verbose_name='توضیحات عارضه')
@@ -37,7 +37,7 @@ class AnesthesiaComplication(models.Model):
     def __str__(self):
         return self.name
 
-class anesthesiology_Treatment(models.Model):
+class anesthesiology_Treatment(CommonModel):
     class Meta:
         db_table = 'anesthesiology_Treatment'
     # بیمار مربوط به این روند درمانی

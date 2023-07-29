@@ -2,7 +2,7 @@ from django.db import models
 from common.models import Person, Places, CommonModel
 
 name = "Pediatric Plastic Surgery"
-class pediatric_plastic_surgery_Patient(models.Model):
+class pediatric_plastic_surgery_Patient(CommonModel):
     class Meta:
         db_table = 'pediatric_plastic_surgery_Patient'
     # فیلدهای مربوط به بیمار
@@ -16,7 +16,7 @@ class pediatric_plastic_surgery_Patient(models.Model):
     def __str__(self):
         return self.full_name
 
-class PediatricPlasticSurgeryProcedure(models.Model):
+class PediatricPlasticSurgeryProcedure(CommonModel):
     # فیلدهای مربوط به روش‌های جراحی پلاستیک کودکان
     name = models.CharField(max_length=100, verbose_name='نام روش جراحی پلاستیک کودکان')
     description = models.TextField(verbose_name='توضیحات روش جراحی پلاستیک کودکان')
@@ -26,7 +26,7 @@ class PediatricPlasticSurgeryProcedure(models.Model):
     def __str__(self):
         return self.name
 
-class PediatricPlasticSurgeryTest(models.Model):
+class PediatricPlasticSurgeryTest(CommonModel):
     # فیلدهای مربوط به آزمایش‌های جراحی پلاستیک کودکان
     name = models.CharField(max_length=100, verbose_name='نام آزمایش جراحی پلاستیک کودکان')
     description = models.TextField(verbose_name='توضیحات آزمایش جراحی پلاستیک کودکان')
@@ -36,7 +36,7 @@ class PediatricPlasticSurgeryTest(models.Model):
     def __str__(self):
         return self.name
 
-class pediatric_plastic_surgery_Treatment(models.Model):
+class pediatric_plastic_surgery_Treatment(CommonModel):
     class Meta:
         db_table = 'pediatric_plastic_surgery_Treatment'
     # بیمار مربوط به این روند درمانی

@@ -3,7 +3,7 @@ from common.models import Person, Places, CommonModel
 
 name="Diagnostic Radiology"
 
-class diagnostic_radiology_Patient(models.Model):
+class diagnostic_radiology_Patient(CommonModel):
     class Meta:
         db_table = 'diagnostic_radiology_Patient'
     # فیلدهای مربوط به بیمار
@@ -17,7 +17,7 @@ class diagnostic_radiology_Patient(models.Model):
     def __str__(self):
         return self.full_name
 
-class ImagingModality(models.Model):
+class ImagingModality(CommonModel):
     # فیلدهای مربوط به انواع تصویربرداری پزشکی
     name = models.CharField(max_length=100, verbose_name='نوع تصویربرداری')
     description = models.TextField(verbose_name='توضیحات تصویربرداری')
@@ -27,7 +27,7 @@ class ImagingModality(models.Model):
     def __str__(self):
         return self.name
 
-class RadiologyFinding(models.Model):
+class RadiologyFinding(CommonModel):
     # فیلدهای مربوط به یافته‌های رادیولوژی
     name = models.CharField(max_length=100, verbose_name='نام یافته')
     description = models.TextField(verbose_name='توضیحات یافته')
@@ -37,7 +37,7 @@ class RadiologyFinding(models.Model):
     def __str__(self):
         return self.name
 
-class diagnostic_radiology_Treatment(models.Model):
+class diagnostic_radiology_Treatment(CommonModel):
     class Meta:
         db_table = 'diagnostic_radiology_Treatment'
     # بیمار مربوط به این روند درمانی

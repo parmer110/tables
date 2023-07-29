@@ -4,7 +4,7 @@ from common.models import Person, Places, CommonModel
 name = "Subspecialty Nephrology"
 
 # مدل بیمار
-class sub_nephrology_Patient(models.Model):
+class sub_nephrology_Patient(CommonModel):
     class Meta:
         db_table = 'sub_nephrology_Patient'
     # فیلدهای مربوط به بیمار
@@ -19,7 +19,7 @@ class sub_nephrology_Patient(models.Model):
         return self.full_name
 
 # مدل زیرتخصص پزشکی نفرولوژی (Nephrology)
-class Nephrology(models.Model):
+class Nephrology(CommonModel):
     patient = models.ForeignKey(sub_nephrology_Patient, on_delete=models.CASCADE, verbose_name='بیمار')
     kidney_condition = models.TextField(verbose_name='وضعیت کلیه')
     urinary_issues = models.TextField(verbose_name='مشکلات ادراری')
@@ -32,7 +32,7 @@ class Nephrology(models.Model):
         return f"زیرتخصص پزشکی نفرولوژی برای بیمار {self.patient.full_name}"
 
 # مدل تجویز (sub_nephrology_Treatment)
-class sub_nephrology_Treatment(models.Model):
+class sub_nephrology_Treatment(CommonModel):
     class Meta:
         db_table = 'sub_nephrology_Treatment'
     patient = models.ForeignKey(sub_nephrology_Patient, on_delete=models.CASCADE, verbose_name='بیمار')

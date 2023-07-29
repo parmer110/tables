@@ -3,7 +3,7 @@ from common.models import Person, Places, CommonModel
 
 name="Nuclear Medicine"
 
-class nuclear_medicine_Patient(models.Model):
+class nuclear_medicine_Patient(CommonModel):
     class Meta:
         db_table = 'nuclear_medicine_Patient'
     # فیلدهای مربوط به بیمار
@@ -17,7 +17,7 @@ class nuclear_medicine_Patient(models.Model):
     def __str__(self):
         return self.full_name
 
-class NuclearMedicineProcedure(models.Model):
+class NuclearMedicineProcedure(CommonModel):
     # فیلدهای مربوط به روش‌های پزشکی هسته‌ای
     name = models.CharField(max_length=100, verbose_name='نام روش پزشکی هسته‌ای')
     description = models.TextField(verbose_name='توضیحات روش پزشکی هسته‌ای')
@@ -27,7 +27,7 @@ class NuclearMedicineProcedure(models.Model):
     def __str__(self):
         return self.name
 
-class NuclearMedicineTest(models.Model):
+class NuclearMedicineTest(CommonModel):
     # فیلدهای مربوط به آزمایش‌های پزشکی هسته‌ای
     name = models.CharField(max_length=100, verbose_name='نام آزمایش پزشکی هسته‌ای')
     description = models.TextField(verbose_name='توضیحات آزمایش پزشکی هسته‌ای')
@@ -37,7 +37,7 @@ class NuclearMedicineTest(models.Model):
     def __str__(self):
         return self.name
 
-class nuclear_medicine_Treatment(models.Model):
+class nuclear_medicine_Treatment(CommonModel):
     class Meta:
         db_table = 'nuclear_medicine_Treatment'
     # بیمار مربوط به این روند درمانی

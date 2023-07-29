@@ -3,7 +3,7 @@ from common.models import Person, Places, CommonModel
 
 name  = "Colorectal Surgery"
 
-class colorectal_surgery_Patient(models.Model):
+class colorectal_surgery_Patient(CommonModel):
     class Meta:
         db_table = 'colorectal_surgery_Patient'
     # فیلدهای مربوط به بیمار
@@ -17,7 +17,7 @@ class colorectal_surgery_Patient(models.Model):
     def __str__(self):
         return self.full_name
 
-class ColorectalSurgeryProcedure(models.Model):
+class ColorectalSurgeryProcedure(CommonModel):
     # فیلدهای مربوط به روش‌های جراحی پایین شکم
     name = models.CharField(max_length=100, verbose_name='نام روش جراحی پایین شکم')
     description = models.TextField(verbose_name='توضیحات روش جراحی پایین شکم')
@@ -27,7 +27,7 @@ class ColorectalSurgeryProcedure(models.Model):
     def __str__(self):
         return self.name
 
-class ColorectalSurgeryTest(models.Model):
+class ColorectalSurgeryTest(CommonModel):
     # فیلدهای مربوط به آزمایش‌های جراحی پایین شکم
     name = models.CharField(max_length=100, verbose_name='نام آزمایش جراحی پایین شکم')
     description = models.TextField(verbose_name='توضیحات آزمایش جراحی پایین شکم')
@@ -37,7 +37,7 @@ class ColorectalSurgeryTest(models.Model):
     def __str__(self):
         return self.name
 
-class colorectal_surgery_Treatment(models.Model):
+class colorectal_surgery_Treatment(CommonModel):
     class Meta:
         db_table = 'colorectal_surgery_Treatment'
     # بیمار مربوط به این روند درمانی

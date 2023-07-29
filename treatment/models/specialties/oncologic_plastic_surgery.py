@@ -4,7 +4,7 @@ from common.models import Person, Places, CommonModel
 name = "Oncologic Plastic Surgery"
 
 # مدل بیمار
-class oncologic_plastic_surgery_Patient(models.Model):
+class oncologic_plastic_surgery_Patient(CommonModel):
     class Meta:
         db_table = 'oncologic_plastic_surgery_Patient'
     # فیلدهای مربوط به بیمار
@@ -19,7 +19,7 @@ class oncologic_plastic_surgery_Patient(models.Model):
         return self.full_name
 
 # مدل تخصص جراحی پلاستیک سرطان (Oncologic Plastic Surgery)
-class OncologicPlasticSurgery(models.Model):
+class OncologicPlasticSurgery(CommonModel):
     patient = models.ForeignKey(oncologic_plastic_surgery_Patient, on_delete=models.CASCADE, verbose_name='بیمار')
     type_of_cancer = models.CharField(max_length=100, verbose_name='نوع سرطان')
     surgical_approach = models.TextField(verbose_name='روش جراحی')
@@ -34,7 +34,7 @@ class OncologicPlasticSurgery(models.Model):
         return f"جراحی پلاستیک سرطان برای بیمار {self.patient.full_name}"
 
 # مدل تجویز (oncologic_plastic_surgery_Treatment)
-class oncologic_plastic_surgery_Treatment(models.Model):
+class oncologic_plastic_surgery_Treatment(CommonModel):
     class Meta:
         db_table = 'oncologic_plastic_surgery_Treatment'
     patient = models.ForeignKey(oncologic_plastic_surgery_Patient, on_delete=models.CASCADE, verbose_name='بیمار')

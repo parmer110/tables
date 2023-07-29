@@ -4,7 +4,7 @@ from common.models import Person, Places, CommonModel
 name = "Subspecialty Adult Cardiology"
 
 # مدل بیمار
-class sub_adult_cardiology_Patient(models.Model):
+class sub_adult_cardiology_Patient(CommonModel):
     class Meta:
         db_table = 'sub_adult_cardiology_Patient'
     # فیلدهای مربوط به بیمار
@@ -19,7 +19,7 @@ class sub_adult_cardiology_Patient(models.Model):
         return self.full_name
 
 # مدل زیرتخصص پزشکی قلب و عروق بالغین (Adult Cardiology)
-class AdultCardiology(models.Model):
+class AdultCardiology(CommonModel):
     patient = models.ForeignKey(sub_adult_cardiology_Patient, on_delete=models.CASCADE, verbose_name='بیمار')
     cardiac_diagnosis = models.TextField(verbose_name='تشخیص قلبی')
     treatment_plan = models.TextField(verbose_name='طرح درمانی')
@@ -32,7 +32,7 @@ class AdultCardiology(models.Model):
         return f"زیرتخصص پزشکی قلب و عروق بالغین برای بیمار {self.patient.full_name}"
 
 # مدل تجویز (sub_adult_cardiology_Treatment)
-class sub_adult_cardiology_Treatment(models.Model):
+class sub_adult_cardiology_Treatment(CommonModel):
     class Meta:
         db_table = 'sub_adult_cardiology_Treatment'
     patient = models.ForeignKey(sub_adult_cardiology_Patient, on_delete=models.CASCADE, verbose_name='بیمار')

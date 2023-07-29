@@ -3,7 +3,7 @@ from common.models import Person, Places, CommonModel
 
 name = "Radiation Oncology"
 
-class radiation_oncology_Patient(models.Model):
+class radiation_oncology_Patient(CommonModel):
     class Meta:
         db_table = 'radiation_oncology_Patient'
     # فیلدهای مربوط به بیمار
@@ -17,7 +17,7 @@ class radiation_oncology_Patient(models.Model):
     def __str__(self):
         return self.full_name
 
-class RadiationProcedure(models.Model):
+class RadiationProcedure(CommonModel):
     # فیلدهای مربوط به روش‌های پرتودرمانی و انکولوژی
     name = models.CharField(max_length=100, verbose_name='نام روش پرتودرمانی و انکولوژی')
     description = models.TextField(verbose_name='توضیحات روش پرتودرمانی و انکولوژی')
@@ -27,7 +27,7 @@ class RadiationProcedure(models.Model):
     def __str__(self):
         return self.name
 
-class RadiationTest(models.Model):
+class RadiationTest(CommonModel):
     # فیلدهای مربوط به آزمایش‌های پرتودرمانی و انکولوژی
     name = models.CharField(max_length=100, verbose_name='نام آزمایش پرتودرمانی و انکولوژی')
     description = models.TextField(verbose_name='توضیحات آزمایش پرتودرمانی و انکولوژی')
@@ -37,7 +37,7 @@ class RadiationTest(models.Model):
     def __str__(self):
         return self.name
 
-class radiation_oncology_Treatment(models.Model):
+class radiation_oncology_Treatment(CommonModel):
     class Meta:
         db_table = 'radiation_oncology_Treatment'
     # بیمار مربوط به این روند درمانی

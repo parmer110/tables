@@ -4,7 +4,7 @@ from common.models import Person, Places, CommonModel
 name = "Subspecialty Sleep Medicine"
 
 # مدل بیمار
-class sub_sleep_medicine_Patient(models.Model):
+class sub_sleep_medicine_Patient(CommonModel):
     class Meta:
         db_table = 'sub_sleep_medicine_Patient'
     # فیلدهای مربوط به بیمار
@@ -19,7 +19,7 @@ class sub_sleep_medicine_Patient(models.Model):
         return self.full_name
 
 # مدل زیرتخصص پزشکی خواب (Sleep Medicine)
-class SleepMedicine(models.Model):
+class SleepMedicine(CommonModel):
     patient = models.ForeignKey(sub_sleep_medicine_Patient, on_delete=models.CASCADE, verbose_name='بیمار')
     sleep_disorders = models.TextField(verbose_name='اختلالات خواب')
     sleep_study_results = models.TextField(verbose_name='نتایج مطالعه خواب')
@@ -34,7 +34,7 @@ class SleepMedicine(models.Model):
         return f"زیرتخصص پزشکی خواب برای بیمار {self.patient.full_name}"
 
 # مدل تجویز (sub_sleep_medicine_Treatment)
-class sub_sleep_medicine_Treatment(models.Model):
+class sub_sleep_medicine_Treatment(CommonModel):
     class Meta:
         db_table = 'sub_sleep_medicine_Treatment'
     patient = models.ForeignKey(sub_sleep_medicine_Patient, on_delete=models.CASCADE, verbose_name='بیمار')

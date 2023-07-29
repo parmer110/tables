@@ -3,7 +3,7 @@ from common.models import Person, Places, CommonModel
 
 name = "Pediatric Gastroenterology"
 
-class pediatric_gastroenterology_Patient(models.Model):
+class pediatric_gastroenterology_Patient(CommonModel):
     class Meta:
         db_table = 'pediatric_gastroenterology_Patient'
     # فیلدهای مربوط به بیمار
@@ -17,7 +17,7 @@ class pediatric_gastroenterology_Patient(models.Model):
     def __str__(self):
         return self.full_name
 
-class PediatricGastroenterologyProcedure(models.Model):
+class PediatricGastroenterologyProcedure(CommonModel):
     # فیلدهای مربوط به روش‌های گوارش کودکان
     name = models.CharField(max_length=100, verbose_name='نام روش گوارش کودکان')
     description = models.TextField(verbose_name='توضیحات روش گوارش کودکان')
@@ -27,7 +27,7 @@ class PediatricGastroenterologyProcedure(models.Model):
     def __str__(self):
         return self.name
 
-class PediatricGastroenterologyTest(models.Model):
+class PediatricGastroenterologyTest(CommonModel):
     # فیلدهای مربوط به آزمایش‌های گوارش کودکان
     name = models.CharField(max_length=100, verbose_name='نام آزمایش گوارش کودکان')
     description = models.TextField(verbose_name='توضیحات آزمایش گوارش کودکان')
@@ -37,7 +37,7 @@ class PediatricGastroenterologyTest(models.Model):
     def __str__(self):
         return self.name
 
-class pediatric_gastroenterology_Treatment(models.Model):
+class pediatric_gastroenterology_Treatment(CommonModel):
     class Meta:
         db_table = 'pediatric_gastroenterology_Treatment'
     # بیمار مربوط به این روند درمانی

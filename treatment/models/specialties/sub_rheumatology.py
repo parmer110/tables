@@ -4,7 +4,7 @@ from common.models import Person, Places, CommonModel
 name = "Subspecialty Rheumatology"
 
 # مدل بیمار
-class sub_rheumatology_Patient(models.Model):
+class sub_rheumatology_Patient(CommonModel):
     class Meta:
         db_table = 'sub_rheumatology_Patient'
     # فیلدهای مربوط به بیمار
@@ -19,7 +19,7 @@ class sub_rheumatology_Patient(models.Model):
         return self.full_name
 
 # مدل زیرتخصص پزشکی روماتولوژی (Rheumatology)
-class Rheumatology(models.Model):
+class Rheumatology(CommonModel):
     patient = models.ForeignKey(sub_rheumatology_Patient, on_delete=models.CASCADE, verbose_name='بیمار')
     rheumatic_conditions = models.TextField(verbose_name='شرایط روماتولوژیک')
     diagnostic_tests = models.TextField(verbose_name='آزمایش‌های تشخیصی')
@@ -34,7 +34,7 @@ class Rheumatology(models.Model):
         return f"زیرتخصص پزشکی روماتولوژی برای بیمار {self.patient.full_name}"
 
 # مدل تجویز (sub_rheumatology_Treatment)
-class sub_rheumatology_Treatment(models.Model):
+class sub_rheumatology_Treatment(CommonModel):
     class Meta:
         db_table = 'sub_rheumatology_Treatment'
     patient = models.ForeignKey(sub_rheumatology_Patient, on_delete=models.CASCADE, verbose_name='بیمار')

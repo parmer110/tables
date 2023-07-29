@@ -4,7 +4,7 @@ from common.models import Person, Places, CommonModel
 name = "Subspecialty Pediatric Cardiology"
 
 # مدل بیمار
-class sub_pediatric_cardiology_Patient(models.Model):
+class sub_pediatric_cardiology_Patient(CommonModel):
     class Meta:
         db_table = 'sub_pediatric_cardiology_Patient'
     # فیلدهای مربوط به بیمار
@@ -19,7 +19,7 @@ class sub_pediatric_cardiology_Patient(models.Model):
         return self.full_name
 
 # مدل زیرتخصص پزشکی قلب و عروق کودکان (Pediatric Cardiology)
-class PediatricCardiology(models.Model):
+class PediatricCardiology(CommonModel):
     patient = models.ForeignKey(sub_pediatric_cardiology_Patient, on_delete=models.CASCADE, verbose_name='بیمار')
     congenital_heart_disease = models.TextField(verbose_name='بیماری‌های قلبی خلقی')
     diagnostic_tests = models.TextField(verbose_name='آزمایشات تشخیصی')
@@ -32,7 +32,7 @@ class PediatricCardiology(models.Model):
         return f"زیرتخصص پزشکی قلب و عروق کودکان برای بیمار {self.patient.full_name}"
 
 # مدل تجویز (sub_pediatric_cardiology_Treatment)
-class sub_pediatric_cardiology_Treatment(models.Model):
+class sub_pediatric_cardiology_Treatment(CommonModel):
     class Meta:
         db_table = 'sub_pediatric_cardiology_Treatment'
     patient = models.ForeignKey(sub_pediatric_cardiology_Patient, on_delete=models.CASCADE, verbose_name='بیمار')

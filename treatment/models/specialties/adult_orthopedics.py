@@ -3,7 +3,7 @@ from common.models import Person, Places, CommonModel
 
 name = "Adult Orthopedics"
 
-class adult_orthopedics_Patient(models.Model):
+class adult_orthopedics_Patient(CommonModel):
     class Meta:
         db_table = 'adult_orthopedics_Patient'
     # فیلدهای مربوط به بیمار
@@ -17,7 +17,7 @@ class adult_orthopedics_Patient(models.Model):
     def __str__(self):
         return self.full_name
 
-class AdultOrthopedicsProcedure(models.Model):
+class AdultOrthopedicsProcedure(CommonModel):
     # فیلدهای مربوط به روش‌های ارتوپدی بالغین
     name = models.CharField(max_length=100, verbose_name='نام روش ارتوپدی بالغین')
     description = models.TextField(verbose_name='توضیحات روش ارتوپدی بالغین')
@@ -27,7 +27,7 @@ class AdultOrthopedicsProcedure(models.Model):
     def __str__(self):
         return self.name
 
-class AdultOrthopedicsTest(models.Model):
+class AdultOrthopedicsTest(CommonModel):
     # فیلدهای مربوط به آزمایش‌های ارتوپدی بالغین
     name = models.CharField(max_length=100, verbose_name='نام آزمایش ارتوپدی بالغین')
     description = models.TextField(verbose_name='توضیحات آزمایش ارتوپدی بالغین')
@@ -37,7 +37,7 @@ class AdultOrthopedicsTest(models.Model):
     def __str__(self):
         return self.name
 
-class adult_orthopedics_Treatment(models.Model):
+class adult_orthopedics_Treatment(CommonModel):
     class Meta:
         db_table = 'adult_orthopedics_Treatment'
     # بیمار مربوط به این روند درمانی

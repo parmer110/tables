@@ -3,7 +3,7 @@ from common.models import Person, Places, CommonModel
 
 name = "Vascular Surgery"
 
-class vascular_surgery_Patient(models.Model):
+class vascular_surgery_Patient(CommonModel):
     class Meta:
         db_table = 'vascular_surgery_Patient'
     # فیلدهای مربوط به بیمار
@@ -17,7 +17,7 @@ class vascular_surgery_Patient(models.Model):
     def __str__(self):
         return self.full_name
 
-class VascularSurgeryProcedure(models.Model):
+class VascularSurgeryProcedure(CommonModel):
     # فیلدهای مربوط به روش‌های جراحی عروق
     name = models.CharField(max_length=100, verbose_name='نام روش جراحی عروق')
     description = models.TextField(verbose_name='توضیحات روش جراحی عروق')
@@ -27,7 +27,7 @@ class VascularSurgeryProcedure(models.Model):
     def __str__(self):
         return self.name
 
-class VascularSurgeryTest(models.Model):
+class VascularSurgeryTest(CommonModel):
     # فیلدهای مربوط به آزمایش‌های جراحی عروق
     name = models.CharField(max_length=100, verbose_name='نام آزمایش جراحی عروق')
     description = models.TextField(verbose_name='توضیحات آزمایش جراحی عروق')
@@ -37,7 +37,7 @@ class VascularSurgeryTest(models.Model):
     def __str__(self):
         return self.name
 
-class vascular_surgery_Treatment(models.Model):
+class vascular_surgery_Treatment(CommonModel):
     class Meta:
         db_table = 'vascular_surgery_Treatment'
     # بیمار مربوط به این روند درمانی

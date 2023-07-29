@@ -3,7 +3,7 @@ from common.models import Person, Places, CommonModel
 
 name = "Subspecialty Gastrointestinal Plastic Surgery"
 
-class gastrointestinal_plastic_surgery_Patient(models.Model):
+class gastrointestinal_plastic_surgery_Patient(CommonModel):
     class Meta:
         db_table = 'gastrointestinal_plastic_surgery_Patient'
     # فیلدهای مربوط به بیمار
@@ -14,7 +14,7 @@ class gastrointestinal_plastic_surgery_Patient(models.Model):
     def __str__(self):
         return self.full_name
 
-class GastrointestinalPlasticSurgery(models.Model):
+class GastrointestinalPlasticSurgery(CommonModel):
     # بیمار مربوط به جراحی پلاستیک گوارشی
     patient = models.ForeignKey(gastrointestinal_plastic_surgery_Patient, on_delete=models.CASCADE, verbose_name='بیمار')
 
@@ -31,7 +31,7 @@ class GastrointestinalPlasticSurgery(models.Model):
     def __str__(self):
         return f"جراحی پلاستیک گوارشی برای بیمار {self.patient.full_name}"
 
-class gastrointestinal_plastic_surgery_Treatment(models.Model):
+class gastrointestinal_plastic_surgery_Treatment(CommonModel):
     class Meta:
         db_table = 'gastrointestinal_plastic_surgery_Treatment'
     # بیمار مربوط به تجویز

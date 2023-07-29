@@ -3,7 +3,7 @@ from common.models import Person, Places, CommonModel
 
 name="Emergency Medicine"
 
-class emergency_medicine_Patient(models.Model):
+class emergency_medicine_Patient(CommonModel):
     class Meta:
         db_table = 'emergency_medicine_Patient'
     # فیلدهای مربوط به بیمار
@@ -17,7 +17,7 @@ class emergency_medicine_Patient(models.Model):
     def __str__(self):
         return self.full_name
 
-class EmergencyComplaint(models.Model):
+class EmergencyComplaint(CommonModel):
     # فیلدهای مربوط به شکایت‌های اورژانسی بیمار
     name = models.CharField(max_length=100, verbose_name='نام شکایت')
     description = models.TextField(verbose_name='توضیحات شکایت')
@@ -27,7 +27,7 @@ class EmergencyComplaint(models.Model):
     def __str__(self):
         return self.name
 
-class EmergencyProcedure(models.Model):
+class EmergencyProcedure(CommonModel):
     # فیلدهای مربوط به اقدامات اورژانسی
     name = models.CharField(max_length=100, verbose_name='نام اقدام')
     description = models.TextField(verbose_name='توضیحات اقدام')
@@ -37,7 +37,7 @@ class EmergencyProcedure(models.Model):
     def __str__(self):
         return self.name
 
-class emergency_medicine_Treatment(models.Model):
+class emergency_medicine_Treatment(CommonModel):
     class Meta:
         db_table = 'emergency_medicine_Treatment'
     # بیمار مربوط به این روند درمانی

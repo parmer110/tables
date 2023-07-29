@@ -4,7 +4,7 @@ from common.models import Person, Places, CommonModel
 name = "Subspecialty Nuclear Medicine"
 
 # مدل بیمار
-class sub_nuclear_medicine_Patient(models.Model):
+class sub_nuclear_medicine_Patient(CommonModel):
     class Meta:
         db_table = 'sub_nuclear_medicine_Patient'
     # فیلدهای مربوط به بیمار
@@ -19,7 +19,7 @@ class sub_nuclear_medicine_Patient(models.Model):
         return self.full_name
 
 # مدل زیرتخصص پزشکی هسته‌ای (Nuclear Medicine)
-class NuclearMedicine(models.Model):
+class NuclearMedicine(CommonModel):
     patient = models.ForeignKey(sub_nuclear_medicine_Patient, on_delete=models.CASCADE, verbose_name='بیمار')
     radioactive_isotopes = models.TextField(verbose_name='ایزوتوپ‌های رادیواکتیو')
     imaging_techniques = models.TextField(verbose_name='تکنیک‌های تصویربرداری')
@@ -31,7 +31,7 @@ class NuclearMedicine(models.Model):
         return f"زیرتخصص پزشکی هسته‌ای برای بیمار {self.patient.full_name}"
 
 # مدل تجویز (sub_nuclear_medicine_Treatment)
-class sub_nuclear_medicine_Treatment(models.Model):
+class sub_nuclear_medicine_Treatment(CommonModel):
     class Meta:
         db_table = 'sub_nuclear_medicine_Treatment'
     patient = models.ForeignKey(sub_nuclear_medicine_Patient, on_delete=models.CASCADE, verbose_name='بیمار')

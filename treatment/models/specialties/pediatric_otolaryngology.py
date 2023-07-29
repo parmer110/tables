@@ -3,7 +3,7 @@ from common.models import Person, Places, CommonModel
 
 name = "Pediatric Otolaryngology"
 
-class pediatric_otolaryngology_Patient(models.Model):
+class pediatric_otolaryngology_Patient(CommonModel):
     class Meta:
         db_table = 'pediatric_otolaryngology_Patient'
     # فیلدهای مربوط به بیمار
@@ -17,7 +17,7 @@ class pediatric_otolaryngology_Patient(models.Model):
     def __str__(self):
         return self.full_name
 
-class PediatricOtolaryngologyProcedure(models.Model):
+class PediatricOtolaryngologyProcedure(CommonModel):
     # فیلدهای مربوط به روش‌های گوش و حلق و بینی کودکان
     name = models.CharField(max_length=100, verbose_name='نام روش گوش و حلق و بینی کودکان')
     description = models.TextField(verbose_name='توضیحات روش گوش و حلق و بینی کودکان')
@@ -27,7 +27,7 @@ class PediatricOtolaryngologyProcedure(models.Model):
     def __str__(self):
         return self.name
 
-class PediatricOtolaryngologyTest(models.Model):
+class PediatricOtolaryngologyTest(CommonModel):
     # فیلدهای مربوط به آزمایش‌های گوش و حلق و بینی کودکان
     name = models.CharField(max_length=100, verbose_name='نام آزمایش گوش و حلق و بینی کودکان')
     description = models.TextField(verbose_name='توضیحات آزمایش گوش و حلق و بینی کودکان')
@@ -37,7 +37,7 @@ class PediatricOtolaryngologyTest(models.Model):
     def __str__(self):
         return self.name
 
-class pediatric_otolaryngology_Treatment(models.Model):
+class pediatric_otolaryngology_Treatment(CommonModel):
     class Meta:
         db_table = 'pediatric_otolaryngology_Treatment'
     # بیمار مربوط به این روند درمانی

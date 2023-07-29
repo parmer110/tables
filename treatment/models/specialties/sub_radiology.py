@@ -4,7 +4,7 @@ from common.models import Person, Places, CommonModel
 name = "Subspecialty Radiology"
 
 # مدل بیمار
-class sub_radiology_Patient(models.Model):
+class sub_radiology_Patient(CommonModel):
     class Meta:
         db_table = 'sub_radiology_Patient'
     # فیلدهای مربوط به بیمار
@@ -19,7 +19,7 @@ class sub_radiology_Patient(models.Model):
         return self.full_name
 
 # مدل زیرتخصص پزشکی رادیولوژی (Radiology)
-class Radiology(models.Model):
+class Radiology(CommonModel):
     patient = models.ForeignKey(sub_radiology_Patient, on_delete=models.CASCADE, verbose_name='بیمار')
     imaging_type = models.CharField(max_length=100, verbose_name='نوع تصویربرداری')
     radiologist_name = models.CharField(max_length=100, verbose_name='نام رادیولوژیست')
@@ -34,7 +34,7 @@ class Radiology(models.Model):
         return f"زیرتخصص پزشکی رادیولوژی برای بیمار {self.patient.full_name}"
 
 # مدل تجویز (sub_radiology_Treatment)
-class sub_radiology_Treatment(models.Model):
+class sub_radiology_Treatment(CommonModel):
     class Meta:
         db_table = 'sub_radiology_Treatment'
     patient = models.ForeignKey(sub_radiology_Patient, on_delete=models.CASCADE, verbose_name='بیمار')

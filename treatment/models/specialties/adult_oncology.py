@@ -3,7 +3,7 @@ from common.models import Person, Places, CommonModel
 
 name = "Adult Oncology"
 
-class adult_oncology_Patient(models.Model):
+class adult_oncology_Patient(CommonModel):
     class Meta:
         db_table = 'adult_oncology_Patient'
     # فیلدهای مربوط به بیمار
@@ -17,7 +17,7 @@ class adult_oncology_Patient(models.Model):
     def __str__(self):
         return self.full_name
 
-class AdultOncologyProcedure(models.Model):
+class AdultOncologyProcedure(CommonModel):
     # فیلدهای مربوط به روش‌های جراحی آنکولوژی بالغین
     name = models.CharField(max_length=100, verbose_name='نام روش جراحی آنکولوژی بالغین')
     description = models.TextField(verbose_name='توضیحات روش جراحی آنکولوژی بالغین')
@@ -27,7 +27,7 @@ class AdultOncologyProcedure(models.Model):
     def __str__(self):
         return self.name
 
-class AdultOncologyTest(models.Model):
+class AdultOncologyTest(CommonModel):
     # فیلدهای مربوط به آزمایش‌های آنکولوژی بالغین
     name = models.CharField(max_length=100, verbose_name='نام آزمایش آنکولوژی بالغین')
     description = models.TextField(verbose_name='توضیحات آزمایش آنکولوژی بالغین')
@@ -37,7 +37,7 @@ class AdultOncologyTest(models.Model):
     def __str__(self):
         return self.name
 
-class adult_oncology_Treatment(models.Model):
+class adult_oncology_Treatment(CommonModel):
     class Meta:
         db_table = 'adult_oncology_Treatment'
     # بیمار مربوط به این روند درمانی

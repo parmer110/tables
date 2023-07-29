@@ -4,7 +4,7 @@ from common.models import Person, Places, CommonModel
 name = "Subspecialty Reproductive Endocrinology/Infertility"
 
 # مدل بیمار
-class sub_reproductive_endocrinology_infertility_Patient(models.Model):
+class sub_reproductive_endocrinology_infertility_Patient(CommonModel):
     class Meta:
         db_table = 'sub_reproductive_endocrinology-infertility_Patient'
     # فیلدهای مربوط به بیمار
@@ -19,7 +19,7 @@ class sub_reproductive_endocrinology_infertility_Patient(models.Model):
         return self.full_name
 
 # مدل زیرتخصص پزشکی غدد و ناباروری تولید مثل (Reproductive Endocrinology/Infertility)
-class ReproductiveEndocrinology(models.Model):
+class ReproductiveEndocrinology(CommonModel):
     patient = models.ForeignKey(sub_reproductive_endocrinology_infertility_Patient, on_delete=models.CASCADE, verbose_name='بیمار')
     hormonal_disorders = models.TextField(verbose_name='اختلالات هورمونی')
     infertility_diagnosis = models.TextField(verbose_name='تشخیص ناباروری')
@@ -34,7 +34,7 @@ class ReproductiveEndocrinology(models.Model):
         return f"زیرتخصص پزشکی غدد و ناباروری تولید مثل برای بیمار {self.patient.full_name}"
 
 # مدل تجویز (sub_reproductive_endocrinology-infertility_Treatment)
-class sub_reproductive_endocrinology_infertility_Treatment(models.Model):
+class sub_reproductive_endocrinology_infertility_Treatment(CommonModel):
     class Meta:
         db_table = 'sub_reproductive_endocrinology-infertility_Treatment'
     patient = models.ForeignKey(sub_reproductive_endocrinology_infertility_Patient, on_delete=models.CASCADE, verbose_name='بیمار')

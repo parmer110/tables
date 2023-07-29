@@ -3,7 +3,7 @@ from common.models import Person, Places, CommonModel
 
 name = "Facial Plastic Surgery"
 
-class facial_plastic_surgery_Patient(models.Model):
+class facial_plastic_surgery_Patient(CommonModel):
     class Meta:
         db_table = 'facial_plastic_surgery_Patient'
     # فیلدهای مربوط به بیمار
@@ -17,7 +17,7 @@ class facial_plastic_surgery_Patient(models.Model):
     def __str__(self):
         return self.full_name
 
-class FacialPlasticSurgeryProcedure(models.Model):
+class FacialPlasticSurgeryProcedure(CommonModel):
     # فیلدهای مربوط به روش‌های جراحی پلاستیک صورت
     name = models.CharField(max_length=100, verbose_name='نام روش جراحی پلاستیک صورت')
     description = models.TextField(verbose_name='توضیحات روش جراحی پلاستیک صورت')
@@ -27,7 +27,7 @@ class FacialPlasticSurgeryProcedure(models.Model):
     def __str__(self):
         return self.name
 
-class FacialPlasticSurgeryTest(models.Model):
+class FacialPlasticSurgeryTest(CommonModel):
     # فیلدهای مربوط به آزمایش‌های جراحی پلاستیک صورت
     name = models.CharField(max_length=100, verbose_name='نام آزمایش جراحی پلاستیک صورت')
     description = models.TextField(verbose_name='توضیحات آزمایش جراحی پلاستیک صورت')
@@ -37,7 +37,7 @@ class FacialPlasticSurgeryTest(models.Model):
     def __str__(self):
         return self.name
 
-class facial_plastic_surgery_Treatment(models.Model):
+class facial_plastic_surgery_Treatment(CommonModel):
     class Meta:
         db_table = 'facial_plastic_surgery_Treatment'
     # بیمار مربوط به این روند درمانی

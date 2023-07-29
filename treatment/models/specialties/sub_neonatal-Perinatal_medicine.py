@@ -4,7 +4,7 @@ from common.models import Person, Places, CommonModel
 name = "Subspecialty Neonatal-Perinatal Medicine"
 
 # مدل بیمار
-class sub_neonatal_Perinatal_medicine_Patient(models.Model):
+class sub_neonatal_Perinatal_medicine_Patient(CommonModel):
     class Meta:
         db_table = 'sub_neonatal-Perinatal_medicine_Patient'
     # فیلدهای مربوط به بیمار
@@ -19,7 +19,7 @@ class sub_neonatal_Perinatal_medicine_Patient(models.Model):
         return self.full_name
 
 # مدل زیرتخصص پزشکی نوزادان و نوزادان نارس (Neonatal-Perinatal Medicine)
-class NeonatalPerinatalMedicine(models.Model):
+class NeonatalPerinatalMedicine(CommonModel):
     patient = models.ForeignKey(sub_neonatal_Perinatal_medicine_Patient, on_delete=models.CASCADE, verbose_name='بیمار')
     neonatal_health_issues = models.TextField(verbose_name='مشکلات بهداشتی نوزاد')
     perinatal_complications = models.TextField(verbose_name='عوارض نوزاد نارس')
@@ -32,7 +32,7 @@ class NeonatalPerinatalMedicine(models.Model):
         return f"زیرتخصص پزشکی نوزادان و نوزادان نارس برای بیمار {self.patient.full_name}"
 
 # مدل تجویز (sub_neonatal-Perinatal_medicine_Treatment)
-class sub_neonatal_Perinatal_medicine_Treatment(models.Model):
+class sub_neonatal_Perinatal_medicine_Treatment(CommonModel):
     class Meta:
         db_table = 'sub_neonatal-Perinatal_medicine_Treatment'
     patient = models.ForeignKey(sub_neonatal_Perinatal_medicine_Patient, on_delete=models.CASCADE, verbose_name='بیمار')

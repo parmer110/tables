@@ -3,7 +3,7 @@ from common.models import Person, Places, CommonModel
 
 name = "Obstetrics and Gynecology"
 
-class obstetrics_and_gynecology_Patient(models.Model):
+class obstetrics_and_gynecology_Patient(CommonModel):
     class Meta:
         db_table = 'obstetrics_and_gynecology_Patient'
     # فیلدهای مربوط به بیمار
@@ -17,7 +17,7 @@ class obstetrics_and_gynecology_Patient(models.Model):
     def __str__(self):
         return self.full_name
 
-class ObstetricsProcedure(models.Model):
+class ObstetricsProcedure(CommonModel):
     # فیلدهای مربوط به روش‌های زنان و زایمان
     name = models.CharField(max_length=100, verbose_name='نام روش زنان و زایمان')
     description = models.TextField(verbose_name='توضیحات روش زنان و زایمان')
@@ -27,7 +27,7 @@ class ObstetricsProcedure(models.Model):
     def __str__(self):
         return self.name
 
-class GynecologyProcedure(models.Model):
+class GynecologyProcedure(CommonModel):
     # فیلدهای مربوط به روش‌های زنانه
     name = models.CharField(max_length=100, verbose_name='نام روش زنانه')
     description = models.TextField(verbose_name='توضیحات روش زنانه')
@@ -37,7 +37,7 @@ class GynecologyProcedure(models.Model):
     def __str__(self):
         return self.name
 
-class obstetrics_and_gynecology_Treatment(models.Model):
+class obstetrics_and_gynecology_Treatment(CommonModel):
     class Meta:
         db_table = 'obstetrics_and_gynecology_Treatment'
     # بیمار مربوط به این روند درمانی

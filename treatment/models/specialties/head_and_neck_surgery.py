@@ -3,7 +3,7 @@ from common.models import Person, Places, CommonModel
 
 name = "Head and Neck Surgery"
 
-class head_and_neck_surgery_Patient(models.Model):
+class head_and_neck_surgery_Patient(CommonModel):
     class Meta:
         db_table = 'head_and_neck_surgery_Patient'
     # فیلدهای مربوط به بیمار
@@ -17,7 +17,7 @@ class head_and_neck_surgery_Patient(models.Model):
     def __str__(self):
         return self.full_name
 
-class HeadAndNeckSurgeryProcedure(models.Model):
+class HeadAndNeckSurgeryProcedure(CommonModel):
     # فیلدهای مربوط به روش‌های جراحی سر و گردن
     name = models.CharField(max_length=100, verbose_name='نام روش جراحی سر و گردن')
     description = models.TextField(verbose_name='توضیحات روش جراحی سر و گردن')
@@ -27,7 +27,7 @@ class HeadAndNeckSurgeryProcedure(models.Model):
     def __str__(self):
         return self.name
 
-class HeadAndNeckSurgeryTest(models.Model):
+class HeadAndNeckSurgeryTest(CommonModel):
     # فیلدهای مربوط به آزمایش‌های جراحی سر و گردن
     name = models.CharField(max_length=100, verbose_name='نام آزمایش جراحی سر و گردن')
     description = models.TextField(verbose_name='توضیحات آزمایش جراحی سر و گردن')
@@ -37,7 +37,7 @@ class HeadAndNeckSurgeryTest(models.Model):
     def __str__(self):
         return self.name
 
-class head_and_neck_surgery_Treatment(models.Model):
+class head_and_neck_surgery_Treatment(CommonModel):
     class Meta:
         db_table = 'head_and_neck_surgery_Treatment'
     # بیمار مربوط به این روند درمانی

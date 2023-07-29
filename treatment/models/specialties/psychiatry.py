@@ -3,7 +3,7 @@ from common.models import Person, Places, CommonModel
 
 name = "Psychiatry"
 
-class psychiatry_Patient(models.Model):
+class psychiatry_Patient(CommonModel):
     class Meta:
         db_table = 'psychiatry_Patient'
     # فیلدهای مربوط به بیمار
@@ -17,7 +17,7 @@ class psychiatry_Patient(models.Model):
     def __str__(self):
         return self.full_name
 
-class PsychiatricTreatment(models.Model):
+class PsychiatricTreatment(CommonModel):
     # فیلدهای مربوط به روش‌های درمانی روانپزشکی
     name = models.CharField(max_length=100, verbose_name='نام روش درمانی روانپزشکی')
     description = models.TextField(verbose_name='توضیحات روش درمانی روانپزشکی')
@@ -27,7 +27,7 @@ class PsychiatricTreatment(models.Model):
     def __str__(self):
         return self.name
 
-class PsychiatricTest(models.Model):
+class PsychiatricTest(CommonModel):
     # فیلدهای مربوط به آزمایش‌های روانپزشکی
     name = models.CharField(max_length=100, verbose_name='نام آزمایش روانپزشکی')
     description = models.TextField(verbose_name='توضیحات آزمایش روانپزشکی')
@@ -37,7 +37,7 @@ class PsychiatricTest(models.Model):
     def __str__(self):
         return self.name
 
-class psychiatry_Treatment(models.Model):
+class psychiatry_Treatment(CommonModel):
     class Meta:
         db_table = 'psychiatry_Treatment'
     # بیمار مربوط به این روند درمانی

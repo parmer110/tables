@@ -3,7 +3,7 @@ from common.models import Person, Places, CommonModel
 
 name = "Pediatric Infectious Disease"
 
-class pediatric_infectious_disease_Patient(models.Model):
+class pediatric_infectious_disease_Patient(CommonModel):
     class Meta:
         db_table = 'pediatric_infectious_disease_Patient'
     # فیلدهای مربوط به بیمار
@@ -17,7 +17,7 @@ class pediatric_infectious_disease_Patient(models.Model):
     def __str__(self):
         return self.full_name
 
-class PediatricInfectiousDiseaseProcedure(models.Model):
+class PediatricInfectiousDiseaseProcedure(CommonModel):
     # فیلدهای مربوط به روش‌های عفونی کودکان
     name = models.CharField(max_length=100, verbose_name='نام روش عفونی کودکان')
     description = models.TextField(verbose_name='توضیحات روش عفونی کودکان')
@@ -27,7 +27,7 @@ class PediatricInfectiousDiseaseProcedure(models.Model):
     def __str__(self):
         return self.name
 
-class PediatricInfectiousDiseaseTest(models.Model):
+class PediatricInfectiousDiseaseTest(CommonModel):
     # فیلدهای مربوط به آزمایش‌های عفونی کودکان
     name = models.CharField(max_length=100, verbose_name='نام آزمایش عفونی کودکان')
     description = models.TextField(verbose_name='توضیحات آزمایش عفونی کودکان')
@@ -37,7 +37,7 @@ class PediatricInfectiousDiseaseTest(models.Model):
     def __str__(self):
         return self.name
 
-class pediatric_infectious_disease_Treatment(models.Model):
+class pediatric_infectious_disease_Treatment(CommonModel):
     class Meta:
         db_table = 'pediatric_infectious_disease_Treatment'
     # بیمار مربوط به این روند درمانی

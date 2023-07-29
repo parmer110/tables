@@ -3,7 +3,7 @@ from common.models import Person, Places, CommonModel
 
 name="Family Medicine"
 
-class family_medicine_Patient(models.Model):
+class family_medicine_Patient(CommonModel):
     class Meta:
         db_table = 'family_medicine_Patient'
     # فیلدهای مربوط به بیمار
@@ -17,7 +17,7 @@ class family_medicine_Patient(models.Model):
     def __str__(self):
         return self.full_name
 
-class FamilyHealthIssue(models.Model):
+class FamilyHealthIssue(CommonModel):
     # فیلدهای مربوط به مسائل سلامت خانواده
     name = models.CharField(max_length=100, verbose_name='نام مسئله سلامت')
     description = models.TextField(verbose_name='توضیحات مسئله سلامت')
@@ -27,7 +27,7 @@ class FamilyHealthIssue(models.Model):
     def __str__(self):
         return self.name
 
-class HealthCheckup(models.Model):
+class HealthCheckup(CommonModel):
     # فیلدهای مربوط به چک‌آپ سلامتی خانواده
     date = models.DateField(verbose_name='تاریخ چک‌آپ')
     results = models.TextField(verbose_name='نتایج چک‌آپ')
@@ -38,7 +38,7 @@ class HealthCheckup(models.Model):
     def __str__(self):
         return f"چک‌آپ سلامتی خانواده در تاریخ {self.date}"
 
-class family_medicine_Treatment(models.Model):
+class family_medicine_Treatment(CommonModel):
     class Meta:
         db_table = 'family_medicine_Treatment'
     # بیمار مربوط به این روند درمانی

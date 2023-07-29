@@ -7,7 +7,7 @@ def rename_models_in_specialties1():
     # نام اپلیکیشن
     app_name = "treatment"
     # مسیر پوشه ای که ماژول‌های تخصص‌ها در آن قرار دارند
-    specialties_dir = os.path.join(app_name, "models", "specialties")
+    specialties_dir = os.path.join(app_name, "models", "TEMP")
 
     # خواندن فایل‌های ماژول‌ها از پوشه "specialties"
     module_files = glob.glob(os.path.join(specialties_dir, "*.py"))
@@ -38,7 +38,7 @@ def rename_models_in_specialties2():
         # نام اپلیکیشن
     app_name = "treatment"
     # مسیر پوشه ای که ماژول‌های تخصص‌ها در آن قرار دارند
-    specialties_dir = os.path.join(app_name, "models", "specialties")
+    specialties_dir = os.path.join(app_name, "models", "TEMP")
 
     # خواندن فایل‌های ماژول‌ها از پوشه "specialties"
     module_files = glob.glob(os.path.join(specialties_dir, "*.py"))
@@ -70,10 +70,37 @@ def rename_models_in_specialties2():
             f.write(updated_module_content)
 
 
+def rename_models_in_specialties3():
+        # نام اپلیکیشن
+    app_name = "treatment"
+    # مسیر پوشه ای که ماژول‌های تخصص‌ها در آن قرار دارند
+    specialties_dir = os.path.join(app_name, "models", "specialties")
+
+    # خواندن فایل‌های ماژول‌ها از پوشه "specialties"
+    module_files = glob.glob(os.path.join(specialties_dir, "*.py"))
+
+    # حذف فایل __init__.py از فهرست فایل‌های خوانده شده
+    module_files = [file for file in module_files if not os.path.basename(file).startswith("__init__")]
+
+    for module_file in module_files:
+
+        # فتح فایل ماژول و خواندن محتوای آن با استفاده از کتابخانه io
+        with io.open(module_file, "r", encoding="utf-8") as f:
+            module_content = f.read()
+
+        # تغییر نام مدل‌های Patient و Treatment با توجه به نام ماژول
+        updated_module_content = re.sub(r"(\(models\.Model\):)", r"({}):".format("CommonModel"), module_content)
+
+        # نوشتن محتوای به‌روز شده در فایل ماژول با استفاده از کتابخانه io
+        with io.open(module_file, "w", encoding="utf-8") as f:
+            f.write(updated_module_content)
 
 
 # اجرای تابع برای اصلاح نام مدل‌ها در ماژول‌ها
 # rename_models_in_specialties1()
 
 # اجرای تابع برای اصلاح نام مدل‌ها در ماژول‌ها
-rename_models_in_specialties2()
+# rename_models_in_specialties2()
+
+# اجرای تابع برای اصلاح نام مدل‌ها در ماژول‌ها
+rename_models_in_specialties3()

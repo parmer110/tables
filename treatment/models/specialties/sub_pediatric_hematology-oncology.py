@@ -4,7 +4,7 @@ from common.models import Person, Places, CommonModel
 name = "Subspecialty Pediatric Hematology-Oncology"
 
 # مدل بیمار
-class sub_pediatric_hematology_oncology_Patient(models.Model):
+class sub_pediatric_hematology_oncology_Patient(CommonModel):
     class Meta:
         db_table = 'sub_pediatric_hematology_oncology_Patient'
     # فیلدهای مربوط به بیمار
@@ -19,7 +19,7 @@ class sub_pediatric_hematology_oncology_Patient(models.Model):
         return self.full_name
 
 # مدل زیرتخصص پزشکی هماتولوژی و آنکولوژی کودکان (Pediatric Hematology-Oncology)
-class PediatricHematologyOncology(models.Model):
+class PediatricHematologyOncology(CommonModel):
     patient = models.ForeignKey(sub_pediatric_hematology_oncology_Patient, on_delete=models.CASCADE, verbose_name='بیمار')
     type_of_cancer = models.CharField(max_length=100, verbose_name='نوع سرطان')
     blood_disorder = models.TextField(verbose_name='اختلال خونی')
@@ -34,7 +34,7 @@ class PediatricHematologyOncology(models.Model):
         return f"زیرتخصص پزشکی هماتولوژی و آنکولوژی کودکان برای بیمار {self.patient.full_name}"
 
 # مدل تجویز (sub_pediatric_hematology-oncology_Treatment)
-class sub_pediatric_hematology_oncology_Treatment(models.Model):
+class sub_pediatric_hematology_oncology_Treatment(CommonModel):
     class Meta:
         db_table = 'sub_pediatric_hematology-oncology_Treatment'
     patient = models.ForeignKey(sub_pediatric_hematology_oncology_Patient, on_delete=models.CASCADE, verbose_name='بیمار')

@@ -4,7 +4,7 @@ from common.models import Person, Places, CommonModel
 name = "Subspecialty Critical Care Medicine"
 
 # مدل بیمار
-class sub_critical_care_medicine_Patient(models.Model):
+class sub_critical_care_medicine_Patient(CommonModel):
     class Meta:
         db_table = 'sub_critical_care_medicine_Patient'
     # فیلدهای مربوط به بیمار
@@ -19,7 +19,7 @@ class sub_critical_care_medicine_Patient(models.Model):
         return self.full_name
 
 # مدل تخصص مراقبت‌های وخیم (Critical Care Medicine)
-class CriticalCareMedicine(models.Model):
+class CriticalCareMedicine(CommonModel):
     patient = models.ForeignKey(sub_critical_care_medicine_Patient, on_delete=models.CASCADE, verbose_name='بیمار')
     condition = models.CharField(max_length=100, verbose_name='وضعیت بیماری')
     treatment_plan = models.TextField(verbose_name='طرح درمانی')
@@ -33,7 +33,7 @@ class CriticalCareMedicine(models.Model):
         return f"مراقبت‌های وخیم برای بیمار {self.patient.full_name}"
 
 # مدل تجویز (sub_critical_care_medicine_Treatment)
-class sub_critical_care_medicine_Treatment(models.Model):
+class sub_critical_care_medicine_Treatment(CommonModel):
     class Meta:
         db_table = 'sub_critical_care_medicine_Treatment'
     patient = models.ForeignKey(sub_critical_care_medicine_Patient, on_delete=models.CASCADE, verbose_name='بیمار')

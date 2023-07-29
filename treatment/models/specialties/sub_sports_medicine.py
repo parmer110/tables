@@ -4,7 +4,7 @@ from common.models import Person, Places, CommonModel
 name = "Subspecialty Sports Medicine"
 
 # مدل بیمار
-class sub_sports_medicine_Patient(models.Model):
+class sub_sports_medicine_Patient(CommonModel):
     class Meta:
         db_table = 'sub_sports_medicine_Patient'
     # فیلدهای مربوط به بیمار
@@ -19,7 +19,7 @@ class sub_sports_medicine_Patient(models.Model):
         return self.full_name
 
 # مدل زیرتخصص پزشکی ورزشی (Sports Medicine)
-class SportsMedicine(models.Model):
+class SportsMedicine(CommonModel):
     patient = models.ForeignKey(sub_sports_medicine_Patient, on_delete=models.CASCADE, verbose_name='بیمار')
     sports_injuries = models.TextField(verbose_name='صدمات ورزشی')
     physical_examinations = models.TextField(verbose_name='بررسی‌های فیزیکی')
@@ -34,7 +34,7 @@ class SportsMedicine(models.Model):
         return f"زیرتخصص پزشکی ورزشی برای بیمار {self.patient.full_name}"
 
 # مدل تجویز (sub_sports_medicine_Treatment)
-class sub_sports_medicine_Treatment(models.Model):
+class sub_sports_medicine_Treatment(CommonModel):
     class Meta:
         db_table = 'sub_sports_medicine_Treatment'
     patient = models.ForeignKey(sub_sports_medicine_Patient, on_delete=models.CASCADE, verbose_name='بیمار')

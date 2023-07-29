@@ -3,7 +3,7 @@ from common.models import Person, Places, CommonModel
 
 name = "Urogenital Plastic Surgery"
 
-class urogenital_plastic_surgery_Patient(models.Model):
+class urogenital_plastic_surgery_Patient(CommonModel):
     class Meta:
         db_table = 'urogenital_plastic_surgery_Patient'
     # فیلدهای مربوط به بیمار
@@ -14,7 +14,7 @@ class urogenital_plastic_surgery_Patient(models.Model):
     def __str__(self):
         return self.full_name
 
-class UrogenitalPlasticSurgery(models.Model):
+class UrogenitalPlasticSurgery(CommonModel):
     # بیمار مربوط به جراحی پلاستیک ادراری
     patient = models.ForeignKey(urogenital_plastic_surgery_Patient, on_delete=models.CASCADE, verbose_name='بیمار')
 
@@ -31,7 +31,7 @@ class UrogenitalPlasticSurgery(models.Model):
     def __str__(self):
         return f"جراحی پلاستیک ادراری برای بیمار {self.patient.full_name}"
 
-class urogenital_plastic_surgery_Treatment(models.Model):
+class urogenital_plastic_surgery_Treatment(CommonModel):
     class Meta:
         db_table = 'urogenital_plastic_surgery_Treatment'
     # بیمار مربوط به تجویز

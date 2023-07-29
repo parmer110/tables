@@ -4,7 +4,7 @@ from common.models import Person, Places, CommonModel
 name = "Breast Reconstruction Surgery"
 
 # مدل بیمار
-class breast_reconstruction_surgery_Patient(models.Model):
+class breast_reconstruction_surgery_Patient(CommonModel):
     class Meta:
         db_table = 'breast_reconstruction_surgery_Patient'
     # فیلدهای مربوط به بیمار
@@ -19,7 +19,7 @@ class breast_reconstruction_surgery_Patient(models.Model):
         return self.full_name
 
 # مدل تخصص جراحی پلاستیک ترمیمی سینه (Breast Reconstruction Surgery)
-class BreastReconstructionSurgery(models.Model):
+class BreastReconstructionSurgery(CommonModel):
     patient = models.ForeignKey(breast_reconstruction_surgery_Patient, on_delete=models.CASCADE, verbose_name='بیمار')
     technique_name = models.CharField(max_length=100, verbose_name='نام تکنیک جراحی ترمیمی سینه')
     description = models.TextField(verbose_name='توضیحات تکنیک جراحی ترمیمی سینه')
@@ -34,7 +34,7 @@ class BreastReconstructionSurgery(models.Model):
         return f"تکنیک جراحی ترمیمی سینه بیمار {self.patient.full_name}"
 
 # مدل تجویز (breast_reconstruction_surgery_Treatment)
-class breast_reconstruction_surgery_Treatment(models.Model):
+class breast_reconstruction_surgery_Treatment(CommonModel):
     class Meta:
         db_table = 'breast_reconstruction_surgery_Treatment'
     patient = models.ForeignKey(breast_reconstruction_surgery_Patient, on_delete=models.CASCADE, verbose_name='بیمار')

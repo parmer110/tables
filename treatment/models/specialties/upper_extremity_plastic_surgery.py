@@ -3,7 +3,7 @@ from common.models import Person, Places, CommonModel
 
 name = "Upper Extremity Plastic Surgery"
 
-class upper_extremity_plastic_surgery_Patient(models.Model):
+class upper_extremity_plastic_surgery_Patient(CommonModel):
     class Meta:
         db_table = 'upper_extremity_plastic_surgery_Patient'
     # فیلدهای مربوط به بیمار
@@ -17,7 +17,7 @@ class upper_extremity_plastic_surgery_Patient(models.Model):
     def __str__(self):
         return self.full_name
 
-class UpperExtremityPlasticSurgeryProcedure(models.Model):
+class UpperExtremityPlasticSurgeryProcedure(CommonModel):
     # فیلدهای مربوط به روش‌های جراحی پلاستیک بالای شکم
     name = models.CharField(max_length=100, verbose_name='نام روش جراحی پلاستیک بالای شکم')
     description = models.TextField(verbose_name='توضیحات روش جراحی پلاستیک بالای شکم')
@@ -27,7 +27,7 @@ class UpperExtremityPlasticSurgeryProcedure(models.Model):
     def __str__(self):
         return self.name
 
-class upper_extremity_plastic_surgery_Treatment(models.Model):
+class upper_extremity_plastic_surgery_Treatment(CommonModel):
     class Meta:
         db_table = 'upper_extremity_plastic_surgery_Treatment'
     # بیمار مربوط به این روند درمانی

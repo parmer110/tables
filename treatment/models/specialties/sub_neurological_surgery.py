@@ -4,7 +4,7 @@ from common.models import Person, Places, CommonModel
 name = "Subspecialty Neurological Surgery"
 
 # مدل بیمار
-class sub_neurological_surgery_Patient(models.Model):
+class sub_neurological_surgery_Patient(CommonModel):
     class Meta:
         db_table = 'sub_neurological_surgery_Patient'
     # فیلدهای مربوط به بیمار
@@ -19,7 +19,7 @@ class sub_neurological_surgery_Patient(models.Model):
         return self.full_name
 
 # مدل زیرتخصص پزشکی جراحی مغز و اعصاب (Neurological Surgery)
-class NeurologicalSurgery(models.Model):
+class NeurologicalSurgery(CommonModel):
     patient = models.ForeignKey(sub_neurological_surgery_Patient, on_delete=models.CASCADE, verbose_name='بیمار')
     brain_condition = models.TextField(verbose_name='وضعیت مغز')
     neurological_issues = models.TextField(verbose_name='مشکلات عصبی')
@@ -32,7 +32,7 @@ class NeurologicalSurgery(models.Model):
         return f"زیرتخصص پزشکی جراحی مغز و اعصاب برای بیمار {self.patient.full_name}"
 
 # مدل تجویز (sub_neurological_surgery_Treatment)
-class sub_neurological_surgery_Treatment(models.Model):
+class sub_neurological_surgery_Treatment(CommonModel):
     class Meta:
         db_table = 'sub_neurological_surgery_Treatment'
     patient = models.ForeignKey(sub_neurological_surgery_Patient, on_delete=models.CASCADE, verbose_name='بیمار')

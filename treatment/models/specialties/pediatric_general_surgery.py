@@ -5,7 +5,7 @@ name = "Pediatric Plastic Surgery"
 
 name = "Pediatric General Surgery"
 
-class pediatric_general_surgery_Patient(models.Model):
+class pediatric_general_surgery_Patient(CommonModel):
     class Meta:
         db_table = 'pediatric_general_surgery_Patient'
     # فیلدهای مربوط به بیمار
@@ -19,7 +19,7 @@ class pediatric_general_surgery_Patient(models.Model):
     def __str__(self):
         return self.full_name
 
-class PediatricGeneralSurgeryProcedure(models.Model):
+class PediatricGeneralSurgeryProcedure(CommonModel):
     # فیلدهای مربوط به روش‌های جراحی عمومی کودکان
     name = models.CharField(max_length=100, verbose_name='نام روش جراحی عمومی کودکان')
     description = models.TextField(verbose_name='توضیحات روش جراحی عمومی کودکان')
@@ -29,7 +29,7 @@ class PediatricGeneralSurgeryProcedure(models.Model):
     def __str__(self):
         return self.name
 
-class PediatricGeneralSurgeryTest(models.Model):
+class PediatricGeneralSurgeryTest(CommonModel):
     # فیلدهای مربوط به آزمایش‌های جراحی عمومی کودکان
     name = models.CharField(max_length=100, verbose_name='نام آزمایش جراحی عمومی کودکان')
     description = models.TextField(verbose_name='توضیحات آزمایش جراحی عمومی کودکان')
@@ -39,7 +39,7 @@ class PediatricGeneralSurgeryTest(models.Model):
     def __str__(self):
         return self.name
 
-class pediatric_general_surgery_Treatment(models.Model):
+class pediatric_general_surgery_Treatment(CommonModel):
     class Meta:
         db_table = 'pediatric_general_surgery_Treatment'
     # بیمار مربوط به این روند درمانی

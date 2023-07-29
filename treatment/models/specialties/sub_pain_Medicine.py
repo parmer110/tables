@@ -4,7 +4,7 @@ from common.models import Person, Places, CommonModel
 name = "Subspecialty Pain Medicine"
 
 # مدل بیمار
-class sub_pain_Medicine_Patient(models.Model):
+class sub_pain_Medicine_Patient(CommonModel):
     class Meta:
         db_table = 'sub_pain_Medicine_Patient'
     # فیلدهای مربوط به بیمار
@@ -19,7 +19,7 @@ class sub_pain_Medicine_Patient(models.Model):
         return self.full_name
 
 # مدل زیرتخصص درد (Pain Medicine)
-class PainMedicine(models.Model):
+class PainMedicine(CommonModel):
     patient = models.ForeignKey(sub_pain_Medicine_Patient, on_delete=models.CASCADE, verbose_name='بیمار')
     pain_location = models.CharField(max_length=100, verbose_name='محل درد')
     pain_intensity = models.PositiveIntegerField(verbose_name='شدت درد')
@@ -34,7 +34,7 @@ class PainMedicine(models.Model):
         return f"زیرتخصص درد برای بیمار {self.patient.full_name}"
 
 # مدل تجویز (sub_pain_Medicine_Treatment)
-class sub_pain_Medicine_Treatment(models.Model):
+class sub_pain_Medicine_Treatment(CommonModel):
     class Meta:
         db_table = 'sub_pain_Medicine_Treatment'
     patient = models.ForeignKey(sub_pain_Medicine_Patient, on_delete=models.CASCADE, verbose_name='بیمار')

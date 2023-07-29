@@ -3,7 +3,7 @@ from common.models import Person, Places, CommonModel
 
 name="Neurology"
 
-class neurology_Patient(models.Model):
+class neurology_Patient(CommonModel):
     class Meta:
         db_table = 'neurology_Patient'
     # فیلدهای مربوط به بیمار
@@ -17,7 +17,7 @@ class neurology_Patient(models.Model):
     def __str__(self):
         return self.full_name
 
-class NeurologicalSymptom(models.Model):
+class NeurologicalSymptom(CommonModel):
     # فیلدهای مربوط به علائم عصبشناسی
     name = models.CharField(max_length=100, verbose_name='نام علامت عصبشناسی')
     description = models.TextField(verbose_name='توضیحات علامت عصبشناسی')
@@ -27,7 +27,7 @@ class NeurologicalSymptom(models.Model):
     def __str__(self):
         return self.name
 
-class NeurologicalTest(models.Model):
+class NeurologicalTest(CommonModel):
     # فیلدهای مربوط به آزمایش‌های عصبشناسی
     name = models.CharField(max_length=100, verbose_name='نام آزمایش عصبشناسی')
     description = models.TextField(verbose_name='توضیحات آزمایش عصبشناسی')
@@ -37,7 +37,7 @@ class NeurologicalTest(models.Model):
     def __str__(self):
         return self.name
 
-class neurology_Treatment(models.Model):
+class neurology_Treatment(CommonModel):
     class Meta:
         db_table = 'neurology_Treatment'
     # بیمار مربوط به این روند درمانی

@@ -3,7 +3,7 @@ from common.models import Person, Places, CommonModel
 
 name = "Breast Surgery"
 
-class breast_surgery_Patient(models.Model):
+class breast_surgery_Patient(CommonModel):
     class Meta:
         db_table = 'breast_surgery_Patient'
     # فیلدهای مربوط به بیمار
@@ -17,7 +17,7 @@ class breast_surgery_Patient(models.Model):
     def __str__(self):
         return self.full_name
 
-class BreastSurgeryProcedure(models.Model):
+class BreastSurgeryProcedure(CommonModel):
     # فیلدهای مربوط به روش‌های جراحی سینه
     name = models.CharField(max_length=100, verbose_name='نام روش جراحی سینه')
     description = models.TextField(verbose_name='توضیحات روش جراحی سینه')
@@ -27,7 +27,7 @@ class BreastSurgeryProcedure(models.Model):
     def __str__(self):
         return self.name
 
-class BreastSurgeryTest(models.Model):
+class BreastSurgeryTest(CommonModel):
     # فیلدهای مربوط به آزمایش‌های جراحی سینه
     name = models.CharField(max_length=100, verbose_name='نام آزمایش جراحی سینه')
     description = models.TextField(verbose_name='توضیحات آزمایش جراحی سینه')
@@ -37,7 +37,7 @@ class BreastSurgeryTest(models.Model):
     def __str__(self):
         return self.name
 
-class breast_surgery_Treatment(models.Model):
+class breast_surgery_Treatment(CommonModel):
     class Meta:
         db_table = 'breast_surgery_Treatment'
     # بیمار مربوط به این روند درمانی

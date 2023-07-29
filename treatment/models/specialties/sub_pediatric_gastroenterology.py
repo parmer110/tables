@@ -4,7 +4,7 @@ from common.models import Person, Places, CommonModel
 name = "Subspecialty Pediatric Gastroenterology"
 
 # مدل بیمار
-class sub_pediatric_gastroenterology_Patient(models.Model):
+class sub_pediatric_gastroenterology_Patient(CommonModel):
     class Meta:
         db_table = 'sub_pediatric_gastroenterology_Patient'
     # فیلدهای مربوط به بیمار
@@ -19,7 +19,7 @@ class sub_pediatric_gastroenterology_Patient(models.Model):
         return self.full_name
 
 # مدل زیرتخصص پزشکی گوارش کودکان (Pediatric Gastroenterology)
-class PediatricGastroenterology(models.Model):
+class PediatricGastroenterology(CommonModel):
     patient = models.ForeignKey(sub_pediatric_gastroenterology_Patient, on_delete=models.CASCADE, verbose_name='بیمار')
     gastrointestinal_disorder = models.TextField(verbose_name='اختلال گوارشی')
     treatment_plan = models.TextField(verbose_name='طرح درمانی')
@@ -33,7 +33,7 @@ class PediatricGastroenterology(models.Model):
         return f"زیرتخصص پزشکی گوارش کودکان برای بیمار {self.patient.full_name}"
 
 # مدل تجویز (sub_pediatric_gastroenterology_Treatment)
-class sub_pediatric_gastroenterology_Treatment(models.Model):
+class sub_pediatric_gastroenterology_Treatment(CommonModel):
     class Meta:
         db_table = 'sub_pediatric_gastroenterology_Treatment'
     patient = models.ForeignKey(sub_pediatric_gastroenterology_Patient, on_delete=models.CASCADE, verbose_name='بیمار')

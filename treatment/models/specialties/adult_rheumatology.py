@@ -3,7 +3,7 @@ from common.models import Person, Places, CommonModel
 
 name= "Adult Rheumatology"
 
-class adult_rheumatology_Patient(models.Model):
+class adult_rheumatology_Patient(CommonModel):
     class Meta:
         db_table = 'adult_rheumatology_Patient'
     # فیلدهای مربوط به بیمار
@@ -17,7 +17,7 @@ class adult_rheumatology_Patient(models.Model):
     def __str__(self):
         return self.full_name
 
-class AdultRheumatologyProcedure(models.Model):
+class AdultRheumatologyProcedure(CommonModel):
     # فیلدهای مربوط به روش‌های روماتولوژی بالغین
     name = models.CharField(max_length=100, verbose_name='نام روش روماتولوژی بالغین')
     description = models.TextField(verbose_name='توضیحات روش روماتولوژی بالغین')
@@ -27,7 +27,7 @@ class AdultRheumatologyProcedure(models.Model):
     def __str__(self):
         return self.name
 
-class AdultRheumatologyTest(models.Model):
+class AdultRheumatologyTest(CommonModel):
     # فیلدهای مربوط به آزمایش‌های روماتولوژی بالغین
     name = models.CharField(max_length=100, verbose_name='نام آزمایش روماتولوژی بالغین')
     description = models.TextField(verbose_name='توضیحات آزمایش روماتولوژی بالغین')
@@ -37,7 +37,7 @@ class AdultRheumatologyTest(models.Model):
     def __str__(self):
         return self.name
 
-class adult_rheumatology_Treatment(models.Model):
+class adult_rheumatology_Treatment(CommonModel):
     class Meta:
         db_table = 'adult_rheumatology_Treatment'
     # بیمار مربوط به این روند درمانی

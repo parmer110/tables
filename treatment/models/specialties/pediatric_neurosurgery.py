@@ -3,7 +3,7 @@ from common.models import Person, Places, CommonModel
 
 name = "Pediatric Neurosurgery"
 
-class pediatric_neurosurgery_Patient(models.Model):
+class pediatric_neurosurgery_Patient(CommonModel):
     class Meta:
         db_table = 'pediatric_neurosurgery_Patient'
     # فیلدهای مربوط به بیمار
@@ -17,7 +17,7 @@ class pediatric_neurosurgery_Patient(models.Model):
     def __str__(self):
         return self.full_name
 
-class PediatricNeurosurgeryProcedure(models.Model):
+class PediatricNeurosurgeryProcedure(CommonModel):
     # فیلدهای مربوط به روش‌های جراحی مغز و اعصاب کودکان
     name = models.CharField(max_length=100, verbose_name='نام روش جراحی مغز و اعصاب کودکان')
     description = models.TextField(verbose_name='توضیحات روش جراحی مغز و اعصاب کودکان')
@@ -27,7 +27,7 @@ class PediatricNeurosurgeryProcedure(models.Model):
     def __str__(self):
         return self.name
 
-class PediatricNeurosurgeryTest(models.Model):
+class PediatricNeurosurgeryTest(CommonModel):
     # فیلدهای مربوط به آزمایش‌های جراحی مغز و اعصاب کودکان
     name = models.CharField(max_length=100, verbose_name='نام آزمایش جراحی مغز و اعصاب کودکان')
     description = models.TextField(verbose_name='توضیحات آزمایش جراحی مغز و اعصاب کودکان')
@@ -37,7 +37,7 @@ class PediatricNeurosurgeryTest(models.Model):
     def __str__(self):
         return self.name
 
-class pediatric_neurosurgery_Treatment(models.Model):
+class pediatric_neurosurgery_Treatment(CommonModel):
     class Meta:
         db_table = 'pediatric_neurosurgery_Treatment'
     # بیمار مربوط به این روند درمانی

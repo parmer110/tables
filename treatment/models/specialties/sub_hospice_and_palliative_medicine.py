@@ -4,7 +4,7 @@ from common.models import Person, Places, CommonModel
 name = "Subspecialty Hospice and Palliative Medicine"
 
 # مدل بیمار
-class sub_hospice_and_palliative_medicine_Patient(models.Model):
+class sub_hospice_and_palliative_medicine_Patient(CommonModel):
     class Meta:
         db_table = 'sub_hospice_and_palliative_medicine_Patient'
     # فیلدهای مربوط به بیمار
@@ -19,7 +19,7 @@ class sub_hospice_and_palliative_medicine_Patient(models.Model):
         return self.full_name
 
 # مدل زیرتخصص بیمارستان و مراقبت‌های لطفاً (Hospice and Palliative Medicine)
-class HospiceAndPalliativeMedicine(models.Model):
+class HospiceAndPalliativeMedicine(CommonModel):
     patient = models.ForeignKey(sub_hospice_and_palliative_medicine_Patient, on_delete=models.CASCADE, verbose_name='بیمار')
     hospice_diagnosis = models.TextField(verbose_name='تشخیص بیمارستان')
     palliative_care_plan = models.TextField(verbose_name='طرح مراقبت‌های لطفاً')
@@ -33,7 +33,7 @@ class HospiceAndPalliativeMedicine(models.Model):
         return f"زیرتخصص بیمارستان و مراقبت‌های لطفاً برای بیمار {self.patient.full_name}"
 
 # مدل تجویز (sub_hospice_and_palliative_medicine_Treatment)
-class sub_hospice_and_palliative_medicine_Treatment(models.Model):
+class sub_hospice_and_palliative_medicine_Treatment(CommonModel):
     class Meta:
         db_table = 'sub_hospice_and_palliative_medicine_Treatment'
     patient = models.ForeignKey(sub_hospice_and_palliative_medicine_Patient, on_delete=models.CASCADE, verbose_name='بیمار')

@@ -3,7 +3,7 @@ from common.models import Person, Places, CommonModel
 
 name="Internal Medicine"
 
-class internal_medicine_Patient(models.Model):
+class internal_medicine_Patient(CommonModel):
     class Meta:
         db_table = 'internal_medicine_Patient'
     # فیلدهای مربوط به بیمار
@@ -17,7 +17,7 @@ class internal_medicine_Patient(models.Model):
     def __str__(self):
         return self.full_name
 
-class MedicalCondition(models.Model):
+class MedicalCondition(CommonModel):
     # فیلدهای مربوط به بیماری‌های پزشکی داخلی
     name = models.CharField(max_length=100, verbose_name='نام بیماری')
     description = models.TextField(verbose_name='توضیحات بیماری')
@@ -27,7 +27,7 @@ class MedicalCondition(models.Model):
     def __str__(self):
         return self.name
 
-class Medication(models.Model):
+class Medication(CommonModel):
     # فیلدهای مربوط به داروهای پزشکی داخلی
     name = models.CharField(max_length=100, verbose_name='نام دارو')
     description = models.TextField(verbose_name='توضیحات دارو')
@@ -37,7 +37,7 @@ class Medication(models.Model):
     def __str__(self):
         return self.name
 
-class internal_medicine_Treatment(models.Model):
+class internal_medicine_Treatment(CommonModel):
     class Meta:
         db_table = 'internal_medicine_Treatment'
     # بیمار مربوط به این روند درمانی

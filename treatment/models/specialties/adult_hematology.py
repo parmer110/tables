@@ -3,7 +3,7 @@ from common.models import Person, Places, CommonModel
 
 name = "Adult Hematology"
 
-class adult_hematology_Patient(models.Model):
+class adult_hematology_Patient(CommonModel):
     class Meta:
         db_table = 'adult_hematology_Patient'
     # فیلدهای مربوط به بیمار
@@ -17,7 +17,7 @@ class adult_hematology_Patient(models.Model):
     def __str__(self):
         return self.full_name
 
-class AdultHematologyProcedure(models.Model):
+class AdultHematologyProcedure(CommonModel):
     # فیلدهای مربوط به روش‌های هماتولوژی بالغین
     name = models.CharField(max_length=100, verbose_name='نام روش هماتولوژی بالغین')
     description = models.TextField(verbose_name='توضیحات روش هماتولوژی بالغین')
@@ -27,7 +27,7 @@ class AdultHematologyProcedure(models.Model):
     def __str__(self):
         return self.name
 
-class AdultHematologyTest(models.Model):
+class AdultHematologyTest(CommonModel):
     # فیلدهای مربوط به آزمایش‌های هماتولوژی بالغین
     name = models.CharField(max_length=100, verbose_name='نام آزمایش هماتولوژی بالغین')
     description = models.TextField(verbose_name='توضیحات آزمایش هماتولوژی بالغین')
@@ -37,7 +37,7 @@ class AdultHematologyTest(models.Model):
     def __str__(self):
         return self.name
 
-class adult_hematology_Treatment(models.Model):
+class adult_hematology_Treatment(CommonModel):
     class Meta:
         db_table = 'adult_hematology_Treatment'
     # بیمار مربوط به این روند درمانی

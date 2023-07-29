@@ -4,7 +4,7 @@ from common.models import Person, Places, CommonModel
 name = "Neurological Plastic Surgery"
 
 # مدل بیمار
-class neurological_plastic_surgery_Patient(models.Model):
+class neurological_plastic_surgery_Patient(CommonModel):
     class Meta:
         db_table = 'neurological_plastic_surgery_Patient'
     first_name = models.CharField(max_length=100)
@@ -14,7 +14,7 @@ class neurological_plastic_surgery_Patient(models.Model):
     # ...
 
 # مدل تخصص جراحی پلاستیک عصبی (Neurological Plastic Surgery)
-class NeurologicalPlasticSurgery(models.Model):
+class NeurologicalPlasticSurgery(CommonModel):
     patient = models.ForeignKey(neurological_plastic_surgery_Patient, on_delete=models.CASCADE)
     nerve_repair_techniques = models.TextField(verbose_name='تکنیک‌های تعمیر عصب')
     cranial_reconstruction_techniques = models.TextField(verbose_name='تکنیک‌های بازسازی مغزی')
@@ -23,7 +23,7 @@ class NeurologicalPlasticSurgery(models.Model):
     # ...
 
 # مدل تجویز (neurological_plastic_surgery_Treatment)
-class neurological_plastic_surgery_Treatment(models.Model):
+class neurological_plastic_surgery_Treatment(CommonModel):
     class Meta:
         db_table = 'neurological_plastic_surgery_Treatment'
     patient = models.ForeignKey(neurological_plastic_surgery_Patient, on_delete=models.CASCADE)

@@ -4,7 +4,7 @@ from common.models import Person, Places, CommonModel
 name = "Subspecialty Pediatric Emergency Medicine"
 
 # مدل بیمار
-class sub_pediatric_emergency_medicine_Patient(models.Model):
+class sub_pediatric_emergency_medicine_Patient(CommonModel):
     class Meta:
         db_table = 'sub_pediatric_emergency_medicine_Patient'
     # فیلدهای مربوط به بیمار
@@ -19,7 +19,7 @@ class sub_pediatric_emergency_medicine_Patient(models.Model):
         return self.full_name
 
 # مدل زیرتخصص پزشکی اورژانس کودکان (Pediatric Emergency Medicine)
-class PediatricEmergencyMedicine(models.Model):
+class PediatricEmergencyMedicine(CommonModel):
     patient = models.ForeignKey(sub_pediatric_emergency_medicine_Patient, on_delete=models.CASCADE, verbose_name='بیمار')
     emergency_condition = models.TextField(verbose_name='وضعیت اورژانسی')
     treatment_plan = models.TextField(verbose_name='طرح درمانی اورژانسی')
@@ -32,7 +32,7 @@ class PediatricEmergencyMedicine(models.Model):
         return f"زیرتخصص پزشکی اورژانس کودکان برای بیمار {self.patient.full_name}"
 
 # مدل تجویز (sub_pediatric_emergency_medicine_Treatment)
-class sub_pediatric_emergency_medicine_Treatment(models.Model):
+class sub_pediatric_emergency_medicine_Treatment(CommonModel):
     class Meta:
         db_table = 'sub_pediatric_emergency_medicine_Treatment'
     patient = models.ForeignKey(sub_pediatric_emergency_medicine_Patient, on_delete=models.CASCADE, verbose_name='بیمار')

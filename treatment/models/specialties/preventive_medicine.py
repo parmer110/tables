@@ -3,7 +3,7 @@ from common.models import Person, Places, CommonModel
 
 name = "Preventive Medicine"
 
-class preventive_medicine_Patient(models.Model):
+class preventive_medicine_Patient(CommonModel):
     class Meta:
         db_table = 'preventive_medicine_Patient'
     # فیلدهای مربوط به بیمار
@@ -17,7 +17,7 @@ class preventive_medicine_Patient(models.Model):
     def __str__(self):
         return self.full_name
 
-class PreventiveMeasure(models.Model):
+class PreventiveMeasure(CommonModel):
     # فیلدهای مربوط به اقدامات پزشکی پیشگیرانه
     name = models.CharField(max_length=100, verbose_name='نام اقدام پزشکی پیشگیرانه')
     description = models.TextField(verbose_name='توضیحات اقدام پزشکی پیشگیرانه')
@@ -27,7 +27,7 @@ class PreventiveMeasure(models.Model):
     def __str__(self):
         return self.name
 
-class PreventiveTest(models.Model):
+class PreventiveTest(CommonModel):
     # فیلدهای مربوط به آزمایش‌های پزشکی پیشگیرانه
     name = models.CharField(max_length=100, verbose_name='نام آزمایش پزشکی پیشگیرانه')
     description = models.TextField(verbose_name='توضیحات آزمایش پزشکی پیشگیرانه')
@@ -37,7 +37,7 @@ class PreventiveTest(models.Model):
     def __str__(self):
         return self.name
 
-class preventive_medicine_Treatment(models.Model):
+class preventive_medicine_Treatment(CommonModel):
     class Meta:
         db_table = 'preventive_medicine_Treatment'
     # بیمار مربوط به این روند درمانی

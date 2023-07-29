@@ -17,7 +17,7 @@ class adult_cardiovascular_surgery_Patient(CommonModel):
     def __str__(self):
         return self.full_name
 
-class AdultCardiovascularSurgeryProcedure(models.Model):
+class AdultCardiovascularSurgeryProcedure(CommonModel):
     # فیلدهای مربوط به روش‌های جراحی قلب و عروق بالغین
     name = models.CharField(max_length=100, verbose_name='نام روش جراحی قلب و عروق بالغین')
     description = models.TextField(verbose_name='توضیحات روش جراحی قلب و عروق بالغین')
@@ -27,7 +27,7 @@ class AdultCardiovascularSurgeryProcedure(models.Model):
     def __str__(self):
         return self.name
 
-class AdultCardiovascularSurgeryTest(models.Model):
+class AdultCardiovascularSurgeryTest(CommonModel):
     # فیلدهای مربوط به آزمایش‌های جراحی قلب و عروق بالغین
     name = models.CharField(max_length=100, verbose_name='نام آزمایش جراحی قلب و عروق بالغین')
     description = models.TextField(verbose_name='توضیحات آزمایش جراحی قلب و عروق بالغین')
@@ -37,7 +37,7 @@ class AdultCardiovascularSurgeryTest(models.Model):
     def __str__(self):
         return self.name
 
-class adult_cardiovascular_surgery_Treatment(models.Model):
+class adult_cardiovascular_surgery_Treatment(CommonModel):
     class Meta:
         db_table = 'adult_cardiovascular_surgery_Treatment'
     # بیمار مربوط به این روند درمانی
