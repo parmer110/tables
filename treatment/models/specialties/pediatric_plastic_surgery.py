@@ -1,6 +1,7 @@
 from django.db import models
 from common.models import Person, Places, CommonModel
 
+name = "Pediatric Plastic Surgery"
 class pediatric_plastic_surgery_Patient(models.Model):
     class Meta:
         db_table = 'pediatric_plastic_surgery_Patient'
