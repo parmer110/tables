@@ -35,7 +35,7 @@ class Person(CommonModel):
     _passport_number = models.TextField(db_column="passport_number", verbose_name="Passport Number", null=True) #CharField(max_length=336+16*10, db_column="passport_number", null=True)
     _sex = models.CharField(max_length=336+16*10, choices=SEX, db_column="sex", verbose_name="Sex", null=True)
     _mobile_phone = models.TextField(db_column="mobile_phone", verbose_name="Mobile Phone", null=True) #CharField(max_length=336+16*20, db_column="mobile_phone", null=True)
-    _address = models.TextField(db_column="address", verbose_name="Address", null=True) #CharField(max_length=336+16*100, null=True, db_column="address", blank=True)
+    address = models.ForeignKey('Places', on_delete=models.DO_NOTHING, related_name="place_manager", null=True) #models.TextField(db_column="address", verbose_name="Address", null=True) #CharField(max_length=336+16*100, null=True, db_column="address", blank=True)
 
     def __str__(self):
         return f"{self.id}- {self.firstname} {self.lastname}"
@@ -61,9 +61,9 @@ class Person(CommonModel):
     @property
     def mobile_phone(self):
         return decoder(self._mobile_phone)
-    @property
-    def address(self):
-        return decoder(self._address)
+    # @property
+    # def address(self):
+    #     return decoder(self._address)
 
     @firstname.setter
     def firstname(self, value):
@@ -86,19 +86,19 @@ class Person(CommonModel):
     @mobile_phone.setter
     def mobile_phone(self, value):
         self._mobile_phone = value
-    @address.setter
-    def address(self, value):
-        self._address = value
+    # @address.setter
+    # def address(self, value):
+    #     self._address = value
 
     def save(self, *args, **kwargs):
         self.firstname = encoder(self.firstname)
         self.lastname = encoder(self.lastname)
+        self.birthdate = encoder(self.birthdate)
         self.national_code = encoder(self.national_code)
         self.passport_number = encoder(self.passport_number)
         self.sex = encoder(self.sex)
         self.mobile_phone = encoder(self.mobile_phone)
-        self.address = encoder(self.address)
-        self.birthdate = encoder(self.birthdate)
+        # self.address = encoder(self.address)
         super(Person, self).save(*args, **kwargs)
 
 class Places(CommonModel):
@@ -110,7 +110,7 @@ class Places(CommonModel):
     _postalcode = models.CharField(max_length=366+16*15, db_column="postalcode", null=True, verbose_name="Postalcode")
     _phoneNumber = models.CharField(max_length=366+16*15, db_column="phone_number", null=True, verbose_name="Phone Number")
     _usage = models.TextField(db_column="usage", verbose_name="Usage", null=True)
-    manager = models.ForeignKey(Person, on_delete=models.CASCADE,  db_column="manager", related_name="Places", verbose_name="Manager", null=True)
+    manager = models.ForeignKey(Person, on_delete=models.CASCADE,  db_column="manager", related_name="manager_place", verbose_name="Manager", null=True, blank=True)
 
     def __str__(self):
         return f"{self.id}- {self.title}"

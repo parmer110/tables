@@ -1,20 +1,26 @@
 import os
 from importlib import import_module
 from django.db import models
+from django.contrib.postgres.fields import ArrayField
 from common.utils.crypto import encoder, decoder
 from common.models import Person, Places, CommonModel
+from .specialties.__constants import choices1, choices2, choices3
 
 
 class SellRepresentation(CommonModel):
-    person = models.CharField(max_length=255, blank=True, null=True)
-    
+    person = models.OneToOneField(Person, on_delete=models.PROTECT, related_name="sell_representation")
+    specialties = ArrayField(models.CharField(max_length=60, choices=choices3, null=True))
+
+    def __str__(self):
+        return f"{self.person.firstname} {self.person.lastname}"
 
 class Customer(CommonModel):
     person = models.ForeignKey(Person, on_delete=models.CASCADE, related_name="patient")
     medical_history = models.TextField()
 
     def __str__(self):
-        return self.person.name
+        return f"{self.person.firstname} {self.person.lastname}"
+
 class Order(CommonModel):
     pass
 
@@ -142,34 +148,6 @@ class HospitalAffiliation(CommonModel):
     end_date = models.DateField(blank=True, null=True)
 
 class Specialty(models.Model):
-
-    spec_module_path = 'treatment.models'
-    spec_packages = [name for name in os.listdir(os.path.dirname(__file__)) if os.path.isdir(os.path.join(os.path.dirname(__file__), name)) and not name.startswith('__')]
-
-    choices1 = [(package, package) for package in spec_packages]
-
-
-    choices2 = []
-    spec_module_path = 'treatment.models.specialties'
-    spec_module = import_module(spec_module_path)
-    spec_files = os.listdir(os.path.dirname(spec_module.__file__))
-    for spec_file in spec_files:
-        if spec_file.endswith('.py') and not spec_file.startswith('__'):
-            spec_module_name = os.path.splitext(spec_file)[0]
-            spec_module = import_module(f'{spec_module_path}.{spec_module_name}')
-            choices2.append((spec_module.name, spec_module_name))
-
-
-    choices3 = []
-    spec_module_path = 'treatment.models.specialties'
-    spec_module = import_module(spec_module_path)
-    spec_files = os.listdir(os.path.dirname(spec_module.__file__))
-    
-    for spec_file in spec_files:
-        if spec_file.endswith('.py') and not spec_file.startswith('__'):
-            spec_module_name = os.path.splitext(spec_file)[0]
-            spec_module = import_module(f'{spec_module_path}.{spec_module_name}')
-            choices3.append((getattr(spec_module, 'name'), getattr(spec_module, 'name')))
 
     branches = models.CharField(max_length=100, choices=choices1, null=True)
     class_name = models.CharField(max_length=100, choices=choices2)

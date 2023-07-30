@@ -6,7 +6,8 @@ class UserAdmin(admin.ModelAdmin):
     list_display = ("id", "username", "email", "timestamp")
 
 class PersonAdmin(admin.ModelAdmin):
-    list_display=("id", "firstname", "lastname", "sex", "birthdate", "address", "mobile_phone", "national_code")
+    list_display = ("id", "firstname", "lastname", "sex", "birthdate", "address", "mobile_phone", "national_code")
+    list_editable = ("address",)
     formfield_overrides = {
         models.TextField: {'widget': admin.widgets.AdminTextareaWidget(attrs={'rows': 1})},
     }
@@ -17,6 +18,7 @@ class PersonAdmin(admin.ModelAdmin):
 
 class PlacesAdmin(admin.ModelAdmin):
     list_display = ("id", "title", "country", "state", "city", "address", "postalcode", "phoneNumber", "usage", "manager")
+    list_editable = ("manager",)
 
 
 class SiteManagementLogAdmin(admin.ModelAdmin):

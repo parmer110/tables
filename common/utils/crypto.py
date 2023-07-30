@@ -153,10 +153,11 @@ def encoder(value):
         value = str(value)
     elif isinstance(value, float):
         value = repr(value)
-
+    value = str(value)
     return sxtw_encoder(aes_encoder(value))
 
 def decoder(stri):
+    stri = str(stri)
     if stri is not None and stri[0: 4] == "sxtw" and len(stri) % 4 == 0:
         value =  aes_decoder(sxtw_decoder(stri))
         # try:
