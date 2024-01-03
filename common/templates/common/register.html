@@ -1,0 +1,64 @@
+{% extends 'common/layout.html' %}
+{% load static %}
+{% block title %}Register{% endblock title %}
+{% block head %}
+    <meta name="description" content="Medical Tourism">
+    <link href="{% static 'intl-tel-input/build/css/intlTelInput.css' %}" rel="stylesheet">
+{% endblock head %}
+{% block content %}
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Register</h4>
+                    </div>
+                    <div class="card-body">
+                        {% if message %}
+                        <div>{{ message }}</div>
+                        {% endif %}
+                        <form action="{% url 'register' %}" method="POST">
+                            {% csrf_token %}
+                            <!-- Username -->
+                            <div class="form-group mb-3">
+                                {{ form.username }}
+                            </div>
+
+                            <!-- Email Address -->
+                            <div class="form-group mb-3">
+                                {{ form.email }}
+                            </div>
+
+                            <!-- Mobile Phone -->
+                            <div class="form-group mb-3">
+                                {{ form.mob_phone }}
+                            </div>
+
+                            <!-- Password -->
+                            <div class="form-group mb-3">
+                                {{ form.password }}
+                            </div>
+
+                            <!-- Confirm Password -->
+                            <div class="form-group mb-3">
+                                {{ form.confirm_password }}
+                            </div>
+
+                            <!-- Register Button -->
+                            <button type="submit" class="btn btn-primary">Register</button>
+                        </form>
+                        Already have an account? <a href="{% url 'login' %}">Login here.</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+{% block lastt %}
+    <script>
+        const utilsScript= "{% static 'intl-tel-input/build/js/utils.js' %}"
+    </script>
+    <script src="{% static 'intl-tel-input/build/js/intlTelInput.min.js' %}"></script>
+    <script src="{% static "js/common_register.js" %}"></script>
+{% endblock lastt %}
+

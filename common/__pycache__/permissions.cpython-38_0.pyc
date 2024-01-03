@@ -1,0 +1,7 @@
+le C:\Users\User\AppData\Local\Programs\Python\Python38\Lib\site-packages\django\core\files\storage\handler.py first seen with mtime 1694731110.9597394
+DEBUG 2023-12-28 16:50:09,570 autoreload File C:\Users\User\AppData\Local\Programs\Python\Python38\Lib\email\mime\multipart.py first seen with mtime 1582660836.0
+DEBUG 2023-12-28 16:50:09,575 autoreload File C:\Users\User\AppData\Local\Programs\Python\Python38\Lib\site-packages\pytz\lazy.py first seen with mtime 1687409662.73268
+DEBUG 2023-12-28 16:50:09,579 autoreload File C:\Users\User\AppData\Local\Programs\Python\Python38\Lib\site-packages\django_redis\cache.py first seen with mtime 1698431168.559951
+DEBUG 2023-12-28 16:50:09,583 autoreload File C:\Users\User\AppData\Local\Programs\Python\Python38\Lib\site-packages\psycopg2\errors.py first seen with mtime 1680879261.3954723
+DEBUG 2023-12-28 16:50:09,588 autoreload File C:\Users\User\AppData\Local\Programs\Python\Python38\Lib\urllib\__init__.py first seen with mtime 1582660836.0
+DEBUG 2023-12-28 16:50:09,592 autoreload File C:\Users\User\AppData\Local\Programs\Python\Python38\Lib\site-packages\django\contrib\sessions\middleware.py first seen with mtime 16947

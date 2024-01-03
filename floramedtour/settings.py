@@ -11,21 +11,55 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
+import os
+from datetime import timedelta
+import logging
+import logging.handlers
+from . import logging_setup
+import environ
+import queue
+
+DEVELOPMENT_MODE = True
+VERSION = "2.0.0"
+
+ROOT_DIR = environ.Path(__file__) - 2
+
+env = environ.Env()
+environ.Env.read_env(str(ROOT_DIR.path('.env')))
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
+# BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+
+SESSION_COOKIE_HTTPONLY = True
+CSRF_COOKIE_HTTPONLY = True
+
+SESSION_COOKIE_SAMESITE = 'Lax'
+CSRF_COOKIE_SAMESITE = 'Lax'
+
+# SESSION_COOKIE_DOMAIN = 'your-domain.com'
+# SESSION_COOKIE_PATH = '/your-path'
+# CSRF_COOKIE_DOMAIN = 'your-domain.com'
+# CSRF_COOKIE_PATH = '/your-path'
+
+# Quick-start development settings - unsuitable for production
+# See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
+
+# Build paths inside the project like this: BASE_DIR / 'subdir'.
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-q^_c4xfywj8$2glsv!03ef2kevs1#ybea9t*x(3+jas+xg-g)l'
+SECRET_KEY = env('DJANGO_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = env.bool('DJANGO_DEBUG', default=False)
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = env.list('ALLOWED_HOSTS', default=[])
 
 
 # Application definition
@@ -35,29 +69,46 @@ INSTALLED_APPS = [
     'food',
     'nursing',
     'shopping',
-    'stay',
     'tourism',
+    'accommodation',
     'transportation',
     'treatment',
     'common',
+    'communication',
+    'financialhub',
+    # 'debug_toolbar',
     'django_extensions',
+    'rest_framework',
+    'rest_framework_simplejwt',
+    'sslserver',
+    'corsheaders',
+    'rest_framework_simplejwt.token_blacklist',
+    # 'django_hosts',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_user_agents',
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'common.middleware.JWTAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
+    'django_user_agents.middleware.UserAgentMiddleware',
+    # 'debug_toolbar.middleware.DebugToolbarMiddleware',
 ]
+
+SESSION_ENGINE = 'django.contrib.sessions.backends.db'
 
 ROOT_URLCONF = 'floramedtour.urls'
 
@@ -70,8 +121,10 @@ TEMPLATES = [
             'context_processors': [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
+                'django.template.context_processors.media',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'common.context_processors.user_context.user_context',
             ],
         },
     },
@@ -79,20 +132,37 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'floramedtour.wsgi.application'
 
+# CELERY_BROKER_URL = 'redis://localhost:6379/0'  # اگر Redis را به عنوان بروکر انتخاب کرده‌اید
+# # یا
+# CELERY_BROKER_URL = 'pyamqp://guest:guest@localhost//'
+
+# # برای نتایج
+# CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'  # اگر Redis را به عنوان بروکر انتخاب کرده‌اید
+# # یا
+# CELERY_RESULT_BACKEND = 'rpc://'
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'floramedtour',
+#         'USER': 'admin',
+#         'PASSWORD': 'RA123456',
+#         'HOST': 'localhost',
+#         'PORT': '5432',
+#         # 'OPTIONS': {
+#         #     'charset': 'utf8',  # 'utf8mb4' 
+#         # },
+#     }
+# }
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'postgres',
-        'USER': 'postgres',
-        'PASSWORD': 'a.e,e/w\Ppr110SA123456',
-        'HOST': 'localhost',
-        'PORT': '5432',
-    }
+    'default': env.db('DATABASE_URL')
 }
+
+DEFAULT_CHARSET = 'utf-8'
 
 # CACHES = {
 #     'default': {
@@ -100,6 +170,15 @@ DATABASES = {
 #         'LOCATION': '127.0.0.1:11211',
 #     }
 # }
+CACHES = {
+    'default': {
+        'BACKEND': 'django_redis.cache.RedisCache',
+        'LOCATION': env('REDIS_URL'),
+        'OPTIONS': {
+            'CLIENT_CLASS': 'django_redis.client.DefaultClient',
+        }
+    }
+}
 
 AUTH_USER_MODEL = "common.User"
 
@@ -133,11 +212,25 @@ USE_I18N = True
 
 USE_TZ = True
 
+GEOIP_PATH = os.path.join(BASE_DIR, 'geoip_data')
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
+STATIC_ROOT = BASE_DIR / 'productionfiles'
+
 STATIC_URL = 'static/'
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+STATICFILES_DIRS = [
+    # BASE_DIR / 'node_modules'
+]
+
+MEDIA_URL = '/media/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
@@ -148,3 +241,85 @@ GRAPH_MODELS ={
 'all_applications': True,
 'graph_models': True,
 }
+
+# ROOT_HOSTCONF = 'project.hosts'  # اسم فایل hosts.py شما
+# DEFAULT_HOST = 'www'
+
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=45), # مدت زمان اعتبار توکن
+    'SLIDING_TOKEN_REFRESH_LIFETIME': timedelta(days=1), # مدت زمان تازه کردن توکن
+    'SLIDING_TOKEN_REFRESH_LIFETIME_GRACE_PERIOD': timedelta(days=1), # بازه زمانی برای تازه کردن توکن
+    'SLIDING_TOKEN_REFRESH_MAX_LIFETIME': timedelta(days=30), # حداکثر مدت زمان تازه کردن توکن
+    'ROTATE_REFRESH_TOKENS': True,
+    'ALGORITHM': 'HS256',
+    'SIGNING_KEY': SECRET_KEY,
+    'VERIFYING_KEY': None,
+    'AUTH_HEADER_TYPES': ('Bearer',),
+    'USER_ID_FIELD': 'id',
+    'USER_ID_CLAIM': 'user_id',
+    'AUTH_TOKEN_CLASSES': ('rest_framework_simplejwt.tokens.AccessToken',),
+    'AUTH_COOKIE_CLASSES': ('rest_framework_simplejwt.tokens.AccessToken',),
+}
+
+# Django Rest Framework settings
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+        # 'django.contrib.auth.backends.ModelBackend',  # For session authentication
+    ),
+    'DEFAULT_RENDERER_CLASSES': (
+        'rest_framework.renderers.JSONRenderer',
+    )
+    # ... (any other DRF settings you have)
+}
+
+APPEND_SLASH = True
+
+INTERNAL_IPS = [
+    # ...
+    '127.0.0.1',
+    # '5.39.60.120'
+]
+
+CORS_ALLOWED_ORIGINS = [
+    "https://127.0.0.1:8000",
+    "https://floramedtour.com",
+]
+
+q = queue.Queue()
+
+# ایجاد یک listener برای هر فایل لاگ
+error_listener = logging.handlers.QueueListener(
+    q, logging.FileHandler('error.log')
+)
+warning_listener = logging.handlers.QueueListener(
+    q, logging.FileHandler('warning.log')
+)
+debug_listener = logging.handlers.QueueListener(
+    q, logging.FileHandler('debug.log')
+)
+
+# شروع کردن listeners
+error_listener.start()
+warning_listener.start()
+debug_listener.start()
+
+# مطمئن شوید که در انتهای برنامه، listeners را متوقف کنید
+error_listener.stop()
+warning_listener.stop()
+debug_listener.stop()
+
+# if 'debug_toolbar' in INSTALLED_APPS:
+#     INSTALLED_APPS.remove('debug_toolbar')
+# if 'debug_toolbar.middleware.DebugToolbarMiddleware' in MIDDLEWARE:
+#     MIDDLEWARE.remove('debug_toolbar.middleware.DebugToolbarMiddleware')
+
+# if 'debug_toolbar' not in INSTALLED_APPS:
+#     INSTALLED_APPS.append('debug_toolbar')
+# if 'debug_toolbar.middleware.DebugToolbarMiddleware' not in MIDDLEWARE:
+#     MIDDLEWARE.insert(0, 'debug_toolbar.middleware.DebugToolbarMiddleware')
+
+"""
+Version:
+2.0.0: revived after disaster entire root deletion with my wife's moral, psychological and emotional support.
+"""

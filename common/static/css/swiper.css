@@ -1,0 +1,60 @@
+/* swiper.css */
+.swiper-container {
+    width: 100%;
+    height: 200px; /* افزایش ارتفاع نوار عکس‌ها */
+    position: relative; 
+}
+
+.swiper-slide img {
+    width: auto;
+    height: 200px; /* افزایش ارتفاع عکس‌ها */
+    width: 100%;
+    height: auto;
+    display: block;    
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    top: 50%; /* موقعیت عمودی */
+    transform: translateY(-50%); /* تنظیم موقعیت */
+}
+
+.swiper-pagination {
+    bottom: 20px;
+    position: absolute; 
+    left: 50%; 
+    transform: translateX(-50%); /* تنظیم موقعیت افقی */
+    margin-top: 10px; 
+}
+
+/* swiper.css */
+.swiper-container {
+    width: 100%;
+    height: 200px; /* افزایش ارتفاع نوار عکس‌ها */
+    position: relative;
+}
+
+.swiper-slide {
+    display: flex;
+    position: relative;
+    overflow: hidden;        
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+}
+
+/* تصویر‌های مخصوص گوشی‌ها */
+/* @media (max-width: 768px) { */
+    /* .swiper-slide { */
+        /* background-image: url('/common/static/images/slide01.jpg'); */
+    /* } */
+/* } */
+
+/* تصویر‌های مخصوص پنجره‌های بزرگ‌تر */
+/* @media (min-width: 769px) { */
+    /* .swiper-slide { */
+        /* background-image: url('/common/static/images/slide02.jpg'); */
+    /* } */
+/* } */

@@ -1,0 +1,294 @@
+{% load custom_tags %}
+{% load permission_tags %}
+{% if menu0.parent is None and menu0.is_active == True and menu0.cat.company.name == company and nv1index == nv1index %}
+{% calculate 0 as val %}
+{% for permission in menu0.individual_permission.all %}
+{% if user|has_permission:permission %}
+{% calculate "before" "+" 1 as val %}
+{% endif %}
+{% empty %}
+{% for group in menu0.role.all %}
+{% if group in user.groups.all %}
+{% calculate "before" "+" 1 as val %}
+{% endif %}
+{% empty %}
+{% calculate "before" "+" 1 as val %}
+{% endfor %}
+{% endfor %}
+{% calculate as val %}
+{% if val %}
+<li class="nav-item dropdown " id="myDropdown{{ menu0.id }}">
+<a class="nav-link dropdown-toggle{% if not menu0.sub_categories.all %} menu{% endif %}" href="#" {% if not menu0.sub_categories.all %}data-tag="{{ menu0.container_tag }}" data-page="{{ menu0.path }}" data-id="{{ menu0.id }}"{% endif %} data-bs-toggle="dropdown" data-url="{{ menu0.url }}">{{ menu0.name }}</a>
+{% if menu0.sub_categories.all %}
+<ul class="dropdown-menu">
+    {% for menu1 in menu0.sub_categories.all|dictsort:"order" %}
+    {% if menu1.is_active == True and menu0.cat.company.name == company and nv1index == nv1index %}
+    {% calculate 0 as val %}
+    {% for permission in menu1.individual_permission.all %}
+    {% if user|has_permission:permission %}
+    {% calculate "before" "+" 1 as val %}
+    {% endif %}
+    {% empty %}
+    {% for group in menu1.role.all %}
+    {% if group in user.groups.all %}
+    {% calculate "before" "+" 1 as val %}
+    {% endif %}
+    {% empty %}
+    {% calculate "before" "+" 1 as val %}
+    {% endfor %}
+    {% endfor %}
+    {% calculate as val %}    
+    {% if val %}
+    <li><a class="dropdown-item{% if not menu1.sub_categories.all %} menu{% endif %}" href="#" {% if not menu1.sub_categories.all %}data-tag="{{ menu1.container_tag }}" data-page="{{ menu1.path }}" data-id="{{ menu1.id }}"{% endif %} data-url="{{ menu1.url }}">{{ menu1.name }}{% if menu1.sub_categories.all %} &raquo; {% endif %}</a>
+    {% if menu1.sub_categories.all %}
+    <ul class="submenu dropdown-menu">
+        {% for menu2 in menu1.sub_categories.all|dictsort:"order" %}
+        {% if menu2.is_active == True and menu0.cat.company.name == company and nv1index == nv1index %}
+        {% calculate 0 as val %}
+        {% for permission in menu2.individual_permission.all %}
+        {% if request.user|has_permission:permission %}
+        {% calculate "before" "+" 1 as val %}
+        {% endif %}
+        {% empty %}
+        {% for group in menu2.role.all %}
+        {% if group in user.groups.all %}
+        {% calculate "before" "+" 1 as val %}
+        {% endif %}
+        {% empty %}
+        {% calculate "before" "+" 1 as val %}
+        {% endfor %}
+        {% endfor %}        
+        {% calculate as val %}    
+        {% if val %}        
+        <li><a class="dropdown-item{% if not menu2.sub_categories.all %} menu{% endif %}" href="#" {% if not menu2.sub_categories.all %}data-tag="{{ menu2.container_tag }}" data-page="{{ menu2.path }}" data-id="{{ menu2.id }}"{% endif %} data-url="{{ menu2.url }}">{{ menu2.name }}{% if menu2.sub_categories.all %} &raquo; {% endif %}</a>
+        {% if menu2.sub_categories.all %}
+        <ul class="submenu dropdown-menu">
+            {% for menu3 in menu2.sub_categories.all|dictsort:"order" %}
+            {% if menu3.is_active == True and menu0.cat.company.name == company and nv1index == nv1index %}
+            {% calculate 0 as val %}
+            {% for permission in menu3.individual_permission.all %}
+            {% if request.user|has_permission:permission %}
+            {% calculate "before" "+" 1 as val %}
+            {% endif %}
+            {% empty %}
+            {% for group in menu3.role.all %}
+            {% if group in user.groups.all %}
+            {% calculate "before" "+" 1 as val %}
+            {% endif %}
+            {% empty %}
+            {% calculate "before" "+" 1 as val %}
+            {% endfor %}
+            {% endfor %}            
+            {% calculate as val %}    
+            {% if val %}            
+            <li><a class="dropdown-item{% if not menu3.sub_categories.all %} menu{% endif %}" href="#" {% if not menu3.sub_categories.all %}data-tag="{{ menu3.container_tag }}" data-page="{{ menu3.path }}" data-id="{{ menu3.id }}"{% endif %} data-url="{{ menu3.url }}">{{ menu3.name }}{% if menu3.sub_categories.all %} &raquo; {% endif %}</a>
+            {% if menu3.sub_categories.all %}
+            <ul class="submenu dropdown-menu">
+                {% for menu4 in menu3.sub_categories.all|dictsort:"order" %}
+                {% if menu4.is_active == True and menu0.cat.company.name == company and nv1index == nv1index %}
+                {% calculate 0 as val %}
+                {% for permission in menu4.individual_permission.all %}
+                {% if request.user|has_permission:permission %}
+                {% calculate "before" "+" 1 as val %}
+                {% endif %}
+                {% empty %}
+                {% for group in menu4.role.all %}
+                {% if group in user.groups.all %}
+                {% calculate "before" "+" 1 as val %}
+                {% endif %}
+                {% empty %}
+                {% calculate "before" "+" 1 as val %}
+                {% endfor %}
+                {% endfor %}                
+                {% calculate as val %}    
+                {% if val %}                
+                <li><a class="dropdown-item{% if not menu4.sub_categories.all %} menu{% endif %}" href="#" {% if not menu4.sub_categories.all %}data-tag="{{ menu4.container_tag }}" data-page="{{ menu4.path }}" data-id="{{ menu4.id }}"{% endif %} data-url="{{ menu4.url }}">{{ menu4.name }}{% if menu4.sub_categories.all %} &raquo; {% endif %}</a>
+                {% if menu4.sub_categories.all %}
+                <ul class="submenu dropdown-menu">
+                    {% for menu5 in menu4.sub_categories|dictsort:"order" %}
+                    {% if menu5.is_active == True and menu0.cat.company.name == company and nv1index == nv1index %}
+                    {% calculate 0 as val %}
+                    {% for permission in menu5.individual_permission.all %}
+                    {% if request.user|has_permission:permission %}
+                    {% calculate "before" "+" 1 as val %}
+                    {% endif %}
+                    {% empty %}
+                    {% for group in menu5.role.all %}
+                    {% if group in user.groups.all %}
+                    {% calculate "before" "+" 1 as val %}
+                    {% endif %}
+                    {% empty %}
+                    {% calculate "before" "+" 1 as val %}
+                    {% endfor %}
+                    {% endfor %}                    
+                    {% calculate as val %}    
+                    {% if val %}                    
+                    <li><a class="dropdown-item{% if not menu5.sub_categories.all %} menu{% endif %}" href="#" {% if not menu5.sub_categories.all %}data-tag="{{ menu5.container_tag }}" data-page="{{ menu5.path }}" data-id="{{ menu5.id }}"{% endif %} data-url="{{ menu5.url }}">{{ menu5.name }}{% if menu5.sub_categories.all %} &raquo; {% endif %}</a>
+                    {% if menu5.sub_categories.all %}
+                    <ul class="submenu dropdown-menu">
+                        {% for menu6 in menu5.sub_categories.all|dictsort:"order" %}
+                        {% if menu6.is_active == True and menu0.cat.company.name == company and nv1index == nv1index %}
+                        {% calculate 0 as val %}
+                        {% for permission in menu6.individual_permission.all %}
+                        {% if request.user|has_permission:permission %}
+                        {% calculate "before" "+" 1 as val %}
+                        {% endif %}
+                        {% empty %}
+                        {% for group in menu6.role.all %}
+                        {% if group in user.groups.all %}
+                        {% calculate "before" "+" 1 as val %}
+                        {% endif %}
+                        {% empty %}
+                        {% calculate "before" "+" 1 as val %}
+                        {% endfor %}
+                        {% endfor %}                        
+                        {% calculate as val %}    
+                        {% if val %}                        
+                        <li><a class="dropdown-item{% if not menu6.sub_categories.all %} menu{% endif %}" href="#" {% if not menu6.sub_categories.all %}data-tag="{{ menu6.container_tag }}" data-page="{{ menu6.path }}" data-id="{{ menu6.id }}"{% endif %} data-url="{{ menu6.url }}">{{ menu6.name }}{% if menu6.sub_categories.all %} &raquo; {% endif %}</a>
+                        {% if menu6.sub_categories.all %}
+                        <ul class="submenu dropdown-menu">
+                            {% for menu7 in menu6.sub_categories.all|dictsort:"order" %}
+                            {% if menu7.is_active == True and menu0.cat.company.name == company and nv1index == nv1index %}
+                            {% calculate 0 as val %}
+                            {% for permission in menu7.individual_permission.all %}
+                            {% if request.user|has_permission:permission %}
+                            {% calculate "before" "+" 1 as val %}
+                            {% endif %}
+                            {% empty %}
+                            {% for group in menu7.role.all %}
+                            {% if group in user.groups.all %}
+                            {% calculate "before" "+" 1 as val %}
+                            {% endif %}
+                            {% empty %}
+                            {% calculate "before" "+" 1 as val %}
+                            {% endfor %}
+                            {% endfor %}                            
+                            {% calculate as val %}    
+                            {% if val %}                            
+                            <li><a class="dropdown-item{% if not menu7.sub_categories.all %} menu{% endif %}" href="#" {% if not menu7.sub_categories.all %}data-tag="{{ menu7.container_tag }}" data-page="{{ menu7.path }}" data-id="{{ menu7.id }}"{% endif %} data-url="{{ menu7.url }}">{{ menu7.name }}{% if menu7.sub_categories.all %} &raquo; {% endif %}</a>
+                            {% if menu7.sub_categories.all %}
+                            <ul class="submenu dropdown-menu">
+                                {% for menu8 in menu7.sub_categories.all|dictsort:"order" %}
+                                {% if menu8.is_active == True and menu0.cat.company.name == company and nv1index == nv1index %}
+                                {% calculate 0 as val %}
+                                {% for permission in menu8.individual_permission.all %}
+                                {% if request.user|has_permission:permission %}
+                                {% calculate "before" "+" 1 as val %}
+                                {% endif %}
+                                {% empty %}
+                                {% for group in menu8.role.all %}
+                                {% if group in user.groups.all %}
+                                {% calculate "before" "+" 1 as val %}
+                                {% endif %}
+                                {% empty %}
+                                {% calculate "before" "+" 1 as val %}
+                                {% endfor %}
+                                {% endfor %}                                
+                                {% calculate as val %}    
+                                {% if val %}                                
+                                <li><a class="dropdown-item{% if not menu8.sub_categories.all %} menu{% endif %}" href="#" {% if not menu8.sub_categories.all %}data-tag="{{ menu8.container_tag }}" data-page="{{ menu8.path }}" data-id="{{ menu8.id }}"{% endif %} data-url="{{ menu8.url }}">{{ menu8.name }}{% if menu8.sub_categories.all %} &raquo; {% endif %}</a>
+                                {% if menu8.sub_categories.all %}
+                                <ul class="submenu dropdown-menu">
+                                    {% for menu9 in menu8.sub_categories.all|dictsort:"order" %}
+                                    {% if menu9.is_active == True and menu0.cat.company.name == company and nv1index == nv1index %}
+                                    {% calculate 0 as val %}
+                                    {% for permission in menu9.individual_permission.all %}
+                                    {% if request.user|has_permission:permission %}
+                                    {% calculate "before" "+" 1 as val %}
+                                    {% endif %}
+                                    {% empty %}
+                                    {% for group in menu9.role.all %}
+                                    {% if group in user.groups.all %}
+                                    {% calculate "before" "+" 1 as val %}
+                                    {% endif %}
+                                    {% empty %}
+                                    {% calculate "before" "+" 1 as val %}
+                                    {% endfor %}
+                                    {% endfor %}                                    
+                                    {% calculate as val %}    
+                                    {% if val %}                                    
+                                    <li><a class="dropdown-item{% if not menu9.sub_categories.all %} menu{% endif %}" href="#" {% if not menu9.sub_categories.all %}data-tag="{{ menu9.container_tag }}" data-page="{{ menu9.path }}" data-id="{{ menu9.id }}"{% endif %} data-url="{{ menu9.url }}">{{ menu9.name }}{% if menu9.sub_categories.all %} &raquo; {% endif %}</a>
+                                    {% if menu9.sub_categories.all %}
+                                    <ul class="submenu dropdown-menu">
+                                        {% for menu10 in menu9.sub_categories.all|dictsort:"order" %}
+                                        {% if menu10.is_active == True and menu0.cat.company.name == company and nv1index == nv1index %}
+                                        {% calculate 0 as val %}
+                                        {% for permission in menu10.individual_permission.all %}
+                                        {% if request.user|has_permission:permission %}
+                                        {% calculate "before" "+" 1 as val %}
+                                        {% endif %}
+                                        {% empty %}
+                                        {% for group in menu10.role.all %}
+                                        {% if group in user.groups.all %}
+                                        {% calculate "before" "+" 1 as val %}
+                                        {% endif %}
+                                        {% empty %}
+                                        {% calculate "before" "+" 1 as val %}
+                                        {% endfor %}
+                                        {% endfor %}                                        
+                                        {% calculate as val %}    
+                                        {% if val %}                                        
+                                        <li><a class="dropdown-item{% if not menu10.sub_categories.all %} menu{% endif %}" href="#" {% if not menu10.sub_categories.all %}data-tag="{{ menu10.container_tag }}" data-page="{{ menu10.path }}" data-id="{{ menu10.id }}"{% endif %} data-url="{{ menu10.url }}">{{ menu10.name }}{% if menu10.sub_categories.all %} &raquo; {% endif %}</a>
+                                        </li>
+                                        {% endif %}
+                                        {% endif %}
+                                        {% endfor %}
+                                    </ul>
+                                    {% endif %}
+                                    </li>
+                                    {% endif %}
+                                    {% endif %}
+                                    {% endfor %}
+                                </ul>
+                                {% endif %}
+                                </li>
+                                {% endif %}
+                                {% endif %}
+                                {% endfor %}
+                            </ul>
+                            {% endif %}
+                            </li>
+                            {% endif %}
+                            {% endif %}
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+                        </li>
+                        {% endif %}
+                        {% endif %}
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+                    </li>
+                    {% endif %}
+                    {% endif %}
+                    {% endfor %}
+                </ul>
+                {% endif %}
+                </li>
+                {% endif %}
+                {% endif %}
+                {% endfor %}
+            </ul>
+            {% endif %}
+            </li>
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+        </ul>
+        {% endif %}
+        </li>
+        {% endif %}
+        {% endif %}
+        {% endfor %}
+    </ul>
+    {% endif %}
+    </li>
+    {% endif %}
+    {% endif %}
+    {% endfor %}
+</ul>
+{% endif %}
+</li>
+{% endif %}
+{% endif %}

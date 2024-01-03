@@ -1,0 +1,37 @@
+{% extends 'common/layout.html' %}
+{% load custom_filters %}
+{% load custom_tags %}
+{% load static %}
+{% block head %}
+
+{% endblock head %}
+
+{% block content %}
+    <h1>Settings2</h1>
+    {% if tables_data %}
+        {% tag_by_field_value tables_data.0.Content "name = Common" as val %}
+    <script>
+        const applicationNames = [
+            {% for table in tables_data %}
+                "{{ table.ApplicationName }}",
+            {% endfor %}
+        ];
+
+        const tableNames = [
+        {% for table in table_data %}
+            "{{ table.TableName }}",
+        {% endfor %}
+        ];
+    </script>
+    {% endif %}
+    
+
+
+{% endblock content %}
+
+{% block lastt %}
+    <script>
+        var tables = JSON.parse('{{ tables_json|escapejs|safe }}');
+    </script>
+    {% comment %} <script src="{% static 'js/common_settings.js' %}"></script> {% endcomment %}
+{% endblock lastt %}
