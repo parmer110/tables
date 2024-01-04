@@ -322,7 +322,7 @@ class UserProfile(CommonModel):
             
 
 class BlacklistedToken(models.Model):
-    token = models.CharField(max_length=500)
+    token = models.CharField(max_length=1000)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     timestamp = models.DateTimeField(auto_now_add=True)
     expires_at = models.DateTimeField()
@@ -841,7 +841,7 @@ class SystemSettingsPic(CommonModel):
         ('prfpic', 'Profile Picture'),
         ('cflag', 'Contry Flag'),
     ]
-    company = models.ForeignKey('administration.Company', on_delete=models.CASCADE, related_name="system_settings_pic")
+    company = models.ForeignKey('administration.Company', on_delete=models.CASCADE, related_name="system_settings_pic", null=True)
     app = models.CharField(max_length=50, choices=get_app_names, null=True, blank=True)
     name = models.CharField(max_length=30, choices=settings_pic, null=True, blank=True)
     max_image_size_width = models.PositiveIntegerField(verbose_name='Max Image Size Width', default=1200)

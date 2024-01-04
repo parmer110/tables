@@ -24,8 +24,8 @@ class SellRepresentationAdmin(admin.ModelAdmin):
 #     list_editable = ("category","duration_years")
 
 class ProcedureAdmin(admin.ModelAdmin):
-    list_display=("id", "name", "code", "description", "specialty", "subspecialty", "skills", "cost", "is_active", "company")
-    # list_editable=("name", "code", "description", "specialty", "subspecialty", "skills", "cost", "is_active", "company")
+    list_display=("id", "name", "code", "description", "specialty", "subspecialty", "skills", "is_active", "company")
+    # list_editable=("name", "code", "description", "specialty", "subspecialty", "skills", "is_active", "company")
     list_editable=("company",)
 
 admin.site.register(SellRepresentation, SellRepresentationAdmin)

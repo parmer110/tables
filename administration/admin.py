@@ -3,8 +3,8 @@ from .models import *
 # Register your models here.
 
 class CompanyAdmin(admin.ModelAdmin):
-    list_display=("pk", "name", "legal_entity", "description")
-    list_editable=("name", "legal_entity", "description")
+    list_display=("pk", "name", "description")
+    list_editable=("name", "description")
     
 class CompanyWebsiteAdmin(admin.ModelAdmin):
     list_display=("id", "company", "url")    

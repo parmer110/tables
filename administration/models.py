@@ -31,22 +31,22 @@ class InternalMessage(CommonModel):
 
 
 class CompanyPersonRole(CommonModel):
-    person = models.ForeignKey(Person, on_delete=models.CASCADE, related_name="company_person_role")
-    role = models.ForeignKey(JobRoles, on_delete=models.CASCADE, related_name="company_person_role")
+    person = models.ForeignKey(Person, on_delete=models.CASCADE, related_name="company_person_role", null=True)
+    job_role = models.ForeignKey(JobRoles, on_delete=models.CASCADE, related_name="company_person_role", null=True)
 
     def __str__(self):
         return f"{self.person.firstname} {self.person.lastname} role is {self.role.name}"
 
 class CompanyAddressRole(CommonModel):
-    address = models.ForeignKey(Places, on_delete=models.CASCADE, related_name="company_address_role")
-    role = models.ForeignKey(JobRoles, on_delete=models.CASCADE, related_name="company_adress_role")
+    address = models.ForeignKey(Places, on_delete=models.CASCADE, related_name="company_address_role", null=True)
+    job_role = models.ForeignKey(JobRoles, on_delete=models.CASCADE, related_name="company_adress_role", null=True)
 
     def __str__(self):
         return f"{self.address.title} role is {self.role.name}"
 
 class Company(CommonModel):
     name = models.CharField(max_length=30, verbose_name="Company Name", null=True, unique=True)
-    legal_entity = models.ForeignKey(LegalEntity, on_delete=models.CASCADE)
+    legal_entity = models.ForeignKey(LegalEntity, on_delete=models.CASCADE, null=True)
     personnel_roles = models.ManyToManyField(CompanyPersonRole, related_name='companies')
     address_roles = models.ManyToManyField(CompanyAddressRole, related_name='companies')
     description = models.TextField(null=True)
