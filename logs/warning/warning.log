@@ -1,0 +1,963 @@
+WARNING 2024-01-05 05:24:51,396 log Not Found: /media/images/e27f6e64d41a43e795618160273d8ea5.jpg
+WARNING 2024-01-05 05:24:51,426 log Not Found: /media/images/0679ae6a159241689186801b3cf69413.jpg
+WARNING 2024-01-05 05:24:51,431 basehttp "GET /media/images/e27f6e64d41a43e795618160273d8ea5.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:24:51,568 basehttp "GET /media/images/0679ae6a159241689186801b3cf69413.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:24:51,639 log Not Found: /media/images/cd54d6df53b54ceeb149af30485f2004.jpg
+WARNING 2024-01-05 05:24:51,645 basehttp "GET /media/images/cd54d6df53b54ceeb149af30485f2004.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:24:52,634 log Not Found: /media/images/49072ed13b094f89a587f4cc1adcc164.jpg
+WARNING 2024-01-05 05:24:52,637 basehttp "GET /media/images/49072ed13b094f89a587f4cc1adcc164.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:24:52,780 log Not Found: /media/images/b29357cfd7e24b6da4680e0246286480.jpg
+WARNING 2024-01-05 05:24:52,782 basehttp "GET /media/images/b29357cfd7e24b6da4680e0246286480.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:24:52,872 log Not Found: /media/images/5122b1428d954b77a1e967a97807c62a.jpg
+WARNING 2024-01-05 05:24:52,874 basehttp "GET /media/images/5122b1428d954b77a1e967a97807c62a.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:24:53,104 log Not Found: /media/images/6e4c3c289e1946ad8bb3244fd64e3e20.jpg
+WARNING 2024-01-05 05:24:53,115 log Not Found: /media/images/cae55bc51c944edbbc8490dbe735698b.jpg
+WARNING 2024-01-05 05:24:53,127 basehttp "GET /media/images/6e4c3c289e1946ad8bb3244fd64e3e20.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:24:53,129 basehttp "GET /media/images/cae55bc51c944edbbc8490dbe735698b.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:24:54,173 log Not Found: /media/images/ea63fc16d4314fbc99efb403b03b7a44.jpg
+WARNING 2024-01-05 05:24:54,176 basehttp "GET /media/images/ea63fc16d4314fbc99efb403b03b7a44.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:24:54,306 log Not Found: /media/images/a98cfd49ed6a4d6bb8273c52006023b6.jpg
+WARNING 2024-01-05 05:24:54,325 log Not Found: /media/images/37a6129c89e94eb6a1ac6b62e449d2de.jpg
+WARNING 2024-01-05 05:24:54,327 basehttp "GET /media/images/a98cfd49ed6a4d6bb8273c52006023b6.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:24:54,346 basehttp "GET /media/images/37a6129c89e94eb6a1ac6b62e449d2de.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:24:54,397 log Not Found: /media/images/c3b8db8f3f82437881c84b076a778a1c.jpg
+WARNING 2024-01-05 05:24:54,399 basehttp "GET /media/images/c3b8db8f3f82437881c84b076a778a1c.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:24:54,527 log Not Found: /media/images/673befba045b4c08a37907aa0e01adbb.jpg
+WARNING 2024-01-05 05:24:54,536 basehttp "GET /media/images/673befba045b4c08a37907aa0e01adbb.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:24:54,656 log Not Found: /media/images/9d293e3014df4aacb8d405940f43bee6.png
+WARNING 2024-01-05 05:24:54,659 basehttp "GET /media/images/9d293e3014df4aacb8d405940f43bee6.png HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:24:55,103 log Not Found: /media/images/22c498e130304438b157a35011fb6904.jpg
+WARNING 2024-01-05 05:24:55,112 basehttp "GET /media/images/22c498e130304438b157a35011fb6904.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:24:55,157 log Not Found: /media/images/c432d94fafdd4b9fb638591c7148c72a.jpg
+WARNING 2024-01-05 05:24:55,160 basehttp "GET /media/images/c432d94fafdd4b9fb638591c7148c72a.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:24:55,333 log Not Found: /media/images/ef2047a2893e4404bc54d7cbb85dae0f.jpg
+WARNING 2024-01-05 05:24:55,347 log Not Found: /media/images/a17de0df5b9a4c7c9b6022660d7e44eb.jpg
+WARNING 2024-01-05 05:24:55,349 basehttp "GET /media/images/ef2047a2893e4404bc54d7cbb85dae0f.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:24:55,354 basehttp "GET /media/images/a17de0df5b9a4c7c9b6022660d7e44eb.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:24:55,573 log Not Found: /media/images/176420d890f649098c5d2e0d4e379451.jpg
+WARNING 2024-01-05 05:24:55,575 basehttp "GET /media/images/176420d890f649098c5d2e0d4e379451.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:25:04,071 log Not Found: /media/images/cd54d6df53b54ceeb149af30485f2004.jpg
+WARNING 2024-01-05 05:25:04,086 log Not Found: /media/images/0679ae6a159241689186801b3cf69413.jpg
+WARNING 2024-01-05 05:25:04,097 log Not Found: /media/images/e27f6e64d41a43e795618160273d8ea5.jpg
+WARNING 2024-01-05 05:25:04,101 basehttp "GET /media/images/cd54d6df53b54ceeb149af30485f2004.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:25:04,101 basehttp "GET /media/images/0679ae6a159241689186801b3cf69413.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:25:04,103 basehttp "GET /media/images/e27f6e64d41a43e795618160273d8ea5.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:25:04,935 log Not Found: /media/images/6e4c3c289e1946ad8bb3244fd64e3e20.jpg
+WARNING 2024-01-05 05:25:04,939 basehttp "GET /media/images/6e4c3c289e1946ad8bb3244fd64e3e20.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:25:04,967 log Not Found: /media/images/cae55bc51c944edbbc8490dbe735698b.jpg
+WARNING 2024-01-05 05:25:04,984 basehttp "GET /media/images/cae55bc51c944edbbc8490dbe735698b.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:25:05,116 log Not Found: /media/images/49072ed13b094f89a587f4cc1adcc164.jpg
+WARNING 2024-01-05 05:25:05,120 basehttp "GET /media/images/49072ed13b094f89a587f4cc1adcc164.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:25:05,292 log Not Found: /media/images/b29357cfd7e24b6da4680e0246286480.jpg
+WARNING 2024-01-05 05:25:05,294 basehttp "GET /media/images/b29357cfd7e24b6da4680e0246286480.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:25:05,568 log Not Found: /media/images/5122b1428d954b77a1e967a97807c62a.jpg
+WARNING 2024-01-05 05:25:05,570 basehttp "GET /media/images/5122b1428d954b77a1e967a97807c62a.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:25:05,900 log Not Found: /media/images/37a6129c89e94eb6a1ac6b62e449d2de.jpg
+WARNING 2024-01-05 05:25:05,909 basehttp "GET /media/images/37a6129c89e94eb6a1ac6b62e449d2de.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:25:06,013 log Not Found: /media/images/ea63fc16d4314fbc99efb403b03b7a44.jpg
+WARNING 2024-01-05 05:25:06,015 basehttp "GET /media/images/ea63fc16d4314fbc99efb403b03b7a44.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:25:06,301 log Not Found: /media/images/a98cfd49ed6a4d6bb8273c52006023b6.jpg
+WARNING 2024-01-05 05:25:06,307 basehttp "GET /media/images/a98cfd49ed6a4d6bb8273c52006023b6.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:25:06,327 log Not Found: /media/images/673befba045b4c08a37907aa0e01adbb.jpg
+WARNING 2024-01-05 05:25:06,330 basehttp "GET /media/images/673befba045b4c08a37907aa0e01adbb.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:25:06,540 log Not Found: /media/images/c3b8db8f3f82437881c84b076a778a1c.jpg
+WARNING 2024-01-05 05:25:06,543 basehttp "GET /media/images/c3b8db8f3f82437881c84b076a778a1c.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:25:06,738 log Not Found: /media/images/9d293e3014df4aacb8d405940f43bee6.png
+WARNING 2024-01-05 05:25:06,740 basehttp "GET /media/images/9d293e3014df4aacb8d405940f43bee6.png HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:25:06,956 log Not Found: /media/images/a17de0df5b9a4c7c9b6022660d7e44eb.jpg
+WARNING 2024-01-05 05:25:06,959 basehttp "GET /media/images/a17de0df5b9a4c7c9b6022660d7e44eb.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:25:07,157 log Not Found: /media/images/c432d94fafdd4b9fb638591c7148c72a.jpg
+WARNING 2024-01-05 05:25:07,160 basehttp "GET /media/images/c432d94fafdd4b9fb638591c7148c72a.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:25:07,277 log Not Found: /media/images/176420d890f649098c5d2e0d4e379451.jpg
+WARNING 2024-01-05 05:25:07,279 basehttp "GET /media/images/176420d890f649098c5d2e0d4e379451.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:25:07,348 log Not Found: /media/images/ef2047a2893e4404bc54d7cbb85dae0f.jpg
+WARNING 2024-01-05 05:25:07,353 basehttp "GET /media/images/ef2047a2893e4404bc54d7cbb85dae0f.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:25:07,570 log Not Found: /media/images/22c498e130304438b157a35011fb6904.jpg
+WARNING 2024-01-05 05:25:07,573 basehttp "GET /media/images/22c498e130304438b157a35011fb6904.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:25:55,910 log Not Found: /media/images/e27f6e64d41a43e795618160273d8ea5.jpg
+WARNING 2024-01-05 05:25:55,919 basehttp "GET /media/images/e27f6e64d41a43e795618160273d8ea5.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:25:56,007 log Not Found: /media/images/0679ae6a159241689186801b3cf69413.jpg
+WARNING 2024-01-05 05:25:56,257 basehttp "GET /media/images/0679ae6a159241689186801b3cf69413.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:25:56,328 log Not Found: /media/images/cd54d6df53b54ceeb149af30485f2004.jpg
+WARNING 2024-01-05 05:25:56,332 basehttp "GET /media/images/cd54d6df53b54ceeb149af30485f2004.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:25:57,219 log Not Found: /media/images/cae55bc51c944edbbc8490dbe735698b.jpg
+WARNING 2024-01-05 05:25:57,223 basehttp "GET /media/images/cae55bc51c944edbbc8490dbe735698b.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:25:57,458 log Not Found: /media/images/49072ed13b094f89a587f4cc1adcc164.jpg
+WARNING 2024-01-05 05:25:57,461 basehttp "GET /media/images/49072ed13b094f89a587f4cc1adcc164.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:25:57,509 log Not Found: /media/images/6e4c3c289e1946ad8bb3244fd64e3e20.jpg
+WARNING 2024-01-05 05:25:57,512 basehttp "GET /media/images/6e4c3c289e1946ad8bb3244fd64e3e20.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:25:57,844 log Not Found: /media/images/b29357cfd7e24b6da4680e0246286480.jpg
+WARNING 2024-01-05 05:25:57,848 basehttp "GET /media/images/b29357cfd7e24b6da4680e0246286480.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:25:58,070 log Not Found: /media/images/5122b1428d954b77a1e967a97807c62a.jpg
+WARNING 2024-01-05 05:25:58,073 basehttp "GET /media/images/5122b1428d954b77a1e967a97807c62a.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:25:58,577 log Not Found: /media/images/37a6129c89e94eb6a1ac6b62e449d2de.jpg
+WARNING 2024-01-05 05:25:58,613 basehttp "GET /media/images/37a6129c89e94eb6a1ac6b62e449d2de.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:25:58,695 log Not Found: /media/images/ea63fc16d4314fbc99efb403b03b7a44.jpg
+WARNING 2024-01-05 05:25:58,699 basehttp "GET /media/images/ea63fc16d4314fbc99efb403b03b7a44.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:25:59,088 log Not Found: /media/images/c3b8db8f3f82437881c84b076a778a1c.jpg
+WARNING 2024-01-05 05:25:59,090 basehttp "GET /media/images/c3b8db8f3f82437881c84b076a778a1c.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:25:59,181 log Not Found: /media/images/673befba045b4c08a37907aa0e01adbb.jpg
+WARNING 2024-01-05 05:25:59,186 basehttp "GET /media/images/673befba045b4c08a37907aa0e01adbb.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:25:59,418 log Not Found: /media/images/a98cfd49ed6a4d6bb8273c52006023b6.jpg
+WARNING 2024-01-05 05:25:59,451 basehttp "GET /media/images/a98cfd49ed6a4d6bb8273c52006023b6.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:25:59,523 log Not Found: /media/images/9d293e3014df4aacb8d405940f43bee6.png
+WARNING 2024-01-05 05:25:59,543 basehttp "GET /media/images/9d293e3014df4aacb8d405940f43bee6.png HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:25:59,557 log Not Found: /media/images/c432d94fafdd4b9fb638591c7148c72a.jpg
+WARNING 2024-01-05 05:25:59,658 log Not Found: /media/images/a17de0df5b9a4c7c9b6022660d7e44eb.jpg
+WARNING 2024-01-05 05:25:59,758 log Not Found: /media/images/22c498e130304438b157a35011fb6904.jpg
+WARNING 2024-01-05 05:25:59,768 basehttp "GET /media/images/c432d94fafdd4b9fb638591c7148c72a.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:25:59,778 basehttp "GET /media/images/22c498e130304438b157a35011fb6904.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:25:59,787 basehttp "GET /media/images/a17de0df5b9a4c7c9b6022660d7e44eb.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:26:00,137 log Not Found: /media/images/ef2047a2893e4404bc54d7cbb85dae0f.jpg
+WARNING 2024-01-05 05:26:00,443 basehttp "GET /media/images/ef2047a2893e4404bc54d7cbb85dae0f.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:26:00,930 log Not Found: /media/images/176420d890f649098c5d2e0d4e379451.jpg
+WARNING 2024-01-05 05:26:00,933 basehttp "GET /media/images/176420d890f649098c5d2e0d4e379451.jpg HTTP/1.1" 404 8518
+ERROR 2024-01-05 05:26:41,518 log Internal Server Error: /table_update/18/
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\views.py", line 251, in destroy
+    instance.delete()
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\models.py", line 92, in delete
+    self.save()
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\models.py", line 906, in save
+    with Image.open(self.image.path) as img:
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\PIL\Image.py", line 3227, in open
+    fp = builtins.open(filename, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\User\\Documents\\Work\\Ramin\\floramedtour\\media\\images\\cae55bc51c944edbbc8490dbe735698b.jpg'
+ERROR 2024-01-05 05:26:41,539 basehttp "DELETE /table_update/18/ HTTP/1.1" 500 114920
+WARNING 2024-01-05 05:28:07,186 log Not Found: /media/images/e27f6e64d41a43e795618160273d8ea5.jpg
+WARNING 2024-01-05 05:28:07,200 basehttp "GET /media/images/e27f6e64d41a43e795618160273d8ea5.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:28:07,250 log Not Found: /media/images/cd54d6df53b54ceeb149af30485f2004.jpg
+WARNING 2024-01-05 05:28:07,259 basehttp "GET /media/images/cd54d6df53b54ceeb149af30485f2004.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:28:07,564 log Not Found: /media/images/0679ae6a159241689186801b3cf69413.jpg
+WARNING 2024-01-05 05:28:07,602 basehttp "GET /media/images/0679ae6a159241689186801b3cf69413.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:28:09,675 log Not Found: /media/images/49072ed13b094f89a587f4cc1adcc164.jpg
+WARNING 2024-01-05 05:28:09,679 basehttp "GET /media/images/49072ed13b094f89a587f4cc1adcc164.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:28:10,027 log Not Found: /media/images/b29357cfd7e24b6da4680e0246286480.jpg
+WARNING 2024-01-05 05:28:10,039 basehttp "GET /media/images/b29357cfd7e24b6da4680e0246286480.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:28:10,148 log Not Found: /media/images/5122b1428d954b77a1e967a97807c62a.jpg
+WARNING 2024-01-05 05:28:10,160 basehttp "GET /media/images/5122b1428d954b77a1e967a97807c62a.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:28:10,171 log Not Found: /media/images/6e4c3c289e1946ad8bb3244fd64e3e20.jpg
+WARNING 2024-01-05 05:28:10,190 basehttp "GET /media/images/6e4c3c289e1946ad8bb3244fd64e3e20.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:28:11,071 log Not Found: /media/images/37a6129c89e94eb6a1ac6b62e449d2de.jpg
+WARNING 2024-01-05 05:28:11,410 basehttp "GET /media/images/37a6129c89e94eb6a1ac6b62e449d2de.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:28:11,235 log Not Found: /media/images/c3b8db8f3f82437881c84b076a778a1c.jpg
+WARNING 2024-01-05 05:28:11,475 basehttp "GET /media/images/c3b8db8f3f82437881c84b076a778a1c.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:28:12,186 log Not Found: /media/images/ea63fc16d4314fbc99efb403b03b7a44.jpg
+WARNING 2024-01-05 05:28:12,238 basehttp "GET /media/images/ea63fc16d4314fbc99efb403b03b7a44.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:28:13,101 log Not Found: /media/images/a98cfd49ed6a4d6bb8273c52006023b6.jpg
+WARNING 2024-01-05 05:28:13,104 basehttp "GET /media/images/a98cfd49ed6a4d6bb8273c52006023b6.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:28:13,261 log Not Found: /media/images/c432d94fafdd4b9fb638591c7148c72a.jpg
+WARNING 2024-01-05 05:28:13,294 basehttp "GET /media/images/c432d94fafdd4b9fb638591c7148c72a.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:28:13,304 log Not Found: /media/images/9d293e3014df4aacb8d405940f43bee6.png
+WARNING 2024-01-05 05:28:13,336 basehttp "GET /media/images/9d293e3014df4aacb8d405940f43bee6.png HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:28:13,389 log Not Found: /media/images/a17de0df5b9a4c7c9b6022660d7e44eb.jpg
+WARNING 2024-01-05 05:28:13,406 log Not Found: /media/images/673befba045b4c08a37907aa0e01adbb.jpg
+WARNING 2024-01-05 05:28:13,412 basehttp "GET /media/images/673befba045b4c08a37907aa0e01adbb.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:28:13,409 basehttp "GET /media/images/a17de0df5b9a4c7c9b6022660d7e44eb.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:28:13,713 log Not Found: /media/images/176420d890f649098c5d2e0d4e379451.jpg
+WARNING 2024-01-05 05:28:13,730 log Not Found: /media/images/22c498e130304438b157a35011fb6904.jpg
+WARNING 2024-01-05 05:28:13,733 basehttp "GET /media/images/176420d890f649098c5d2e0d4e379451.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:28:13,815 basehttp "GET /media/images/22c498e130304438b157a35011fb6904.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:28:14,131 log Not Found: /media/images/ef2047a2893e4404bc54d7cbb85dae0f.jpg
+WARNING 2024-01-05 05:28:14,136 basehttp "GET /media/images/ef2047a2893e4404bc54d7cbb85dae0f.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:28:44,870 log Not Found: /media/images/e27f6e64d41a43e795618160273d8ea5.jpg
+WARNING 2024-01-05 05:28:44,887 basehttp "GET /media/images/e27f6e64d41a43e795618160273d8ea5.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:28:44,990 log Not Found: /media/images/cd54d6df53b54ceeb149af30485f2004.jpg
+WARNING 2024-01-05 05:28:44,999 basehttp "GET /media/images/cd54d6df53b54ceeb149af30485f2004.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:28:45,484 log Not Found: /media/images/0679ae6a159241689186801b3cf69413.jpg
+WARNING 2024-01-05 05:28:45,486 basehttp "GET /media/images/0679ae6a159241689186801b3cf69413.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:28:47,806 log Not Found: /media/images/6e4c3c289e1946ad8bb3244fd64e3e20.jpg
+WARNING 2024-01-05 05:28:47,812 basehttp "GET /media/images/6e4c3c289e1946ad8bb3244fd64e3e20.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:28:48,241 log Not Found: /media/images/5122b1428d954b77a1e967a97807c62a.jpg
+WARNING 2024-01-05 05:28:48,260 basehttp "GET /media/images/5122b1428d954b77a1e967a97807c62a.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:28:48,258 log Not Found: /media/images/49072ed13b094f89a587f4cc1adcc164.jpg
+WARNING 2024-01-05 05:28:48,291 log Not Found: /media/images/b29357cfd7e24b6da4680e0246286480.jpg
+WARNING 2024-01-05 05:28:48,294 basehttp "GET /media/images/49072ed13b094f89a587f4cc1adcc164.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:28:48,308 basehttp "GET /media/images/b29357cfd7e24b6da4680e0246286480.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:28:48,400 log Not Found: /media/images/37a6129c89e94eb6a1ac6b62e449d2de.jpg
+WARNING 2024-01-05 05:28:48,411 basehttp "GET /media/images/37a6129c89e94eb6a1ac6b62e449d2de.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:28:49,012 log Not Found: /media/images/673befba045b4c08a37907aa0e01adbb.jpg
+WARNING 2024-01-05 05:28:49,057 basehttp "GET /media/images/673befba045b4c08a37907aa0e01adbb.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:28:49,181 log Not Found: /media/images/ea63fc16d4314fbc99efb403b03b7a44.jpg
+WARNING 2024-01-05 05:28:49,222 log Not Found: /media/images/a98cfd49ed6a4d6bb8273c52006023b6.jpg
+WARNING 2024-01-05 05:28:49,229 basehttp "GET /media/images/ea63fc16d4314fbc99efb403b03b7a44.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:28:49,234 basehttp "GET /media/images/a98cfd49ed6a4d6bb8273c52006023b6.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:28:49,251 log Not Found: /media/images/c3b8db8f3f82437881c84b076a778a1c.jpg
+WARNING 2024-01-05 05:28:49,258 basehttp "GET /media/images/c3b8db8f3f82437881c84b076a778a1c.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:28:49,344 log Not Found: /media/images/9d293e3014df4aacb8d405940f43bee6.png
+WARNING 2024-01-05 05:28:49,479 basehttp "GET /media/images/9d293e3014df4aacb8d405940f43bee6.png HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:28:50,012 log Not Found: /media/images/c432d94fafdd4b9fb638591c7148c72a.jpg
+WARNING 2024-01-05 05:28:50,034 basehttp "GET /media/images/c432d94fafdd4b9fb638591c7148c72a.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:28:50,516 log Not Found: /media/images/176420d890f649098c5d2e0d4e379451.jpg
+WARNING 2024-01-05 05:28:50,540 log Not Found: /media/images/ef2047a2893e4404bc54d7cbb85dae0f.jpg
+WARNING 2024-01-05 05:28:50,546 basehttp "GET /media/images/ef2047a2893e4404bc54d7cbb85dae0f.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:28:50,551 basehttp "GET /media/images/176420d890f649098c5d2e0d4e379451.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:28:50,991 log Not Found: /media/images/a17de0df5b9a4c7c9b6022660d7e44eb.jpg
+WARNING 2024-01-05 05:28:50,996 basehttp "GET /media/images/a17de0df5b9a4c7c9b6022660d7e44eb.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:28:51,007 log Not Found: /media/images/22c498e130304438b157a35011fb6904.jpg
+WARNING 2024-01-05 05:28:51,012 basehttp "GET /media/images/22c498e130304438b157a35011fb6904.jpg HTTP/1.1" 404 8518
+ERROR 2024-01-05 05:28:59,774 log Internal Server Error: /table_update/19/
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\views.py", line 251, in destroy
+    instance.delete()
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\models.py", line 92, in delete
+    self.save()
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\models.py", line 906, in save
+    with Image.open(self.image.path) as img:
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\PIL\Image.py", line 3227, in open
+    fp = builtins.open(filename, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\User\\Documents\\Work\\Ramin\\floramedtour\\media\\images\\49072ed13b094f89a587f4cc1adcc164.jpg'
+ERROR 2024-01-05 05:28:59,786 basehttp "DELETE /table_update/19/ HTTP/1.1" 500 114920
+WARNING 2024-01-05 05:30:48,926 log Not Found: /media/images/e27f6e64d41a43e795618160273d8ea5.jpg
+WARNING 2024-01-05 05:30:49,072 basehttp "GET /media/images/e27f6e64d41a43e795618160273d8ea5.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:30:49,556 log Not Found: /media/images/cd54d6df53b54ceeb149af30485f2004.jpg
+WARNING 2024-01-05 05:30:49,559 basehttp "GET /media/images/cd54d6df53b54ceeb149af30485f2004.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:30:49,576 log Not Found: /media/images/0679ae6a159241689186801b3cf69413.jpg
+WARNING 2024-01-05 05:30:49,579 basehttp "GET /media/images/0679ae6a159241689186801b3cf69413.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:30:54,407 log Not Found: /media/images/5122b1428d954b77a1e967a97807c62a.jpg
+WARNING 2024-01-05 05:30:54,440 basehttp "GET /media/images/5122b1428d954b77a1e967a97807c62a.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:30:54,461 log Not Found: /media/images/6e4c3c289e1946ad8bb3244fd64e3e20.jpg
+WARNING 2024-01-05 05:30:54,469 basehttp "GET /media/images/6e4c3c289e1946ad8bb3244fd64e3e20.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:30:54,507 log Not Found: /media/images/37a6129c89e94eb6a1ac6b62e449d2de.jpg
+WARNING 2024-01-05 05:30:54,572 basehttp "GET /media/images/37a6129c89e94eb6a1ac6b62e449d2de.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:30:54,774 log Not Found: /media/images/ea63fc16d4314fbc99efb403b03b7a44.jpg
+WARNING 2024-01-05 05:30:54,779 basehttp "GET /media/images/ea63fc16d4314fbc99efb403b03b7a44.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:30:54,799 log Not Found: /media/images/b29357cfd7e24b6da4680e0246286480.jpg
+WARNING 2024-01-05 05:30:54,811 basehttp "GET /media/images/b29357cfd7e24b6da4680e0246286480.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:30:55,457 log Not Found: /media/images/c3b8db8f3f82437881c84b076a778a1c.jpg
+WARNING 2024-01-05 05:30:55,490 basehttp "GET /media/images/c3b8db8f3f82437881c84b076a778a1c.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:30:55,597 log Not Found: /media/images/673befba045b4c08a37907aa0e01adbb.jpg
+WARNING 2024-01-05 05:30:55,961 basehttp "GET /media/images/673befba045b4c08a37907aa0e01adbb.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:30:55,977 log Not Found: /media/images/9d293e3014df4aacb8d405940f43bee6.png
+WARNING 2024-01-05 05:30:56,032 log Not Found: /media/images/a98cfd49ed6a4d6bb8273c52006023b6.jpg
+WARNING 2024-01-05 05:30:56,033 basehttp "GET /media/images/9d293e3014df4aacb8d405940f43bee6.png HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:30:56,039 basehttp "GET /media/images/a98cfd49ed6a4d6bb8273c52006023b6.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:30:56,654 log Not Found: /media/images/c432d94fafdd4b9fb638591c7148c72a.jpg
+WARNING 2024-01-05 05:30:56,658 basehttp "GET /media/images/c432d94fafdd4b9fb638591c7148c72a.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:30:57,337 log Not Found: /media/images/22c498e130304438b157a35011fb6904.jpg
+WARNING 2024-01-05 05:30:57,430 basehttp "GET /media/images/22c498e130304438b157a35011fb6904.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:30:57,592 log Not Found: /media/images/176420d890f649098c5d2e0d4e379451.jpg
+WARNING 2024-01-05 05:30:57,657 basehttp "GET /media/images/176420d890f649098c5d2e0d4e379451.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:30:57,804 log Not Found: /media/images/a17de0df5b9a4c7c9b6022660d7e44eb.jpg
+WARNING 2024-01-05 05:30:57,869 basehttp "GET /media/images/a17de0df5b9a4c7c9b6022660d7e44eb.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:30:58,108 log Not Found: /media/images/ef2047a2893e4404bc54d7cbb85dae0f.jpg
+WARNING 2024-01-05 05:30:58,128 basehttp "GET /media/images/ef2047a2893e4404bc54d7cbb85dae0f.jpg HTTP/1.1" 404 8518
+ERROR 2024-01-05 05:51:27,253 log Internal Server Error: /table_update/20/
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\views.py", line 251, in destroy
+    instance.delete()
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\models.py", line 93, in delete
+    self.save()
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\models.py", line 907, in save
+    with Image.open(self.image.path) as img:
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\PIL\Image.py", line 3227, in open
+    fp = builtins.open(filename, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\User\\Documents\\Work\\Ramin\\floramedtour\\media\\images\\b29357cfd7e24b6da4680e0246286480.jpg'
+ERROR 2024-01-05 05:51:27,282 basehttp "DELETE /table_update/20/ HTTP/1.1" 500 114920
+ERROR 2024-01-05 05:51:38,535 log Internal Server Error: /table_update/21/
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\views.py", line 251, in destroy
+    instance.delete()
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\models.py", line 93, in delete
+    self.save()
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\models.py", line 907, in save
+    with Image.open(self.image.path) as img:
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\PIL\Image.py", line 3227, in open
+    fp = builtins.open(filename, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\User\\Documents\\Work\\Ramin\\floramedtour\\media\\images\\5122b1428d954b77a1e967a97807c62a.jpg'
+ERROR 2024-01-05 05:51:38,547 basehttp "DELETE /table_update/21/ HTTP/1.1" 500 114920
+ERROR 2024-01-05 05:51:51,176 log Internal Server Error: /table_update/25/
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\views.py", line 251, in destroy
+    instance.delete()
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\models.py", line 93, in delete
+    self.save()
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\models.py", line 907, in save
+    with Image.open(self.image.path) as img:
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\PIL\Image.py", line 3227, in open
+    fp = builtins.open(filename, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\User\\Documents\\Work\\Ramin\\floramedtour\\media\\images\\c3b8db8f3f82437881c84b076a778a1c.jpg'
+ERROR 2024-01-05 05:51:51,192 basehttp "DELETE /table_update/25/ HTTP/1.1" 500 114920
+WARNING 2024-01-05 05:52:02,683 log Not Found: /media/images/0679ae6a159241689186801b3cf69413.jpg
+WARNING 2024-01-05 05:52:02,694 basehttp "GET /media/images/0679ae6a159241689186801b3cf69413.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:52:02,709 log Not Found: /media/images/e27f6e64d41a43e795618160273d8ea5.jpg
+WARNING 2024-01-05 05:52:02,721 basehttp "GET /media/images/e27f6e64d41a43e795618160273d8ea5.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:52:02,892 log Not Found: /media/images/cd54d6df53b54ceeb149af30485f2004.jpg
+WARNING 2024-01-05 05:52:02,900 basehttp "GET /media/images/cd54d6df53b54ceeb149af30485f2004.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:52:04,384 log Not Found: /media/images/37a6129c89e94eb6a1ac6b62e449d2de.jpg
+WARNING 2024-01-05 05:52:04,425 basehttp "GET /media/images/37a6129c89e94eb6a1ac6b62e449d2de.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:52:04,524 log Not Found: /media/images/6e4c3c289e1946ad8bb3244fd64e3e20.jpg
+WARNING 2024-01-05 05:52:04,534 basehttp "GET /media/images/6e4c3c289e1946ad8bb3244fd64e3e20.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:52:05,261 log Not Found: /media/images/ea63fc16d4314fbc99efb403b03b7a44.jpg
+WARNING 2024-01-05 05:52:05,273 basehttp "GET /media/images/ea63fc16d4314fbc99efb403b03b7a44.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:52:05,579 log Not Found: /media/images/a98cfd49ed6a4d6bb8273c52006023b6.jpg
+WARNING 2024-01-05 05:52:05,592 basehttp "GET /media/images/a98cfd49ed6a4d6bb8273c52006023b6.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:52:06,592 log Not Found: /media/images/c432d94fafdd4b9fb638591c7148c72a.jpg
+WARNING 2024-01-05 05:52:06,628 basehttp "GET /media/images/c432d94fafdd4b9fb638591c7148c72a.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:52:06,652 log Not Found: /media/images/673befba045b4c08a37907aa0e01adbb.jpg
+WARNING 2024-01-05 05:52:06,673 basehttp "GET /media/images/673befba045b4c08a37907aa0e01adbb.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:52:07,333 log Not Found: /media/images/9d293e3014df4aacb8d405940f43bee6.png
+WARNING 2024-01-05 05:52:07,336 basehttp "GET /media/images/9d293e3014df4aacb8d405940f43bee6.png HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:52:07,652 log Not Found: /media/images/22c498e130304438b157a35011fb6904.jpg
+WARNING 2024-01-05 05:52:07,656 basehttp "GET /media/images/22c498e130304438b157a35011fb6904.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:52:07,998 log Not Found: /media/images/176420d890f649098c5d2e0d4e379451.jpg
+WARNING 2024-01-05 05:52:08,003 basehttp "GET /media/images/176420d890f649098c5d2e0d4e379451.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:52:08,030 log Not Found: /favicon.ico
+WARNING 2024-01-05 05:52:08,047 basehttp "GET /favicon.ico HTTP/1.1" 404 8157
+WARNING 2024-01-05 05:52:08,302 log Not Found: /media/images/a17de0df5b9a4c7c9b6022660d7e44eb.jpg
+WARNING 2024-01-05 05:52:08,312 log Not Found: /media/images/ef2047a2893e4404bc54d7cbb85dae0f.jpg
+WARNING 2024-01-05 05:52:08,314 basehttp "GET /media/images/a17de0df5b9a4c7c9b6022660d7e44eb.jpg HTTP/1.1" 404 8518
+WARNING 2024-01-05 05:52:08,320 basehttp "GET /media/images/ef2047a2893e4404bc54d7cbb85dae0f.jpg HTTP/1.1" 404 8518
+ERROR 2024-01-05 05:52:22,176 log Internal Server Error: /admin/common/systemsettingspic/
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\shutil.py", line 788, in move
+    os.rename(src, real_dst)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\User\\Documents\\Work\\Ramin\\floramedtour\\media\\images\\e71eabad123f43cd96f055536cb89a9c.jpg' -> 'temp/e71eabad123f43cd96f055536cb89a9c.jpg'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\contrib\admin\options.py", line 688, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\utils\decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\views\decorators\cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\contrib\admin\sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\utils\decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\utils\decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\contrib\admin\options.py", line 1983, in changelist_view
+    response = self.response_action(
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\contrib\admin\options.py", line 1593, in response_action
+    response = func(self, request, queryset)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\contrib\admin\actions.py", line 51, in delete_selected
+    modeladmin.delete_queryset(request, queryset)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\contrib\admin\options.py", line 1237, in delete_queryset
+    queryset.delete()
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\db\models\query.py", line 1148, in delete
+    deleted, _rows_count = collector.delete()
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\db\models\deletion.py", line 512, in delete
+    signals.post_delete.send(
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\dispatch\dispatcher.py", line 176, in send
+    return [
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\dispatch\dispatcher.py", line 177, in <listcomp>
+    (receiver, receiver(signal=self, sender=sender, **named))
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\models.py", line 925, in delete_picture
+    shutil.move(instance.image.path, destination)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\shutil.py", line 802, in move
+    copy_function(src, real_dst)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\shutil.py", line 432, in copy2
+    copyfile(src, dst, follow_symlinks=follow_symlinks)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\shutil.py", line 261, in copyfile
+    with open(src, 'rb') as fsrc, open(dst, 'wb') as fdst:
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\User\\Documents\\Work\\Ramin\\floramedtour\\media\\images\\e71eabad123f43cd96f055536cb89a9c.jpg'
+ERROR 2024-01-05 05:52:22,201 basehttp "POST /admin/common/systemsettingspic/ HTTP/1.1" 500 164619
+ERROR 2024-01-05 05:52:57,853 log Internal Server Error: /table_update/22/
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\views.py", line 251, in destroy
+    instance.delete()
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\models.py", line 93, in delete
+    self.save()
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\models.py", line 907, in save
+    with Image.open(self.image.path) as img:
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\PIL\Image.py", line 3227, in open
+    fp = builtins.open(filename, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\User\\Documents\\Work\\Ramin\\floramedtour\\media\\images\\37a6129c89e94eb6a1ac6b62e449d2de.jpg'
+ERROR 2024-01-05 05:52:57,867 basehttp "DELETE /table_update/22/ HTTP/1.1" 500 114920
+ERROR 2024-01-05 05:53:01,642 log Internal Server Error: /table_update/24/
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\views.py", line 251, in destroy
+    instance.delete()
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\models.py", line 93, in delete
+    self.save()
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\models.py", line 907, in save
+    with Image.open(self.image.path) as img:
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\PIL\Image.py", line 3227, in open
+    fp = builtins.open(filename, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\User\\Documents\\Work\\Ramin\\floramedtour\\media\\images\\ea63fc16d4314fbc99efb403b03b7a44.jpg'
+ERROR 2024-01-05 05:53:01,655 basehttp "DELETE /table_update/24/ HTTP/1.1" 500 114920
+ERROR 2024-01-05 05:53:04,910 log Internal Server Error: /table_update/26/
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\views.py", line 251, in destroy
+    instance.delete()
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\models.py", line 93, in delete
+    self.save()
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\models.py", line 907, in save
+    with Image.open(self.image.path) as img:
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\PIL\Image.py", line 3227, in open
+    fp = builtins.open(filename, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\User\\Documents\\Work\\Ramin\\floramedtour\\media\\images\\a98cfd49ed6a4d6bb8273c52006023b6.jpg'
+ERROR 2024-01-05 05:53:04,926 basehttp "DELETE /table_update/26/ HTTP/1.1" 500 114920
+ERROR 2024-01-05 05:53:08,573 log Internal Server Error: /table_update/27/
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\views.py", line 251, in destroy
+    instance.delete()
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\models.py", line 93, in delete
+    self.save()
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\models.py", line 907, in save
+    with Image.open(self.image.path) as img:
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\PIL\Image.py", line 3227, in open
+    fp = builtins.open(filename, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\User\\Documents\\Work\\Ramin\\floramedtour\\media\\images\\673befba045b4c08a37907aa0e01adbb.jpg'
+ERROR 2024-01-05 05:53:08,588 basehttp "DELETE /table_update/27/ HTTP/1.1" 500 114920
+ERROR 2024-01-05 05:53:12,378 log Internal Server Error: /table_update/28/
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\views.py", line 251, in destroy
+    instance.delete()
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\models.py", line 93, in delete
+    self.save()
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\models.py", line 907, in save
+    with Image.open(self.image.path) as img:
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\PIL\Image.py", line 3227, in open
+    fp = builtins.open(filename, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\User\\Documents\\Work\\Ramin\\floramedtour\\media\\images\\9d293e3014df4aacb8d405940f43bee6.png'
+ERROR 2024-01-05 05:53:12,399 basehttp "DELETE /table_update/28/ HTTP/1.1" 500 114920
+ERROR 2024-01-05 05:53:18,149 log Internal Server Error: /table_update/29/
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\views.py", line 251, in destroy
+    instance.delete()
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\models.py", line 93, in delete
+    self.save()
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\models.py", line 907, in save
+    with Image.open(self.image.path) as img:
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\PIL\Image.py", line 3227, in open
+    fp = builtins.open(filename, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\User\\Documents\\Work\\Ramin\\floramedtour\\media\\images\\c432d94fafdd4b9fb638591c7148c72a.jpg'
+ERROR 2024-01-05 05:53:18,160 basehttp "DELETE /table_update/29/ HTTP/1.1" 500 114920
+ERROR 2024-01-05 05:53:21,391 log Internal Server Error: /table_update/30/
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\views.py", line 251, in destroy
+    instance.delete()
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\models.py", line 93, in delete
+    self.save()
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\models.py", line 907, in save
+    with Image.open(self.image.path) as img:
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\PIL\Image.py", line 3227, in open
+    fp = builtins.open(filename, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\User\\Documents\\Work\\Ramin\\floramedtour\\media\\images\\a17de0df5b9a4c7c9b6022660d7e44eb.jpg'
+ERROR 2024-01-05 05:53:21,405 basehttp "DELETE /table_update/30/ HTTP/1.1" 500 114920
+ERROR 2024-01-05 05:53:24,476 log Internal Server Error: /table_update/31/
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\views.py", line 251, in destroy
+    instance.delete()
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\models.py", line 93, in delete
+    self.save()
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\models.py", line 907, in save
+    with Image.open(self.image.path) as img:
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\PIL\Image.py", line 3227, in open
+    fp = builtins.open(filename, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\User\\Documents\\Work\\Ramin\\floramedtour\\media\\images\\22c498e130304438b157a35011fb6904.jpg'
+ERROR 2024-01-05 05:53:24,490 basehttp "DELETE /table_update/31/ HTTP/1.1" 500 114920
+ERROR 2024-01-05 05:53:27,879 log Internal Server Error: /table_update/32/
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\views.py", line 251, in destroy
+    instance.delete()
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\models.py", line 93, in delete
+    self.save()
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\models.py", line 907, in save
+    with Image.open(self.image.path) as img:
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\PIL\Image.py", line 3227, in open
+    fp = builtins.open(filename, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\User\\Documents\\Work\\Ramin\\floramedtour\\media\\images\\176420d890f649098c5d2e0d4e379451.jpg'
+ERROR 2024-01-05 05:53:27,891 basehttp "DELETE /table_update/32/ HTTP/1.1" 500 114920
+ERROR 2024-01-05 05:53:31,869 log Internal Server Error: /table_update/33/
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\views.py", line 251, in destroy
+    instance.delete()
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\models.py", line 93, in delete
+    self.save()
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\models.py", line 907, in save
+    with Image.open(self.image.path) as img:
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\PIL\Image.py", line 3227, in open
+    fp = builtins.open(filename, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\User\\Documents\\Work\\Ramin\\floramedtour\\media\\images\\ef2047a2893e4404bc54d7cbb85dae0f.jpg'
+ERROR 2024-01-05 05:53:31,881 basehttp "DELETE /table_update/33/ HTTP/1.1" 500 114920
+WARNING 2024-01-05 05:53:34,655 log Not Found: /serialized_table/common/Pictures
+WARNING 2024-01-05 05:53:34,657 basehttp "GET /serialized_table/common/Pictures?page=2&page_size=10 HTTP/1.1" 404 26
+ERROR 2024-01-05 05:53:46,770 log Internal Server Error: /table_update/35/
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\views.py", line 251, in destroy
+    instance.delete()
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\models.py", line 93, in delete
+    self.save()
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\models.py", line 907, in save
+    with Image.open(self.image.path) as img:
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\PIL\Image.py", line 3227, in open
+    fp = builtins.open(filename, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\User\\Documents\\Work\\Ramin\\floramedtour\\media\\images\\6e4c3c289e1946ad8bb3244fd64e3e20.jpg'
+ERROR 2024-01-05 05:53:46,784 basehttp "DELETE /table_update/35/ HTTP/1.1" 500 114920
+ERROR 2024-01-05 05:53:51,785 log Internal Server Error: /table_update/36/
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\views.py", line 251, in destroy
+    instance.delete()
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\models.py", line 93, in delete
+    self.save()
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\models.py", line 907, in save
+    with Image.open(self.image.path) as img:
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\PIL\Image.py", line 3227, in open
+    fp = builtins.open(filename, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\User\\Documents\\Work\\Ramin\\floramedtour\\media\\images\\cd54d6df53b54ceeb149af30485f2004.jpg'
+ERROR 2024-01-05 05:53:51,797 basehttp "DELETE /table_update/36/ HTTP/1.1" 500 114929
+ERROR 2024-01-05 05:53:56,181 log Internal Server Error: /table_update/37/
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\views.py", line 251, in destroy
+    instance.delete()
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\models.py", line 93, in delete
+    self.save()
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\models.py", line 907, in save
+    with Image.open(self.image.path) as img:
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\PIL\Image.py", line 3227, in open
+    fp = builtins.open(filename, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\User\\Documents\\Work\\Ramin\\floramedtour\\media\\images\\0679ae6a159241689186801b3cf69413.jpg'
+ERROR 2024-01-05 05:53:56,216 basehttp "DELETE /table_update/37/ HTTP/1.1" 500 114932
+ERROR 2024-01-05 05:54:00,520 log Internal Server Error: /table_update/38/
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\views.py", line 251, in destroy
+    instance.delete()
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\models.py", line 93, in delete
+    self.save()
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\models.py", line 907, in save
+    with Image.open(self.image.path) as img:
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\PIL\Image.py", line 3227, in open
+    fp = builtins.open(filename, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\User\\Documents\\Work\\Ramin\\floramedtour\\media\\images\\e27f6e64d41a43e795618160273d8ea5.jpg'
+ERROR 2024-01-05 05:54:00,534 basehttp "DELETE /table_update/38/ HTTP/1.1" 500 114937
+ERROR 2024-01-05 05:55:41,987 log Internal Server Error: /admin/common/systemsettingspic/
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\shutil.py", line 788, in move
+    os.rename(src, real_dst)
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\User\\Documents\\Work\\Ramin\\floramedtour\\media\\images\\17a5de85aee84bc19078572f16ff8a18.jpg' -> 'temp/17a5de85aee84bc19078572f16ff8a18.jpg'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\contrib\admin\options.py", line 688, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\utils\decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\views\decorators\cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\contrib\admin\sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\utils\decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\utils\decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\contrib\admin\options.py", line 1983, in changelist_view
+    response = self.response_action(
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\contrib\admin\options.py", line 1593, in response_action
+    response = func(self, request, queryset)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\contrib\admin\actions.py", line 51, in delete_selected
+    modeladmin.delete_queryset(request, queryset)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\contrib\admin\options.py", line 1237, in delete_queryset
+    queryset.delete()
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\db\models\query.py", line 1148, in delete
+    deleted, _rows_count = collector.delete()
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\db\models\deletion.py", line 512, in delete
+    signals.post_delete.send(
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\dispatch\dispatcher.py", line 176, in send
+    return [
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\dispatch\dispatcher.py", line 177, in <listcomp>
+    (receiver, receiver(signal=self, sender=sender, **named))
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\models.py", line 925, in delete_picture
+    shutil.move(instance.image.path, destination)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\shutil.py", line 802, in move
+    copy_function(src, real_dst)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\shutil.py", line 432, in copy2
+    copyfile(src, dst, follow_symlinks=follow_symlinks)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\shutil.py", line 261, in copyfile
+    with open(src, 'rb') as fsrc, open(dst, 'wb') as fdst:
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\User\\Documents\\Work\\Ramin\\floramedtour\\media\\images\\17a5de85aee84bc19078572f16ff8a18.jpg'
+ERROR 2024-01-05 05:55:42,007 basehttp "POST /admin/common/systemsettingspic/ HTTP/1.1" 500 164951
+WARNING 2024-01-05 05:55:42,748 log Not Found: /favicon.ico
+WARNING 2024-01-05 05:55:42,750 basehttp "GET /favicon.ico HTTP/1.1" 404 8157
+WARNING 2024-01-05 15:04:57,741 log Bad Request: /token/refresh/
+WARNING 2024-01-05 15:04:57,746 basehttp "POST /token/refresh/ HTTP/1.1" 400 23
+WARNING 2024-01-05 15:05:14,755 log Bad Request: /token/refresh/
+WARNING 2024-01-05 15:05:14,757 basehttp "POST /token/refresh/ HTTP/1.1" 400 23
+WARNING 2024-01-05 19:20:55,065 log Not Found: /favicon.ico
+WARNING 2024-01-05 19:20:55,085 basehttp "GET /favicon.ico HTTP/1.1" 404 8157
+WARNING 2024-01-05 19:24:08,756 log Bad Request: /table_update/
+WARNING 2024-01-05 19:24:08,765 basehttp "POST /table_update/ HTTP/1.1" 400 85
+WARNING 2024-01-05 19:34:28,423 log Bad Request: /table_update/
+WARNING 2024-01-05 19:34:28,432 basehttp "POST /table_update/ HTTP/1.1" 400 85
+ERROR 2024-01-05 19:44:35,852 log Internal Server Error: /table_update/
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\serializers.py", line 962, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\db\models\query.py", line 658, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\models.py", line 899, in save
+    self.image.name = generate_unique_image_filename(self.image)
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\utils\tools.py", line 355, in generate_unique_image_filename
+    _, ext = os.path.splitext(image.name)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\ntpath.py", line 204, in splitext
+    p = os.fspath(p)
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\views.py", line 224, in create
+    self.perform_create(serializer)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\mixins.py", line 24, in perform_create
+    serializer.save()
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\serializers.py", line 212, in save
+    self.instance = self.create(validated_data)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\serializers.py", line 981, in create
+    raise TypeError(msg)
+TypeError: Got a `TypeError` when calling `Pictures.objects.create()`. This may be because you have a writable field on the serializer class that is not a valid argument to `Pictures.objects.create()`. You may need to make the field read-only, or override the CustomModelSerializer.create() method to handle this correctly.
+Original exception was:
+ Traceback (most recent call last):
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\serializers.py", line 962, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\db\models\query.py", line 658, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\models.py", line 899, in save
+    self.image.name = generate_unique_image_filename(self.image)
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\utils\tools.py", line 355, in generate_unique_image_filename
+    _, ext = os.path.splitext(image.name)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\ntpath.py", line 204, in splitext
+    p = os.fspath(p)
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+
+ERROR 2024-01-05 19:44:35,897 basehttp "POST /table_update/ HTTP/1.1" 500 169265
+WARNING 2024-01-05 19:45:18,039 log Bad Request: /table_update/
+WARNING 2024-01-05 19:45:18,052 basehttp "POST /table_update/ HTTP/1.1" 400 85
+WARNING 2024-01-05 19:49:29,918 log Bad Request: /table_update/
+WARNING 2024-01-05 19:49:29,929 basehttp "POST /table_update/ HTTP/1.1" 400 85

@@ -529,6 +529,7 @@ const relationModal = (parentMetadata, metadata, bodyRow, td) => {
 const controlRow = (table, record, bodyRow, td) => {
 
     let message;
+    let message2;
     let tag;
     let keyName = `editingTable_${table['model_info']['app']}_${table['model_info']['name']}`;
     keyName = keyName.toLowerCase();
@@ -629,29 +630,33 @@ const controlRow = (table, record, bodyRow, td) => {
                             try {
                                 let data = await sendToServer('PUT', `/table_update/${record.id}/`, body)
 
-                                message = "Updated Instance!";
+                                if (data.ok) {
+                                    message = "Updated Instance!";
                                 
-                                Array.from(bodyRow.children).forEach((cell, index) => {
-                                    if (index !== 0) {
-                                        let key = table['field_info'][index - 1]['name'];
-                                        if (key in data) {
-                                            cell.hasChanged = false;
-                                            cell.initRelateValue = data[key];
-
-                                            const span = document.createElement('span');
-                                            span.textContent = data[key];
-                                            cell.innerHTML = '';
-                                            cell.appendChild(span);
-
-                                            bodyRow.className = "";
+                                    Array.from(bodyRow.children).forEach((cell, index) => {
+                                        if (index !== 0) {
+                                            let key = table['field_info'][index - 1]['name'];
+                                            if (key in data) {
+                                                cell.hasChanged = false;
+                                                cell.initRelateValue = data[key];
+    
+                                                const span = document.createElement('span');
+                                                span.textContent = data[key];
+                                                cell.innerHTML = '';
+                                                cell.appendChild(span);
+    
+                                                bodyRow.className = "";
+                                            }
                                         }
-                                    }
-                                });
-
-                                sessionStorage.removeItem(keyName); // Pagination handling permision
-
-                                // Adding first cell control buttons
-                                let icon1 = controlRow(table, data, bodyRow, bodyRow.firstChild)
+                                    });
+    
+                                    sessionStorage.removeItem(keyName); // Pagination handling permision
+    
+                                    // Adding first cell control buttons
+                                    let icon1 = controlRow(table, data, bodyRow, bodyRow.firstChild)    
+                                } else {
+                                    message2 = data.detail;
+                                }
 
                             } catch(error) {
                                 // Data send to server Rejected or stablize handling issues.
@@ -689,8 +694,8 @@ const controlRow = (table, record, bodyRow, td) => {
                                     // Adding first cell control buttons
                                     let icon1 = controlRow(table, data, bodyRow, bodyRow.firstChild)
                                 } else {
-                                    console.log(data);
-                                    message = await data.json();
+                                    // message = await data.json();
+                                    message2 = data.detail;
                                 }
                             } catch(error) {
                                 // Data send to server Rejected or stablize handling issues.
@@ -706,6 +711,8 @@ const controlRow = (table, record, bodyRow, td) => {
             await showConfirmationModal(`Are you sure you want to upload these changes to server?`, 'Confirmation!', modalButtons);
             if (message) {
                 showAlertTooltip(bodyRow.firstChild, message);
+            } else if (message2) {
+                showWarningTooltip(bodyRow.firstChild, message2);
             }
         }
     });
@@ -763,7 +770,7 @@ const controlRow = (table, record, bodyRow, td) => {
             // $('.modal-body').text(`Are you sure you want to delete this row?`);
             $('.modal-body').html(`<p>Are you sure you want to delete this row?</p><p>No undo performs!</p><p>${message}</p>`);
 
-            $('#deleteButton').off('click').click(function() {
+            $('#deleteButton').off('click').click(async function() {
                 var icon2 = $('#deleteModal').data('icon2');
 
                 let body = {
@@ -771,31 +778,36 @@ const controlRow = (table, record, bodyRow, td) => {
                     model: table['model_info']['name'],
                     id: record.id
                 }
-                sendToServer('DELETE', `/table_update/${record.id}/`, body)
-                .then(data  => { // Data send to server Succeeded.
-                    
-                    if (bodyRow.nextElementSibling) {
-                        tag = bodyRow.nextElementSibling.firstChild;
-                    } else if (bodyRow.previousElementSibling) {
-                        tag = bodyRow.previousElementSibling.firstChild;
-                    } else {
-                        tag = bodyRow.parentElement.previousElementSibling.firstChild.firstChild;
-                    }
+                
+                try {
+                    let data = await sendToServer('DELETE', `/table_update/${record.id}/`, body)
 
-                    message = 'Row Deleted!';
-                    bodyRow.remove();
-                    
-                    console.log('Deleted');
-                    
-                    if (message) {
-                        showWarningTooltip(tag, message);
+                    if (data.ok) {
+                        if (bodyRow.nextElementSibling) {
+                            tag = bodyRow.nextElementSibling.firstChild;
+                        } else if (bodyRow.previousElementSibling) {
+                            tag = bodyRow.previousElementSibling.firstChild;
+                        } else {
+                            tag = bodyRow.parentElement.previousElementSibling.firstChild.firstChild;
+                        }
+    
+                        message = 'Row Deleted!';
+                        bodyRow.remove();
+                        
+                        console.log('Deleted');    
+                    } else {
+                        message = data.detail;
                     }
-                })
-                .catch(error => {
+                    
+                } catch(error) {
                     // Deleting model instance handling issues.
                     message = 'Server fault occurs!';
                     console.error(`Error in instance ommite. ${error}`);
-                });    
+                };  
+                
+                if (message) {
+                    showWarningTooltip(bodyRow.firstChild, message);
+                }
 
                 // // Reset the message to the default
                 // $('.modal-body').text(defaultMsg);
@@ -851,7 +863,9 @@ const controlRow = (table, record, bodyRow, td) => {
 }
 
 function createNewRow(table, tbody, addRowButton, keyName) {
-    let message; 
+    console.log(table);
+    let message;
+    let message2;
     const newRow = document.createElement('tr');
     newRow.className = 'table-active'; // Editing row indicator
     tbody.prepend(newRow);
@@ -931,28 +945,32 @@ function createNewRow(table, tbody, addRowButton, keyName) {
                         
                         try {
                             let data = await sendToServer('POST', '/table_update/', body)
-                            Array.from(newRow.children).forEach((cell, index) => {
-                                if (index !== 0) {
-                                    const span = document.createElement('span');
-                                    span.textContent = data[table['field_info'][index - 1]['name']];
-                                    cell.innerHTML = '';
-                                    cell.appendChild(span);
-                                    cell.hasChanged = false;
-                                    cell.initRelateValue = span.textContent;
-                                }
-                            });
-
-                            message = "Upload data successfully!";
-
-                            // Adding first cell control buttons
-                            let icon1 = controlRow(table, data, newRow, newRow.firstChild)
-                            
-                            newRow.className = "";
-
-                            addRowButton.isAddingRow = false;
-                            addRowButton.disabled = false;
-                            
-                            sessionStorage.removeItem(keyName); // Pagination handling permision
+                            if (data.ok) {
+                                Array.from(newRow.children).forEach((cell, index) => {
+                                    if (index !== 0) {
+                                        const span = document.createElement('span');
+                                        span.textContent = data[table['field_info'][index - 1]['name']];
+                                        cell.innerHTML = '';
+                                        cell.appendChild(span);
+                                        cell.hasChanged = false;
+                                        cell.initRelateValue = span.textContent;
+                                    }
+                                });
+    
+                                message = "Upload data successfully!";
+    
+                                // Adding first cell control buttons
+                                let icon1 = controlRow(table, data, newRow, newRow.firstChild)
+                                
+                                newRow.className = "";
+    
+                                addRowButton.isAddingRow = false;
+                                addRowButton.disabled = false;
+                                
+                                sessionStorage.removeItem(keyName); // Pagination handling permision    
+                            } else {
+                                message2 = data.detail;
+                            }
 
                         } catch(error) {
                             
@@ -974,6 +992,8 @@ function createNewRow(table, tbody, addRowButton, keyName) {
         }
         if (message) {
             showAlertTooltip(newRow.firstChild, message, timeOut ? timeOut : 5);
+        } else if (message2) {
+            showWarningTooltip(newRow.firstChild, message2);
         }
     });
 
@@ -1098,8 +1118,94 @@ function createEditingField(table, field, bodyRow, td, keyName) {
                 this.reportValidity();
             });
 
+        } else if (field['is_file']) {
+            input = document.createElement('input');
+            input.type = 'file';
+            input.className = 'form-control';
+            input.value = initText;
+
+            // بررسی شرط null بودن
+            if (!field['nullable']) {
+                input.setAttribute('required', true);
+            }
+
+            input.addEventListener('input', function(event) {
+                console.log(event.target.files.length);
+
+                if (event.target.files.length) {
+                    // Type valication
+                    let file = event.target.files[0];
+                    let maxSize = 1024 * 1024;
+
+                    if(file.size > maxSize) {
+                        this.classList.add('is-invalid');
+                        this.setCustomValidity("File size must be less than 1MB");
+                    } else {
+                        this.classList.remove('is-invalid');
+                        this.setCustomValidity("");
+                    }
+
+                    if (field['type'].toLowerCase().includes('imagefield')) {
+                        if(file.type != "image/jpeg" && file.type != "image/png") {
+                            this.classList.add('is-invalid');
+                            this.setCustomValidity("File must be a JPEG or PNG image");
+                        } else {
+                            this.classList.remove('is-invalid');
+                            this.setCustomValidity("");
+                        }    
+                    }
+                }
+
+                if (input.value == initText) {
+                    td.hasChanged = false;
+                    if (this.classList.contains('is-valid')) {
+                        this.classList.remove('is-valid');
+                    }                        
+
+                } else {
+                    td.hasChanged = true;
+                    if (!this.classList.contains('is-valid')) {
+                        this.classList.add('is-valid');
+                    }                        
+
+                }
+                
+                // If is there a changed cell all ever.
+                if (Array.from(bodyRow.querySelectorAll('td')).filter(td => td.hasChanged === true).length) {
+                    if (!bodyRow.classList.contains('table-warning')) {
+                        bodyRow.classList.add('table-warning');
+                    }
+                    if (bodyRow.classList.contains('table-active')) {
+                        bodyRow.classList.remove('table-active');
+                    }    
+
+                    sessionStorage.setItem(keyName, true);
+
+                } else {
+
+                    if (bodyRow.classList.contains('table-warning')) {
+                        bodyRow.classList.remove('table-warning');
+                    }
+                    if (!bodyRow.classList.contains('table-active')) {
+                        bodyRow.classList.add('table-active');
+                    }    
+
+                    sessionStorage.removeItem(keyName);
+                }
+                
+                this.setCustomValidity('');
+                if (!this.checkValidity()) {
+                    this.classList.add('is-invalid');
+                    this.setCustomValidity('This field should not be null.');
+                } else {
+                    this.classList.remove('is-invalid');
+                    this.setCustomValidity('');
+                }
+                this.reportValidity();
+            });
         } else if (field['choices']) {  // Inital data list
-            select = document.createElement('select');
+
+            // select = document.createElement('select');
             select.className = 'form-control';
 
             let isOptionAvailable;

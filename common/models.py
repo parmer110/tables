@@ -24,6 +24,7 @@ from django.core.cache import cache
 from rest_framework_simplejwt.token_blacklist.models import OutstandingToken, BlacklistedToken as JWTBlacklistedToken
 from django.contrib.sessions.models import Session
 import uuid
+import shutil
 from common.utils.crypto import encoder, decoder
 from common.utils.tools import *
 
@@ -913,10 +914,15 @@ class Pictures(CommonModel):
 @receiver(post_delete, sender=Pictures)
 def delete_picture(sender, instance, **kwargs):
     if instance.image:
-        # حذف فایل از دیسک
-        if os.path.isfile(instance.image.path):
-            os.remove(instance.image.path)
-
+        # ایجاد مسیر موردنیاز
+        destination = 'temp/' + instance.image.name.split('/')[-1]
+        
+        # بررسی وجود پوشه و ایجاد آن در صورت لزوم
+        if not os.path.exists('temp'):
+            os.makedirs('temp')
+        
+        # منتقل کردن فایل به مسیر موردنظر
+        shutil.move(instance.image.path, destination)
 
 def get_templates(app_name):
     app = apps.get_app_config(app_name)

@@ -1,11 +1,7 @@
 from pathlib import Path
 import os
 from datetime import timedelta
-import logging
-import logging.handlers
-import atexit
 import environ
-import queue
 from .logging_setup import LOGGING
 
 DEVELOPMENT_MODE = True
@@ -39,8 +35,6 @@ DEBUG = env.bool('DJANGO_DEBUG', default=False)
 
 ALLOWED_HOSTS = env.list('ALLOWED_HOSTS', default=[])
 
-LOGGING = LOGGING
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -56,6 +50,7 @@ INSTALLED_APPS = [
     'communication',
     'financialhub',
     # 'debug_toolbar',
+    # 'logtailer',
     'django_extensions',
     'rest_framework',
     'rest_framework_simplejwt',
@@ -235,29 +230,9 @@ CORS_ALLOWED_ORIGINS = [
     "https://floramedtour.com",
 ]
 
-q = queue.Queue()
 
-error_listener = logging.handlers.QueueListener(
-    q, logging.FileHandler('error.log')
-)
-warning_listener = logging.handlers.QueueListener(
-    q, logging.FileHandler('warning.log')
-)
-debug_listener = logging.handlers.QueueListener(
-    q, logging.FileHandler('debug.log')
-)
-
-error_listener.start()
-warning_listener.start()
-debug_listener.start()
-
-def stop_listeners():
-    error_listener.stop()
-    warning_listener.stop()
-    debug_listener.stop()
 
 # Register the function to be called on exit
-atexit.register(stop_listeners)
 
 # if 'debug_toolbar' in INSTALLED_APPS:
 #     INSTALLED_APPS.remove('debug_toolbar')
