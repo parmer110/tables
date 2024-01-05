@@ -3,7 +3,7 @@ import os
 from datetime import timedelta
 import logging
 import logging.handlers
-from . import logging_setup
+import atexit
 import environ
 import queue
 from .logging_setup import LOGGING
@@ -251,9 +251,13 @@ error_listener.start()
 warning_listener.start()
 debug_listener.start()
 
-error_listener.stop()
-warning_listener.stop()
-debug_listener.stop()
+def stop_listeners():
+    error_listener.stop()
+    warning_listener.stop()
+    debug_listener.stop()
+
+# Register the function to be called on exit
+atexit.register(stop_listeners)
 
 # if 'debug_toolbar' in INSTALLED_APPS:
 #     INSTALLED_APPS.remove('debug_toolbar')

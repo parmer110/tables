@@ -664,30 +664,34 @@ const controlRow = (table, record, bodyRow, td) => {
                             try {
                                 let data = await sendToServer('PATCH', `/table_update/${record.id}/`, body)
 
-                                message = 'Updated!';
+                                if (data.ok) {
+                                    message = 'Updated!';
 
-                                Array.from(bodyRow.children).forEach((cell, index) => {
-                                    if (index !== 0) {
-                                        let key = table['field_info'][index - 1]['name'];
-                                        if (key in data) {
-                                            cell.hasChanged = false;
-                                            cell.initRelateValue = data[key];
-
-                                            const span = document.createElement('span');
-                                            span.textContent = data[key];
-                                            cell.innerHTML = '';
-                                            cell.appendChild(span);
-
-                                            bodyRow.className = "";
+                                    Array.from(bodyRow.children).forEach((cell, index) => {
+                                        if (index !== 0) {
+                                            let key = table['field_info'][index - 1]['name'];
+                                            if (key in data) {
+                                                cell.hasChanged = false;
+                                                cell.initRelateValue = data[key];
+    
+                                                const span = document.createElement('span');
+                                                span.textContent = data[key];
+                                                cell.innerHTML = '';
+                                                cell.appendChild(span);
+    
+                                                bodyRow.className = "";
+                                            }
                                         }
-                                    }
-                                });
+                                    });
 
-                                sessionStorage.removeItem(keyName); // Pagination handling permision
+                                    sessionStorage.removeItem(keyName); // Pagination handling permision
 
-                                // Adding first cell control buttons
-                                let icon1 = controlRow(table, data, bodyRow, bodyRow.firstChild)
-
+                                    // Adding first cell control buttons
+                                    let icon1 = controlRow(table, data, bodyRow, bodyRow.firstChild)
+                                } else {
+                                    console.log(data);
+                                    message = await data.json();
+                                }
                             } catch(error) {
                                 // Data send to server Rejected or stablize handling issues.
                                 message = ('Some incorrect data found!');

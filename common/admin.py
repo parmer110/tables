@@ -56,8 +56,8 @@ class TranslateAdmin(admin.ModelAdmin):
         }
 
 class SystemSettingsPicAdmin(admin.ModelAdmin):
-    list_display=("id", "app", "name", "max_image_size_width", "max_image_size_height", "max_image_file_size_mb", "allowed_image_formats")
-    list_editable=("app", "name", "max_image_size_width", "max_image_size_height", "max_image_file_size_mb", "allowed_image_formats")
+    list_display=("id", "company", "app", "name", "max_image_size_width", "max_image_size_height", "max_image_file_size_mb", "allowed_image_formats")
+    list_editable=("app", "company", "name", "max_image_size_width", "max_image_size_height", "max_image_file_size_mb", "allowed_image_formats")
 
 class PicturesAdmin(admin.ModelAdmin):
     list_display=("id", "image_settings", "name", "description", "image")
@@ -101,8 +101,8 @@ class SettingMenusAdmin(admin.ModelAdmin):
     list_editable=("index", "name", "parent", "cat", "path", "container_tag", "is_active")
 
 class SettingAdmin(admin.ModelAdmin):
-    list_display=("id", "application", "page", "model",)
-    list_editable=("application", "page", "model",)
+    list_display=("id", "company", "application", "page", "model",)
+    list_editable=("company", "application", "page", "model",)
 
 
 class AuditLogAdmin(admin.ModelAdmin):
