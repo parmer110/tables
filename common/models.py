@@ -885,44 +885,57 @@ class Pictures(CommonModel):
     image_height = models.PositiveIntegerField(null=True, blank=True, default='image_width')
 
     def save(self, *args, **kwargs):
-        # از مقادیر مدل ImageSettings استفاده می‌کنیم
-        max_upload_size = self.image_settings.max_image_file_size_bytes
-        formats = self.image_settings.allowed_image_formats
-        max_image_size = (self.image_settings.max_image_size_width, self.image_settings.max_image_size_height)
 
-        # اختصاص مقادیر به فیلد image
-        self.image.max_upload_size = max_upload_size  # حداکثر حجم فایل
-        self.image.formats = formats  # فرمت‌های مجاز
-        
-        if not self.pk:  # بررسی برای ایجاد
-            # تولید نام منحصر به فرد برای فایل جدید
-            self.image.name = generate_unique_image_filename(self.image)
-            # ذخیره تصویر با استفاده از متد save از والدین ImageField
-            self.image.save(self.image.name, self.image.file, save=False)
+        if self.deleted_at and not self._state.adding:
+            if self.image and os.path.isfile(self.image.path):
+                destination = 'temp/' + self.image.name.split('/')[-1]
+
+                if not os.path.exists('temp'):
+                    os.makedirs('temp')
+
+                shutil.move(self.image.path, destination)
+        else:
+            # از مقادیر مدل ImageSettings استفاده می‌کنیم
+            max_upload_size = self.image_settings.max_image_file_size_bytes
+            formats = self.image_settings.allowed_image_formats
+            max_image_size = (self.image_settings.max_image_size_width, self.image_settings.max_image_size_height)
+
+            # اختصاص مقادیر به فیلد image
+            self.image.max_upload_size = max_upload_size  # حداکثر حجم فایل
+            self.image.formats = formats  # فرمت‌های مجاز
+            
+            if not self.pk:  # بررسی برای ایجاد
+                # تولید نام منحصر به فرد برای فایل جدید
+                self.image.name = generate_unique_image_filename(self.image)
+                # ذخیره تصویر با استفاده از متد save از والدین ImageField
+                self.image.save(self.image.name, self.image.file, save=False)
         
         super(Pictures, self).save(*args, **kwargs)
 
         if self.image:
         # Open the image and get its width
-            with Image.open(self.image.path) as img:
-                self.image_width = img.width
-                self.image_height = img.height
-                # Save the model again with updated image_width
-                super().save(update_fields=['image_width', 'image_height'])
+            if os.path.isfile(self.image.path):
+                with Image.open(self.image.path) as img:
+                    self.image_width = img.width
+                    self.image_height = img.height
+                    # Save the model again with updated image_width
+                    super().save(update_fields=['image_width', 'image_height'])
     
-# تابع برای حذف فایل پس از حذف مدل
-@receiver(post_delete, sender=Pictures)
-def delete_picture(sender, instance, **kwargs):
-    if instance.image:
-        # ایجاد مسیر موردنیاز
-        destination = 'temp/' + instance.image.name.split('/')[-1]
+# # تابع برای حذف فایل پس از حذف مدل
+# @receiver(post_delete, sender=Pictures)
+# def delete_picture(sender, instance, **kwargs):
+#     print("↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑")
+#     if instance.image and os.path.isfile(instance.image.path):
+#         print("↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓")
+#         # ایجاد مسیر موردنیاز
+#         destination = 'temp/' + instance.image.name.split('/')[-1]
         
-        # بررسی وجود پوشه و ایجاد آن در صورت لزوم
-        if not os.path.exists('temp'):
-            os.makedirs('temp')
+#         # بررسی وجود پوشه و ایجاد آن در صورت لزوم
+#         if not os.path.exists('temp'):
+#             os.makedirs('temp')
         
-        # منتقل کردن فایل به مسیر موردنظر
-        shutil.move(instance.image.path, destination)
+#         # منتقل کردن فایل به مسیر موردنظر
+#         shutil.move(instance.image.path, destination)
 
 def get_templates(app_name):
     app = apps.get_app_config(app_name)
@@ -954,7 +967,7 @@ class AppModels(CommonModel):
 
     def get_related_model(self):
         # pdb.set_trace()
-        return apps.get_model(self.application, self.model)            
+        return apps.get_model(self.application, self.model)
 
 class Setting(CommonModel):
     company = models.ForeignKey('administration.Company', on_delete=models.CASCADE, related_name="setting_menus", null=True)

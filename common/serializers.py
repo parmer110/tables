@@ -1,3 +1,4 @@
+import os
 from rest_framework import serializers
 from django.apps import apps
 from django.db import models
@@ -22,6 +23,12 @@ def serialize_model(target_model='', fields_set='__all__', application='', model
                 rep.pop('deleted_at')
             if 'password' in rep:
                 rep['password'] = '•••'
+
+            for field_name, field in self.fields.items():
+                if isinstance(field, serializers.FileField):
+                    file = rep.get(field_name)
+                    if file:
+                        rep[field_name] = os.path.basename(file) if file else None
             return rep
     return CustomModelSerializer
 

@@ -961,3 +961,447 @@ WARNING 2024-01-05 19:45:18,039 log Bad Request: /table_update/
 WARNING 2024-01-05 19:45:18,052 basehttp "POST /table_update/ HTTP/1.1" 400 85
 WARNING 2024-01-05 19:49:29,918 log Bad Request: /table_update/
 WARNING 2024-01-05 19:49:29,929 basehttp "POST /table_update/ HTTP/1.1" 400 85
+WARNING 2024-01-05 20:43:09,688 log Bad Request: /table_update/
+WARNING 2024-01-05 20:43:09,698 basehttp "POST /table_update/ HTTP/1.1" 400 85
+ERROR 2024-01-05 23:35:52,792 log Internal Server Error: /table_update/
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\utils\datastructures.py", line 84, in __getitem__
+    list_ = super().__getitem__(key)
+KeyError: 'data'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\views.py", line 219, in create
+    serializer = self.get_serializer(data=request.data['data'])
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\utils\datastructures.py", line 86, in __getitem__
+    raise MultiValueDictKeyError(key)
+django.utils.datastructures.MultiValueDictKeyError: 'data'
+ERROR 2024-01-05 23:35:52,840 basehttp "POST /table_update/ HTTP/1.1" 500 109834
+ERROR 2024-01-05 23:53:34,437 log Internal Server Error: /table_update/
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\utils\datastructures.py", line 84, in __getitem__
+    list_ = super().__getitem__(key)
+KeyError: 'data'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\views.py", line 221, in create
+    serializer = self.get_serializer(data=request.data['data'])
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\utils\datastructures.py", line 86, in __getitem__
+    raise MultiValueDictKeyError(key)
+django.utils.datastructures.MultiValueDictKeyError: 'data'
+ERROR 2024-01-05 23:53:34,490 basehttp "POST /table_update/ HTTP/1.1" 500 109834
+ERROR 2024-01-06 01:54:30,348 log Internal Server Error: /table_update/43/
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\views.py", line 245, in partial_update
+    return Response(serializer.data)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\serializers.py", line 555, in data
+    ret = super().data
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\serializers.py", line 29, in to_representation
+    if isinstance(field, model.FileField):
+AttributeError: 'str' object has no attribute 'FileField'
+ERROR 2024-01-06 01:54:30,384 basehttp "PATCH /table_update/43/ HTTP/1.1" 500 120663
+ERROR 2024-01-06 01:59:04,355 log Internal Server Error: /table_update/43/
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\views.py", line 245, in partial_update
+    return Response(serializer.data)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\serializers.py", line 555, in data
+    ret = super().data
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\serializers.py", line 33, in to_representation
+    print(os.path.basename(file.name))
+AttributeError: 'str' object has no attribute 'name'
+ERROR 2024-01-06 01:59:04,424 basehttp "PATCH /table_update/43/ HTTP/1.1" 500 120617
+ERROR 2024-01-06 02:00:32,971 log Internal Server Error: /table_update/43/
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\views.py", line 245, in partial_update
+    return Response(serializer.data)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\serializers.py", line 555, in data
+    ret = super().data
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\serializers.py", line 33, in to_representation
+    print(os.path.basename(file.name))
+AttributeError: 'str' object has no attribute 'name'
+ERROR 2024-01-06 02:00:33,018 basehttp "PATCH /table_update/43/ HTTP/1.1" 500 120611
+ERROR 2024-01-06 02:22:25,761 log Internal Server Error: /table_update/46/
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\views.py", line 251, in destroy
+    instance.delete()
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\models.py", line 93, in delete
+    self.save()
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\models.py", line 907, in save
+    with Image.open(self.image.path) as img:
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\PIL\Image.py", line 3227, in open
+    fp = builtins.open(filename, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\User\\Documents\\Work\\Ramin\\floramedtour\\media\\images\\5f2944f1c05449538876df2cba30d41d.jpg'
+ERROR 2024-01-06 02:22:25,799 basehttp "DELETE /table_update/46/ HTTP/1.1" 500 115085
+ERROR 2024-01-06 02:22:34,024 log Internal Server Error: /table_update/47/
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\views.py", line 251, in destroy
+    instance.delete()
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\models.py", line 93, in delete
+    self.save()
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\models.py", line 907, in save
+    with Image.open(self.image.path) as img:
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\PIL\Image.py", line 3227, in open
+    fp = builtins.open(filename, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\User\\Documents\\Work\\Ramin\\floramedtour\\media\\images\\89b1d1badd8f4edf8d6093f02758765e.jpg'
+ERROR 2024-01-06 02:22:34,052 basehttp "DELETE /table_update/47/ HTTP/1.1" 500 115085
+WARNING 2024-01-06 02:34:48,398 log Not Found: /media/images/682eff15faaa4f4ebb6c8cb19dd5526e.jpg
+WARNING 2024-01-06 02:34:48,657 basehttp "GET /media/images/682eff15faaa4f4ebb6c8cb19dd5526e.jpg HTTP/1.1" 404 8518
+ERROR 2024-01-06 02:35:03,692 log Internal Server Error: /table_update/49/
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\views.py", line 251, in destroy
+    instance.delete()
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\models.py", line 93, in delete
+    self.save()
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\models.py", line 907, in save
+    with Image.open(self.image.path) as img:
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\PIL\Image.py", line 3227, in open
+    fp = builtins.open(filename, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\User\\Documents\\Work\\Ramin\\floramedtour\\media\\images\\682eff15faaa4f4ebb6c8cb19dd5526e.jpg'
+ERROR 2024-01-06 02:35:03,753 basehttp "DELETE /table_update/49/ HTTP/1.1" 500 114966
+ERROR 2024-01-06 02:36:14,357 log Internal Server Error: /table_update/49/
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\views.py", line 250, in destroy
+    instance = ModelClass.objects.get(pk=kwargs['pk'])
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\db\models\query.py", line 637, in get
+    raise self.model.DoesNotExist(
+common.models.Pictures.DoesNotExist: Pictures matching query does not exist.
+ERROR 2024-01-06 02:36:14,393 basehttp "DELETE /table_update/49/ HTTP/1.1" 500 109353
+ERROR 2024-01-06 02:36:58,445 log Internal Server Error: /table_update/50/
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\views.py", line 251, in destroy
+    instance.delete()
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\models.py", line 93, in delete
+    self.save()
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\models.py", line 907, in save
+    with Image.open(self.image.path) as img:
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\PIL\Image.py", line 3227, in open
+    fp = builtins.open(filename, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\User\\Documents\\Work\\Ramin\\floramedtour\\media\\images\\8d5342ea3255457ba9268af28760cf29.jpg'
+ERROR 2024-01-06 02:36:58,484 basehttp "DELETE /table_update/50/ HTTP/1.1" 500 115728
+WARNING 2024-01-06 02:52:45,331 log Bad Request: /table_update/56/
+WARNING 2024-01-06 02:52:45,375 basehttp "PUT /table_update/56/ HTTP/1.1" 400 71
+WARNING 2024-01-06 02:53:23,910 log Bad Request: /table_update/56/
+WARNING 2024-01-06 02:53:23,920 basehttp "PATCH /table_update/56/ HTTP/1.1" 400 71
+WARNING 2024-01-06 02:53:40,528 log Bad Request: /table_update/56/
+WARNING 2024-01-06 02:53:40,538 basehttp "PATCH /table_update/56/ HTTP/1.1" 400 71
+WARNING 2024-01-06 03:00:50,404 log Bad Request: /table_update/56/
+WARNING 2024-01-06 03:00:50,415 basehttp "PATCH /table_update/56/ HTTP/1.1" 400 71
+WARNING 2024-01-06 03:01:31,903 log Bad Request: /table_update/56/
+WARNING 2024-01-06 03:01:31,915 basehttp "PATCH /table_update/56/ HTTP/1.1" 400 71
+WARNING 2024-01-06 03:03:45,984 log Bad Request: /table_update/56/
+WARNING 2024-01-06 03:03:45,995 basehttp "PUT /table_update/56/ HTTP/1.1" 400 71
+WARNING 2024-01-06 03:04:11,089 log Bad Request: /table_update/56/
+WARNING 2024-01-06 03:04:11,097 basehttp "PATCH /table_update/56/ HTTP/1.1" 400 71
+WARNING 2024-01-06 05:14:09,755 log Bad Request: /table_update/
+WARNING 2024-01-06 05:14:09,765 basehttp "POST /table_update/ HTTP/1.1" 400 63
+WARNING 2024-01-06 05:19:30,026 log Bad Request: /table_update/
+WARNING 2024-01-06 05:19:30,044 basehttp "POST /table_update/ HTTP/1.1" 400 63
+WARNING 2024-01-06 05:20:35,348 log Bad Request: /table_update/
+WARNING 2024-01-06 05:20:35,363 basehttp "POST /table_update/ HTTP/1.1" 400 63
+WARNING 2024-01-06 05:23:06,307 log Bad Request: /table_update/
+WARNING 2024-01-06 05:23:06,321 basehttp "POST /table_update/ HTTP/1.1" 400 63
+WARNING 2024-01-06 05:23:55,723 log Bad Request: /table_update/
+WARNING 2024-01-06 05:23:55,741 basehttp "POST /table_update/ HTTP/1.1" 400 63
+WARNING 2024-01-06 05:24:38,261 log Bad Request: /table_update/
+WARNING 2024-01-06 05:24:38,279 basehttp "POST /table_update/ HTTP/1.1" 400 63
+WARNING 2024-01-06 05:25:10,075 log Bad Request: /table_update/
+WARNING 2024-01-06 05:25:10,091 basehttp "POST /table_update/ HTTP/1.1" 400 63
+WARNING 2024-01-06 05:25:37,690 log Bad Request: /table_update/
+WARNING 2024-01-06 05:25:37,700 basehttp "POST /table_update/ HTTP/1.1" 400 63
+WARNING 2024-01-06 05:26:10,794 log Bad Request: /table_update/
+WARNING 2024-01-06 05:26:10,808 basehttp "POST /table_update/ HTTP/1.1" 400 63
+WARNING 2024-01-06 05:32:53,506 log Bad Request: /table_update/
+WARNING 2024-01-06 05:32:53,522 basehttp "POST /table_update/ HTTP/1.1" 400 63
+WARNING 2024-01-06 05:41:47,758 log Bad Request: /table_update/
+WARNING 2024-01-06 05:41:47,774 basehttp "POST /table_update/ HTTP/1.1" 400 63
+WARNING 2024-01-06 05:51:21,736 log Bad Request: /table_update/
+WARNING 2024-01-06 05:51:21,746 basehttp "POST /table_update/ HTTP/1.1" 400 63
+WARNING 2024-01-06 05:54:13,555 log Bad Request: /table_update/729/
+WARNING 2024-01-06 05:54:13,565 basehttp "PUT /table_update/729/ HTTP/1.1" 400 30
+WARNING 2024-01-06 05:56:58,300 log Bad Request: /table_update/
+WARNING 2024-01-06 05:56:58,309 basehttp "POST /table_update/ HTTP/1.1" 400 78
+WARNING 2024-01-06 05:57:44,332 log Bad Request: /table_update/
+WARNING 2024-01-06 05:57:44,343 basehttp "POST /table_update/ HTTP/1.1" 400 78
+WARNING 2024-01-06 05:58:01,635 log Bad Request: /table_update/
+WARNING 2024-01-06 05:58:01,644 basehttp "POST /table_update/ HTTP/1.1" 400 78
+WARNING 2024-01-06 05:58:33,157 log Bad Request: /table_update/
+WARNING 2024-01-06 05:58:33,166 basehttp "POST /table_update/ HTTP/1.1" 400 78
+WARNING 2024-01-06 06:02:25,475 log Bad Request: /table_update/
+WARNING 2024-01-06 06:02:25,486 basehttp "POST /table_update/ HTTP/1.1" 400 78
+WARNING 2024-01-06 06:18:04,880 log Bad Request: /table_update/
+WARNING 2024-01-06 06:18:04,892 basehttp "POST /table_update/ HTTP/1.1" 400 78
+WARNING 2024-01-06 06:18:15,671 log Bad Request: /table_update/
+WARNING 2024-01-06 06:18:15,681 basehttp "POST /table_update/ HTTP/1.1" 400 78
+WARNING 2024-01-06 06:18:23,929 log Bad Request: /table_update/
+WARNING 2024-01-06 06:18:23,939 basehttp "POST /table_update/ HTTP/1.1" 400 78
+WARNING 2024-01-06 06:21:03,035 log Bad Request: /table_update/
+WARNING 2024-01-06 06:21:03,045 basehttp "POST /table_update/ HTTP/1.1" 400 78
+WARNING 2024-01-06 06:23:30,107 log Bad Request: /table_update/
+WARNING 2024-01-06 06:23:30,121 basehttp "POST /table_update/ HTTP/1.1" 400 78
+WARNING 2024-01-06 06:24:50,063 log Bad Request: /table_update/
+WARNING 2024-01-06 06:24:50,074 basehttp "POST /table_update/ HTTP/1.1" 400 78
+WARNING 2024-01-06 06:25:04,045 log Not Found: /favicon.ico
+WARNING 2024-01-06 06:25:04,058 basehttp "GET /favicon.ico HTTP/1.1" 404 8157
+WARNING 2024-01-06 06:28:41,963 log Bad Request: /table_update/
+WARNING 2024-01-06 06:28:41,972 basehttp "POST /table_update/ HTTP/1.1" 400 63
+WARNING 2024-01-06 06:29:47,681 log Bad Request: /table_update/
+WARNING 2024-01-06 06:29:47,691 basehttp "POST /table_update/ HTTP/1.1" 400 63
+WARNING 2024-01-06 06:34:38,912 log Bad Request: /table_update/
+WARNING 2024-01-06 06:34:38,922 basehttp "POST /table_update/ HTTP/1.1" 400 63
+WARNING 2024-01-06 06:35:06,921 log Bad Request: /table_update/
+WARNING 2024-01-06 06:35:06,935 basehttp "POST /table_update/ HTTP/1.1" 400 63
+WARNING 2024-01-06 15:23:39,450 log Bad Request: /table_update/
+WARNING 2024-01-06 15:23:39,462 basehttp "POST /table_update/ HTTP/1.1" 400 63
+WARNING 2024-01-06 15:32:45,817 log Bad Request: /table_update/
+WARNING 2024-01-06 15:32:45,827 basehttp "POST /table_update/ HTTP/1.1" 400 63
+WARNING 2024-01-06 15:34:56,384 log Bad Request: /table_update/
+WARNING 2024-01-06 15:34:56,396 basehttp "POST /table_update/ HTTP/1.1" 400 63
+WARNING 2024-01-06 15:42:15,585 log Bad Request: /table_update/
+WARNING 2024-01-06 15:42:15,600 basehttp "POST /table_update/ HTTP/1.1" 400 63
+WARNING 2024-01-06 15:43:52,981 log Bad Request: /table_update/
+WARNING 2024-01-06 15:43:52,993 basehttp "POST /table_update/ HTTP/1.1" 400 63
+WARNING 2024-01-06 16:31:23,972 log Not Found: /favicon.ico
+WARNING 2024-01-06 16:31:24,058 basehttp "GET /favicon.ico HTTP/1.1" 404 8157
+WARNING 2024-01-06 16:33:12,850 log Bad Request: /table_update/
+WARNING 2024-01-06 16:33:12,860 basehttp "POST /table_update/ HTTP/1.1" 400 78
+WARNING 2024-01-06 16:36:03,856 log Bad Request: /table_update/
+WARNING 2024-01-06 16:36:03,867 basehttp "POST /table_update/ HTTP/1.1" 400 78
+WARNING 2024-01-06 16:50:13,915 log Bad Request: /table_update/
+WARNING 2024-01-06 16:50:13,929 basehttp "POST /table_update/ HTTP/1.1" 400 79
+WARNING 2024-01-06 16:53:41,413 log Bad Request: /table_update/
+WARNING 2024-01-06 16:53:41,424 basehttp "POST /table_update/ HTTP/1.1" 400 143
+WARNING 2024-01-06 16:56:47,423 log Bad Request: /table_update/
+WARNING 2024-01-06 16:56:47,433 basehttp "POST /table_update/ HTTP/1.1" 400 143
+WARNING 2024-01-06 17:16:53,982 log Bad Request: /table_update/
+WARNING 2024-01-06 17:16:53,995 basehttp "POST /table_update/ HTTP/1.1" 400 143
+WARNING 2024-01-06 17:18:23,585 log Bad Request: /table_update/
+WARNING 2024-01-06 17:18:23,597 basehttp "POST /table_update/ HTTP/1.1" 400 143
+WARNING 2024-01-06 17:29:43,525 log Unsupported Media Type: /table_update/
+WARNING 2024-01-06 17:29:43,537 basehttp "POST /table_update/ HTTP/1.1" 415 76
+WARNING 2024-01-06 17:30:14,035 log Not Found: /favicon.ico
+WARNING 2024-01-06 17:30:14,047 basehttp "GET /favicon.ico HTTP/1.1" 404 8157
+WARNING 2024-01-06 17:32:31,661 log Unsupported Media Type: /table_update/
+WARNING 2024-01-06 17:32:31,670 basehttp "POST /table_update/ HTTP/1.1" 415 76
+ERROR 2024-01-06 19:22:57,824 log Internal Server Error: /table_update/731/
+Traceback (most recent call last):
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\permissions.py", line 9, in has_permission
+    model = view.queryset.model
+AttributeError: 'NoneType' object has no attribute 'model'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\apps\registry.py", line 158, in get_app_config
+    return self.app_configs[app_label]
+KeyError: ''
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 497, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 415, in initial
+    self.check_permissions(request)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 332, in check_permissions
+    if not permission.has_permission(request, self):
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\permissions.py", line 11, in has_permission
+    model = view.get_model_class()
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\views.py", line 208, in get_model_class
+    return apps.get_model(application, model_name)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\apps\registry.py", line 208, in get_model
+    app_config = self.get_app_config(app_label)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\apps\registry.py", line 165, in get_app_config
+    raise LookupError(message)
+LookupError: No installed app with label ''.
+ERROR 2024-01-06 19:22:57,862 basehttp "DELETE /table_update/731/ HTTP/1.1" 500 129771
+WARNING 2024-01-06 19:32:30,206 log Not Found: /favicon.ico
+WARNING 2024-01-06 19:32:30,218 basehttp "GET /favicon.ico HTTP/1.1" 404 8157
+WARNING 2024-01-06 19:34:27,999 log Bad Request: /table_update/
+WARNING 2024-01-06 19:34:28,009 basehttp "POST /table_update/?application=common&model=AppModels HTTP/1.1" 400 78
+WARNING 2024-01-06 19:40:45,324 log Not Found: /favicon.ico
+WARNING 2024-01-06 19:40:45,335 basehttp "GET /favicon.ico HTTP/1.1" 404 8157

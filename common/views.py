@@ -203,8 +203,8 @@ class ModifyModelViewSet(viewsets.ModelViewSet):
     permission_classes = [IsAuthenticated, CustomModelPermission]
 
     def get_model_class(self):
-        application = self.request.data.get('application', '')
-        model_name = self.request.data.get('model', '')
+        application = self.request.query_params.get('application', '')
+        model_name = self.request.query_params.get('model', '')
         return apps.get_model(application, model_name)
 
     def get_serializer_class(self):
@@ -216,7 +216,7 @@ class ModifyModelViewSet(viewsets.ModelViewSet):
         return ModelClass.objects.all()
         
     def create(self, request, *args, **kwargs):
-        serializer = self.get_serializer(data=request.data['data'])
+        serializer = self.get_serializer(data=request.data)
         try:
             serializer.is_valid(raise_exception=True)
         except ValidationError as e:
@@ -229,7 +229,7 @@ class ModifyModelViewSet(viewsets.ModelViewSet):
     def update(self, request, *args, **kwargs):
         instance = self.get_object()
 
-        serializer = self.get_serializer(instance, data=request.data['data'])
+        serializer = self.get_serializer(instance, data=request.data)
         try:
             serializer.is_valid(raise_exception=True)
         except ValidationError as e:
@@ -239,7 +239,7 @@ class ModifyModelViewSet(viewsets.ModelViewSet):
 
     def partial_update(self, request, *args, **kwargs):
         instance = self.get_object()
-        serializer = self.get_serializer(instance, data=request.data['data'], partial=True)
+        serializer = self.get_serializer(instance, data=request.data, partial=True)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data)

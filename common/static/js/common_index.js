@@ -79,16 +79,28 @@ async function refreshToken() {
 // Session (send)
 async function sendToServer(method, path, body, qs="") {
     // const csrf_token = document.cookie.match(/csrftoken=([^;]+)/)[1];
+    let headers;
+    let bodyData;
     const url = `${path}${qs ? '?' + qs : ''}`;
     const csrf_token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
-    return fetch(url, {
-        method: `${method}`,
-        headers: {
+    if (body instanceof FormData) {
+        headers = {
+            'X-CSRFToken': csrf_token,
+            'Authorization': `eslope`,
+        };
+        bodyData = body;
+    } else {
+        headers = {
             'Content-Type': 'application/json',
             'X-CSRFToken': csrf_token,
-            'Authorization': `eslope`
-        },
-        body: JSON.stringify(body)
+            'Authorization': `eslope`,
+        };
+        bodyData = JSON.stringify(body);
+    }
+    return fetch(url, {
+        method: `${method}`,
+        headers: headers,
+        body: bodyData
     })
     .then(response => {
         if (response.ok && response.status === 204) { // No Content
@@ -163,7 +175,7 @@ function convertToValidData(dataString, dataType) {
         'datetime': stringDateTime
     };
     
-    if (!dataString) {return null;}
+    if (!dataString) {return '';}
     for (let key in converters) {
         if (dataType.toLowerCase().includes(key)) {
             return converters[key](dataString);
@@ -534,7 +546,7 @@ const controlRow = (table, record, bodyRow, td) => {
     let keyName = `editingTable_${table['model_info']['app']}_${table['model_info']['name']}`;
     keyName = keyName.toLowerCase();
     const editableFieldsCount = table['field_info'].filter(obj => obj.editable === true && obj.type !== 'AutoField').length;
-    const updFields = {};
+    const updFields = new FormData();
     const updInvalid = {};
     const icon1 = document.createElement('i');
     const icon2 = document.createElement('i');
@@ -587,21 +599,27 @@ const controlRow = (table, record, bodyRow, td) => {
                                 if (cell.hasChanged) {
                                     if (cell.firstChild) {
 
-                                        if (fieldDataType === 'ManyToManyField') {
+                                        if (cell.firstChild.type === 'file'){
                                             if(isNullable || cell.firstChild.value) {
-                                                updFields[fieldName] = convertStringToIntegerArray(cell.firstChild.value);
+                                                updFields.append(fieldName, cell.firstChild.files[0]);
+                                            } else {
+                                                updInvalid[fieldName] = cell.firstChild.value;
+                                            }
+                                        } else if (fieldDataType === 'ManyToManyField') {
+                                            if(isNullable || cell.firstChild.value) {
+                                                updFields.append(fieldName, convertStringToIntegerArray(cell.firstChild.value));
                                             } else {
                                                 updInvalid[fieldName] = cell.firstChild.value;
                                             }
                                         } else if(fieldDataType === 'ForeignKey' || fieldDataType === 'OneToOneField') {
                                             if (isNullable || cell.firstChild.value) {
-                                                updFields[fieldName] = convertToValidData(cell.firstChild.value, 'integer');
+                                                updFields.append(fieldName, convertToValidData(cell.firstChild.value, 'integer'));
                                             } else {
                                                 updInvalid[fieldName] = cell.firstChild.value;
                                             }
                                         } else {
                                             if (cell.firstChild.checkValidity()) {
-                                                updFields[fieldName] = convertToValidData(cell.firstChild.value, fieldDataType);
+                                                updFields.append(fieldName, convertToValidData(cell.firstChild.value, fieldDataType));
                                             } else {
                                                 updInvalid[fieldName] = cell.firstChild.value;
                                             }
@@ -614,23 +632,20 @@ const controlRow = (table, record, bodyRow, td) => {
                     // Finalize sending rowData to the server
                     let application = table['model_info']['app'];
                     let model = table['model_info']['name'];
-                    let body = {
-                        application: application,
-                        model: model,
-                        data: updFields
-                    }
+
+                    let qs = `application=${application}&model=${model}`;
 
                     if (Object.keys(updInvalid).length) {
                         message = 'Some incorrect data found!';
                         console.error(`This data are incorrect: ${updInvalid}`);
                         console.log(updInvalid);
                     } else {
-                        if (Object.keys(updFields).length === editableFieldsCount) {
+                        if (Array.from(updFields.entries()).length === editableFieldsCount) {
                             // Entire row updation
                             try {
-                                let data = await sendToServer('PUT', `/table_update/${record.id}/`, body)
+                                let data = await sendToServer('PUT', `/table_update/${record.id}/`, updFields, qs);
 
-                                if (data.ok) {
+                                if (data.status >= 200 && data.status < 300) {
                                     message = "Updated Instance!";
                                 
                                     Array.from(bodyRow.children).forEach((cell, index) => {
@@ -667,9 +682,9 @@ const controlRow = (table, record, bodyRow, td) => {
                         } else {
                             // Partial row updation
                             try {
-                                let data = await sendToServer('PATCH', `/table_update/${record.id}/`, body)
+                                let data = await sendToServer('PATCH', `/table_update/${record.id}/`, updFields, qs);
 
-                                if (data.ok) {
+                                if (data.status >= 200 && data.status < 300) {
                                     message = 'Updated!';
 
                                     Array.from(bodyRow.children).forEach((cell, index) => {
@@ -773,16 +788,19 @@ const controlRow = (table, record, bodyRow, td) => {
             $('#deleteButton').off('click').click(async function() {
                 var icon2 = $('#deleteModal').data('icon2');
 
+                let application = table['model_info']['app'];
+                let model =  table['model_info']['name'];
+
+                let qs = `application=${application}&model=${model}`;
+
                 let body = {
-                    application: table['model_info']['app'],
-                    model: table['model_info']['name'],
                     id: record.id
                 }
-                
-                try {
-                    let data = await sendToServer('DELETE', `/table_update/${record.id}/`, body)
 
-                    if (data.ok) {
+                try {
+                    let data = await sendToServer('DELETE', `/table_update/${record.id}/`, body, qs);
+
+                    if (data.status >= 200 && data.status < 300) {
                         if (bodyRow.nextElementSibling) {
                             tag = bodyRow.nextElementSibling.firstChild;
                         } else if (bodyRow.previousElementSibling) {
@@ -794,7 +812,7 @@ const controlRow = (table, record, bodyRow, td) => {
                         message = 'Row Deleted!';
                         bodyRow.remove();
                         
-                        console.log('Deleted');    
+                        // console.log('Deleted');    
                     } else {
                         message = data.detail;
                     }
@@ -806,7 +824,7 @@ const controlRow = (table, record, bodyRow, td) => {
                 };  
                 
                 if (message) {
-                    showWarningTooltip(bodyRow.firstChild, message);
+                    showWarningTooltip(tag, message);
                 }
 
                 // // Reset the message to the default
@@ -863,7 +881,6 @@ const controlRow = (table, record, bodyRow, td) => {
 }
 
 function createNewRow(table, tbody, addRowButton, keyName) {
-    console.log(table);
     let message;
     let message2;
     const newRow = document.createElement('tr');
@@ -908,7 +925,7 @@ function createNewRow(table, tbody, addRowButton, keyName) {
                 }},
                 'confirmButton': { text: 'Confirm', clickFunction: async () => {
         
-                    const newRowData = {};
+                    const newRowData = new FormData();
 
                     Array.from(newRow.children).forEach((cell, index) => {
                         if(index !== 0) {
@@ -920,13 +937,15 @@ function createNewRow(table, tbody, addRowButton, keyName) {
                             
                             if (isEditableField) {
                                 if(cell.firstChild) {
-                                    if (fieldDataType === 'ManyToManyField' && cell.firstChild.value) {
-                                        newRowData[fieldName] = convertStringToIntegerArray(cell.firstChild.value);
+                                    if (cell.firstChild.type === 'file'){
+                                        newRowData.append(fieldName, cell.firstChild.files[0]);
+                                    } else if (fieldDataType === 'ManyToManyField' && cell.firstChild.value) {
+                                        newRowData.append(fieldName, convertStringToIntegerArray(cell.firstChild.value));
                                     } else if(fieldDataType === 'ForeignKey' || fieldDataType === 'OneToOneField') {
-                                        newRowData[fieldName] = convertToValidData(cell.firstChild.value, 'integer');
+                                        newRowData.append(fieldName, convertToValidData(cell.firstChild.value, 'integer'));
                                     } else if (cell.firstChild.value){
-                                        newRowData[fieldName] = convertToValidData(cell.firstChild.value, fieldDataType);
-                                    }    
+                                        newRowData.append(fieldName, convertToValidData(cell.firstChild.value, fieldDataType));
+                                    }
                                 }
                             }
                         }
@@ -935,17 +954,14 @@ function createNewRow(table, tbody, addRowButton, keyName) {
                     // Finalize sending rowData to the server
                     let application = table['model_info']['app'];
                     let model = table['model_info']['name'];
-                    let body = {
-                        application: application,
-                        model: model,
-                        data: newRowData
-                    }
+
+                    let qs = `application=${application}&model=${model}`;
+
                     let validation = validateRow(newRow, table['field_info']);
-                    if(!validation['errorCount']) {
-                        
+                    if(!validation['errorCount']) {    
                         try {
-                            let data = await sendToServer('POST', '/table_update/', body)
-                            if (data.ok) {
+                            let data = await sendToServer('POST', '/table_update/', newRowData, qs);
+                            if (data.status >= 200 && data.status < 300) {
                                 Array.from(newRow.children).forEach((cell, index) => {
                                     if (index !== 0) {
                                         const span = document.createElement('span');
@@ -969,7 +985,11 @@ function createNewRow(table, tbody, addRowButton, keyName) {
                                 
                                 sessionStorage.removeItem(keyName); // Pagination handling permision    
                             } else {
-                                message2 = data.detail;
+                                if (data.detail) {
+                                    message2 = data.detail;
+                                } else {
+                                    message2 = `Server error status: ${data.status}`
+                                }
                             }
 
                         } catch(error) {
@@ -1122,7 +1142,7 @@ function createEditingField(table, field, bodyRow, td, keyName) {
             input = document.createElement('input');
             input.type = 'file';
             input.className = 'form-control';
-            input.value = initText;
+            input.value = '';
 
             // بررسی شرط null بودن
             if (!field['nullable']) {
@@ -1130,31 +1150,6 @@ function createEditingField(table, field, bodyRow, td, keyName) {
             }
 
             input.addEventListener('input', function(event) {
-                console.log(event.target.files.length);
-
-                if (event.target.files.length) {
-                    // Type valication
-                    let file = event.target.files[0];
-                    let maxSize = 1024 * 1024;
-
-                    if(file.size > maxSize) {
-                        this.classList.add('is-invalid');
-                        this.setCustomValidity("File size must be less than 1MB");
-                    } else {
-                        this.classList.remove('is-invalid');
-                        this.setCustomValidity("");
-                    }
-
-                    if (field['type'].toLowerCase().includes('imagefield')) {
-                        if(file.type != "image/jpeg" && file.type != "image/png") {
-                            this.classList.add('is-invalid');
-                            this.setCustomValidity("File must be a JPEG or PNG image");
-                        } else {
-                            this.classList.remove('is-invalid');
-                            this.setCustomValidity("");
-                        }    
-                    }
-                }
 
                 if (input.value == initText) {
                     td.hasChanged = false;
@@ -1194,9 +1189,29 @@ function createEditingField(table, field, bodyRow, td, keyName) {
                 }
                 
                 this.setCustomValidity('');
+                const maxSize = 1024 * 1024;
                 if (!this.checkValidity()) {
                     this.classList.add('is-invalid');
                     this.setCustomValidity('This field should not be null.');
+                } else if (event.target.files.length) {
+                    // Type valication
+                    let file = event.target.files[0];
+                    if (field['type'].toLowerCase().includes('imagefield')) {
+                        if(file.type != "image/jpeg" && file.type != "image/png") {
+                            this.classList.add('is-invalid');
+                            this.setCustomValidity("File must be a JPEG or PNG image");
+                        } else {
+                            this.classList.remove('is-invalid');
+                            this.setCustomValidity("");
+                        }
+                    // Size valication
+                    } else if(file.size > maxSize) {
+                        this.classList.add('is-invalid');
+                        this.setCustomValidity("File size must be less than 1MB");
+                    } else {
+                        this.classList.remove('is-invalid');
+                        this.setCustomValidity("");
+                    }
                 } else {
                     this.classList.remove('is-invalid');
                     this.setCustomValidity('');
@@ -1205,7 +1220,8 @@ function createEditingField(table, field, bodyRow, td, keyName) {
             });
         } else if (field['choices']) {  // Inital data list
 
-            // select = document.createElement('select');
+            select = document.createElement('select');
+            initText = String(initText);
             select.className = 'form-control';
 
             let isOptionAvailable;
