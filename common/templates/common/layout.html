@@ -67,7 +67,7 @@
                         <h4 class="text-white">Contact</h4>
                         <ul class="list-unstyled">
                             {% for header_contact in header_contacts %}
-                                <li><a href="#" class="text-white"><img class="img-header" src="{{ MEDIA_URL }}{{ header_contact.image }}"><span class="no-underline"> </span>{{ header_contact.name }}</a></li>
+                                <li><a href="#" class="text-white"><img class="img-header" src="{{ header_contact.image.url }}"><span class="no-underline"> </span>{{ header_contact.name }}</a></li>
                             {% endfor %}
                             <li><span>        </span><a href="mailto:floragashtsalamat@gmail.com" class="text-white">Email us</a></li>
                         </ul>

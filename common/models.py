@@ -289,6 +289,8 @@ class User(AbstractUser, CommonModel):
     token_lifetime = models.ForeignKey(TokenLifetime, null=True, blank=True, on_delete=models.SET_NULL)
     description = models.CharField(max_length=255, null=True, blank=True, verbose_name="User Description")
 
+    objects = ActiveManager()
+
     def __str__(self):
         return self.username
 
@@ -451,135 +453,135 @@ class Person(CommonModel):
 
 
 class Places(CommonModel):
-    _title = models.CharField(max_length=366+16*50, db_column="title", verbose_name="Title", null=True)
-    _country = models.CharField(max_length=366+16*20, db_column="country", null=True, verbose_name="Country")
-    _statee = models.CharField(max_length=366+16*20, db_column="state", null=True, verbose_name="State")
-    _city = models.CharField(max_length=366+16*20, db_column="city", null=True, verbose_name="City")
-    _address = models.CharField(max_length=366+16*100, db_column="address", null=True, verbose_name="Address")
-    _postalcode = models.CharField(max_length=366+16*15, db_column="postalcode", null=True, verbose_name="Postalcode")
-    _phoneNumber = models.CharField(max_length=366+16*15, db_column="phone_number", null=True, verbose_name="Phone Number")
+    title = models.CharField(max_length=366+16*50, db_column="title", verbose_name="Title", null=True)
+    country = models.CharField(max_length=366+16*20, db_column="country", null=True, verbose_name="Country")
+    state = models.CharField(max_length=366+16*20, db_column="state", null=True, verbose_name="State")
+    city = models.CharField(max_length=366+16*20, db_column="city", null=True, verbose_name="City")
+    address = models.CharField(max_length=366+16*100, db_column="address", null=True, verbose_name="Address")
+    postalcode = models.CharField(max_length=366+16*15, db_column="postalcode", null=True, verbose_name="Postalcode")
+    phoneNumber = models.CharField(max_length=366+16*15, db_column="phone_number", null=True, verbose_name="Phone Number")
     website = models.URLField(blank=True, null=True, verbose_name="Website Address")
-    _usage = models.TextField(db_column="usage", verbose_name="Usage", null=True)
-    _area = models.CharField(max_length=366+16*11, db_column="area", verbose_name="Area", null=True, blank=True)
-    _num_floors = models.CharField(max_length=366+16*3, db_column="num_floors", verbose_name="Number Floors", null=True, blank=True)
+    usage = models.TextField(db_column="usage", verbose_name="Usage", null=True)
+    area = models.CharField(max_length=366+16*11, db_column="area", verbose_name="Area", null=True, blank=True)
+    num_floors = models.CharField(max_length=366+16*3, db_column="num_floors", verbose_name="Number Floors", null=True, blank=True)
     location = models.ForeignKey(Location, on_delete=models.SET_NULL, related_name="place", verbose_name="Location", null=True)
     manager = models.ForeignKey(Person, on_delete=models.SET_NULL,  db_column="manager", related_name="manager_place", verbose_name="Manager", null=True, blank=True)
 
     def __str__(self):
         return f"{self.id}- {self.title}"
     
-    @property
-    def title(self):
-        return decoder(self._title)
-    @property
-    def country(self):
-        return decoder(self._country)
-    @property
-    def state(self):
-        return decoder(self._statee)
-    @property
-    def city(self):
-        return decoder(self._city)
-    @property
-    def address(self):
-        return decoder(self._address)
-    @property
-    def postalcode(self):
-        return decoder(self._postalcode)
-    @property
-    def phoneNumber(self):
-        return decoder(self._phoneNumber)
-    @property
-    def usage(self):
-        return decoder(self._usage)
-    @property
-    def area(self):
-        return decoder(self._area)
-    @property
-    def num_floors(self):
-        return decoder(self._num_floors)
+    # @property
+    # def title(self):
+    #     return decoder(self._title)
+    # @property
+    # def country(self):
+    #     return decoder(self._country)
+    # @property
+    # def state(self):
+    #     return decoder(self._statee)
+    # @property
+    # def city(self):
+    #     return decoder(self._city)
+    # @property
+    # def address(self):
+    #     return decoder(self._address)
+    # @property
+    # def postalcode(self):
+    #     return decoder(self._postalcode)
+    # @property
+    # def phoneNumber(self):
+    #     return decoder(self._phoneNumber)
+    # @property
+    # def usage(self):
+    #     return decoder(self._usage)
+    # @property
+    # def area(self):
+    #     return decoder(self._area)
+    # @property
+    # def num_floors(self):
+    #     return decoder(self._num_floors)
 
-    @title.setter
-    def title(self, value):
-        self._title = value
-    @country.setter
-    def country(self, value):
-        self._country = value
-    @state.setter
-    def state(self, value):
-        self._statee = value
-    @city.setter
-    def city(self, value):
-        self._city = value
-    @address.setter
-    def address(self, value):
-        self._address = value
-    @postalcode.setter
-    def postalcode(self, value):
-        self._postalcode = value
-    @phoneNumber.setter
-    def phoneNumber(self, value):
-        self._phoneNumber = value
-    @usage.setter
-    def usage(self, value):
-        self._usage = value
-    @area.setter
-    def area(self, value):
-        self._area = value
-    @num_floors.setter
-    def num_floors(self, value):
-        self._num_floors = value
+    # @title.setter
+    # def title(self, value):
+    #     self._title = value
+    # @country.setter
+    # def country(self, value):
+    #     self._country = value
+    # @state.setter
+    # def state(self, value):
+    #     self._statee = value
+    # @city.setter
+    # def city(self, value):
+    #     self._city = value
+    # @address.setter
+    # def address(self, value):
+    #     self._address = value
+    # @postalcode.setter
+    # def postalcode(self, value):
+    #     self._postalcode = value
+    # @phoneNumber.setter
+    # def phoneNumber(self, value):
+    #     self._phoneNumber = value
+    # @usage.setter
+    # def usage(self, value):
+    #     self._usage = value
+    # @area.setter
+    # def area(self, value):
+    #     self._area = value
+    # @num_floors.setter
+    # def num_floors(self, value):
+    #     self._num_floors = value
 
-    def save(self, *args, **kwargs):
-        self.title = encoder(self.title)
-        self.country = encoder(self.country)
-        self.state = encoder(self.state)
-        self.city = encoder(self.title)
-        self.address = encoder(self.address)
-        self.postalcode = encoder(self.postalcode)
-        self.phoneNumber = encoder(self.phoneNumber)
-        self.usage = encoder(self.usage)
-        self.area = encoder(self.area)
-        self.num_floors = encoder(self.num_floors)
-        super(Places, self).save(*args, **kwargs)
+    # def save(self, *args, **kwargs):
+    #     self.title = encoder(self.title)
+    #     self.country = encoder(self.country)
+    #     self.state = encoder(self.state)
+    #     self.city = encoder(self.title)
+    #     self.address = encoder(self.address)
+    #     self.postalcode = encoder(self.postalcode)
+    #     self.phoneNumber = encoder(self.phoneNumber)
+    #     self.usage = encoder(self.usage)
+    #     self.area = encoder(self.area)
+    #     self.num_floors = encoder(self.num_floors)
+    #     super(Places, self).save(*args, **kwargs)
 
         
 class PersonPlace(CommonModel):
     person = models.ForeignKey(Person, on_delete=models.CASCADE, related_name="person_place")
     place = models.ForeignKey(Places, on_delete=models.CASCADE, related_name="place_person")
-    _priority = models.CharField(max_length=366+16*3, db_column="priority", verbose_name="Priority", null=True)
-    _role = models.CharField(max_length=366+16*20, db_column="role", verbose_name="Role and Position", null=True)
-    _responsibility = models.TextField(db_column="responsibility", verbose_name="Responsibility", null=True)
+    priority = models.CharField(max_length=366+16*3, db_column="priority", verbose_name="Priority", null=True)
+    role = models.CharField(max_length=366+16*20, db_column="role", verbose_name="Role and Position", null=True)
+    responsibility = models.TextField(db_column="responsibility", verbose_name="Responsibility", null=True)
     website = models.URLField(blank=True, null=True, verbose_name="آدرس وبسایت")
 
     def __str__(self):
         return f"{self.person.lastname} - {self.place.title}"
 
-    @property
-    def priority(self):
-        return decoder(self._priority)
-    @property
-    def role(self):
-        return decoder(self._role)
-    @property
-    def responsibility(self):
-        return decoder(self._responsibility)
+    # @property
+    # def priority(self):
+    #     return decoder(self._priority)
+    # @property
+    # def role(self):
+    #     return decoder(self._role)
+    # @property
+    # def responsibility(self):
+    #     return decoder(self._responsibility)
 
-    @priority.setter
-    def priority(self, value):
-        self._priority = value
-    @role.setter
-    def role(self, value):
-        self._role = value
-    @responsibility.setter
-    def responsibility(self, value):
-        self._responsibility = value
+    # @priority.setter
+    # def priority(self, value):
+    #     self._priority = value
+    # @role.setter
+    # def role(self, value):
+    #     self._role = value
+    # @responsibility.setter
+    # def responsibility(self, value):
+    #     self._responsibility = value
 
-    def save(self, *args, **kwargs):
-        self.priority = encoder(self.priority)
-        self.role = encoder(self.role)
-        self.responsibility = encoder(self.responsibility)
-        super(PersonPlace, self).save(*args, **kwargs)
+    # def save(self, *args, **kwargs):
+    #     self.priority = encoder(self.priority)
+    #     self.role = encoder(self.role)
+    #     self.responsibility = encoder(self.responsibility)
+    #     super(PersonPlace, self).save(*args, **kwargs)
 
 
 # نوع شخصیت‌های حقوقی

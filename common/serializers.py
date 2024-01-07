@@ -3,6 +3,7 @@ from rest_framework import serializers
 from django.apps import apps
 from django.db import models
 from django.db.models.base import ModelBase
+from django.http import QueryDict
 from .models import SettingMenus, AppModels
 from .utilities import field_type
 
@@ -30,6 +31,20 @@ def serialize_model(target_model='', fields_set='__all__', application='', model
                     if file:
                         rep[field_name] = os.path.basename(file) if file else None
             return rep
+        def to_internal_value(self, data):
+            mutable_data = QueryDict('', mutable=True)
+            for field_name in data.keys():
+                field = self.fields.get(field_name)
+                if field and isinstance(field, serializers.ManyRelatedField):
+                    values = list(map(int, data[field_name].split(',')))
+                    if len(values) == 1:
+                        mutable_data.setlist(field_name, [values[0]])
+                    else:
+                        for value in values:
+                            mutable_data.appendlist(field_name, value)
+                else:
+                    mutable_data.setlist(field_name, data.getlist(field_name))
+            return super().to_internal_value(mutable_data)
     return CustomModelSerializer
 
 class ModelInfoSerializer(serializers.Serializer):

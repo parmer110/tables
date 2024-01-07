@@ -546,7 +546,6 @@ const controlRow = (table, record, bodyRow, td) => {
     let keyName = `editingTable_${table['model_info']['app']}_${table['model_info']['name']}`;
     keyName = keyName.toLowerCase();
     const editableFieldsCount = table['field_info'].filter(obj => obj.editable === true && obj.type !== 'AutoField').length;
-    const updFields = new FormData();
     const updInvalid = {};
     const icon1 = document.createElement('i');
     const icon2 = document.createElement('i');
@@ -587,6 +586,7 @@ const controlRow = (table, record, bodyRow, td) => {
                     $('#confirmationModal').modal('hide');
                 } },
                 'confirmButton': { text: 'Confirm', clickFunction: async() => {
+                    const updFields = new FormData();
                     Array.from(bodyRow.children).forEach((cell, index) => {
                         if (index !== 0) { // Skip the first cell
                             let fieldName = table['field_info'][index - 1]['name'];
@@ -682,7 +682,11 @@ const controlRow = (table, record, bodyRow, td) => {
                         } else {
                             // Partial row updation
                             try {
+                                for (var pair of updFields.entries()) {
+                                    console.log(pair[0]+ ', ' + pair[1]); 
+                                }    
                                 let data = await sendToServer('PATCH', `/table_update/${record.id}/`, updFields, qs);
+                                console.log(data);
 
                                 if (data.status >= 200 && data.status < 300) {
                                     message = 'Updated!';

@@ -1405,3 +1405,1133 @@ WARNING 2024-01-06 19:34:27,999 log Bad Request: /table_update/
 WARNING 2024-01-06 19:34:28,009 basehttp "POST /table_update/?application=common&model=AppModels HTTP/1.1" 400 78
 WARNING 2024-01-06 19:40:45,324 log Not Found: /favicon.ico
 WARNING 2024-01-06 19:40:45,335 basehttp "GET /favicon.ico HTTP/1.1" 404 8157
+WARNING 2024-01-06 20:18:43,662 log Bad Request: /table_update/728/
+WARNING 2024-01-06 20:18:43,673 basehttp "PATCH /table_update/728/?application=common&model=SettingMenus HTTP/1.1" 400 63
+WARNING 2024-01-06 20:19:05,896 log Bad Request: /table_update/728/
+WARNING 2024-01-06 20:19:05,906 basehttp "PATCH /table_update/728/?application=common&model=SettingMenus HTTP/1.1" 400 63
+WARNING 2024-01-06 20:30:31,678 log Bad Request: /table_update/728/
+WARNING 2024-01-06 20:30:31,687 basehttp "PATCH /table_update/728/?application=common&model=SettingMenus HTTP/1.1" 400 63
+WARNING 2024-01-06 20:37:07,826 log Bad Request: /table_update/728/
+WARNING 2024-01-06 20:37:07,835 basehttp "PATCH /table_update/728/?application=common&model=SettingMenus HTTP/1.1" 400 63
+WARNING 2024-01-06 21:16:50,288 log Bad Request: /table_update/728/
+WARNING 2024-01-06 21:16:50,298 basehttp "PATCH /table_update/728/?application=common&model=SettingMenus HTTP/1.1" 400 63
+WARNING 2024-01-06 21:19:42,871 log Bad Request: /table_update/728/
+WARNING 2024-01-06 21:19:42,880 basehttp "PATCH /table_update/728/?application=common&model=SettingMenus HTTP/1.1" 400 63
+WARNING 2024-01-06 21:36:48,996 log Bad Request: /table_update/728/
+WARNING 2024-01-06 21:36:49,005 basehttp "PATCH /table_update/728/?application=common&model=SettingMenus HTTP/1.1" 400 63
+WARNING 2024-01-06 21:39:40,132 log Bad Request: /table_update/728/
+WARNING 2024-01-06 21:39:40,142 basehttp "PATCH /table_update/728/?application=common&model=SettingMenus HTTP/1.1" 400 63
+ERROR 2024-01-06 22:07:59,460 log Internal Server Error: /table_update/728/
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\views.py", line 243, in partial_update
+    print(json.loads(request.data))
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\json\__init__.py", line 341, in loads
+    raise TypeError(f'the JSON object must be str, bytes or bytearray, '
+TypeError: the JSON object must be str, bytes or bytearray, not QueryDict
+ERROR 2024-01-06 22:07:59,572 basehttp "PATCH /table_update/728/?application=common&model=SettingMenus HTTP/1.1" 500 107254
+WARNING 2024-01-06 22:08:41,096 log Bad Request: /table_update/728/
+WARNING 2024-01-06 22:08:41,108 basehttp "PATCH /table_update/728/?application=common&model=SettingMenus HTTP/1.1" 400 63
+ERROR 2024-01-06 22:10:29,270 log Internal Server Error: /table_update/728/
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\views.py", line 243, in partial_update
+    print(json.loads(request.data))
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\json\__init__.py", line 341, in loads
+    raise TypeError(f'the JSON object must be str, bytes or bytearray, '
+TypeError: the JSON object must be str, bytes or bytearray, not QueryDict
+ERROR 2024-01-06 22:10:29,297 basehttp "PATCH /table_update/728/?application=common&model=SettingMenus HTTP/1.1" 500 107294
+ERROR 2024-01-07 00:09:44,211 log Internal Server Error: /table_update/728/
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\views.py", line 243, in partial_update
+    print(json.loads(request.data))
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\json\__init__.py", line 341, in loads
+    raise TypeError(f'the JSON object must be str, bytes or bytearray, '
+TypeError: the JSON object must be str, bytes or bytearray, not QueryDict
+ERROR 2024-01-07 00:09:44,242 basehttp "PATCH /table_update/728/?application=common&model=SettingMenus HTTP/1.1" 500 107314
+WARNING 2024-01-07 00:11:46,055 log Bad Request: /table_update/728/
+WARNING 2024-01-07 00:11:46,064 basehttp "PATCH /table_update/728/?application=common&model=SettingMenus HTTP/1.1" 400 63
+WARNING 2024-01-07 00:15:47,329 log Bad Request: /table_update/728/
+WARNING 2024-01-07 00:15:47,340 basehttp "PATCH /table_update/728/?application=common&model=SettingMenus HTTP/1.1" 400 63
+ERROR 2024-01-07 00:22:35,335 log Internal Server Error: /table_update/728/
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\db\models\options.py", line 681, in get_field
+    return self.fields_map[field_name]
+KeyError: 'field_name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\views.py", line 243, in partial_update
+    if serializer.is_valid():
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\serializers.py", line 227, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\serializers.py", line 426, in run_validation
+    value = self.to_internal_value(data)
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\serializers.py", line 35, in to_internal_value
+    print(self.Meta.model._meta.get_field('field_name'))
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\db\models\options.py", line 683, in get_field
+    raise FieldDoesNotExist(
+django.core.exceptions.FieldDoesNotExist: SettingMenus has no field named 'field_name'
+ERROR 2024-01-07 00:22:35,367 basehttp "PATCH /table_update/728/?application=common&model=SettingMenus HTTP/1.1" 500 129708
+WARNING 2024-01-07 00:33:12,540 log Bad Request: /table_update/728/
+WARNING 2024-01-07 00:33:12,551 basehttp "PATCH /table_update/728/?application=common&model=SettingMenus HTTP/1.1" 400 63
+ERROR 2024-01-07 00:36:06,453 log Internal Server Error: /table_update/728/
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\views.py", line 243, in partial_update
+    if serializer.is_valid():
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\serializers.py", line 227, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\serializers.py", line 426, in run_validation
+    value = self.to_internal_value(data)
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\serializers.py", line 36, in to_internal_value
+    list_of_integers = list(map(int, field_name.split(',')))
+ValueError: invalid literal for int() with base 10: 'role'
+ERROR 2024-01-07 00:36:06,497 basehttp "PATCH /table_update/728/?application=common&model=SettingMenus HTTP/1.1" 500 122315
+ERROR 2024-01-07 00:36:43,656 log Internal Server Error: /table_update/728/
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\views.py", line 243, in partial_update
+    if serializer.is_valid():
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\serializers.py", line 227, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\serializers.py", line 426, in run_validation
+    value = self.to_internal_value(data)
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\serializers.py", line 37, in to_internal_value
+    list_of_integers = list(map(int, field_name.split(',')))
+ValueError: invalid literal for int() with base 10: 'role'
+ERROR 2024-01-07 00:36:43,684 basehttp "PATCH /table_update/728/?application=common&model=SettingMenus HTTP/1.1" 500 122423
+ERROR 2024-01-07 00:42:30,882 log Internal Server Error: /table_update/728/
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\utils\datastructures.py", line 84, in __getitem__
+    list_ = super().__getitem__(key)
+KeyError: 'role'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\views.py", line 243, in partial_update
+    if serializer.is_valid():
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\serializers.py", line 227, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\serializers.py", line 426, in run_validation
+    value = self.to_internal_value(data)
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\serializers.py", line 37, in to_internal_value
+    list_of_integers = list(map(int, data[field_name].split(',')))
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\utils\datastructures.py", line 86, in __getitem__
+    raise MultiValueDictKeyError(key)
+django.utils.datastructures.MultiValueDictKeyError: 'role'
+ERROR 2024-01-07 00:42:30,915 basehttp "PATCH /table_update/728/?application=common&model=SettingMenus HTTP/1.1" 500 130051
+ERROR 2024-01-07 00:50:37,245 log Internal Server Error: /table_update/728/
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\views.py", line 243, in partial_update
+    if serializer.is_valid():
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\serializers.py", line 227, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\serializers.py", line 426, in run_validation
+    value = self.to_internal_value(data)
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\serializers.py", line 39, in to_internal_value
+    data[field_name] = list(map(int, data[field_name].split(',')))
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\http\request.py", line 555, in __setitem__
+    self._assert_mutable()
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\http\request.py", line 552, in _assert_mutable
+    raise AttributeError("This QueryDict instance is immutable")
+AttributeError: This QueryDict instance is immutable
+ERROR 2024-01-07 00:50:37,275 basehttp "PATCH /table_update/728/?application=common&model=SettingMenus HTTP/1.1" 500 129949
+ERROR 2024-01-07 01:02:05,499 log Internal Server Error: /table_update/728/
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\utils\datastructures.py", line 84, in __getitem__
+    list_ = super().__getitem__(key)
+KeyError: 'id'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\views.py", line 243, in partial_update
+    if serializer.is_valid():
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\serializers.py", line 227, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\serializers.py", line 426, in run_validation
+    value = self.to_internal_value(data)
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\serializers.py", line 42, in to_internal_value
+    ret[field] = data[field]
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\utils\datastructures.py", line 86, in __getitem__
+    raise MultiValueDictKeyError(key)
+django.utils.datastructures.MultiValueDictKeyError: 'id'
+ERROR 2024-01-07 01:02:05,573 basehttp "PATCH /table_update/728/?application=common&model=SettingMenus HTTP/1.1" 500 129979
+ERROR 2024-01-07 01:02:51,273 log Internal Server Error: /table_update/728/
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\utils\datastructures.py", line 84, in __getitem__
+    list_ = super().__getitem__(key)
+KeyError: 'id'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\views.py", line 243, in partial_update
+    if serializer.is_valid():
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\serializers.py", line 227, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\serializers.py", line 426, in run_validation
+    value = self.to_internal_value(data)
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\serializers.py", line 42, in to_internal_value
+    ret[field] = data[field]
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\utils\datastructures.py", line 86, in __getitem__
+    raise MultiValueDictKeyError(key)
+django.utils.datastructures.MultiValueDictKeyError: 'id'
+ERROR 2024-01-07 01:02:51,303 basehttp "PATCH /table_update/728/?application=common&model=SettingMenus HTTP/1.1" 500 130059
+ERROR 2024-01-07 01:03:02,210 log Internal Server Error: /table_update/728/
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\utils\datastructures.py", line 84, in __getitem__
+    list_ = super().__getitem__(key)
+KeyError: 'id'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\views.py", line 243, in partial_update
+    if serializer.is_valid():
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\serializers.py", line 227, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\serializers.py", line 426, in run_validation
+    value = self.to_internal_value(data)
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\serializers.py", line 42, in to_internal_value
+    ret[field] = data[field]
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\utils\datastructures.py", line 86, in __getitem__
+    raise MultiValueDictKeyError(key)
+django.utils.datastructures.MultiValueDictKeyError: 'id'
+ERROR 2024-01-07 01:03:02,241 basehttp "PATCH /table_update/728/?application=common&model=SettingMenus HTTP/1.1" 500 130140
+ERROR 2024-01-07 01:03:45,507 log Internal Server Error: /table_update/728/
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\utils\datastructures.py", line 84, in __getitem__
+    list_ = super().__getitem__(key)
+KeyError: 'id'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\views.py", line 243, in partial_update
+    if serializer.is_valid():
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\serializers.py", line 227, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\serializers.py", line 426, in run_validation
+    value = self.to_internal_value(data)
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\serializers.py", line 43, in to_internal_value
+    ret[field] = data[field]
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\utils\datastructures.py", line 86, in __getitem__
+    raise MultiValueDictKeyError(key)
+django.utils.datastructures.MultiValueDictKeyError: 'id'
+ERROR 2024-01-07 01:03:45,537 basehttp "PATCH /table_update/728/?application=common&model=SettingMenus HTTP/1.1" 500 130266
+ERROR 2024-01-07 01:07:20,114 log Internal Server Error: /table_update/728/
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\utils\datastructures.py", line 84, in __getitem__
+    list_ = super().__getitem__(key)
+KeyError: IntegerField(read_only=True)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\views.py", line 234, in update
+    serializer.is_valid(raise_exception=True)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\serializers.py", line 227, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\serializers.py", line 426, in run_validation
+    value = self.to_internal_value(data)
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\serializers.py", line 43, in to_internal_value
+    ret[field] = data[field]
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\utils\datastructures.py", line 86, in __getitem__
+    raise MultiValueDictKeyError(key)
+django.utils.datastructures.MultiValueDictKeyError: IntegerField(read_only=True)
+ERROR 2024-01-07 01:07:20,144 basehttp "PUT /table_update/728/?application=common&model=SettingMenus HTTP/1.1" 500 130532
+ERROR 2024-01-07 01:08:55,794 log Internal Server Error: /table_update/728/
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\views.py", line 243, in partial_update
+    if serializer.is_valid():
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\serializers.py", line 227, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\serializers.py", line 426, in run_validation
+    value = self.to_internal_value(data)
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\serializers.py", line 37, in to_internal_value
+    list_of_integers = list(map(int, field_name.split(',')))
+ValueError: invalid literal for int() with base 10: 'role'
+ERROR 2024-01-07 01:08:55,832 basehttp "PATCH /table_update/728/?application=common&model=SettingMenus HTTP/1.1" 500 122862
+ERROR 2024-01-07 01:10:15,405 log Internal Server Error: /table_update/728/
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\utils\datastructures.py", line 84, in __getitem__
+    list_ = super().__getitem__(key)
+KeyError: IntegerField(read_only=True)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\views.py", line 243, in partial_update
+    if serializer.is_valid():
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\serializers.py", line 227, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\serializers.py", line 426, in run_validation
+    value = self.to_internal_value(data)
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\serializers.py", line 45, in to_internal_value
+    ret[field] = data[field]
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\utils\datastructures.py", line 86, in __getitem__
+    raise MultiValueDictKeyError(key)
+django.utils.datastructures.MultiValueDictKeyError: IntegerField(read_only=True)
+ERROR 2024-01-07 01:10:15,438 basehttp "PATCH /table_update/728/?application=common&model=SettingMenus HTTP/1.1" 500 130875
+ERROR 2024-01-07 01:13:57,091 log Internal Server Error: /table_update/728/
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\views.py", line 243, in partial_update
+    if serializer.is_valid():
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\serializers.py", line 227, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\serializers.py", line 426, in run_validation
+    value = self.to_internal_value(data)
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\serializers.py", line 37, in to_internal_value
+    if isinstance(field, serializers.ManyRelatedField) and field_name in self.validated_data:
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\serializers.py", line 271, in validated_data
+    raise AssertionError(msg)
+AssertionError: You must call `.is_valid()` before accessing `.validated_data`.
+ERROR 2024-01-07 01:13:57,117 basehttp "PATCH /table_update/728/?application=common&model=SettingMenus HTTP/1.1" 500 128945
+WARNING 2024-01-07 01:19:13,762 log Bad Request: /table_update/728/
+WARNING 2024-01-07 01:19:13,771 basehttp "PATCH /table_update/728/?application=common&model=SettingMenus HTTP/1.1" 400 63
+WARNING 2024-01-07 01:27:17,954 log Bad Request: /table_update/728/
+WARNING 2024-01-07 01:27:17,973 basehttp "PATCH /table_update/728/?application=common&model=SettingMenus HTTP/1.1" 400 63
+WARNING 2024-01-07 01:28:07,093 log Bad Request: /table_update/728/
+WARNING 2024-01-07 01:28:07,111 basehttp "PATCH /table_update/728/?application=common&model=SettingMenus HTTP/1.1" 400 63
+WARNING 2024-01-07 01:29:38,841 log Bad Request: /table_update/728/
+WARNING 2024-01-07 01:29:38,965 basehttp "PATCH /table_update/728/?application=common&model=SettingMenus HTTP/1.1" 400 63
+WARNING 2024-01-07 01:30:43,686 log Bad Request: /table_update/728/
+WARNING 2024-01-07 01:30:43,701 basehttp "PATCH /table_update/728/?application=common&model=SettingMenus HTTP/1.1" 400 63
+WARNING 2024-01-07 01:30:52,453 log Bad Request: /table_update/728/
+WARNING 2024-01-07 01:30:52,466 basehttp "PATCH /table_update/728/?application=common&model=SettingMenus HTTP/1.1" 400 63
+WARNING 2024-01-07 01:31:21,052 log Bad Request: /table_update/728/
+WARNING 2024-01-07 01:31:21,070 basehttp "PATCH /table_update/728/?application=common&model=SettingMenus HTTP/1.1" 400 63
+WARNING 2024-01-07 01:33:08,318 log Bad Request: /table_update/728/
+WARNING 2024-01-07 01:33:08,330 basehttp "PATCH /table_update/728/?application=common&model=SettingMenus HTTP/1.1" 400 63
+WARNING 2024-01-07 01:33:41,765 log Bad Request: /table_update/728/
+WARNING 2024-01-07 01:33:41,785 basehttp "PATCH /table_update/728/?application=common&model=SettingMenus HTTP/1.1" 400 63
+WARNING 2024-01-07 01:37:12,617 log Bad Request: /table_update/728/
+WARNING 2024-01-07 01:37:12,634 basehttp "PATCH /table_update/728/?application=common&model=SettingMenus HTTP/1.1" 400 63
+ERROR 2024-01-07 01:59:54,466 log Internal Server Error: /table_update/728/
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\views.py", line 243, in partial_update
+    if serializer.is_valid():
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\serializers.py", line 227, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\serializers.py", line 426, in run_validation
+    value = self.to_internal_value(data)
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\serializers.py", line 39, in to_internal_value
+    data[field_name] = list(map(int, data[field_name].split(',')))
+KeyError: 'role'
+ERROR 2024-01-07 01:59:54,522 basehttp "PATCH /table_update/728/?application=common&model=SettingMenus HTTP/1.1" 500 122189
+ERROR 2024-01-07 02:01:13,952 log Internal Server Error: /table_update/728/
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\views.py", line 243, in partial_update
+    if serializer.is_valid():
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\serializers.py", line 227, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\serializers.py", line 426, in run_validation
+    value = self.to_internal_value(data)
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\serializers.py", line 40, in to_internal_value
+    data[field_name] = list(map(int, data[field_name].split(',')))
+KeyError: 'role'
+ERROR 2024-01-07 02:01:13,986 basehttp "PATCH /table_update/728/?application=common&model=SettingMenus HTTP/1.1" 500 122212
+ERROR 2024-01-07 02:02:26,508 log Internal Server Error: /table_update/728/
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\views.py", line 243, in partial_update
+    if serializer.is_valid():
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\serializers.py", line 227, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\serializers.py", line 426, in run_validation
+    value = self.to_internal_value(data)
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\serializers.py", line 42, in to_internal_value
+    data[field_name] = list(map(int, data[field_name].split(',')))
+KeyError: 'role'
+ERROR 2024-01-07 02:02:26,542 basehttp "PATCH /table_update/728/?application=common&model=SettingMenus HTTP/1.1" 500 122376
+WARNING 2024-01-07 02:05:40,492 log Bad Request: /table_update/728/
+WARNING 2024-01-07 02:05:40,512 basehttp "PATCH /table_update/728/?application=common&model=SettingMenus HTTP/1.1" 400 61
+ERROR 2024-01-07 02:18:17,469 log Internal Server Error: /table_update/728/
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\views.py", line 243, in partial_update
+    if serializer.is_valid():
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\serializers.py", line 227, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\serializers.py", line 426, in run_validation
+    value = self.to_internal_value(data)
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\serializers.py", line 40, in to_internal_value
+    data[field_name] = list(map(int, data[field_name].split(',')))
+KeyError: 'role'
+ERROR 2024-01-07 02:18:17,607 basehttp "PATCH /table_update/728/?application=common&model=SettingMenus HTTP/1.1" 500 122438
+ERROR 2024-01-07 02:20:22,149 log Internal Server Error: /table_update/728/
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\views.py", line 243, in partial_update
+    if serializer.is_valid():
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\serializers.py", line 227, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\serializers.py", line 426, in run_validation
+    value = self.to_internal_value(data)
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\serializers.py", line 40, in to_internal_value
+    data[field_name] = list(map(int, data[field_name].split(',')))
+KeyError: 'role'
+ERROR 2024-01-07 02:20:22,184 basehttp "PATCH /table_update/728/?application=common&model=SettingMenus HTTP/1.1" 500 121829
+ERROR 2024-01-07 02:27:21,220 log Internal Server Error: /table_update/728/
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\views.py", line 243, in partial_update
+    if serializer.is_valid():
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\serializers.py", line 227, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\serializers.py", line 426, in run_validation
+    value = self.to_internal_value(data)
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\serializers.py", line 38, in to_internal_value
+    data[field_name] = list(map(int, data[field_name].split(',')))
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\http\request.py", line 555, in __setitem__
+    self._assert_mutable()
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\http\request.py", line 552, in _assert_mutable
+    raise AttributeError("This QueryDict instance is immutable")
+AttributeError: This QueryDict instance is immutable
+ERROR 2024-01-07 02:27:21,298 basehttp "PATCH /table_update/728/?application=common&model=SettingMenus HTTP/1.1" 500 129702
+ERROR 2024-01-07 02:27:31,991 log Internal Server Error: /table_update/728/
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\views.py", line 243, in partial_update
+    if serializer.is_valid():
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\serializers.py", line 227, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\serializers.py", line 426, in run_validation
+    value = self.to_internal_value(data)
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\serializers.py", line 38, in to_internal_value
+    data[field_name] = list(map(int, data[field_name].split(',')))
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\http\request.py", line 555, in __setitem__
+    self._assert_mutable()
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\http\request.py", line 552, in _assert_mutable
+    raise AttributeError("This QueryDict instance is immutable")
+AttributeError: This QueryDict instance is immutable
+ERROR 2024-01-07 02:27:32,022 basehttp "PATCH /table_update/728/?application=common&model=SettingMenus HTTP/1.1" 500 129862
+ERROR 2024-01-07 02:29:30,586 log Internal Server Error: /table_update/728/
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\views.py", line 243, in partial_update
+    if serializer.is_valid():
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\serializers.py", line 227, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\serializers.py", line 426, in run_validation
+    value = self.to_internal_value(data)
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\serializers.py", line 42, in to_internal_value
+    data[field_name] = list(map(int, data[field_name].split(',')))
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\http\request.py", line 555, in __setitem__
+    self._assert_mutable()
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\http\request.py", line 552, in _assert_mutable
+    raise AttributeError("This QueryDict instance is immutable")
+AttributeError: This QueryDict instance is immutable
+ERROR 2024-01-07 02:29:30,658 basehttp "PATCH /table_update/728/?application=common&model=SettingMenus HTTP/1.1" 500 130142
+ERROR 2024-01-07 02:31:14,554 log Internal Server Error: /table_update/728/
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\views.py", line 243, in partial_update
+    if serializer.is_valid():
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\serializers.py", line 227, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\serializers.py", line 426, in run_validation
+    value = self.to_internal_value(data)
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\serializers.py", line 39, in to_internal_value
+    data[field_name] = list(map(int, data[field_name].split(',')))
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\http\request.py", line 555, in __setitem__
+    self._assert_mutable()
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\http\request.py", line 552, in _assert_mutable
+    raise AttributeError("This QueryDict instance is immutable")
+AttributeError: This QueryDict instance is immutable
+ERROR 2024-01-07 02:31:14,589 basehttp "PATCH /table_update/728/?application=common&model=SettingMenus HTTP/1.1" 500 130197
+ERROR 2024-01-07 02:32:12,705 log Internal Server Error: /table_update/728/
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\views.py", line 243, in partial_update
+    if serializer.is_valid():
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\serializers.py", line 227, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\serializers.py", line 426, in run_validation
+    value = self.to_internal_value(data)
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\serializers.py", line 40, in to_internal_value
+    data[field_name] = list(map(int, data[field_name].split(',')))
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\http\request.py", line 555, in __setitem__
+    self._assert_mutable()
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\http\request.py", line 552, in _assert_mutable
+    raise AttributeError("This QueryDict instance is immutable")
+AttributeError: This QueryDict instance is immutable
+ERROR 2024-01-07 02:32:12,739 basehttp "PATCH /table_update/728/?application=common&model=SettingMenus HTTP/1.1" 500 129884
+ERROR 2024-01-07 02:32:56,660 log Internal Server Error: /table_update/728/
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\views.py", line 243, in partial_update
+    if serializer.is_valid():
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\serializers.py", line 227, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\serializers.py", line 426, in run_validation
+    value = self.to_internal_value(data)
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\serializers.py", line 40, in to_internal_value
+    data[field_name] = list(map(int, data[field_name].split(',')))
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\http\request.py", line 555, in __setitem__
+    self._assert_mutable()
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\http\request.py", line 552, in _assert_mutable
+    raise AttributeError("This QueryDict instance is immutable")
+AttributeError: This QueryDict instance is immutable
+ERROR 2024-01-07 02:32:56,694 basehttp "PATCH /table_update/728/?application=common&model=SettingMenus HTTP/1.1" 500 129985
+ERROR 2024-01-07 02:33:38,931 log Internal Server Error: /table_update/728/
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\views.py", line 243, in partial_update
+    if serializer.is_valid():
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\serializers.py", line 227, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\serializers.py", line 426, in run_validation
+    value = self.to_internal_value(data)
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\serializers.py", line 40, in to_internal_value
+    data[field_name] = list(map(int, data[field_name].split(',')))
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\http\request.py", line 555, in __setitem__
+    self._assert_mutable()
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\http\request.py", line 552, in _assert_mutable
+    raise AttributeError("This QueryDict instance is immutable")
+AttributeError: This QueryDict instance is immutable
+ERROR 2024-01-07 02:33:38,969 basehttp "PATCH /table_update/728/?application=common&model=SettingMenus HTTP/1.1" 500 130075
+WARNING 2024-01-07 02:36:19,373 log Bad Request: /table_update/728/
+WARNING 2024-01-07 02:36:19,399 basehttp "PATCH /table_update/728/?application=common&model=SettingMenus HTTP/1.1" 400 63
+WARNING 2024-01-07 02:39:11,662 log Bad Request: /table_update/728/
+WARNING 2024-01-07 02:39:11,674 basehttp "PATCH /table_update/728/?application=common&model=SettingMenus HTTP/1.1" 400 63
+ERROR 2024-01-07 02:40:18,451 log Internal Server Error: /table_update/728/
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\views.py", line 243, in partial_update
+    if serializer.is_valid():
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\serializers.py", line 227, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\serializers.py", line 426, in run_validation
+    value = self.to_internal_value(data)
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\serializers.py", line 39, in to_internal_value
+    data[field_name] = list(map(int, data[field_name].split(',')))
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\http\request.py", line 555, in __setitem__
+    self._assert_mutable()
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\http\request.py", line 552, in _assert_mutable
+    raise AttributeError("This QueryDict instance is immutable")
+AttributeError: This QueryDict instance is immutable
+ERROR 2024-01-07 02:40:18,495 basehttp "PATCH /table_update/728/?application=common&model=SettingMenus HTTP/1.1" 500 130274
+ERROR 2024-01-07 02:40:55,209 log Internal Server Error: /table_update/728/
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\views.py", line 234, in update
+    serializer.is_valid(raise_exception=True)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\serializers.py", line 227, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\serializers.py", line 426, in run_validation
+    value = self.to_internal_value(data)
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\serializers.py", line 39, in to_internal_value
+    data[field_name] = list(map(int, data[field_name].split(',')))
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\http\request.py", line 555, in __setitem__
+    self._assert_mutable()
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\http\request.py", line 552, in _assert_mutable
+    raise AttributeError("This QueryDict instance is immutable")
+AttributeError: This QueryDict instance is immutable
+ERROR 2024-01-07 02:40:55,243 basehttp "PUT /table_update/728/?application=common&model=SettingMenus HTTP/1.1" 500 130226
+ERROR 2024-01-07 02:41:29,583 log Internal Server Error: /table_update/728/
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\views.py", line 243, in partial_update
+    if serializer.is_valid():
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\serializers.py", line 227, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\serializers.py", line 426, in run_validation
+    value = self.to_internal_value(data)
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\serializers.py", line 40, in to_internal_value
+    data[field_name] = list(map(int, data[field_name].split(',')))
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\http\request.py", line 555, in __setitem__
+    self._assert_mutable()
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\http\request.py", line 552, in _assert_mutable
+    raise AttributeError("This QueryDict instance is immutable")
+AttributeError: This QueryDict instance is immutable
+ERROR 2024-01-07 02:41:29,621 basehttp "PATCH /table_update/728/?application=common&model=SettingMenus HTTP/1.1" 500 130482
+ERROR 2024-01-07 02:43:08,267 log Internal Server Error: /table_update/728/
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\views.py", line 243, in partial_update
+    if serializer.is_valid():
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\serializers.py", line 227, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\serializers.py", line 426, in run_validation
+    value = self.to_internal_value(data)
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\serializers.py", line 42, in to_internal_value
+    data[field_name] = list(map(int, data[field_name].split(',')))
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\http\request.py", line 555, in __setitem__
+    self._assert_mutable()
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\http\request.py", line 552, in _assert_mutable
+    raise AttributeError("This QueryDict instance is immutable")
+AttributeError: This QueryDict instance is immutable
+ERROR 2024-01-07 02:43:08,303 basehttp "PATCH /table_update/728/?application=common&model=SettingMenus HTTP/1.1" 500 130668
+WARNING 2024-01-07 02:48:16,294 log Bad Request: /table_update/728/
+WARNING 2024-01-07 02:48:16,308 basehttp "PATCH /table_update/728/?application=common&model=SettingMenus HTTP/1.1" 400 63
+WARNING 2024-01-07 02:51:21,392 log Bad Request: /table_update/728/
+WARNING 2024-01-07 02:51:21,404 basehttp "PATCH /table_update/728/?application=common&model=SettingMenus HTTP/1.1" 400 63
+WARNING 2024-01-07 02:56:40,148 log Bad Request: /table_update/728/
+WARNING 2024-01-07 02:56:40,161 basehttp "PATCH /table_update/728/?application=common&model=SettingMenus HTTP/1.1" 400 63
+WARNING 2024-01-07 03:00:54,455 log Bad Request: /table_update/728/
+WARNING 2024-01-07 03:00:54,480 basehttp "PATCH /table_update/728/?application=common&model=SettingMenus HTTP/1.1" 400 63
+WARNING 2024-01-07 03:15:16,945 log Bad Request: /table_update/728/
+WARNING 2024-01-07 03:15:16,959 basehttp "PATCH /table_update/728/?application=common&model=SettingMenus HTTP/1.1" 400 63
+WARNING 2024-01-07 03:16:33,129 log Bad Request: /table_update/728/
+WARNING 2024-01-07 03:16:33,139 basehttp "PATCH /table_update/728/?application=common&model=SettingMenus HTTP/1.1" 400 63
+ERROR 2024-01-07 03:18:29,258 log Internal Server Error: /table_update/728/
+Traceback (most recent call last):
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\views.py", line 243, in partial_update
+    if serializer.is_valid():
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\serializers.py", line 227, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python38\lib\site-packages\rest_framework\serializers.py", line 426, in run_validation
+    value = self.to_internal_value(data)
+  File "C:\Users\User\Documents\Work\Ramin\floramedtour\common\serializers.py", line 44, in to_internal_value
+    print(mutable_data[field_name].split(','))
+AttributeError: 'list' object has no attribute 'split'
+ERROR 2024-01-07 03:18:29,302 basehttp "PATCH /table_update/728/?application=common&model=SettingMenus HTTP/1.1" 500 122762
+WARNING 2024-01-07 03:19:26,756 log Bad Request: /table_update/728/
+WARNING 2024-01-07 03:19:26,767 basehttp "PATCH /table_update/728/?application=common&model=SettingMenus HTTP/1.1" 400 63
+WARNING 2024-01-07 03:21:02,086 log Bad Request: /table_update/728/
+WARNING 2024-01-07 03:21:02,105 basehttp "PATCH /table_update/728/?application=common&model=SettingMenus HTTP/1.1" 400 63
+WARNING 2024-01-07 03:22:08,414 log Bad Request: /table_update/728/
+WARNING 2024-01-07 03:22:08,428 basehttp "PATCH /table_update/728/?application=common&model=SettingMenus HTTP/1.1" 400 64
+WARNING 2024-01-07 03:23:46,408 log Bad Request: /table_update/728/
+WARNING 2024-01-07 03:23:46,423 basehttp "PATCH /table_update/728/?application=common&model=SettingMenus HTTP/1.1" 400 64
+WARNING 2024-01-07 03:24:38,002 log Bad Request: /table_update/728/
+WARNING 2024-01-07 03:24:38,017 basehttp "PATCH /table_update/728/?application=common&model=SettingMenus HTTP/1.1" 400 64
+WARNING 2024-01-07 03:28:05,741 log Not Found: /favicon.ico
+WARNING 2024-01-07 03:28:05,752 basehttp "GET /favicon.ico HTTP/1.1" 404 8157
+WARNING 2024-01-07 03:32:20,766 log Bad Request: /table_update/728/
+WARNING 2024-01-07 03:32:20,776 basehttp "PATCH /table_update/728/?application=common&model=SettingMenus HTTP/1.1" 400 63
+WARNING 2024-01-07 03:43:14,001 log Bad Request: /table_update/728/
+WARNING 2024-01-07 03:43:14,014 basehttp "PATCH /table_update/728/?application=common&model=SettingMenus HTTP/1.1" 400 63
+WARNING 2024-01-07 03:51:18,690 log Bad Request: /table_update/728/
+WARNING 2024-01-07 03:51:18,703 basehttp "PATCH /table_update/728/?application=common&model=SettingMenus HTTP/1.1" 400 63
+WARNING 2024-01-07 03:59:32,105 log Bad Request: /table_update/728/
+WARNING 2024-01-07 03:59:32,116 basehttp "PATCH /table_update/728/?application=common&model=SettingMenus HTTP/1.1" 400 63
+WARNING 2024-01-07 04:01:20,829 log Bad Request: /table_update/728/
+WARNING 2024-01-07 04:01:20,846 basehttp "PATCH /table_update/728/?application=common&model=SettingMenus HTTP/1.1" 400 63
+WARNING 2024-01-07 04:02:31,351 log Bad Request: /table_update/728/
+WARNING 2024-01-07 04:02:31,361 basehttp "PATCH /table_update/728/?application=common&model=SettingMenus HTTP/1.1" 400 63
+WARNING 2024-01-07 04:03:30,860 log Bad Request: /table_update/728/
+WARNING 2024-01-07 04:03:30,968 basehttp "PATCH /table_update/728/?application=common&model=SettingMenus HTTP/1.1" 400 61
+WARNING 2024-01-07 06:31:16,652 log Not Found: /favicon.ico
+WARNING 2024-01-07 06:31:16,668 basehttp "GET /favicon.ico HTTP/1.1" 404 8157
+WARNING 2024-01-07 08:21:07,878 log Not Found: /images/5f58b1c96f9441f69d9ce1a8c4e4fbb7.jpg
+WARNING 2024-01-07 08:21:07,894 basehttp "GET /images/5f58b1c96f9441f69d9ce1a8c4e4fbb7.jpg HTTP/1.1" 404 8253
+WARNING 2024-01-07 08:21:08,061 log Not Found: /images/88e0fb424e7c4bcb9d78675ef4c8fb4f.jpg
+WARNING 2024-01-07 08:21:08,079 basehttp "GET /images/88e0fb424e7c4bcb9d78675ef4c8fb4f.jpg HTTP/1.1" 404 8253
+WARNING 2024-01-07 08:21:08,148 log Not Found: /images/312dc00cae6f49079c49cd08a6051090.jpg
+WARNING 2024-01-07 08:21:08,163 basehttp "GET /images/312dc00cae6f49079c49cd08a6051090.jpg HTTP/1.1" 404 8253
