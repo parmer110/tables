@@ -1,16 +1,19 @@
 from pathlib import Path
 import os
 from datetime import timedelta
-import environ
+from dotenv import load_dotenv
+import dj_database_url
 from .logging_setup import LOGGING
 
 DEVELOPMENT_MODE = True
 VERSION = "2.0.0"
 
-ROOT_DIR = environ.Path(__file__) - 2
+load_dotenv()
+# ROOT_DIR = environ.Path(__file__) - 2
+parent_dir = os.path.dirname(os.path.abspath(__file__))
 
-env = environ.Env()
-environ.Env.read_env(str(ROOT_DIR.path('.env')))
+# env = environ.Env()
+# environ.Env.read_env(str(parent_dir.path('.env')))
 
 # BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -29,11 +32,11 @@ CSRF_COOKIE_SAMESITE = 'Lax'
 # CSRF_COOKIE_DOMAIN = 'your-domain.com'
 # CSRF_COOKIE_PATH = '/your-path'
 
-SECRET_KEY = env('DJANGO_SECRET_KEY')
+SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')
 
-DEBUG = env.bool('DJANGO_DEBUG', default=False)
+DEBUG = os.getenv('DJANGO_DEBUG', 'False').lower() == 'true'
 
-ALLOWED_HOSTS = env.list('ALLOWED_HOSTS', default=[])
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '').split(',')
 
 # Application definition
 
@@ -115,8 +118,12 @@ WSGI_APPLICATION = 'floramedtour.wsgi.application'
 # # یا
 # CELERY_RESULT_BACKEND = 'rpc://'
 
+# DATABASES = {
+#     'default': os.getenv('DATABASE_URL')
+# }
+
 DATABASES = {
-    'default': env.db('DATABASE_URL')
+    'default': dj_database_url.parse(os.getenv('DATABASE_URL'))
 }
 
 DEFAULT_CHARSET = 'utf-8'
@@ -130,7 +137,7 @@ DEFAULT_CHARSET = 'utf-8'
 CACHES = {
     'default': {
         'BACKEND': 'django_redis.cache.RedisCache',
-        'LOCATION': env('REDIS_URL'),
+        'LOCATION': os.getenv('REDIS_URL'),
         'OPTIONS': {
             'CLIENT_CLASS': 'django_redis.client.DefaultClient',
         }
@@ -186,8 +193,8 @@ GRAPH_MODELS ={
 # ROOT_HOSTCONF = 'project.hosts'  # اسم فایل hosts.py شما
 # DEFAULT_HOST = 'www'
 
-PRIVATE_KEY = env('PRIVATE_KEY').replace('\\n', '\n')
-PUBLIC_KEY = env('PUBLIC_KEY').replace('\\n', '\n')
+PRIVATE_KEY = os.getenv('PRIVATE_KEY').replace('\\n', '\n')
+PUBLIC_KEY = os.getenv('PUBLIC_KEY').replace('\\n', '\n')
 
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(hours=3),

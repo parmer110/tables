@@ -44,7 +44,7 @@ from rest_framework.throttling import AnonRateThrottle
 import logging
 from django.utils.decorators import method_decorator
 from django.core.cache import cache
-from celery.result import AsyncResult
+# from celery.result import AsyncResult
 from django.http import HttpResponseNotAllowed
 from django.contrib.contenttypes.models import ContentType
 from .tasks import fetch_related_data

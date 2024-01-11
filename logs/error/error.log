@@ -2057,3 +2057,43 @@ Traceback (most recent call last):
     print(mutable_data[field_name].split(','))
 AttributeError: 'list' object has no attribute 'split'
 ERROR 2024-01-07 03:18:29,302 basehttp "PATCH /table_update/728/?application=common&model=SettingMenus HTTP/1.1" 500 122762
+ERROR 2024-01-11 00:30:41,368 log Internal Server Error: /login/
+Traceback (most recent call last):
+  File "/var/www/html/floramedtour_dev/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/var/www/html/floramedtour_dev/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/var/www/html/floramedtour_dev/env/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/var/www/html/floramedtour_dev/env/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/var/www/html/floramedtour_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/var/www/html/floramedtour_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/var/www/html/floramedtour_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/var/www/html/floramedtour_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/var/www/html/floramedtour_dev/env/lib/python3.10/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/var/www/html/floramedtour_dev/common/views.py", line 435, in login_view
+    if form.is_valid():
+  File "/var/www/html/floramedtour_dev/env/lib/python3.10/site-packages/django/forms/forms.py", line 197, in is_valid
+    return self.is_bound and not self.errors
+  File "/var/www/html/floramedtour_dev/env/lib/python3.10/site-packages/django/forms/forms.py", line 192, in errors
+    self.full_clean()
+  File "/var/www/html/floramedtour_dev/env/lib/python3.10/site-packages/django/forms/forms.py", line 328, in full_clean
+    self._clean_form()
+  File "/var/www/html/floramedtour_dev/env/lib/python3.10/site-packages/django/forms/forms.py", line 349, in _clean_form
+    cleaned_data = self.clean()
+  File "/var/www/html/floramedtour_dev/env/lib/python3.10/site-packages/django/contrib/auth/forms.py", line 250, in clean
+    self.user_cache = authenticate(
+  File "/var/www/html/floramedtour_dev/env/lib/python3.10/site-packages/django/views/decorators/debug.py", line 73, in sensitive_variables_wrapper
+    return func(*func_args, **func_kwargs)
+  File "/var/www/html/floramedtour_dev/env/lib/python3.10/site-packages/django/contrib/auth/__init__.py", line 79, in authenticate
+    user = backend.authenticate(request, **credentials)
+  File "/var/www/html/floramedtour_dev/env/lib/python3.10/site-packages/django/contrib/auth/backends.py", line 42, in authenticate
+    user = UserModel._default_manager.get_by_natural_key(username)
+AttributeError: 'ActiveManager' object has no attribute 'get_by_natural_key'
+ERROR 2024-01-11 00:30:41,383 basehttp "POST /login/ HTTP/1.1" 500 135791
