@@ -14,7 +14,7 @@ import requests
 import geoip2.database
 from twilio.rest import Client
 from django.conf import settings
-import winreg as reg
+# import winreg as reg
 import socket
 import socks  # Import PySocks
 from twilio.http.http_client import TwilioHttpClient

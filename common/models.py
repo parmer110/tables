@@ -42,6 +42,9 @@ class ActiveManager(models.Manager):
     def get_queryset(self):
         return super().get_queryset().filter(deleted_at__isnull=True)
 
+    def get_by_natural_key(self, username):
+        return self.get(username=username)
+    
 class AllManager(models.Manager):
     def get_queryset(self):
         return super().get_queryset()        
