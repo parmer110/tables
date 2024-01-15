@@ -2581,3 +2581,23 @@ WARNING 2024-01-11 00:30:43,658 log Not Found: /favicon.ico
 WARNING 2024-01-11 00:30:43,664 basehttp "GET /favicon.ico HTTP/1.1" 404 8157
 WARNING 2024-01-11 00:43:10,796 log Bad Request: /token/refresh/
 WARNING 2024-01-11 00:43:10,825 basehttp "POST /token/refresh/ HTTP/1.1" 400 23
+WARNING 2024-01-15 12:23:10,601 log Bad Request: /token/refresh/
+WARNING 2024-01-15 12:23:10,809 basehttp "POST /token/refresh/ HTTP/1.1" 400 23
+WARNING 2024-01-15 14:51:18,593 log Bad Request: /token/refresh/
+WARNING 2024-01-15 14:51:18,600 basehttp "POST /token/refresh/ HTTP/1.1" 400 23
+WARNING 2024-01-15 14:56:01,573 log Bad Request: /token/refresh/
+WARNING 2024-01-15 14:56:01,584 basehttp "POST /token/refresh/ HTTP/1.1" 400 23
+WARNING 2024-01-15 14:59:28,870 log Bad Request: /token/refresh/
+WARNING 2024-01-15 14:59:28,875 basehttp "POST /token/refresh/ HTTP/1.1" 400 23
+WARNING 2024-01-15 15:00:09,910 log Bad Request: /token/refresh/
+WARNING 2024-01-15 15:00:09,916 basehttp "POST /token/refresh/ HTTP/1.1" 400 23
+WARNING 2024-01-15 15:00:28,342 log Bad Request: /token/refresh/
+WARNING 2024-01-15 15:00:28,348 basehttp "POST /token/refresh/ HTTP/1.1" 400 23
+WARNING 2024-01-15 15:00:43,373 log Bad Request: /token/refresh/
+WARNING 2024-01-15 15:00:43,377 basehttp "POST /token/refresh/ HTTP/1.1" 400 23
+WARNING 2024-01-15 15:02:33,377 log Bad Request: /token/refresh/
+WARNING 2024-01-15 15:02:33,387 basehttp "POST /token/refresh/ HTTP/1.1" 400 23
+WARNING 2024-01-15 15:03:32,999 log Bad Request: /token/refresh/
+WARNING 2024-01-15 15:03:33,005 basehttp "POST /token/refresh/ HTTP/1.1" 400 23
+WARNING 2024-01-15 15:03:43,272 log Bad Request: /token/refresh/
+WARNING 2024-01-15 15:03:43,276 basehttp "POST /token/refresh/ HTTP/1.1" 400 23
