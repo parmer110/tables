@@ -2601,3 +2601,89 @@ WARNING 2024-01-15 15:03:32,999 log Bad Request: /token/refresh/
 WARNING 2024-01-15 15:03:33,005 basehttp "POST /token/refresh/ HTTP/1.1" 400 23
 WARNING 2024-01-15 15:03:43,272 log Bad Request: /token/refresh/
 WARNING 2024-01-15 15:03:43,276 basehttp "POST /token/refresh/ HTTP/1.1" 400 23
+WARNING 2024-01-15 22:26:59,478 basehttp "GET /static/intl-tel-input/build/js/intlTelInput.min.js HTTP/1.1" 404 1889
+WARNING 2024-01-15 22:26:59,483 basehttp "GET /static/node_modules/intl-tel-input/build/css/intlTelInput.css HTTP/1.1" 404 1922
+WARNING 2024-01-16 01:06:07,871 basehttp "GET /static/node_modules/intl-tel-input/build/css/intlTelInput.css HTTP/1.1" 404 1922
+WARNING 2024-01-16 01:06:07,874 basehttp "GET /static/intl-tel-input/build/js/intlTelInput.min.js HTTP/1.1" 404 1889
+WARNING 2024-01-16 10:17:42,063 log Bad Request: /token/refresh/
+WARNING 2024-01-16 10:17:42,096 basehttp "POST /token/refresh/ HTTP/1.1" 400 23
+WARNING 2024-01-16 10:17:58,686 log Bad Request: /token/refresh/
+WARNING 2024-01-16 10:17:58,691 basehttp "POST /token/refresh/ HTTP/1.1" 400 23
+WARNING 2024-01-16 18:45:29,205 log Bad Request: /token/refresh/
+WARNING 2024-01-16 18:45:29,233 basehttp "POST /token/refresh/ HTTP/1.1" 400 23
+WARNING 2024-01-17 02:19:33,823 log Bad Request: /token/refresh/
+WARNING 2024-01-17 02:19:33,832 basehttp "POST /token/refresh/ HTTP/1.1" 400 23
+ERROR 2024-01-17 03:05:43,241 log Internal Server Error: /register/
+Traceback (most recent call last):
+  File "/var/www/html/floramedtour_dev/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/var/www/html/floramedtour_dev/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/var/www/html/floramedtour_dev/env/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/var/www/html/floramedtour_dev/env/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/var/www/html/floramedtour_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/var/www/html/floramedtour_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/var/www/html/floramedtour_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/var/www/html/floramedtour_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/var/www/html/floramedtour_dev/env/lib/python3.10/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/var/www/html/floramedtour_dev/common/views.py", line 420, in register
+    return render (request, "common/register.html", {
+  File "/var/www/html/floramedtour_dev/env/lib/python3.10/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/var/www/html/floramedtour_dev/env/lib/python3.10/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/var/www/html/floramedtour_dev/env/lib/python3.10/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "/var/www/html/floramedtour_dev/env/lib/python3.10/site-packages/django/template/backends/django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/var/www/html/floramedtour_dev/env/lib/python3.10/site-packages/django/template/engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "/var/www/html/floramedtour_dev/env/lib/python3.10/site-packages/django/template/engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/var/www/html/floramedtour_dev/env/lib/python3.10/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/var/www/html/floramedtour_dev/env/lib/python3.10/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+  File "/var/www/html/floramedtour_dev/env/lib/python3.10/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/var/www/html/floramedtour_dev/env/lib/python3.10/site-packages/django/template/base.py", line 196, in compile_nodelist
+    return parser.parse()
+  File "/var/www/html/floramedtour_dev/env/lib/python3.10/site-packages/django/template/base.py", line 510, in parse
+    raise self.error(token, e)
+  File "/var/www/html/floramedtour_dev/env/lib/python3.10/site-packages/django/template/base.py", line 508, in parse
+    compiled_result = compile_func(self, token)
+  File "/var/www/html/floramedtour_dev/env/lib/python3.10/site-packages/django/template/loader_tags.py", line 295, in do_extends
+    nodelist = parser.parse()
+  File "/var/www/html/floramedtour_dev/env/lib/python3.10/site-packages/django/template/base.py", line 510, in parse
+    raise self.error(token, e)
+  File "/var/www/html/floramedtour_dev/env/lib/python3.10/site-packages/django/template/base.py", line 508, in parse
+    compiled_result = compile_func(self, token)
+  File "/var/www/html/floramedtour_dev/env/lib/python3.10/site-packages/django/template/loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "/var/www/html/floramedtour_dev/env/lib/python3.10/site-packages/django/template/base.py", line 510, in parse
+    raise self.error(token, e)
+  File "/var/www/html/floramedtour_dev/env/lib/python3.10/site-packages/django/template/base.py", line 508, in parse
+    compiled_result = compile_func(self, token)
+  File "/var/www/html/floramedtour_dev/env/lib/python3.10/site-packages/django/templatetags/static.py", line 171, in do_static
+    return StaticNode.handle_token(parser, token)
+  File "/var/www/html/floramedtour_dev/env/lib/python3.10/site-packages/django/templatetags/static.py", line 145, in handle_token
+    path = parser.compile_filter(bits[1])
+  File "/var/www/html/floramedtour_dev/env/lib/python3.10/site-packages/django/template/base.py", line 597, in compile_filter
+    return FilterExpression(token, self)
+  File "/var/www/html/floramedtour_dev/env/lib/python3.10/site-packages/django/template/base.py", line 698, in __init__
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '"dist/register_bundle.js' from '"dist/register_bundle.js'
+ERROR 2024-01-17 03:05:43,334 basehttp "GET /register/ HTTP/1.1" 500 228948
+WARNING 2024-01-17 03:05:44,357 log Not Found: /favicon.ico
+WARNING 2024-01-17 03:05:44,363 basehttp "GET /favicon.ico HTTP/1.1" 404 8157
+WARNING 2024-01-17 03:20:15,145 log Bad Request: /token/refresh/
+WARNING 2024-01-17 03:20:15,149 basehttp "POST /token/refresh/ HTTP/1.1" 400 23
+WARNING 2024-01-17 03:33:30,410 log Bad Request: /token/refresh/
+WARNING 2024-01-17 03:33:30,415 basehttp "POST /token/refresh/ HTTP/1.1" 400 23

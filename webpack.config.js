@@ -5,6 +5,7 @@ module.exports = {
   entry: {
     common_index: './common/static/js/common_index.js',
     modal: './common/static/js/components.js',
+    register: './common/static/js/common_register.js',
   },
   output: {
     path: path.resolve(__dirname, './common/static/dist'),
@@ -21,6 +22,11 @@ module.exports = {
             presets: ['@babel/preset-env', '@babel/preset-react'],
           },
         },
+      },
+      // new CSS rule
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
       },
     ],
   },
