@@ -173,7 +173,7 @@ GEOIP_PATH = os.path.join(BASE_DIR, 'geoip_data')
 
 STATIC_ROOT = BASE_DIR / 'productionfiles'
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 

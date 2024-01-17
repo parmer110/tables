@@ -3,7 +3,7 @@
 {% block title %}Register{% endblock title %}
 {% block head %}
     <meta name="description" content="Medical Tourism">
-    <link href="{% static 'node_modules/intl-tel-input/build/css/intlTelInput.css' %}" rel="stylesheet">
+    <script src='{% static "dist/register_bundle.js" %}'></script>
 {% endblock head %}
 {% block content %}
     <div class="container mt-5">
@@ -55,10 +55,5 @@
     </div>
 {% endblock content %}
 {% block lastt %}
-    <script>
-        const utilsScript= "{% static 'intl-tel-input/build/js/utils.js' %}"
-    </script>
-    <script src="{% static 'intl-tel-input/build/js/intlTelInput.min.js' %}"></script>
-    <script src="{% static "js/common_register.js" %}"></script>
 {% endblock lastt %}
 

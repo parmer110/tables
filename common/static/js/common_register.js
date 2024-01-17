@@ -1,3 +1,7 @@
+import 'intl-tel-input/build/css/intlTelInput.css';
+import intlTelInput from 'intl-tel-input';
+import utilsScript from 'intl-tel-input/build/js/utils.js';
+
 document.addEventListener("DOMContentLoaded", ()=>{
     var input = document.querySelector("#phone_number");
 
@@ -17,13 +21,13 @@ document.addEventListener("DOMContentLoaded", ()=>{
                 itiOptions.initialCountry = 'us';
             }
 
-            var iti = window.intlTelInput(input, itiOptions);
+            var iti = intlTelInput(input, itiOptions);
 
             input.addEventListener('blur', () => {
               if (iti.isValidNumber()) {
                 input.setCustomValidity('');
               } else {
-                input.setCustomValidity('لطفاً یک شماره تلفن معتبر وارد کنید.');
+                input.setCustomValidity('Please enter valid phone number.');
               }
             });
         })
