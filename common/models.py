@@ -36,7 +36,7 @@ from common.utils.tools import *
     # Place
     # PersonPlace
     # SiteManagementsLog
-    #Translate
+    # Translate
 
 class ActiveManager(models.Manager):
     def get_queryset(self):
@@ -131,43 +131,49 @@ def create_audit_log_on_save(sender, instance, created, **kwargs):
     if sender in excluded_models:
         return
 
-    print("♠♠♠♠♠♠♠♠♠♠♠♠♠♠♠♠♠♠♠♠♠♠♠")
-    print(sender)
-    # Clear chaches
-    cache.client.delete_pattern('settings_serialized_model_*')
-    if sender == SettingMenus:
-        cache.client.delete_pattern('setting_table_index_view_set_retrieve_*')
-    if sender == AppModels:
-        cache.client.delete_pattern('*table_title*')
+    try:
+        print("♠♠♠♠♠♠♠♠♠♠♠♠♠♠♠♠♠♠♠♠♠♠♠")
+        print(sender)
+        # Clear chaches
+        cache.client.delete_pattern('settings_serialized_model_*')
+        if sender == SettingMenus:
+            cache.client.delete_pattern('setting_table_index_view_set_retrieve_*')
+        if sender == AppModels:
+            cache.client.delete_pattern('*table_title*')
 
-    if created:
-        action = "Created"
-    else:
-        action = "Updated"
+        if created:
+            action = "Created"
+        else:
+            action = "Updated"
 
-    user = instance if hasattr(instance, 'is_authenticated') and instance.is_authenticated else None
-    AuditLog.objects.create(
-        user=user,
-        action=action,
-        content_type=ContentType.objects.get_for_model(sender),
-        object_id=instance.id,
-    )
+        user = instance if hasattr(instance, 'is_authenticated') and instance.is_authenticated else None
+        AuditLog.objects.create(
+            user=user,
+            action=action,
+            content_type=ContentType.objects.get_for_model(sender),
+            object_id=instance.id,
+        )
+    except:
+        print(f"ContentType does not exist for model {sender}")
 
 @receiver(pre_delete)
 def create_audit_log_on_delete(sender, instance, **kwargs):
     if sender == AuditLog or sender == MyCounter or sender == Session:
         return
 
-    action = "Deleted"
+    try:
+        action = "Deleted"
 
-    user = instance if hasattr(instance, 'is_authenticated') and instance.is_authenticated else None
+        user = instance if hasattr(instance, 'is_authenticated') and instance.is_authenticated else None
 
-    AuditLog.objects.create(
-        user=user,
-        action=action,
-        content_type=ContentType.objects.get_for_model(sender),
-        object_id=instance.id,
-    )
+        AuditLog.objects.create(
+            user=user,
+            action=action,
+            content_type=ContentType.objects.get_for_model(sender),
+            object_id=instance.id,
+        )
+    except:
+        print(f"ContentType does not exist for model {sender}")
 
 
 def validate_model_name(app_name, value):
@@ -288,11 +294,30 @@ class TokenLifetime(CommonModel):
     def __str__(self):
         return str(self.lifetime)
 
+
+# class UserActiveManager(ActiveManager):
+#     def create_user(self, username, email=None, password=None, **extra_fields):
+#         # Create a new user object
+#         user = self.model(username=username, email=email, **extra_fields)
+
+#         # Set the user's password
+#         user.set_password(password)
+
+#         # Save the user object to the database
+#         user.save()
+
+#         return user
+        
+    # def create_superuser(self, username, email=None, password=None, **extra_fields):
+    #     extra_fields.setdefault('is_staff', True)
+    #     extra_fields.setdefault('is_superuser', True)
+    #     return self.create_user(username, email, password, **extra_fields)
+
 class User(AbstractUser, CommonModel):
     token_lifetime = models.ForeignKey(TokenLifetime, null=True, blank=True, on_delete=models.SET_NULL)
     description = models.CharField(max_length=255, null=True, blank=True, verbose_name="User Description")
 
-    objects = ActiveManager()
+    # objects = UserActiveManager()
 
     def __str__(self):
         return self.username
@@ -852,9 +877,11 @@ class SystemSettingsPic(CommonModel):
     name = models.CharField(max_length=30, choices=settings_pic, null=True, blank=True)
     max_image_size_width = models.PositiveIntegerField(verbose_name='Max Image Size Width', default=1200)
     max_image_size_height = models.PositiveIntegerField(verbose_name='Max Image Size Height', default=800)
-    max_image_file_size_mb = models.PositiveIntegerField(
+    max_image_file_size_mb = models.DecimalField(
         verbose_name='Max Image File Size (MB)',
-        default=2,
+        default=2.0,
+        decimal_places=2,
+        max_digits=5,
         help_text='Enter the maximum image file size in megabytes (MB).'
     )
     @property
@@ -867,14 +894,15 @@ class SystemSettingsPic(CommonModel):
     )
 
     class Meta:
-        unique_together = [['app', 'name']]  
+        unique_together = [['app', 'name', 'deleted_at']]  
 
     def __str__(self):
         return f"{self.app} System Settings, {self.name}"
 
 
 class Pictures(CommonModel):
-    image_settings = models.ForeignKey(SystemSettingsPic, on_delete=models.CASCADE, related_name="pictures")
+    image_settings = models.ForeignKey(SystemSettingsPic, on_delete=models.CASCADE, related_name="pictures", null=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="picture", null=True, blank=True, editable=False)
     classification = models.ManyToManyField(Classification, blank=True, related_name="picture")
     name = models.CharField(max_length=20, null=True, unique=True)
     description = models.TextField(null=True, blank=True)
@@ -889,7 +917,9 @@ class Pictures(CommonModel):
     image_width = models.PositiveIntegerField(null=True, blank=True, default='image_width')
     image_height = models.PositiveIntegerField(null=True, blank=True, default='image_width')
 
-    def save(self, *args, **kwargs):
+    def save(self, user=None, *args, **kwargs):
+        if user:
+            self.user = user
 
         if self.deleted_at and not self._state.adding:
             if self.image and os.path.isfile(self.image.path):
@@ -926,21 +956,22 @@ class Pictures(CommonModel):
                     # Save the model again with updated image_width
                     super().save(update_fields=['image_width', 'image_height'])
     
-# # تابع برای حذف فایل پس از حذف مدل
-# @receiver(post_delete, sender=Pictures)
-# def delete_picture(sender, instance, **kwargs):
-#     print("↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑")
-#     if instance.image and os.path.isfile(instance.image.path):
-#         print("↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓")
-#         # ایجاد مسیر موردنیاز
-#         destination = 'temp/' + instance.image.name.split('/')[-1]
-        
-#         # بررسی وجود پوشه و ایجاد آن در صورت لزوم
-#         if not os.path.exists('temp'):
-#             os.makedirs('temp')
-        
-#         # منتقل کردن فایل به مسیر موردنظر
-#         shutil.move(instance.image.path, destination)
+@receiver(post_delete, sender=Pictures)
+def delete_picture(sender, instance, **kwargs):
+    if instance.image and os.path.isfile(instance.image.path):
+        try:
+            # Generate a unique filename based on current timestamp
+            timestamp = datetime.datetime.now().timestamp()
+            destination = f'temp/{timestamp}_{instance.image.name.split("/")[-1]}'
+            
+            # Ensure the 'temp' directory exists
+            if not os.path.exists('temp'):  
+                os.makedirs('temp')  
+            
+            shutil.move(instance.image.path, destination)
+        except Exception as e:
+            # Handle the error gracefully (e.g., log the error)
+            print(f"Error during file deletion: {e}")
 
 def get_templates(app_name):
     app = apps.get_app_config(app_name)
@@ -1032,6 +1063,14 @@ class SettingMenus(CommonModel):
 class MyCounter(models.Model):
     name = models.CharField(max_length=20, default="default")
     value = models.DecimalField(max_digits=10, decimal_places=2, default=0)
+
+
+class Path(CommonModel):
+    url = models.URLField(blank=True, verbose_name="Website Address")
+    description = models.TextField(null=True, blank=True)
+
+    def __str__(self):
+        return f"{self.id}- {self.url}"
 
 
 class DynamicTableTest1(CommonModel):

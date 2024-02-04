@@ -150,16 +150,18 @@ function DynamicTableComponent(props) {
     if (pagination.table === null) {
       return [];
     }
-    return pagination.table.model_instances.results.map((record, index) => {
-      const row = {};
-      pagination.table.field_info.forEach((field) => {
-        if (field.name !== 'created_at' && field.name !== 'updated_at' && field.name !== 'deleted_at') {
-          row[field.name] = record[field.name];
-        }
-      });
-      row.id0 = index + 1;
-      return row;
-    });
+    if (pagination.table && pagination.table.model_instances && pagination.table.model_instances.results) {
+      return pagination.table.model_instances.results.map((record, index) => {
+        const row = {};
+        pagination.table.field_info.forEach((field) => {
+          if (field.name !== 'created_at' && field.name !== 'updated_at' && field.name !== 'deleted_at') {
+            row[field.name] = record[field.name];
+          }
+        });
+        row.id0 = index + 1;
+        return row;
+      });  
+    }
   }, [pagination]);
 
   const initialSelectedRows = selectedId.reduce((acc, id) => {
@@ -220,9 +222,12 @@ function DynamicTableComponent(props) {
                   onChange: (e) => {
                     const originalOnChange = getToggleAllRowsSelectedProps().onChange;
                     originalOnChange(e);
+                    let allRowIds = [];
                     if (e.target.checked) {
-                      const allRowIds = data.map(row => row.id);
-                      handleCheckboxChange(allRowIds); // Pass all row IDs
+                      if (data && data.length > 0) {
+                        allRowIds = data.map(row => row.id);
+                      }
+                        handleCheckboxChange(allRowIds); // Pass all row IDs
                     } else {
                       handleCheckboxChange([]); // Pass an empty array
                     }

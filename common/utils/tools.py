@@ -29,7 +29,6 @@ import logging
 import uuid
 from django.contrib.auth.hashers import check_password
 from rest_framework_simplejwt.tokens import AccessToken
-import jwt
 
 logger = logging.getLogger(__name__)
 

@@ -12,4 +12,4 @@ media/
 productionfiles/
 node_modules/
 temp/
-floramedtour/dev_settings.py
+tables/dev_settings.py

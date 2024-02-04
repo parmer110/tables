@@ -88,6 +88,7 @@ class FieldInfoSerializer(serializers.Serializer):
                 'editable': field.editable,
                 'nullable': field.blank,
                 'is_file': isinstance(field, models.FileField),
+                'default': field.get_default() if hasattr(field, 'get_default') else None,
                 'choices': [{'value': choice[0], 'label': choice[1]} 
                     for choice in field.choices] 
                     if hasattr(field, 'choices') and field.choices is not None else None,

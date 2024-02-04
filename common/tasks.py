@@ -28,7 +28,8 @@ def fetch_related_data(request, model):
     # Pagination using customized StandardResultsSetPagination Paginatior
     page_size = request.GET.get('page_size', 10)
     paginator = StandardResultsSetPagination(page_size=page_size)
-    model_instances = model.objects.all().order_by('id')
+    # model_instances = model.objects.all().order_by('id')
+    model_instances = model_instances.order_by('id')
     model_instances_paginated_field = paginator.paginate_queryset(model_instances, request)
 
     # Get model info using the CustomModelSerializer

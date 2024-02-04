@@ -683,10 +683,10 @@ const controlRow = (table, record, bodyRow, td) => {
                             // Partial row updation
                             try {
                                 for (var pair of updFields.entries()) {
-                                    console.log(pair[0]+ ', ' + pair[1]); 
+                                    // console.log(pair[0]+ ', ' + pair[1]); 
                                 }    
                                 let data = await sendToServer('PATCH', `/table_update/${record.id}/`, updFields, qs);
-                                console.log(data);
+                                // console.log(data);
 
                                 if (data.status >= 200 && data.status < 300) {
                                     message = 'Updated!';
@@ -962,7 +962,7 @@ function createNewRow(table, tbody, addRowButton, keyName) {
                     let qs = `application=${application}&model=${model}`;
 
                     let validation = validateRow(newRow, table['field_info']);
-                    if(!validation['errorCount']) {    
+                    if(!validation['errorCount']) {
                         try {
                             let data = await sendToServer('POST', '/table_update/', newRowData, qs);
                             if (data.status >= 200 && data.status < 300) {
@@ -1074,7 +1074,11 @@ function createEditingField(table, field, bodyRow, td, keyName) {
             input.type = 'text';
             input.className = 'form-control';
             input.readOnly = true;
-            input.value = initText;
+            if (field.default) {
+                input.value = field.default;
+            }
+            if (initText){input.value = initText;}
+            
 
             if (!td.classList.contains('related-field')) {
                 td.classList.add('related-field');
@@ -1147,6 +1151,9 @@ function createEditingField(table, field, bodyRow, td, keyName) {
             input.type = 'file';
             input.className = 'form-control';
             input.value = '';
+            if (field.default) {
+                input.value = field.default;
+            }
 
             // بررسی شرط null بودن
             if (!field['nullable']) {
@@ -1252,6 +1259,9 @@ function createEditingField(table, field, bodyRow, td, keyName) {
                 let option = document.createElement('option');
                 option.value = choice.value;
                 option.text = choice.label;
+                if (choice.value === field.default && isOptionAvailable) {
+                    option.selected = true;
+                }
                 if (choice.value === initText && isOptionAvailable) {
                     option.selected = true;
                 }
@@ -1308,7 +1318,10 @@ function createEditingField(table, field, bodyRow, td, keyName) {
             input = document.createElement('input');
             input.type = 'datetime-local';
             input.className = 'form-control';
-            input.value = initText;
+            if (field.default) {
+                input.value = field.default;
+            }
+            if (initText){input.value = initText;}
 
             // بررسی شرط null بودن
             if (!field['nullable']) {
@@ -1395,6 +1408,9 @@ function createEditingField(table, field, bodyRow, td, keyName) {
                 let option = document.createElement('option');
                 option.value = condition;
                 option.text = condition;
+                if (condition === field.default && isOptionAvailable) {
+                    option.selected = true;
+                }
                 if (condition === initText && isOptionAvailable) {
                     option.selected = true;
                 }
@@ -1458,7 +1474,10 @@ function createEditingField(table, field, bodyRow, td, keyName) {
             input.className = 'form-control';
             input.min = 0;
             input.style.width = "70px";
-            input.value = initText;
+            if (field.default) {
+                input.value = field.default;
+            }
+            if (initText) {input.value = initText;}
         
             // بررسی شرط null بودن
             if (!field['nullable']) {
@@ -1517,7 +1536,10 @@ function createEditingField(table, field, bodyRow, td, keyName) {
             input = document.createElement('input');
             input.type = 'number';
             input.className = 'form-control';
-            input.value = initText;
+            if (field.default) {
+                input.value = field.default;
+            }
+            if (initText) {input.value = initText;}
 
             input.setAttribute('pattern', '\\d+(\\.\\d+)?'); // بررسی الگوی اعداد اعشاری
             input.setAttribute('title', 'Please enter a valid decimal number.'); // پیام مربوط به ورود داده نامعتبر
@@ -1581,7 +1603,10 @@ function createEditingField(table, field, bodyRow, td, keyName) {
             input = document.createElement('input');
             input.type = 'text';
             input.className = 'form-control';
-            input.value = initText;
+            if (field.default) {
+                input.value = JSON.stringify(field.default);
+            }
+            if (initText) {input.value = initText;}
 
             // بررسی شرط null بودن
             if (!field['nullable']) {
@@ -2526,7 +2551,7 @@ function SPAFrame(tag, title, url="") {
             }
             tableAndPagination(savedId);
             break;
-        case "articlefirst_present":
+        case "articlevisualize":
             const holder = document.querySelector('#website_container');
             holder.innerHTML = "";
             let iframe = document.createElement('iframe');
@@ -2537,6 +2562,7 @@ function SPAFrame(tag, title, url="") {
             break;
         default:
             console.error('Unknown page!');
+            console.log(tag + title);
             savedPage = "home";
             savedTag = "section";
             SPAFrame(savedTag, savedPage);

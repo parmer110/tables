@@ -60,8 +60,8 @@ class SystemSettingsPicAdmin(admin.ModelAdmin):
     list_editable=("app", "company", "name", "max_image_size_width", "max_image_size_height", "max_image_file_size_mb", "allowed_image_formats")
 
 class PicturesAdmin(admin.ModelAdmin):
-    list_display=("id", "image_settings", "name", "description", "image")
-    list_editable=("image_settings", "name", "description", "image")
+    list_display=("id", "user", "name", "description", "image")
+    list_editable=("name", "description", "image")
     
 
 class EducationalDegreeAdmin(admin.ModelAdmin):

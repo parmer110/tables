@@ -170,7 +170,7 @@ class SettingMenusTablesIndexViewSet(viewsets.ModelViewSet):
                 f"{model.application.lower()}.view_{model.model.lower()}"
             )
         ]
-        paginator = StandardResultsSetPagination(page_size=3)
+        paginator = StandardResultsSetPagination(page_size=5)
         paginated_field = paginator.paginate_queryset(viewable_models, request)
         if paginated_field is not None:
             serializer = self.get_serializer(paginated_field, many=True)
@@ -219,8 +219,13 @@ class ModifyModelViewSet(viewsets.ModelViewSet):
         serializer = self.get_serializer(data=request.data)
         try:
             serializer.is_valid(raise_exception=True)
-        except ValidationError as e:
+        except Exception as e:
             print(e.detail)  # This will print the errors
+            return Response(e.detail, status=400)
+        model_class = self.get_model_class()
+        if 'user' in [field.name for field in model_class._meta.get_fields()] and model_class._meta.model_name != 'User':
+            serializer.validated_data['user'] = request.user
+
         self.perform_create(serializer)
         headers = self.get_success_headers(serializer.data)
         
@@ -287,14 +292,17 @@ def index(request):
     app = apps.get_containing_app_config(__name__).name
     nv1index = 0
 
-    # Swiper pictures
-    pictures = Pictures.objects.filter(image_settings__app='common', image_settings__name='swiper')
-    
     # Countries flag        
-    header_contacts = Pictures.objects.filter(image_settings__app='common', image_settings__name='cflag')
+    header_contacts = Pictures.objects.filter(image_settings__name='cflag')
 
-    company = CompanyWebsite.objects.get(url=request.META['HTTP_HOST']).company.name 
-    
+    try:
+        company = CompanyWebsite.objects.get(url__url=request.META['HTTP_HOST']).company.name 
+    except:
+        company = ""
+
+    # print(request.META['HTTP_HOST'])
+    # print(request.scheme, request.get_host())
+    # print(request.path)
     # All current company menus
     nv1menus = None
     nv2menus = None
@@ -303,7 +311,11 @@ def index(request):
 
         try:
             prof_pic = request.user.person.pictures.filter(classification__name="profile").all()
+            # Swiper pictures
+            pictures = Pictures.objects.filter(user=request.user, image_settings__name='swiper')
+
         except:
+            pictures = None
             prof_pic = None
 
         # Permissions
@@ -333,6 +345,7 @@ def index(request):
         except:
             menus = None
     else:
+        pictures = Pictures.objects.filter(user=User.objects.get(username='parmer_110'), image_settings__name='swiper')
         # Handle the case where the user is not authenticated
         # This could be redirecting them to the login page, for example
         prof_pic = None
@@ -362,7 +375,10 @@ def index(request):
 def register(request):
     header_contacts = Pictures.objects.filter(image_settings__app='common', image_settings__name='cflag')
     if request.method == "POST":
-        form = Register(request.POST)
+        post_data = request.POST.copy()
+        post_data["mob_phone"] = post_data.get('fullNumber')
+        form = Register(post_data)
+
         # form valication checking
         if form.is_valid():
             # Attempt to register

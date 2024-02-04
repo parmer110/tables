@@ -28,7 +28,7 @@
     "webpack": "^5.89.0",
     "webpack-cli": "^5.1.4"
   },
-  "name": "floramedtour",
+  "name": "tables",
   "description": "* Implemented encoding and decoding function. (For all 149186 Unicode characters avalibility in 26 english letters and 0 digits characters) and AES cryptography function with internal security-key and minimul string lenght.\r         * Implementing \"getter\" and \"setter\" systems in database models get and save values for guarantee encoded data saved and decoded whats are get from DB.\r         * Contains 10 applications.\r         * Using postgreSQL database.\r         * Contains commerce, messaging, todo list and ... units, Django backend and Javascript frontend.\r         * Using memory maintenance management systems as \"Lazy Loading\", \"Mamory Caching\" or \"Prefetching\".\r         * Common application within main 10 applications, contains \"utils\" package for common functions and classes which I have wroted.\r         * Creating multi level models are seprated in modules there in sub packages.\r         * Developing admin dashboard for multy applications system.\r         * Deep UI locally using Swiper and Bootstrap.\r         * Set user groups and access rights, using django AbstractUser, Group, Permission classes.\r           * Access menus permision management.\r         * Creating custom Django tamplate filters and tag.\r         * In this project, we have employed JSON Web Tokens (JWT) through Django's rest_framework_simplejwt to secure our user authentication system. This allows us to provide token-based authentication, ensuring the integrity and confidentiality of user data. We've tailored the token lifetimes to be adjustable per user or user group, offering a more granular control over session expirations. Additionally, meticulous strategies have been developed to manage expired and blacklisted tokens, keeping the authentication ecosystem clean and efficient. Through these mechanisms, we've built a secure, user-friendly authentication architecture, showcasing a distinctive and complex approach to ensuring user data security in our application.\r         * Utilizing context_processo: In this project, given the use of JWT tokens, we realized that Django's traditional method for providing user context in templates lacked the necessary efficiency. Therefore, we created a custom context_processor to make the current user's information accessible in all templates using the token. This capability enables us to effortlessly display user information across various pages of the application without having to send user information to each view separately.\r         * Creating Custom Decorators: Furthermore, we have crafted custom decorators to better manage access permissions. These decorators allow for the examination and enforcement of access permissions based on the specific needs of the application. Through this approach, we have ensured that only authorized users can access different resources within the application.\r         * the Django Debug Toolbar was utilized to ensure efficient debugging and performance optimization. This tool is instrumental in providing real-time feedback on the performance of our Django application. To activate the Debug Toolbar, it was necessary to install it via pip (pip install django-debug-toolbar), and subsequently add 'debug_toolbar' to the INSTALLED_APPS section, and 'debug_toolbar.middleware.DebugToolbarMiddleware' to the MIDDLEWARE section of our Django settings. Moreover, the internal IPs were configured to recognize our local setup. The Debug Toolbar is visible only when DEBUG is set to True, ensuring it's deactivated in a production environment, maintaining the security and efficiency of our application. This setup significantly aided in identifying and resolving performance bottlenecks, thereby streamlining the development process.\r         * HTTPS Implementation:\r           * To enhance security, HTTPS was enabled in the project by obtaining and installing an SSL certificate, configuring Django settings, and modifying the application's URL for secure communication.\r         * CORS and Allowed IPs:\r           * CORS functionality was added using the django-cors-headers package, and specific IP addresses were authorized in the Django settings to access project resources.",
   "version": "1.0.0",
   "main": "index.js",
@@ -39,13 +39,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/parmer110/floramedtour.git"
+    "url": "git+https://github.com/parmer110/tables.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/parmer110/floramedtour/issues"
+    "url": "https://github.com/parmer110/tables/issues"
   },
-  "homepage": "https://github.com/parmer110/floramedtour#readme"
+  "homepage": "https://github.com/parmer110/tables#readme"
 }

@@ -1,5 +1,5 @@
 from django.db import models
-from common.models import CommonModel, Person, Places, LegalEntity, JobRoles, Document
+from common.models import CommonModel, Person, Places, LegalEntity, JobRoles, Document, Path
 
 
 class Employee(CommonModel):
@@ -35,14 +35,14 @@ class CompanyPersonRole(CommonModel):
     job_role = models.ForeignKey(JobRoles, on_delete=models.CASCADE, related_name="company_person_role", null=True)
 
     def __str__(self):
-        return f"{self.person.firstname} {self.person.lastname} role is {self.role.name}"
+        return f"{self.person.firstname} {self.person.lastname} role is {self.job_role.name}"
 
 class CompanyAddressRole(CommonModel):
     address = models.ForeignKey(Places, on_delete=models.CASCADE, related_name="company_address_role", null=True)
     job_role = models.ForeignKey(JobRoles, on_delete=models.CASCADE, related_name="company_adress_role", null=True)
 
     def __str__(self):
-        return f"{self.address.title} role is {self.role.name}"
+        return f"{self.address.title} role is {self.job_role.name}"
 
 class Company(CommonModel):
     name = models.CharField(max_length=30, verbose_name="Company Name", null=True, unique=True)
@@ -58,8 +58,8 @@ class Company(CommonModel):
 
 
 class CompanyWebsite(CommonModel):
-    company = models.ForeignKey(Company, on_delete=models.CASCADE, related_name="company_website")
-    url = models.CharField(max_length=200, unique=True)
+    company = models.ForeignKey(Company, on_delete=models.CASCADE, related_name="company_websites")
+    url = models.ManyToManyField(Path, related_name='company_websites')
 
     def __str__(self):
-        return self.url
+        return str(self.url)

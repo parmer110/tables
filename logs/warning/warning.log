@@ -2687,3 +2687,2282 @@ WARNING 2024-01-17 03:20:15,145 log Bad Request: /token/refresh/
 WARNING 2024-01-17 03:20:15,149 basehttp "POST /token/refresh/ HTTP/1.1" 400 23
 WARNING 2024-01-17 03:33:30,410 log Bad Request: /token/refresh/
 WARNING 2024-01-17 03:33:30,415 basehttp "POST /token/refresh/ HTTP/1.1" 400 23
+ERROR 2024-01-23 17:48:43,857 log Internal Server Error: /
+Traceback (most recent call last):
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.UndefinedTable: relation "administration_companywebsite" does not exist
+LINE 1: ...y_id", "administration_companywebsite"."url" FROM "administr...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/var/www/html/tables_dev/common/views.py", line 296, in index
+    company = CompanyWebsite.objects.get(url=request.META['HTTP_HOST']).company.name
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/query.py", line 643, in get
+    num = len(clone)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/query.py", line 380, in __len__
+    self._fetch_all()
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/query.py", line 1926, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.ProgrammingError: relation "administration_companywebsite" does not exist
+LINE 1: ...y_id", "administration_companywebsite"."url" FROM "administr...
+                                                             ^
+
+ERROR 2024-01-23 17:48:43,904 basehttp "GET / HTTP/1.1" 500 167380
+WARNING 2024-01-23 17:48:44,955 log Not Found: /favicon.ico
+WARNING 2024-01-23 17:48:44,996 basehttp "GET /favicon.ico HTTP/1.1" 404 8151
+ERROR 2024-01-24 21:57:01,337 log Internal Server Error: /
+Traceback (most recent call last):
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/var/www/html/tables_dev/common/views.py", line 296, in index
+    company = CompanyWebsite.objects.get(url=request.META['HTTP_HOST']).company.name
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/query.py", line 647, in get
+    raise self.model.DoesNotExist(
+administration.models.CompanyWebsite.DoesNotExist: CompanyWebsite matching query does not exist.
+ERROR 2024-01-24 21:57:01,393 basehttp "GET / HTTP/1.1" 500 110431
+WARNING 2024-01-24 21:57:02,422 log Not Found: /favicon.ico
+WARNING 2024-01-24 21:57:02,445 basehttp "GET /favicon.ico HTTP/1.1" 404 8151
+ERROR 2024-01-27 02:32:10,769 log Internal Server Error: /
+Traceback (most recent call last):
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/var/www/html/tables_dev/common/views.py", line 296, in index
+    company = CompanyWebsite.objects.get(url=request.META['HTTP_HOST']).company.name
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/query.py", line 647, in get
+    raise self.model.DoesNotExist(
+administration.models.CompanyWebsite.DoesNotExist: CompanyWebsite matching query does not exist.
+ERROR 2024-01-27 02:32:11,173 basehttp "GET / HTTP/1.1" 500 111046
+WARNING 2024-01-27 02:32:12,115 log Not Found: /favicon.ico
+WARNING 2024-01-27 02:32:12,132 basehttp "GET /favicon.ico HTTP/1.1" 404 8151
+ERROR 2024-01-27 02:46:53,956 log Internal Server Error: /
+Traceback (most recent call last):
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/var/www/html/tables_dev/common/views.py", line 297, in index
+    Print(request.META['HTTP_HOST'])
+NameError: name 'Print' is not defined
+ERROR 2024-01-27 02:46:53,997 basehttp "GET / HTTP/1.1" 500 102303
+ERROR 2024-01-27 02:47:38,586 log Internal Server Error: /
+Traceback (most recent call last):
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/var/www/html/tables_dev/common/views.py", line 298, in index
+    company = CompanyWebsite.objects.get(url=request.META['HTTP_HOST']).company.name
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/query.py", line 647, in get
+    raise self.model.DoesNotExist(
+administration.models.CompanyWebsite.DoesNotExist: CompanyWebsite matching query does not exist.
+ERROR 2024-01-27 02:47:38,628 basehttp "GET / HTTP/1.1" 500 111133
+WARNING 2024-01-27 02:49:02,221 log Bad Request: /token/refresh/
+WARNING 2024-01-27 02:49:02,232 basehttp "POST /token/refresh/ HTTP/1.1" 400 23
+WARNING 2024-01-27 02:50:44,715 log Bad Request: /token/refresh/
+WARNING 2024-01-27 02:50:44,720 basehttp "POST /token/refresh/ HTTP/1.1" 400 23
+ERROR 2024-01-27 03:53:29,534 log Internal Server Error: /register/
+Traceback (most recent call last):
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/var/www/html/tables_dev/common/views.py", line 386, in register
+    default_group = UserRole.objects.get(name='user')
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/query.py", line 647, in get
+    raise self.model.DoesNotExist(
+django.contrib.auth.models.Group.DoesNotExist: Group matching query does not exist.
+ERROR 2024-01-27 03:53:30,613 basehttp "POST /register/ HTTP/1.1" 500 113545
+ERROR 2024-01-28 06:40:39,154 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2024-01-28 06:40:39,161 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2024-01-28 06:40:39,449 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2024-01-28 06:40:39,451 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2024-01-28 06:40:50,908 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2024-01-28 06:40:50,924 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2024-01-28 06:40:51,185 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2024-01-28 06:40:51,208 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2024-01-28 06:41:24,763 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2024-01-28 06:41:24,782 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2024-01-28 06:41:24,903 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2024-01-28 06:41:24,915 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+WARNING 2024-01-28 06:43:39,236 log Bad Request: /token/refresh/
+WARNING 2024-01-28 06:43:39,254 basehttp "POST /token/refresh/ HTTP/1.1" 400 23
+WARNING 2024-01-28 06:43:48,845 log Not Found: /favicon.ico
+WARNING 2024-01-28 06:43:48,861 basehttp "GET /favicon.ico HTTP/1.1" 404 8151
+ERROR 2024-01-28 06:44:58,114 log Internal Server Error: /register/
+Traceback (most recent call last):
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/var/www/html/tables_dev/common/views.py", line 386, in register
+    default_group = UserRole.objects.get(name='user')
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/query.py", line 647, in get
+    raise self.model.DoesNotExist(
+django.contrib.auth.models.Group.DoesNotExist: Group matching query does not exist.
+ERROR 2024-01-28 06:44:58,129 basehttp "POST /register/ HTTP/1.1" 500 113541
+ERROR 2024-01-28 07:12:09,240 log Internal Server Error: /register/
+Traceback (most recent call last):
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/jwt/algorithms.py", line 350, in prepare_key
+    RSAPrivateKey, load_pem_private_key(key_bytes, password=None)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/cryptography/hazmat/primitives/serialization/base.py", line 25, in load_pem_private_key
+    return ossl.load_pem_private_key(
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/cryptography/hazmat/backends/openssl/backend.py", line 747, in load_pem_private_key
+    return self._load_key(
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/cryptography/hazmat/backends/openssl/backend.py", line 929, in _load_key
+    self._handle_key_loading_error()
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/cryptography/hazmat/backends/openssl/backend.py", line 984, in _handle_key_loading_error
+    raise ValueError(
+ValueError: ('Could not deserialize key data. The data may be in an incorrect format, it may be encrypted with an unsupported algorithm, or it may be an unsupported key type (e.g. EC curves with explicit parameters).', [<OpenSSLError(code=503841036, lib=60, reason=524556, reason_text=unsupported)>])
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/var/www/html/tables_dev/common/views.py", line 397, in register
+    access_token, refresh_token, access_lifetime = create_new_token(user)
+  File "/var/www/html/tables_dev/common/utils/tools.py", line 130, in create_new_token
+    new_token, refresh_token, access_lifetime = generate_token(user)
+  File "/var/www/html/tables_dev/common/utils/tools.py", line 114, in generate_token
+    refresh = RefreshToken.for_user(user)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework_simplejwt/tokens.py", line 291, in for_user
+    token=str(token),
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework_simplejwt/tokens.py", line 95, in __str__
+    return self.get_token_backend().encode(self.payload)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework_simplejwt/backends.py", line 118, in encode
+    token = jwt.encode(
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/jwt/api_jwt.py", line 73, in encode
+    return api_jws.encode(
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/jwt/api_jws.py", line 160, in encode
+    key = alg_obj.prepare_key(key)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/jwt/algorithms.py", line 353, in prepare_key
+    return cast(RSAPublicKey, load_pem_public_key(key_bytes))
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/cryptography/hazmat/primitives/serialization/base.py", line 35, in load_pem_public_key
+    return ossl.load_pem_public_key(data)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/cryptography/hazmat/backends/openssl/backend.py", line 794, in load_pem_public_key
+    self._handle_key_loading_error()
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/cryptography/hazmat/backends/openssl/backend.py", line 984, in _handle_key_loading_error
+    raise ValueError(
+ValueError: ('Could not deserialize key data. The data may be in an incorrect format, it may be encrypted with an unsupported algorithm, or it may be an unsupported key type (e.g. EC curves with explicit parameters).', [<OpenSSLError(code=75497580, lib=9, reason=108, reason_text=no start line)>])
+ERROR 2024-01-28 07:12:09,257 basehttp "POST /register/ HTTP/1.1" 500 202438
+ERROR 2024-01-28 11:47:14,530 log Internal Server Error: /register/
+Traceback (most recent call last):
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/jwt/algorithms.py", line 350, in prepare_key
+    RSAPrivateKey, load_pem_private_key(key_bytes, password=None)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/cryptography/hazmat/primitives/serialization/base.py", line 25, in load_pem_private_key
+    return ossl.load_pem_private_key(
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/cryptography/hazmat/backends/openssl/backend.py", line 747, in load_pem_private_key
+    return self._load_key(
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/cryptography/hazmat/backends/openssl/backend.py", line 929, in _load_key
+    self._handle_key_loading_error()
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/cryptography/hazmat/backends/openssl/backend.py", line 984, in _handle_key_loading_error
+    raise ValueError(
+ValueError: ('Could not deserialize key data. The data may be in an incorrect format, it may be encrypted with an unsupported algorithm, or it may be an unsupported key type (e.g. EC curves with explicit parameters).', [<OpenSSLError(code=503841036, lib=60, reason=524556, reason_text=unsupported)>])
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/var/www/html/tables_dev/common/views.py", line 397, in register
+    access_token, refresh_token, access_lifetime = create_new_token(user)
+  File "/var/www/html/tables_dev/common/utils/tools.py", line 130, in create_new_token
+    new_token, refresh_token, access_lifetime = generate_token(user)
+  File "/var/www/html/tables_dev/common/utils/tools.py", line 114, in generate_token
+    refresh = RefreshToken.for_user(user)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework_simplejwt/tokens.py", line 291, in for_user
+    token=str(token),
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework_simplejwt/tokens.py", line 95, in __str__
+    return self.get_token_backend().encode(self.payload)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework_simplejwt/backends.py", line 118, in encode
+    token = jwt.encode(
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/jwt/api_jwt.py", line 73, in encode
+    return api_jws.encode(
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/jwt/api_jws.py", line 160, in encode
+    key = alg_obj.prepare_key(key)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/jwt/algorithms.py", line 353, in prepare_key
+    return cast(RSAPublicKey, load_pem_public_key(key_bytes))
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/cryptography/hazmat/primitives/serialization/base.py", line 35, in load_pem_public_key
+    return ossl.load_pem_public_key(data)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/cryptography/hazmat/backends/openssl/backend.py", line 794, in load_pem_public_key
+    self._handle_key_loading_error()
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/cryptography/hazmat/backends/openssl/backend.py", line 984, in _handle_key_loading_error
+    raise ValueError(
+ValueError: ('Could not deserialize key data. The data may be in an incorrect format, it may be encrypted with an unsupported algorithm, or it may be an unsupported key type (e.g. EC curves with explicit parameters).', [<OpenSSLError(code=75497580, lib=9, reason=108, reason_text=no start line)>])
+ERROR 2024-01-28 11:47:14,613 basehttp "POST /register/ HTTP/1.1" 500 202445
+ERROR 2024-01-28 11:51:46,161 log Internal Server Error: /register/
+Traceback (most recent call last):
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/jwt/algorithms.py", line 350, in prepare_key
+    RSAPrivateKey, load_pem_private_key(key_bytes, password=None)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/cryptography/hazmat/primitives/serialization/base.py", line 25, in load_pem_private_key
+    return ossl.load_pem_private_key(
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/cryptography/hazmat/backends/openssl/backend.py", line 747, in load_pem_private_key
+    return self._load_key(
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/cryptography/hazmat/backends/openssl/backend.py", line 929, in _load_key
+    self._handle_key_loading_error()
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/cryptography/hazmat/backends/openssl/backend.py", line 984, in _handle_key_loading_error
+    raise ValueError(
+ValueError: ('Could not deserialize key data. The data may be in an incorrect format, it may be encrypted with an unsupported algorithm, or it may be an unsupported key type (e.g. EC curves with explicit parameters).', [<OpenSSLError(code=503841036, lib=60, reason=524556, reason_text=unsupported)>])
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/var/www/html/tables_dev/common/views.py", line 397, in register
+    access_token, refresh_token, access_lifetime = create_new_token(user)
+  File "/var/www/html/tables_dev/common/utils/tools.py", line 130, in create_new_token
+    new_token, refresh_token, access_lifetime = generate_token(user)
+  File "/var/www/html/tables_dev/common/utils/tools.py", line 114, in generate_token
+    refresh = RefreshToken.for_user(user)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework_simplejwt/tokens.py", line 291, in for_user
+    token=str(token),
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework_simplejwt/tokens.py", line 95, in __str__
+    return self.get_token_backend().encode(self.payload)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework_simplejwt/backends.py", line 118, in encode
+    token = jwt.encode(
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/jwt/api_jwt.py", line 73, in encode
+    return api_jws.encode(
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/jwt/api_jws.py", line 160, in encode
+    key = alg_obj.prepare_key(key)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/jwt/algorithms.py", line 353, in prepare_key
+    return cast(RSAPublicKey, load_pem_public_key(key_bytes))
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/cryptography/hazmat/primitives/serialization/base.py", line 35, in load_pem_public_key
+    return ossl.load_pem_public_key(data)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/cryptography/hazmat/backends/openssl/backend.py", line 794, in load_pem_public_key
+    self._handle_key_loading_error()
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/cryptography/hazmat/backends/openssl/backend.py", line 984, in _handle_key_loading_error
+    raise ValueError(
+ValueError: ('Could not deserialize key data. The data may be in an incorrect format, it may be encrypted with an unsupported algorithm, or it may be an unsupported key type (e.g. EC curves with explicit parameters).', [<OpenSSLError(code=75497580, lib=9, reason=108, reason_text=no start line)>])
+ERROR 2024-01-28 11:51:46,191 basehttp "POST /register/ HTTP/1.1" 500 200435
+ERROR 2024-01-28 11:53:16,310 log Internal Server Error: /login/
+Traceback (most recent call last):
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/jwt/algorithms.py", line 350, in prepare_key
+    RSAPrivateKey, load_pem_private_key(key_bytes, password=None)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/cryptography/hazmat/primitives/serialization/base.py", line 25, in load_pem_private_key
+    return ossl.load_pem_private_key(
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/cryptography/hazmat/backends/openssl/backend.py", line 747, in load_pem_private_key
+    return self._load_key(
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/cryptography/hazmat/backends/openssl/backend.py", line 929, in _load_key
+    self._handle_key_loading_error()
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/cryptography/hazmat/backends/openssl/backend.py", line 984, in _handle_key_loading_error
+    raise ValueError(
+ValueError: ('Could not deserialize key data. The data may be in an incorrect format, it may be encrypted with an unsupported algorithm, or it may be an unsupported key type (e.g. EC curves with explicit parameters).', [<OpenSSLError(code=503841036, lib=60, reason=524556, reason_text=unsupported)>])
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/var/www/html/tables_dev/common/views.py", line 449, in login_view
+    access_token, refresh_token, access_lifetime = create_new_token(user)
+  File "/var/www/html/tables_dev/common/utils/tools.py", line 130, in create_new_token
+    new_token, refresh_token, access_lifetime = generate_token(user)
+  File "/var/www/html/tables_dev/common/utils/tools.py", line 114, in generate_token
+    refresh = RefreshToken.for_user(user)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework_simplejwt/tokens.py", line 291, in for_user
+    token=str(token),
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework_simplejwt/tokens.py", line 95, in __str__
+    return self.get_token_backend().encode(self.payload)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework_simplejwt/backends.py", line 118, in encode
+    token = jwt.encode(
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/jwt/api_jwt.py", line 73, in encode
+    return api_jws.encode(
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/jwt/api_jws.py", line 160, in encode
+    key = alg_obj.prepare_key(key)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/jwt/algorithms.py", line 353, in prepare_key
+    return cast(RSAPublicKey, load_pem_public_key(key_bytes))
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/cryptography/hazmat/primitives/serialization/base.py", line 35, in load_pem_public_key
+    return ossl.load_pem_public_key(data)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/cryptography/hazmat/backends/openssl/backend.py", line 794, in load_pem_public_key
+    self._handle_key_loading_error()
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/cryptography/hazmat/backends/openssl/backend.py", line 984, in _handle_key_loading_error
+    raise ValueError(
+ValueError: ('Could not deserialize key data. The data may be in an incorrect format, it may be encrypted with an unsupported algorithm, or it may be an unsupported key type (e.g. EC curves with explicit parameters).', [<OpenSSLError(code=75497580, lib=9, reason=108, reason_text=no start line)>])
+ERROR 2024-01-28 11:53:16,326 basehttp "POST /login/ HTTP/1.1" 500 200832
+ERROR 2024-01-28 11:53:26,189 log Internal Server Error: /login/
+Traceback (most recent call last):
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/jwt/algorithms.py", line 350, in prepare_key
+    RSAPrivateKey, load_pem_private_key(key_bytes, password=None)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/cryptography/hazmat/primitives/serialization/base.py", line 25, in load_pem_private_key
+    return ossl.load_pem_private_key(
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/cryptography/hazmat/backends/openssl/backend.py", line 747, in load_pem_private_key
+    return self._load_key(
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/cryptography/hazmat/backends/openssl/backend.py", line 929, in _load_key
+    self._handle_key_loading_error()
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/cryptography/hazmat/backends/openssl/backend.py", line 984, in _handle_key_loading_error
+    raise ValueError(
+ValueError: ('Could not deserialize key data. The data may be in an incorrect format, it may be encrypted with an unsupported algorithm, or it may be an unsupported key type (e.g. EC curves with explicit parameters).', [<OpenSSLError(code=503841036, lib=60, reason=524556, reason_text=unsupported)>])
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/var/www/html/tables_dev/common/views.py", line 449, in login_view
+    access_token, refresh_token, access_lifetime = create_new_token(user)
+  File "/var/www/html/tables_dev/common/utils/tools.py", line 130, in create_new_token
+    new_token, refresh_token, access_lifetime = generate_token(user)
+  File "/var/www/html/tables_dev/common/utils/tools.py", line 114, in generate_token
+    refresh = RefreshToken.for_user(user)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework_simplejwt/tokens.py", line 291, in for_user
+    token=str(token),
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework_simplejwt/tokens.py", line 95, in __str__
+    return self.get_token_backend().encode(self.payload)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework_simplejwt/backends.py", line 118, in encode
+    token = jwt.encode(
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/jwt/api_jwt.py", line 73, in encode
+    return api_jws.encode(
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/jwt/api_jws.py", line 160, in encode
+    key = alg_obj.prepare_key(key)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/jwt/algorithms.py", line 353, in prepare_key
+    return cast(RSAPublicKey, load_pem_public_key(key_bytes))
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/cryptography/hazmat/primitives/serialization/base.py", line 35, in load_pem_public_key
+    return ossl.load_pem_public_key(data)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/cryptography/hazmat/backends/openssl/backend.py", line 794, in load_pem_public_key
+    self._handle_key_loading_error()
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/cryptography/hazmat/backends/openssl/backend.py", line 984, in _handle_key_loading_error
+    raise ValueError(
+ValueError: ('Could not deserialize key data. The data may be in an incorrect format, it may be encrypted with an unsupported algorithm, or it may be an unsupported key type (e.g. EC curves with explicit parameters).', [<OpenSSLError(code=75497580, lib=9, reason=108, reason_text=no start line)>])
+ERROR 2024-01-28 11:53:26,291 basehttp "POST /login/ HTTP/1.1" 500 200832
+ERROR 2024-01-28 12:45:43,350 log Internal Server Error: /login/
+Traceback (most recent call last):
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/jwt/algorithms.py", line 350, in prepare_key
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/cryptography/hazmat/primitives/serialization/base.py", line 25, in load_pem_private_key
+    return ossl.load_pem_private_key(
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/cryptography/hazmat/backends/openssl/backend.py", line 747, in load_pem_private_key
+    return self._load_key(
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/cryptography/hazmat/backends/openssl/backend.py", line 929, in _load_key
+    self._handle_key_loading_error()
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/cryptography/hazmat/backends/openssl/backend.py", line 984, in _handle_key_loading_error
+    raise ValueError(
+ValueError: ('Could not deserialize key data. The data may be in an incorrect format, it may be encrypted with an unsupported algorithm, or it may be an unsupported key type (e.g. EC curves with explicit parameters).', [<OpenSSLError(code=503841036, lib=60, reason=524556, reason_text=unsupported)>])
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/var/www/html/tables_dev/common/views.py", line 449, in login_view
+    access_token, refresh_token, access_lifetime = create_new_token(user)
+  File "/var/www/html/tables_dev/common/utils/tools.py", line 130, in create_new_token
+    new_token, refresh_token, access_lifetime = generate_token(user)
+  File "/var/www/html/tables_dev/common/utils/tools.py", line 114, in generate_token
+    refresh = RefreshToken.for_user(user)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework_simplejwt/tokens.py", line 291, in for_user
+    token=str(token),
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework_simplejwt/tokens.py", line 95, in __str__
+    return self.get_token_backend().encode(self.payload)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework_simplejwt/backends.py", line 118, in encode
+    token = jwt.encode(
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/jwt/api_jwt.py", line 73, in encode
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/jwt/api_jws.py", line 160, in encode
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/jwt/algorithms.py", line 353, in prepare_key
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/cryptography/hazmat/primitives/serialization/base.py", line 35, in load_pem_public_key
+    return ossl.load_pem_public_key(data)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/cryptography/hazmat/backends/openssl/backend.py", line 794, in load_pem_public_key
+    self._handle_key_loading_error()
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/cryptography/hazmat/backends/openssl/backend.py", line 984, in _handle_key_loading_error
+    raise ValueError(
+ValueError: ('Could not deserialize key data. The data may be in an incorrect format, it may be encrypted with an unsupported algorithm, or it may be an unsupported key type (e.g. EC curves with explicit parameters).', [<OpenSSLError(code=75497580, lib=9, reason=108, reason_text=no start line)>])
+ERROR 2024-01-28 12:45:43,369 basehttp "POST /login/ HTTP/1.1" 500 191852
+ERROR 2024-01-28 12:54:32,467 log Internal Server Error: /login/
+Traceback (most recent call last):
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/jwt/algorithms.py", line 350, in prepare_key
+    RSAPrivateKey, load_pem_private_key(key_bytes, password=None)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/cryptography/hazmat/primitives/serialization/base.py", line 25, in load_pem_private_key
+    return ossl.load_pem_private_key(
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/cryptography/hazmat/backends/openssl/backend.py", line 747, in load_pem_private_key
+    return self._load_key(
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/cryptography/hazmat/backends/openssl/backend.py", line 929, in _load_key
+    self._handle_key_loading_error()
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/cryptography/hazmat/backends/openssl/backend.py", line 984, in _handle_key_loading_error
+    raise ValueError(
+ValueError: ('Could not deserialize key data. The data may be in an incorrect format, it may be encrypted with an unsupported algorithm, or it may be an unsupported key type (e.g. EC curves with explicit parameters).', [<OpenSSLError(code=503841036, lib=60, reason=524556, reason_text=unsupported)>])
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/var/www/html/tables_dev/common/views.py", line 449, in login_view
+    access_token, refresh_token, access_lifetime = create_new_token(user)
+  File "/var/www/html/tables_dev/common/utils/tools.py", line 129, in create_new_token
+    new_token, refresh_token, access_lifetime = generate_token(user)
+  File "/var/www/html/tables_dev/common/utils/tools.py", line 113, in generate_token
+    refresh = RefreshToken.for_user(user)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework_simplejwt/tokens.py", line 291, in for_user
+    token=str(token),
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework_simplejwt/tokens.py", line 95, in __str__
+    return self.get_token_backend().encode(self.payload)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework_simplejwt/backends.py", line 118, in encode
+    token = jwt.encode(
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/jwt/api_jwt.py", line 73, in encode
+    return api_jws.encode(
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/jwt/api_jws.py", line 160, in encode
+    key = alg_obj.prepare_key(key)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/jwt/algorithms.py", line 353, in prepare_key
+    return cast(RSAPublicKey, load_pem_public_key(key_bytes))
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/cryptography/hazmat/primitives/serialization/base.py", line 35, in load_pem_public_key
+    return ossl.load_pem_public_key(data)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/cryptography/hazmat/backends/openssl/backend.py", line 794, in load_pem_public_key
+    self._handle_key_loading_error()
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/cryptography/hazmat/backends/openssl/backend.py", line 984, in _handle_key_loading_error
+    raise ValueError(
+ValueError: ('Could not deserialize key data. The data may be in an incorrect format, it may be encrypted with an unsupported algorithm, or it may be an unsupported key type (e.g. EC curves with explicit parameters).', [<OpenSSLError(code=75497580, lib=9, reason=108, reason_text=no start line)>])
+ERROR 2024-01-28 12:54:32,486 basehttp "POST /login/ HTTP/1.1" 500 200832
+WARNING 2024-01-28 13:16:45,405 log Bad Request: /token/refresh/
+WARNING 2024-01-28 13:16:45,409 basehttp "POST /token/refresh/ HTTP/1.1" 400 23
+WARNING 2024-01-28 13:37:09,782 basehttp "GET /static/css/custom_admin.css HTTP/1.1" 404 1820
+WARNING 2024-01-28 13:37:12,918 basehttp "GET /static/css/custom_admin.css HTTP/1.1" 404 1820
+WARNING 2024-01-28 13:41:46,215 basehttp "GET /static/css/custom_admin.css HTTP/1.1" 404 1820
+WARNING 2024-01-28 13:41:48,395 basehttp "GET /static/css/custom_admin.css HTTP/1.1" 404 1820
+WARNING 2024-01-28 13:42:36,550 basehttp "GET /static/css/custom_admin.css HTTP/1.1" 404 1820
+ERROR 2024-01-28 13:47:03,082 log Internal Server Error: /admin/administration/companyaddressrole/add/
+Traceback (most recent call last):
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/contrib/admin/options.py", line 714, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/utils/decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/utils/decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/views/decorators/cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/contrib/admin/sites.py", line 240, in inner
+    return view(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/contrib/admin/options.py", line 1941, in add_view
+    return self.changeform_view(request, None, form_url, extra_context)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/utils/decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/utils/decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/contrib/admin/options.py", line 1802, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/contrib/admin/options.py", line 1859, in _changeform_view
+    self.log_addition(request, new_object, change_message)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/contrib/admin/options.py", line 952, in log_addition
+    object_repr=str(obj),
+  File "/var/www/html/tables_dev/administration/models.py", line 45, in __str__
+    return f"{self.address.title} role is {self.role.name}"
+AttributeError: 'CompanyAddressRole' object has no attribute 'role'
+ERROR 2024-01-28 13:47:03,106 basehttp "POST /admin/administration/companyaddressrole/add/ HTTP/1.1" 500 134295
+ERROR 2024-01-28 13:49:10,113 log Internal Server Error: /admin/administration/companypersonrole/add/
+Traceback (most recent call last):
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/contrib/admin/options.py", line 714, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/utils/decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/utils/decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/views/decorators/cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/contrib/admin/sites.py", line 240, in inner
+    return view(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/contrib/admin/options.py", line 1941, in add_view
+    return self.changeform_view(request, None, form_url, extra_context)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/utils/decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/utils/decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/contrib/admin/options.py", line 1802, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/contrib/admin/options.py", line 1859, in _changeform_view
+    self.log_addition(request, new_object, change_message)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/contrib/admin/options.py", line 952, in log_addition
+    object_repr=str(obj),
+  File "/var/www/html/tables_dev/administration/models.py", line 38, in __str__
+    return f"{self.person.firstname} {self.person.lastname} role is {self.role.name}"
+AttributeError: 'CompanyPersonRole' object has no attribute 'role'
+ERROR 2024-01-28 13:49:10,142 basehttp "POST /admin/administration/companypersonrole/add/ HTTP/1.1" 500 134094
+ERROR 2024-01-28 19:54:59,696 log Internal Server Error: /
+Traceback (most recent call last):
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/var/www/html/tables_dev/common/views.py", line 302, in index
+    print(url=request.META['HTTP_HOST'])
+TypeError: 'url' is an invalid keyword argument for print()
+ERROR 2024-01-28 19:54:59,778 basehttp "GET / HTTP/1.1" 500 103128
+WARNING 2024-01-28 19:55:01,356 log Not Found: /favicon.ico
+WARNING 2024-01-28 19:55:01,361 basehttp "GET /favicon.ico HTTP/1.1" 404 8151
+WARNING 2024-01-28 20:01:09,075 log Not Found: /favicon.ico
+WARNING 2024-01-28 20:01:09,080 basehttp "GET /favicon.ico HTTP/1.1" 404 8151
+WARNING 2024-01-28 20:10:35,346 log Not Found: /favicon.ico
+WARNING 2024-01-28 20:10:35,407 basehttp "GET /favicon.ico HTTP/1.1" 404 8151
+WARNING 2024-01-28 22:20:34,043 log Unauthorized: /serialized_table/common/Setting
+WARNING 2024-01-28 22:20:34,094 basehttp "GET /serialized_table/common/Setting?page=1&page_size=10 HTTP/1.1" 401 53
+WARNING 2024-01-28 22:20:34,339 log Unauthorized: /serialized_table/common/Setting
+WARNING 2024-01-28 22:20:34,354 basehttp "GET /serialized_table/common/Setting?page=1&page_size=10 HTTP/1.1" 401 53
+WARNING 2024-01-28 22:20:46,950 log Unauthorized: /serialized_table/common/Setting
+WARNING 2024-01-28 22:20:46,954 basehttp "GET /serialized_table/common/Setting?page=1&page_size=10 HTTP/1.1" 401 53
+WARNING 2024-01-28 22:20:47,120 log Unauthorized: /serialized_table/common/Setting
+WARNING 2024-01-28 22:20:47,131 basehttp "GET /serialized_table/common/Setting?page=1&page_size=10 HTTP/1.1" 401 53
+WARNING 2024-01-28 22:21:15,989 log Unauthorized: /token/refresh/
+WARNING 2024-01-28 22:21:15,992 basehttp "POST /token/refresh/ HTTP/1.1" 401 65
+WARNING 2024-01-28 22:23:25,321 log Not Found: /favicon.ico
+WARNING 2024-01-28 22:23:25,326 basehttp "GET /favicon.ico HTTP/1.1" 404 8151
+ERROR 2024-01-28 23:45:58,109 log Internal Server Error: /table_update/
+Traceback (most recent call last):
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/serializers.py", line 962, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/query.py", line 675, in create
+    obj = self.model(**kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/base.py", line 567, in __init__
+    raise TypeError(
+TypeError: AppModels() got unexpected keyword arguments: 'user'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/common/views.py", line 225, in create
+    self.perform_create(serializer)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/mixins.py", line 24, in perform_create
+    serializer.save()
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/serializers.py", line 212, in save
+    self.instance = self.create(validated_data)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/serializers.py", line 981, in create
+    raise TypeError(msg)
+TypeError: Got a `TypeError` when calling `AppModels.objects.create()`. This may be because you have a writable field on the serializer class that is not a valid argument to `AppModels.objects.create()`. You may need to make the field read-only, or override the CustomModelSerializer.create() method to handle this correctly.
+Original exception was:
+ Traceback (most recent call last):
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/serializers.py", line 962, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/query.py", line 675, in create
+    obj = self.model(**kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/base.py", line 567, in __init__
+    raise TypeError(
+TypeError: AppModels() got unexpected keyword arguments: 'user'
+
+ERROR 2024-01-28 23:45:58,220 basehttp "POST /table_update/?application=common&model=AppModels HTTP/1.1" 500 159492
+ERROR 2024-01-28 23:48:22,107 log Internal Server Error: /table_update/
+Traceback (most recent call last):
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/serializers.py", line 962, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/query.py", line 675, in create
+    obj = self.model(**kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/base.py", line 567, in __init__
+    raise TypeError(
+TypeError: AppModels() got unexpected keyword arguments: 'user'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/common/views.py", line 225, in create
+    self.perform_create(serializer)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/mixins.py", line 24, in perform_create
+    serializer.save()
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/serializers.py", line 212, in save
+    self.instance = self.create(validated_data)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/serializers.py", line 981, in create
+    raise TypeError(msg)
+TypeError: Got a `TypeError` when calling `AppModels.objects.create()`. This may be because you have a writable field on the serializer class that is not a valid argument to `AppModels.objects.create()`. You may need to make the field read-only, or override the CustomModelSerializer.create() method to handle this correctly.
+Original exception was:
+ Traceback (most recent call last):
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/serializers.py", line 962, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/query.py", line 675, in create
+    obj = self.model(**kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/base.py", line 567, in __init__
+    raise TypeError(
+TypeError: AppModels() got unexpected keyword arguments: 'user'
+
+ERROR 2024-01-28 23:48:22,142 basehttp "POST /table_update/?application=common&model=AppModels HTTP/1.1" 500 159492
+ERROR 2024-01-28 23:52:06,787 log Internal Server Error: /table_update/
+Traceback (most recent call last):
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/serializers.py", line 962, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/query.py", line 675, in create
+    obj = self.model(**kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/base.py", line 567, in __init__
+    raise TypeError(
+TypeError: AppModels() got unexpected keyword arguments: 'user'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/common/views.py", line 225, in create
+    self.perform_create(serializer)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/mixins.py", line 24, in perform_create
+    serializer.save()
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/serializers.py", line 212, in save
+    self.instance = self.create(validated_data)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/serializers.py", line 981, in create
+    raise TypeError(msg)
+TypeError: Got a `TypeError` when calling `AppModels.objects.create()`. This may be because you have a writable field on the serializer class that is not a valid argument to `AppModels.objects.create()`. You may need to make the field read-only, or override the CustomModelSerializer.create() method to handle this correctly.
+Original exception was:
+ Traceback (most recent call last):
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/serializers.py", line 962, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/query.py", line 675, in create
+    obj = self.model(**kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/base.py", line 567, in __init__
+    raise TypeError(
+TypeError: AppModels() got unexpected keyword arguments: 'user'
+
+ERROR 2024-01-28 23:52:06,809 basehttp "POST /table_update/?application=common&model=AppModels HTTP/1.1" 500 159480
+ERROR 2024-01-28 23:52:14,431 log Internal Server Error: /
+Traceback (most recent call last):
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/var/www/html/tables_dev/common/views.py", line 292, in index
+    pictures = Pictures.objects.filter(image_settings__app='common', image_settings__name='swiper')
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/query.py", line 1476, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/query.py", line 1494, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/query.py", line 1501, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1602, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1634, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1484, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg, summarize)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1296, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1761, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'image_settings' into field. Choices are: classification, created_at, deleted_at, description, dynamictabletest1, dynamictabletest2, id, image, image_height, image_width, name, person, updated_at, user, user_id
+ERROR 2024-01-28 23:52:14,443 basehttp "GET / HTTP/1.1" 500 148377
+WARNING 2024-01-28 23:52:15,436 log Not Found: /favicon.ico
+WARNING 2024-01-28 23:52:15,439 basehttp "GET /favicon.ico HTTP/1.1" 404 8151
+ERROR 2024-01-28 23:54:13,696 log Internal Server Error: /
+Traceback (most recent call last):
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/var/www/html/tables_dev/common/views.py", line 292, in index
+    pictures = Pictures.objects.filter(image_settings__app='common', image_settings__name='swiper')
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/query.py", line 1476, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/query.py", line 1494, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/query.py", line 1501, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1602, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1634, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1484, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg, summarize)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1296, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1761, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'image_settings' into field. Choices are: classification, created_at, deleted_at, description, dynamictabletest1, dynamictabletest2, id, image, image_height, image_width, name, person, updated_at, user, user_id
+ERROR 2024-01-28 23:54:13,720 basehttp "GET / HTTP/1.1" 500 148249
+ERROR 2024-01-29 00:00:34,095 log Internal Server Error: /
+Traceback (most recent call last):
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/var/www/html/tables_dev/common/views.py", line 292, in index
+    pictures = Pictures.objects.filter(user=request.user, image_settings__name='swiper')
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/query.py", line 1476, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/query.py", line 1494, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/query.py", line 1501, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1602, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1634, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1484, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg, summarize)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1296, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1761, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'image_settings' into field. Choices are: classification, created_at, deleted_at, description, dynamictabletest1, dynamictabletest2, id, image, image_height, image_width, name, person, updated_at, user, user_id
+ERROR 2024-01-29 00:00:34,150 basehttp "GET / HTTP/1.1" 500 148159
+ERROR 2024-01-29 00:01:42,913 log Internal Server Error: /
+Traceback (most recent call last):
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/var/www/html/tables_dev/common/views.py", line 292, in index
+    pictures = Pictures.objects.filter(user=request.user, image_settings__name='swiper')
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/query.py", line 1476, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/query.py", line 1494, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/query.py", line 1501, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1602, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1634, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1484, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg, summarize)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1296, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1761, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'image_settings' into field. Choices are: classification, created_at, deleted_at, description, dynamictabletest1, dynamictabletest2, id, image, image_height, image_width, name, person, updated_at, user, user_id
+ERROR 2024-01-29 00:01:42,956 basehttp "GET / HTTP/1.1" 500 148119
+ERROR 2024-01-29 00:10:24,098 log Internal Server Error: /table_update/
+Traceback (most recent call last):
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/serializers.py", line 962, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/query.py", line 675, in create
+    obj = self.model(**kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/base.py", line 567, in __init__
+    raise TypeError(
+TypeError: AppModels() got unexpected keyword arguments: 'user'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/common/views.py", line 225, in create
+    self.perform_create(serializer)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/mixins.py", line 24, in perform_create
+    serializer.save()
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/serializers.py", line 212, in save
+    self.instance = self.create(validated_data)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/serializers.py", line 981, in create
+    raise TypeError(msg)
+TypeError: Got a `TypeError` when calling `AppModels.objects.create()`. This may be because you have a writable field on the serializer class that is not a valid argument to `AppModels.objects.create()`. You may need to make the field read-only, or override the CustomModelSerializer.create() method to handle this correctly.
+Original exception was:
+ Traceback (most recent call last):
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/serializers.py", line 962, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/query.py", line 675, in create
+    obj = self.model(**kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/base.py", line 567, in __init__
+    raise TypeError(
+TypeError: AppModels() got unexpected keyword arguments: 'user'
+
+ERROR 2024-01-29 00:10:24,116 basehttp "POST /table_update/?application=common&model=AppModels HTTP/1.1" 500 159492
+ERROR 2024-01-29 00:54:45,297 log Internal Server Error: /table_update/
+Traceback (most recent call last):
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/serializers.py", line 962, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/query.py", line 675, in create
+    obj = self.model(**kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/base.py", line 567, in __init__
+    raise TypeError(
+TypeError: SettingMenus() got unexpected keyword arguments: 'user'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/common/views.py", line 225, in create
+    self.perform_create(serializer)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/mixins.py", line 24, in perform_create
+    serializer.save()
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/serializers.py", line 212, in save
+    self.instance = self.create(validated_data)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/serializers.py", line 981, in create
+    raise TypeError(msg)
+TypeError: Got a `TypeError` when calling `SettingMenus.objects.create()`. This may be because you have a writable field on the serializer class that is not a valid argument to `SettingMenus.objects.create()`. You may need to make the field read-only, or override the CustomModelSerializer.create() method to handle this correctly.
+Original exception was:
+ Traceback (most recent call last):
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/serializers.py", line 962, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/query.py", line 675, in create
+    obj = self.model(**kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/base.py", line 567, in __init__
+    raise TypeError(
+TypeError: SettingMenus() got unexpected keyword arguments: 'user'
+
+ERROR 2024-01-29 00:54:45,821 basehttp "POST /table_update/?application=common&model=SettingMenus HTTP/1.1" 500 169139
+WARNING 2024-01-29 01:08:14,955 log Unauthorized: /serialized_table/common/Setting
+WARNING 2024-01-29 01:08:15,009 basehttp "GET /serialized_table/common/Setting?page=1&page_size=10 HTTP/1.1" 401 53
+WARNING 2024-01-29 01:08:15,308 log Unauthorized: /serialized_table/common/Setting
+WARNING 2024-01-29 01:08:15,316 basehttp "GET /serialized_table/common/Setting?page=1&page_size=10 HTTP/1.1" 401 53
+WARNING 2024-01-29 01:10:21,368 log Unauthorized: /serialized_table/common/Setting
+WARNING 2024-01-29 01:10:21,375 basehttp "GET /serialized_table/common/Setting?page=1&page_size=10 HTTP/1.1" 401 53
+WARNING 2024-01-29 01:10:21,718 log Unauthorized: /serialized_table/common/Setting
+WARNING 2024-01-29 01:10:21,773 basehttp "GET /serialized_table/common/Setting?page=1&page_size=10 HTTP/1.1" 401 53
+WARNING 2024-01-29 01:10:36,027 log Unauthorized: /serialized_table/common/Setting
+WARNING 2024-01-29 01:10:36,045 basehttp "GET /serialized_table/common/Setting?page=1&page_size=10 HTTP/1.1" 401 53
+WARNING 2024-01-29 01:10:36,181 log Unauthorized: /serialized_table/common/Setting
+WARNING 2024-01-29 01:10:36,186 basehttp "GET /serialized_table/common/Setting?page=1&page_size=10 HTTP/1.1" 401 53
+ERROR 2024-01-29 01:11:07,380 log Internal Server Error: /
+Traceback (most recent call last):
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/fields/__init__.py", line 2112, in get_prep_value
+    return int(value)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/contrib/auth/models.py", line 437, in __int__
+    raise TypeError(
+TypeError: Cannot cast AnonymousUser to int. Are you trying to use it in place of User?
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/var/www/html/tables_dev/common/views.py", line 292, in index
+    pictures = Pictures.objects.filter(user=request.user, image_settings__name='swiper')
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/query.py", line 1476, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/query.py", line 1494, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/query.py", line 1501, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1602, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1634, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1548, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1378, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/lookups.py", line 30, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/fields/related_lookups.py", line 156, in get_prep_lookup
+    self.rhs = target_field.get_prep_value(self.rhs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/fields/__init__.py", line 2114, in get_prep_value
+    raise e.__class__(
+TypeError: Field 'id' expected a number but got <django.contrib.auth.models.AnonymousUser object at 0x7ff3faa0b730>.
+ERROR 2024-01-29 01:11:07,472 basehttp "GET / HTTP/1.1" 500 165606
+WARNING 2024-01-29 01:11:09,503 log Not Found: /favicon.ico
+WARNING 2024-01-29 01:11:09,508 basehttp "GET /favicon.ico HTTP/1.1" 404 8151
+ERROR 2024-01-29 01:13:27,089 log Internal Server Error: /
+Traceback (most recent call last):
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/fields/__init__.py", line 2112, in get_prep_value
+    return int(value)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/contrib/auth/models.py", line 437, in __int__
+    raise TypeError(
+TypeError: Cannot cast AnonymousUser to int. Are you trying to use it in place of User?
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/var/www/html/tables_dev/common/views.py", line 292, in index
+    pictures = Pictures.objects.filter(user=request.user, image_settings__name='swiper')
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/query.py", line 1476, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/query.py", line 1494, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/query.py", line 1501, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1602, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1634, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1548, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1378, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/lookups.py", line 30, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/fields/related_lookups.py", line 156, in get_prep_lookup
+    self.rhs = target_field.get_prep_value(self.rhs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/fields/__init__.py", line 2114, in get_prep_value
+    raise e.__class__(
+TypeError: Field 'id' expected a number but got <django.contrib.auth.models.AnonymousUser object at 0x7f580c434040>.
+ERROR 2024-01-29 01:13:27,119 basehttp "GET / HTTP/1.1" 500 165311
+WARNING 2024-01-29 01:13:27,928 log Not Found: /favicon.ico
+WARNING 2024-01-29 01:13:27,937 basehttp "GET /favicon.ico HTTP/1.1" 404 8151
+ERROR 2024-01-29 01:16:51,982 log Internal Server Error: /
+Traceback (most recent call last):
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/fields/__init__.py", line 2112, in get_prep_value
+    return int(value)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/contrib/auth/models.py", line 437, in __int__
+    raise TypeError(
+TypeError: Cannot cast AnonymousUser to int. Are you trying to use it in place of User?
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/var/www/html/tables_dev/common/views.py", line 292, in index
+    pictures = Pictures.objects.filter(user=request.user, image_settings__name='swiper')
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/query.py", line 1476, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/query.py", line 1494, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/query.py", line 1501, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1602, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1634, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1548, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1378, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/lookups.py", line 30, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/fields/related_lookups.py", line 156, in get_prep_lookup
+    self.rhs = target_field.get_prep_value(self.rhs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/fields/__init__.py", line 2114, in get_prep_value
+    raise e.__class__(
+TypeError: Field 'id' expected a number but got <django.contrib.auth.models.AnonymousUser object at 0x7f5807f12ce0>.
+ERROR 2024-01-29 01:16:52,013 basehttp "GET / HTTP/1.1" 500 165597
+ERROR 2024-01-29 01:21:19,537 log Internal Server Error: /
+Traceback (most recent call last):
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/var/www/html/tables_dev/common/views.py", line 354, in index
+    "pictures": pictures,
+UnboundLocalError: local variable 'pictures' referenced before assignment
+ERROR 2024-01-29 01:21:19,559 basehttp "GET / HTTP/1.1" 500 103117
+WARNING 2024-01-29 01:25:19,554 log Unauthorized: /token/refresh/
+WARNING 2024-01-29 01:25:19,561 basehttp "POST /token/refresh/ HTTP/1.1" 401 65
+WARNING 2024-01-29 01:27:07,093 log Not Found: /favicon.ico
+WARNING 2024-01-29 01:27:07,098 basehttp "GET /favicon.ico HTTP/1.1" 404 8151
+WARNING 2024-01-29 01:34:09,873 log Not Found: /favicon.ico
+WARNING 2024-01-29 01:34:09,882 basehttp "GET /favicon.ico HTTP/1.1" 404 8151
+WARNING 2024-01-29 21:38:30,693 log Bad Request: /token/refresh/
+WARNING 2024-01-29 21:38:30,733 basehttp "POST /token/refresh/ HTTP/1.1" 400 23
+WARNING 2024-01-29 21:38:38,757 log Bad Request: /token/refresh/
+WARNING 2024-01-29 21:38:38,762 basehttp "POST /token/refresh/ HTTP/1.1" 400 23
+WARNING 2024-01-30 07:59:43,214 log Bad Request: /token/refresh/
+WARNING 2024-01-30 07:59:43,253 basehttp "POST /token/refresh/ HTTP/1.1" 400 23
+WARNING 2024-01-30 09:28:28,317 log Not Found: /favicon.ico
+WARNING 2024-01-30 09:28:28,349 basehttp "GET /favicon.ico HTTP/1.1" 404 8151
+WARNING 2024-01-30 09:33:30,028 basehttp "GET /static/images/1200px-Refresh_icon.svg.png HTTP/1.1" 404 1862
+WARNING 2024-01-30 09:33:46,435 basehttp "GET /static/images/1200px-Refresh_icon.svg.png HTTP/1.1" 404 1862
+ERROR 2024-01-30 09:35:50,115 log Internal Server Error: /table_update/
+Traceback (most recent call last):
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/serializers.py", line 962, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/query.py", line 675, in create
+    obj = self.model(**kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/base.py", line 567, in __init__
+    raise TypeError(
+TypeError: AppModels() got unexpected keyword arguments: 'user'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/common/views.py", line 225, in create
+    self.perform_create(serializer)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/mixins.py", line 24, in perform_create
+    serializer.save()
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/serializers.py", line 212, in save
+    self.instance = self.create(validated_data)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/serializers.py", line 981, in create
+    raise TypeError(msg)
+TypeError: Got a `TypeError` when calling `AppModels.objects.create()`. This may be because you have a writable field on the serializer class that is not a valid argument to `AppModels.objects.create()`. You may need to make the field read-only, or override the CustomModelSerializer.create() method to handle this correctly.
+Original exception was:
+ Traceback (most recent call last):
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/serializers.py", line 962, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/query.py", line 675, in create
+    obj = self.model(**kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/base.py", line 567, in __init__
+    raise TypeError(
+TypeError: AppModels() got unexpected keyword arguments: 'user'
+
+ERROR 2024-01-30 09:35:50,164 basehttp "POST /table_update/?application=common&model=AppModels HTTP/1.1" 500 159751
+ERROR 2024-01-30 09:35:59,327 log Internal Server Error: /table_update/
+Traceback (most recent call last):
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/serializers.py", line 962, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/query.py", line 675, in create
+    obj = self.model(**kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/base.py", line 567, in __init__
+    raise TypeError(
+TypeError: AppModels() got unexpected keyword arguments: 'user'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/common/views.py", line 225, in create
+    self.perform_create(serializer)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/mixins.py", line 24, in perform_create
+    serializer.save()
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/serializers.py", line 212, in save
+    self.instance = self.create(validated_data)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/serializers.py", line 981, in create
+    raise TypeError(msg)
+TypeError: Got a `TypeError` when calling `AppModels.objects.create()`. This may be because you have a writable field on the serializer class that is not a valid argument to `AppModels.objects.create()`. You may need to make the field read-only, or override the CustomModelSerializer.create() method to handle this correctly.
+Original exception was:
+ Traceback (most recent call last):
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/serializers.py", line 962, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/query.py", line 675, in create
+    obj = self.model(**kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/base.py", line 567, in __init__
+    raise TypeError(
+TypeError: AppModels() got unexpected keyword arguments: 'user'
+
+ERROR 2024-01-30 09:35:59,349 basehttp "POST /table_update/?application=common&model=AppModels HTTP/1.1" 500 159751
+ERROR 2024-01-30 09:36:36,036 log Internal Server Error: /table_update/
+Traceback (most recent call last):
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/serializers.py", line 962, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/query.py", line 675, in create
+    obj = self.model(**kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/base.py", line 567, in __init__
+    raise TypeError(
+TypeError: AppModels() got unexpected keyword arguments: 'user'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/common/views.py", line 225, in create
+    self.perform_create(serializer)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/mixins.py", line 24, in perform_create
+    serializer.save()
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/serializers.py", line 212, in save
+    self.instance = self.create(validated_data)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/serializers.py", line 981, in create
+    raise TypeError(msg)
+TypeError: Got a `TypeError` when calling `AppModels.objects.create()`. This may be because you have a writable field on the serializer class that is not a valid argument to `AppModels.objects.create()`. You may need to make the field read-only, or override the CustomModelSerializer.create() method to handle this correctly.
+Original exception was:
+ Traceback (most recent call last):
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/serializers.py", line 962, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/query.py", line 675, in create
+    obj = self.model(**kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/base.py", line 567, in __init__
+    raise TypeError(
+TypeError: AppModels() got unexpected keyword arguments: 'user'
+
+ERROR 2024-01-30 09:36:36,043 basehttp "POST /table_update/?application=common&model=AppModels HTTP/1.1" 500 159751
+WARNING 2024-01-30 09:37:01,380 basehttp "GET /static/images/1200px-Refresh_icon.svg.png HTTP/1.1" 404 1862
+WARNING 2024-01-30 10:13:40,970 log Unauthorized: /token/refresh/
+WARNING 2024-01-30 10:13:40,981 basehttp "POST /token/refresh/ HTTP/1.1" 401 65
+ERROR 2024-01-30 10:14:37,625 log Internal Server Error: /table_update/
+Traceback (most recent call last):
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/serializers.py", line 962, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/query.py", line 675, in create
+    obj = self.model(**kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/base.py", line 567, in __init__
+    raise TypeError(
+TypeError: AppModels() got unexpected keyword arguments: 'user'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/common/views.py", line 225, in create
+    self.perform_create(serializer)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/mixins.py", line 24, in perform_create
+    serializer.save()
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/serializers.py", line 212, in save
+    self.instance = self.create(validated_data)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/serializers.py", line 981, in create
+    raise TypeError(msg)
+TypeError: Got a `TypeError` when calling `AppModels.objects.create()`. This may be because you have a writable field on the serializer class that is not a valid argument to `AppModels.objects.create()`. You may need to make the field read-only, or override the CustomModelSerializer.create() method to handle this correctly.
+Original exception was:
+ Traceback (most recent call last):
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/serializers.py", line 962, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/query.py", line 675, in create
+    obj = self.model(**kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/base.py", line 567, in __init__
+    raise TypeError(
+TypeError: AppModels() got unexpected keyword arguments: 'user'
+
+ERROR 2024-01-30 10:14:37,646 basehttp "POST /table_update/?application=common&model=AppModels HTTP/1.1" 500 159376
+ERROR 2024-01-30 11:28:06,938 log Internal Server Error: /table_update/
+Traceback (most recent call last):
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/serializers.py", line 962, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/query.py", line 675, in create
+    obj = self.model(**kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/base.py", line 567, in __init__
+    raise TypeError(
+TypeError: AppModels() got unexpected keyword arguments: 'user'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/common/views.py", line 225, in create
+    self.perform_create(serializer)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/mixins.py", line 24, in perform_create
+    serializer.save()
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/serializers.py", line 212, in save
+    self.instance = self.create(validated_data)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/serializers.py", line 981, in create
+    raise TypeError(msg)
+TypeError: Got a `TypeError` when calling `AppModels.objects.create()`. This may be because you have a writable field on the serializer class that is not a valid argument to `AppModels.objects.create()`. You may need to make the field read-only, or override the CustomModelSerializer.create() method to handle this correctly.
+Original exception was:
+ Traceback (most recent call last):
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/serializers.py", line 962, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/query.py", line 675, in create
+    obj = self.model(**kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/base.py", line 567, in __init__
+    raise TypeError(
+TypeError: AppModels() got unexpected keyword arguments: 'user'
+
+ERROR 2024-01-30 11:28:06,953 basehttp "POST /table_update/?application=common&model=AppModels HTTP/1.1" 500 159376
+WARNING 2024-01-30 14:20:06,243 log Not Found: /favicon.ico
+WARNING 2024-01-30 14:20:06,273 basehttp "GET /favicon.ico HTTP/1.1" 404 8151
+WARNING 2024-01-30 14:21:31,598 log Bad Request: /table_update/
+WARNING 2024-01-30 14:21:31,602 basehttp "POST /table_update/?application=common&model=Path HTTP/1.1" 400 30
+WARNING 2024-01-30 14:22:21,363 log Bad Request: /table_update/
+WARNING 2024-01-30 14:22:21,370 basehttp "POST /table_update/?application=common&model=Path HTTP/1.1" 400 30
+WARNING 2024-01-30 14:24:48,538 log Bad Request: /table_update/
+WARNING 2024-01-30 14:24:48,544 basehttp "POST /table_update/?application=common&model=Path HTTP/1.1" 400 30
+WARNING 2024-01-30 14:24:54,599 log Bad Request: /table_update/
+WARNING 2024-01-30 14:24:54,605 basehttp "POST /table_update/?application=common&model=Path HTTP/1.1" 400 30
+WARNING 2024-01-30 14:25:00,098 log Bad Request: /table_update/
+WARNING 2024-01-30 14:25:00,101 basehttp "POST /table_update/?application=common&model=Path HTTP/1.1" 400 30
+WARNING 2024-01-31 16:08:31,279 log Unauthorized: /serialized_table/administration/Company
+WARNING 2024-01-31 16:08:31,342 basehttp "GET /serialized_table/administration/Company?page=1&page_size=10 HTTP/1.1" 401 53
+WARNING 2024-01-31 16:08:31,429 log Unauthorized: /serialized_table/administration/Company
+WARNING 2024-01-31 16:08:31,440 basehttp "GET /serialized_table/administration/Company?page=1&page_size=10 HTTP/1.1" 401 53
+WARNING 2024-01-31 16:08:51,878 log Unauthorized: /serialized_table/administration/Company
+WARNING 2024-01-31 16:08:51,885 basehttp "GET /serialized_table/administration/Company?page=1&page_size=10 HTTP/1.1" 401 53
+WARNING 2024-01-31 16:08:52,061 log Unauthorized: /serialized_table/administration/Company
+WARNING 2024-01-31 16:08:52,066 basehttp "GET /serialized_table/administration/Company?page=1&page_size=10 HTTP/1.1" 401 53
+WARNING 2024-01-31 16:11:19,870 log Bad Request: /table_update/
+WARNING 2024-01-31 16:11:19,879 basehttp "POST /table_update/?application=common&model=SystemSettingsPic HTTP/1.1" 400 35
+WARNING 2024-01-31 16:18:01,183 log Bad Request: /table_update/
+WARNING 2024-01-31 16:18:01,194 basehttp "POST /table_update/?application=common&model=SystemSettingsPic HTTP/1.1" 400 35
+WARNING 2024-02-01 07:33:42,722 log Bad Request: /token/refresh/
+WARNING 2024-02-01 07:33:42,829 basehttp "POST /token/refresh/ HTTP/1.1" 400 23
+WARNING 2024-02-01 07:35:11,603 log Not Found: /favicon.ico
+WARNING 2024-02-01 07:35:11,622 basehttp "GET /favicon.ico HTTP/1.1" 404 8151
+WARNING 2024-02-02 03:37:26,209 log Bad Request: /table_update/
+WARNING 2024-02-02 03:37:26,398 basehttp "POST /table_update/?application=common&model=SystemSettingsPic HTTP/1.1" 400 55
+WARNING 2024-02-02 04:17:05,349 log Bad Request: /table_update/
+WARNING 2024-02-02 04:17:05,382 basehttp "POST /table_update/?application=common&model=SystemSettingsPic HTTP/1.1" 400 55
+WARNING 2024-02-02 04:22:18,197 log Bad Request: /table_update/
+WARNING 2024-02-02 04:22:18,207 basehttp "POST /table_update/?application=common&model=SystemSettingsPic HTTP/1.1" 400 55
+WARNING 2024-02-02 04:24:48,423 log Bad Request: /table_update/
+WARNING 2024-02-02 04:24:48,451 basehttp "POST /table_update/?application=common&model=SystemSettingsPic HTTP/1.1" 400 55
+WARNING 2024-02-02 04:29:06,459 log Bad Request: /table_update/
+WARNING 2024-02-02 04:29:06,641 basehttp "POST /table_update/?application=common&model=SystemSettingsPic HTTP/1.1" 400 55
+WARNING 2024-02-02 04:30:06,426 log Not Found: /favicon.ico
+WARNING 2024-02-02 04:30:06,433 basehttp "GET /favicon.ico HTTP/1.1" 404 8151
+WARNING 2024-02-02 05:06:45,184 log Bad Request: /table_update/
+WARNING 2024-02-02 05:06:45,296 basehttp "POST /table_update/?application=common&model=SystemSettingsPic HTTP/1.1" 400 55
+WARNING 2024-02-02 05:07:59,762 log Bad Request: /table_update/
+WARNING 2024-02-02 05:07:59,785 basehttp "POST /table_update/?application=common&model=SystemSettingsPic HTTP/1.1" 400 55
+WARNING 2024-02-02 05:16:24,719 log Bad Request: /table_update/
+WARNING 2024-02-02 05:16:24,817 basehttp "POST /table_update/?application=common&model=SystemSettingsPic HTTP/1.1" 400 55
+WARNING 2024-02-02 05:41:51,359 log Bad Request: /table_update/
+WARNING 2024-02-02 05:41:51,646 basehttp "POST /table_update/?application=common&model=SystemSettingsPic HTTP/1.1" 400 55
+WARNING 2024-02-02 05:56:12,977 log Bad Request: /table_update/
+WARNING 2024-02-02 05:56:13,017 basehttp "POST /table_update/?application=common&model=SystemSettingsPic HTTP/1.1" 400 55
+WARNING 2024-02-02 05:57:08,579 log Bad Request: /table_update/
+WARNING 2024-02-02 05:57:08,599 basehttp "POST /table_update/?application=common&model=SystemSettingsPic HTTP/1.1" 400 55
+WARNING 2024-02-02 05:57:36,825 log Not Found: /favicon.ico
+WARNING 2024-02-02 05:57:36,831 basehttp "GET /favicon.ico HTTP/1.1" 404 8151
+ERROR 2024-02-02 06:05:22,427 log Internal Server Error: /table_update/
+Traceback (most recent call last):
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/common/views.py", line 231, in create
+    self.perform_create(serializer)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/mixins.py", line 24, in perform_create
+    serializer.save()
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/serializers.py", line 184, in save
+    assert not self.errors, (
+AssertionError: You cannot call `.save()` on a serializer with invalid data.
+ERROR 2024-02-02 06:05:22,627 basehttp "POST /table_update/?application=common&model=SystemSettingsPic HTTP/1.1" 500 118628
+ERROR 2024-02-02 06:15:14,096 log Internal Server Error: /table_update/
+Traceback (most recent call last):
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/common/views.py", line 231, in create
+    self.perform_create(serializer)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/mixins.py", line 24, in perform_create
+    serializer.save()
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/serializers.py", line 184, in save
+    assert not self.errors, (
+AssertionError: You cannot call `.save()` on a serializer with invalid data.
+ERROR 2024-02-02 06:15:14,211 basehttp "POST /table_update/?application=common&model=SystemSettingsPic HTTP/1.1" 500 118628
+ERROR 2024-02-02 06:19:20,204 log Internal Server Error: /table_update/
+Traceback (most recent call last):
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/common/views.py", line 230, in create
+    self.perform_create(serializer)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/mixins.py", line 24, in perform_create
+    serializer.save()
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/serializers.py", line 184, in save
+    assert not self.errors, (
+AssertionError: You cannot call `.save()` on a serializer with invalid data.
+ERROR 2024-02-02 06:19:20,222 basehttp "POST /table_update/?application=common&model=SystemSettingsPic HTTP/1.1" 500 118596
+ERROR 2024-02-02 06:34:34,060 log Internal Server Error: /table_update/
+Traceback (most recent call last):
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/common/views.py", line 228, in create
+    self.perform_create(serializer)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/mixins.py", line 24, in perform_create
+    serializer.save()
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/serializers.py", line 184, in save
+    assert not self.errors, (
+AssertionError: You cannot call `.save()` on a serializer with invalid data.
+ERROR 2024-02-02 06:34:34,228 basehttp "POST /table_update/?application=common&model=SystemSettingsPic HTTP/1.1" 500 118596
+WARNING 2024-02-02 06:48:55,633 log Bad Request: /table_update/
+WARNING 2024-02-02 06:48:55,738 basehttp "POST /table_update/?application=common&model=SystemSettingsPic HTTP/1.1" 400 55
+WARNING 2024-02-02 12:36:36,228 log Bad Request: /table_update/
+WARNING 2024-02-02 12:36:36,284 basehttp "POST /table_update/?application=common&model=SystemSettingsPic HTTP/1.1" 400 55
+WARNING 2024-02-03 02:49:00,611 log Bad Request: /table_update/
+WARNING 2024-02-03 02:49:01,309 basehttp "POST /table_update/?application=common&model=SystemSettingsPic HTTP/1.1" 400 55
+ERROR 2024-02-03 15:32:31,294 log Internal Server Error: /table_update/
+Traceback (most recent call last):
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.UniqueViolation: duplicate key value violates unique constraint "common_systemsettingspic_app_name_538c61cb_uniq"
+DETAIL:  Key (app, name)=(common, swiper) already exists.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/common/views.py", line 229, in create
+    self.perform_create(serializer)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/mixins.py", line 24, in perform_create
+    serializer.save()
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/serializers.py", line 212, in save
+    self.instance = self.create(validated_data)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/serializers.py", line 962, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/query.py", line 677, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/base.py", line 822, in save
+    self.save_base(
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/base.py", line 909, in save_base
+    updated = self._save_table(
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/base.py", line 1067, in _save_table
+    results = self._do_insert(
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/base.py", line 1108, in _do_insert
+    return manager._insert(
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/query.py", line 1845, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1823, in execute_sql
+    cursor.execute(sql, params)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.IntegrityError: duplicate key value violates unique constraint "common_systemsettingspic_app_name_538c61cb_uniq"
+DETAIL:  Key (app, name)=(common, swiper) already exists.
+
+ERROR 2024-02-03 15:32:31,365 basehttp "POST /table_update/?application=common&model=SystemSettingsPic HTTP/1.1" 500 217101
+ERROR 2024-02-03 15:33:43,255 log Internal Server Error: /table_update/
+Traceback (most recent call last):
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.UniqueViolation: duplicate key value violates unique constraint "common_systemsettingspic_app_name_538c61cb_uniq"
+DETAIL:  Key (app, name)=(common, swiper) already exists.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/common/views.py", line 229, in create
+    self.perform_create(serializer)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/mixins.py", line 24, in perform_create
+    serializer.save()
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/serializers.py", line 212, in save
+    self.instance = self.create(validated_data)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/serializers.py", line 962, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/query.py", line 677, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/base.py", line 822, in save
+    self.save_base(
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/base.py", line 909, in save_base
+    updated = self._save_table(
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/base.py", line 1067, in _save_table
+    results = self._do_insert(
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/base.py", line 1108, in _do_insert
+    return manager._insert(
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/query.py", line 1845, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1823, in execute_sql
+    cursor.execute(sql, params)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.IntegrityError: duplicate key value violates unique constraint "common_systemsettingspic_app_name_538c61cb_uniq"
+DETAIL:  Key (app, name)=(common, swiper) already exists.
+
+ERROR 2024-02-03 15:33:43,279 basehttp "POST /table_update/?application=common&model=SystemSettingsPic HTTP/1.1" 500 217087
+WARNING 2024-02-03 16:41:27,380 log Bad Request: /token/refresh/
+WARNING 2024-02-03 16:41:27,446 basehttp "POST /token/refresh/ HTTP/1.1" 400 23
+WARNING 2024-02-03 16:51:11,635 log Bad Request: /token/refresh/
+WARNING 2024-02-03 16:51:11,643 basehttp "POST /token/refresh/ HTTP/1.1" 400 23
+ERROR 2024-02-03 21:19:12,731 log Internal Server Error: /register/
+Traceback (most recent call last):
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/var/www/html/tables_dev/common/views.py", line 383, in register
+    mobile_number = form.cleaned_data["fullNumber"]
+KeyError: 'fullNumber'
+ERROR 2024-02-03 21:19:13,258 basehttp "POST /register/ HTTP/1.1" 500 103782
+WARNING 2024-02-03 21:19:15,189 log Not Found: /favicon.ico
+WARNING 2024-02-03 21:19:15,198 basehttp "GET /favicon.ico HTTP/1.1" 404 8151
+WARNING 2024-02-03 22:03:05,758 log Bad Request: /token/refresh/
+WARNING 2024-02-03 22:03:05,804 basehttp "POST /token/refresh/ HTTP/1.1" 400 23
+WARNING 2024-02-03 22:08:33,183 log Bad Request: /token/refresh/
+WARNING 2024-02-03 22:08:33,204 basehttp "POST /token/refresh/ HTTP/1.1" 400 23
+WARNING 2024-02-03 22:08:41,800 log Bad Request: /token/refresh/
+WARNING 2024-02-03 22:08:41,806 basehttp "POST /token/refresh/ HTTP/1.1" 400 23
+WARNING 2024-02-03 22:53:53,149 log Not Found: /favicon.ico
+WARNING 2024-02-03 22:53:53,250 basehttp "GET /favicon.ico HTTP/1.1" 404 8151
+ERROR 2024-02-03 22:58:47,297 log Internal Server Error: /register/
+Traceback (most recent call last):
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/var/www/html/tables_dev/common/views.py", line 378, in register
+    form.cleaned_data["mob_phone"] = request.POST.get('fullNumber')
+AttributeError: 'Register' object has no attribute 'cleaned_data'
+ERROR 2024-02-03 22:58:47,419 basehttp "POST /register/ HTTP/1.1" 500 103794
+WARNING 2024-02-03 23:08:19,028 log Bad Request: /token/refresh/
+WARNING 2024-02-03 23:08:19,080 basehttp "POST /token/refresh/ HTTP/1.1" 400 23
+ERROR 2024-02-03 23:08:46,163 log Internal Server Error: /
+Traceback (most recent call last):
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/var/www/html/tables_dev/common/views.py", line 359, in index
+    "pictures": pictures,
+UnboundLocalError: local variable 'pictures' referenced before assignment
+ERROR 2024-02-03 23:08:46,189 basehttp "GET / HTTP/1.1" 500 104269
+ERROR 2024-02-03 23:11:58,440 log Internal Server Error: /
+Traceback (most recent call last):
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/var/www/html/tables_dev/common/views.py", line 360, in index
+    "pictures": pictures,
+UnboundLocalError: local variable 'pictures' referenced before assignment
+ERROR 2024-02-03 23:11:58,477 basehttp "GET / HTTP/1.1" 500 104269
+ERROR 2024-02-03 23:12:20,977 log Internal Server Error: /
+Traceback (most recent call last):
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/var/www/html/tables_dev/common/views.py", line 360, in index
+    "pictures": pictures,
+UnboundLocalError: local variable 'pictures' referenced before assignment
+ERROR 2024-02-03 23:12:21,004 basehttp "GET / HTTP/1.1" 500 104269
+ERROR 2024-02-03 23:12:42,252 log Internal Server Error: /
+Traceback (most recent call last):
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/var/www/html/tables_dev/common/views.py", line 361, in index
+    "pictures": pictures,
+UnboundLocalError: local variable 'pictures' referenced before assignment
+ERROR 2024-02-03 23:12:42,263 basehttp "GET / HTTP/1.1" 500 104269
+ERROR 2024-02-03 23:13:18,707 log Internal Server Error: /
+Traceback (most recent call last):
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/var/www/html/tables_dev/common/views.py", line 362, in index
+    "pictures": pictures,
+UnboundLocalError: local variable 'pictures' referenced before assignment
+ERROR 2024-02-03 23:13:18,715 basehttp "GET / HTTP/1.1" 500 104269
+ERROR 2024-02-03 23:13:30,733 log Internal Server Error: /
+Traceback (most recent call last):
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/var/www/html/tables_dev/common/views.py", line 362, in index
+    "pictures": pictures,
+UnboundLocalError: local variable 'pictures' referenced before assignment
+ERROR 2024-02-03 23:13:30,740 basehttp "GET / HTTP/1.1" 500 104269
+ERROR 2024-02-03 23:15:15,746 log Internal Server Error: /
+Traceback (most recent call last):
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/var/www/html/tables_dev/common/views.py", line 312, in index
+    prof_pic = request.user.person.pictures.filter(classification__name="profile").all()
+  File "/var/www/html/tables_dev/env/lib/python3.10/site-packages/django/db/models/fields/related_descriptors.py", line 524, in __get__
+    raise self.RelatedObjectDoesNotExist(
+common.models.User.person.RelatedObjectDoesNotExist: User has no person.
+ERROR 2024-02-03 23:15:15,813 basehttp "GET / HTTP/1.1" 500 107986
+WARNING 2024-02-03 23:37:27,642 log Forbidden: /tables_index_from_menus_record/2/
+WARNING 2024-02-03 23:37:27,662 basehttp "GET /tables_index_from_menus_record/2/?page=1 HTTP/1.1" 403 63
+WARNING 2024-02-03 23:37:43,634 log Bad Request: /token/refresh/
+WARNING 2024-02-03 23:37:43,638 basehttp "POST /token/refresh/ HTTP/1.1" 400 23
+WARNING 2024-02-04 00:18:16,417 log Bad Request: /token/refresh/
+WARNING 2024-02-04 00:18:16,891 basehttp "POST /token/refresh/ HTTP/1.1" 400 23
+WARNING 2024-02-04 00:49:10,967 log Bad Request: /token/refresh/
+WARNING 2024-02-04 00:49:11,104 basehttp "POST /token/refresh/ HTTP/1.1" 400 23
+WARNING 2024-02-04 00:50:14,803 log Forbidden: /tables_index_from_menus_record/2/
+WARNING 2024-02-04 00:50:14,927 basehttp "GET /tables_index_from_menus_record/2/?page=1 HTTP/1.1" 403 63
+WARNING 2024-02-04 00:50:34,366 log Forbidden: /tables_index_from_menus_record/4/
+WARNING 2024-02-04 00:50:34,370 basehttp "GET /tables_index_from_menus_record/4/?page=1 HTTP/1.1" 403 63
+WARNING 2024-02-04 00:51:01,425 log Bad Request: /token/refresh/
+WARNING 2024-02-04 00:51:01,441 basehttp "POST /token/refresh/ HTTP/1.1" 400 23
+WARNING 2024-02-04 01:06:14,984 log Unauthorized: /set_session/tag/section/
+WARNING 2024-02-04 01:06:14,993 basehttp "POST /set_session/tag/section/ HTTP/1.1" 401 53
+WARNING 2024-02-04 01:06:14,990 log Unauthorized: /set_session/page/home/
+WARNING 2024-02-04 01:06:15,006 basehttp "POST /set_session/page/home/ HTTP/1.1" 401 53
+WARNING 2024-02-04 01:07:18,118 log Unauthorized: /set_session/tag/section/
+WARNING 2024-02-04 01:07:18,138 basehttp "POST /set_session/tag/section/ HTTP/1.1" 401 53
+WARNING 2024-02-04 01:07:18,188 log Unauthorized: /set_session/page/settings/
+WARNING 2024-02-04 01:07:18,194 basehttp "POST /set_session/page/settings/ HTTP/1.1" 401 53
+WARNING 2024-02-04 01:07:18,585 log Unauthorized: /tables_index_from_menus_record/2/
+WARNING 2024-02-04 01:07:18,590 basehttp "GET /tables_index_from_menus_record/2/?page=1 HTTP/1.1" 401 53
+WARNING 2024-02-04 01:07:31,106 log Unauthorized: /token/refresh/
+WARNING 2024-02-04 01:07:31,134 basehttp "POST /token/refresh/ HTTP/1.1" 401 65
+WARNING 2024-02-04 01:14:28,532 log Bad Request: /token/refresh/
+WARNING 2024-02-04 01:14:28,579 basehttp "POST /token/refresh/ HTTP/1.1" 400 23
