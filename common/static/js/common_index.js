@@ -911,7 +911,7 @@ function createNewRow(table, tbody, addRowButton, keyName) {
         td.classList.add("max-width-cell");
         createEditingField(table, field, newRow, td, keyName);
         newRow.appendChild(td);
-        if (field.name === 'created_at' || field.name === 'updated_at' || field.name === 'deleted_at') {
+        if (field.name === 'created_at' || field.name === 'updated_at' || field.name === 'deleted_at' || field.name === 'is_deleted') {
             td.classList.add('hidden');
         }
     });
@@ -2127,7 +2127,7 @@ function createDynamicTable(table) {
 
         headerRow.appendChild(th);
 
-        if (field.name === 'created_at' || field.name === 'updated_at' || field.name === 'deleted_at') {
+        if (field.name === 'created_at' || field.name === 'updated_at' || field.name === 'deleted_at' || field.name === 'is_deleted') {
             th.classList.add('hidden');
             th.previousElementSibling.prepend(iconEyeSlash);
         }
@@ -2195,7 +2195,7 @@ function createDynamicTable(table) {
                 td.appendChild(span);
                 td.initRelateValue = convertToString(record[field['name']]);
     
-                if (field.name === 'created_at' || field.name === 'updated_at' || field.name === 'deleted_at') {
+                if (field.name === 'created_at' || field.name === 'updated_at' || field.name === 'deleted_at' || field.name === 'is_deleted') {
                     td.classList.add('hidden');
                 }
     

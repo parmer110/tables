@@ -28,3 +28,4 @@ SocksiPy_branch==1.1
 SocksiPy_branch==1.01
 twilio==8.11.0
 user_agents==2.2.0
+dj-database-url==2.1.0

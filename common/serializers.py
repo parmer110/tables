@@ -22,6 +22,8 @@ def serialize_model(target_model='', fields_set='__all__', application='', model
             rep = super().to_representation(instance)
             if 'deleted_at' in rep:
                 rep.pop('deleted_at')
+            if 'is_deleted' in rep:
+                rep.pop('is_deleted')
             if 'password' in rep:
                 rep['password'] = '•••'
 
@@ -79,7 +81,7 @@ class FieldInfoSerializer(serializers.Serializer):
     def to_representation(self, instance):
         field_info = []
         for field in instance._meta.get_fields():
-            if field.auto_created and field.name != 'id' or field.name == 'deleted_at':
+            if field.auto_created and field.name != 'id' or field.name == 'deleted_at' or field.name == 'is_deleted':
                 continue
             field_dict = {
                 'name': field.name,

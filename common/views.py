@@ -311,12 +311,15 @@ def index(request):
 
         try:
             prof_pic = request.user.person.pictures.filter(classification__name="profile").all()
-            # Swiper pictures
-            pictures = Pictures.objects.filter(user=request.user, image_settings__name='swiper')
 
         except:
-            pictures = None
             prof_pic = None
+        
+        try:
+            # Swiper pictures
+            pictures = Pictures.objects.filter(user=request.user, image_settings__name='swiper')
+        except:
+            pictures = None
 
         # Permissions
         user_permissions = request.user.user_permissions.all()

@@ -44,17 +44,3 @@
     background-position: center;
     height: 100%;
 }
-
-/* تصویر‌های مخصوص گوشی‌ها */
-/* @media (max-width: 768px) { */
-    /* .swiper-slide { */
-        /* background-image: url('/common/static/images/slide01.jpg'); */
-    /* } */
-/* } */
-
-/* تصویر‌های مخصوص پنجره‌های بزرگ‌تر */
-/* @media (min-width: 769px) { */
-    /* .swiper-slide { */
-        /* background-image: url('/common/static/images/slide02.jpg'); */
-    /* } */
-/* } */

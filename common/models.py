@@ -54,6 +54,7 @@ class CommonModel(models.Model):
     created_at = models.DateTimeField(auto_now_add=True, editable=False, null=True)
     updated_at = models.DateTimeField(auto_now=True, editable=False, null=True)
     deleted_at = models.DateTimeField(editable=False, null=True)
+    is_deleted  = models.BooleanField(editable=False, null=True, default=False)
 
     objects = ActiveManager()
     all_objects = AllManager()
@@ -93,6 +94,7 @@ class CommonModel(models.Model):
                     setattr(self, field.name, unique_value)
 
         self.deleted_at = timezone.now()
+        self.is_deleted = True
         self.save()
 
     class Meta:
@@ -899,12 +901,17 @@ class SystemSettingsPic(CommonModel):
     def __str__(self):
         return f"{self.app} System Settings, {self.name}"
 
+# Get the path to the 'media' directory
+media_path = settings.MEDIA_ROOT
+
+# Append 'temp' to the media path
+temp_path = os.path.join(media_path, 'temp')
 
 class Pictures(CommonModel):
     image_settings = models.ForeignKey(SystemSettingsPic, on_delete=models.CASCADE, related_name="pictures", null=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="picture", null=True, blank=True, editable=False)
     classification = models.ManyToManyField(Classification, blank=True, related_name="picture")
-    name = models.CharField(max_length=20, null=True, unique=True)
+    name = models.CharField(max_length=20, null=True)
     description = models.TextField(null=True, blank=True)
     image = models.ImageField(
         upload_to='images/',
@@ -916,18 +923,24 @@ class Pictures(CommonModel):
     )
     image_width = models.PositiveIntegerField(null=True, blank=True, default='image_width')
     image_height = models.PositiveIntegerField(null=True, blank=True, default='image_width')
+    
+    # class Meta:
+    #     unique_together = ('user', 'name','deleted_at')
 
     def save(self, user=None, *args, **kwargs):
+        if Pictures.objects.filter(user=self.user, name=self.name, is_deleted=False).exists():
+            raise ValidationError("An instance with this user and name already exists.")
+
         if user:
             self.user = user
 
         if self.deleted_at and not self._state.adding:
             if self.image and os.path.isfile(self.image.path):
-                destination = 'temp/' + self.image.name.split('/')[-1]
+                destination = os.path.join(temp_path, self.image.name.split('/')[-1])
 
-                if not os.path.exists('temp'):
-                    os.makedirs('temp')
-
+                if not os.path.exists(temp_path):
+                    os.makedirs(temp_path)
+                
                 shutil.move(self.image.path, destination)
         else:
             # از مقادیر مدل ImageSettings استفاده می‌کنیم
@@ -941,7 +954,7 @@ class Pictures(CommonModel):
             
             if not self.pk:  # بررسی برای ایجاد
                 # تولید نام منحصر به فرد برای فایل جدید
-                self.image.name = generate_unique_image_filename(self.image)
+                self.image.name = os.path.splitext(self.image.name)[0] + "_" + generate_unique_image_filename(self.image)
                 # ذخیره تصویر با استفاده از متد save از والدین ImageField
                 self.image.save(self.image.name, self.image.file, save=False)
         
@@ -958,20 +971,30 @@ class Pictures(CommonModel):
     
 @receiver(post_delete, sender=Pictures)
 def delete_picture(sender, instance, **kwargs):
+    media_path = settings.MEDIA_ROOT
+    temp_path = os.path.join(media_path, 'temp')
+
     if instance.image and os.path.isfile(instance.image.path):
         try:
             # Generate a unique filename based on current timestamp
             timestamp = datetime.datetime.now().timestamp()
-            destination = f'temp/{timestamp}_{instance.image.name.split("/")[-1]}'
+            destination = os.path.join(temp_path, f'{timestamp}_{instance.image.name.split("/")[-1]}')
             
             # Ensure the 'temp' directory exists
-            if not os.path.exists('temp'):  
-                os.makedirs('temp')  
+            if not os.path.exists(temp_path):  
+                os.makedirs(temp_path)  
             
+            print(f"media_path: {media_path}")
+            print(f"temp_path: {temp_path}")
+            print(f"destination: {destination}")
             shutil.move(instance.image.path, destination)
         except Exception as e:
             # Handle the error gracefully (e.g., log the error)
             print(f"Error during file deletion: {e}")
+
+def get_templates(app_name):
+    app = apps.get_app_config(app_name)
+    return [(t.name, t.name) for t in app.get_template_names()]
 
 def get_templates(app_name):
     app = apps.get_app_config(app_name)

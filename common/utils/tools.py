@@ -280,6 +280,9 @@ def extract_user_agent_data(request):
     return data
 
 def extract_geo_data(ip_str):
+    if not ip_str:
+        logger.error('No IP address provided.')
+        return None
     db_path = os.path.join(settings.GEOIP_PATH, 'GeoLite2-City.mmdb')
     geo = GeoIP2Reader(db_path)
     try:
