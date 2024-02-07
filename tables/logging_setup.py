@@ -9,7 +9,6 @@ import atexit
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# تعریف مسیر‌های مورد نظر
 LOGGING_DIR = os.path.join(BASE_DIR, 'logs')
 DEBUG_LOG_DIR = os.path.join(LOGGING_DIR, 'debug')
 ERROR_LOG_DIR = os.path.join(LOGGING_DIR, 'error')
@@ -22,7 +21,6 @@ log_directories = [
     WARNING_LOG_DIR
 ]
 
-# ایجاد پوشه‌ها به صورت خودکار
 for directory in log_directories:
     if not os.path.exists(directory):
         os.makedirs(directory)

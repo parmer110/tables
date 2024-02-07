@@ -2,19 +2,17 @@
 
     ### Distinctiveness and Complexity
 
-        * Implemented encoding and decoding function. (For all 149186 Unicode characters avalibility in 26 english letters and 0 digits characters) and AES cryptography function with internal security-key and minimul string lenght.
-        * Implementing "getter" and "setter" systems in database models get and save values for guarantee encoded data saved and decoded whats are get from DB.
-        * Contains 10 applications.
+        * Contains 2 applications.
         * Using postgreSQL database.
-        * Contains commerce, messaging, todo list and ... units, Django backend and Javascript frontend.
+        * Contains DRF (ViewSet and APIView and FBV, CBV), Redis caching server, JWT security, Models signal, Dynamic Customized Serializers, Customized DRF paginations, Middleware codings, Customized permissions using builth-in auth and ContentType application for Django backend and Javascript and React frontend all is there in development and production environment which is deployed on https://tables.sytes.net/.
         * Using memory maintenance management systems as "Lazy Loading", "Mamory Caching" or "Prefetching".
-        * Common application within main 10 applications, contains "utils" package for common functions and classes which I have wroted.
-        * Creating multi level models are seprated in modules there in sub packages.
-        * Developing admin dashboard for multy applications system.
+        * Common application within main 2 applications, contains "utils" package for common functions and classes which I have wroted.
+        * Developing same upgraded admin dashboard for multy applications system.
         * Deep UI locally using Swiper and Bootstrap.
         * Set user groups and access rights, using django AbstractUser, Group, Permission classes.
           * Access menus permision management.
         * Creating custom Django tamplate filters and tag.
+        * Specific loging system.
         * In this project, we have employed JSON Web Tokens (JWT) through Django's rest_framework_simplejwt to secure our user authentication system. This allows us to provide token-based authentication, ensuring the integrity and confidentiality of user data. We've tailored the token lifetimes to be adjustable per user or user group, offering a more granular control over session expirations. Additionally, meticulous strategies have been developed to manage expired and blacklisted tokens, keeping the authentication ecosystem clean and efficient. Through these mechanisms, we've built a secure, user-friendly authentication architecture, showcasing a distinctive and complex approach to ensuring user data security in our application.
         * Utilizing context_processo: In this project, given the use of JWT tokens, we realized that Django's traditional method for providing user context in templates lacked the necessary efficiency. Therefore, we created a custom context_processor to make the current user's information accessible in all templates using the token. This capability enables us to effortlessly display user information across various pages of the application without having to send user information to each view separately.
         * Creating Custom Decorators: Furthermore, we have crafted custom decorators to better manage access permissions. These decorators allow for the examination and enforcement of access permissions based on the specific needs of the application. Through this approach, we have ensured that only authorized users can access different resources within the application.
@@ -27,31 +25,40 @@
           * In the course of the project, we successfully set up a Redis server to enhance the efficiency of data storage and retrieval operations. This enables faster data access, which is crucial for the real-time performance needs of the application.
         * JavaScript Compilation with Babel and Webpack.
         * Modal Component in React for Table Interaction and JavaScript and HTML-Bootstrap modal implementation: his section of the codebase showcases advanced functionalities, leveraging diverse tools like jQuery for DOM manipulation and React Table library for robust table rendering. The usage of these technologies empowers interactive features within the code, providing a seamless user experience and enhancing the overall functionality.
+        * Implemented soft-delete for database records and uploaded files.
 
     ### Files content
 
         1- common/utils/
-          * crypto, (common/utils/crypto.py): encryption functions and decryption ones.
           * Dynamic code change (common/utils/codehelp.py): Functions are dinamically changes group of modules programatcally using Regular Exprssion.
         2- node_modules directory: contains swiper css and js files and React framework files locally.
         3- GeoLite2-City.mmdb defined in settings.py (GEOIP_PATH = 'path') is MaxMind GeoLite2 City database.
         4- node_modules:
-            * bootstrap
-            * jquer
-            * js-tokens
-            * intl-tel-input
-            * swiper
-            * scheduler
-            * react
-            * react-dom
-            * loose-envify
+        5. env
+        6. package.json: contains list od Node.JS dependencies with version.
+        7. tables/prod_settings.py: the settings file specified for production environment
+        8. tables/dev_settings.py: The settings file spedified for development environment
+        9. .env: environment variable contains secure project data.
+        10. .gitignone: project files and directories not follwing with git version system.
+        11. manage.py: Have defined DJANGO_SETTINGS_MODULE reference.
+        12. tables/logging_setup: loging system configurations.
 
     ### Running
 
-        * Install Dependencies: Navigate to the project directory and run npm install to install all necessary dependencies specified in package.json.
-        * (Not activated for default. It's an optional item is not defined using in appropriated templates) Compile JavaScript Code: Use the command npm run build to trigger Webpack for compiling the JavaScript files. This will generate an ES5-compatible bundle.js file in the specified output directory.
+        * Install Dependencies:
+            pip install -r requirements.txt
+            npm install
         * Run redis-server
-        * Run python manage.py runsslserver.
+        * installing PostgreSQL server:
+             Create user:
+                name=admin_tables
+                password=123
+            Run psql terminal with postgres built-in superuser:
+                CREATE DATABASE tables;
+            Implement current database structure schema:
+                psql -U admin_tables -h localhost -d tables < backup2.sql
+        * Run python manage.py runsslserver
+        * Visit result in browser.
         
 
     #### Video Demo:  <URL HERE>
@@ -62,11 +69,7 @@
         ## Preliminaries and generalities
             1- Semantic Versioning Implementation
             Implementing Semantic Versioning (SemVer) in my project signifies a commitment to clear and meaningful version numbers. In the heart of settings.py, the declaration VERSION = "0.1.0" marks the inception of my project with version 0.1.0. This not only sets a solid foundation but also establishes a convention for version increments, adhering to SemVer principles. As I progress, version updates will transparently communicate the nature of changes, ensuring compatibility and facilitating a streamlined development process.
-            2- Have generating this project multilingual.
-            3- Made React files locally using native "react.production.min.js" and "react-dom.production.min.js" files. ("npm install react react-dom" command)
-            4- Create Swiper pictures with: "https://unpkg.com/swiper/swiper-bundle.min.js" and "https://unpkg.com/swiper/swiper-bundle.min.css" thate have made locally.
-            5- Localize Bootstrap in node_modules directory which is in project's root
-            6- The data exchange system encompasses various HTTP protocols within the server-side API implementation. The SettingsGetTableContentView APIView facilitates data retrieval via the GET protocol. The ModifyModelViewSet in the server-side implements multiple protocols:
+            2- The data exchange system encompasses various HTTP protocols within the server-side API implementation. The SettingsGetTableContentView APIView facilitates data retrieval via the GET protocol. The ModifyModelViewSet in the server-side implements multiple protocols:
             POST protocol: Sending model instances to the server by overriding the create method.
             PUT protocol: Implementing complete model field updates through the update method override.
             PATCH protocol: Changing specific fields of a model instance by overriding the partial_update method.
@@ -76,9 +79,6 @@
         * 11 applications definition:
             * administration
             * common
-            * financialhub
-            * nursing
-            * treatment
         * Database defined as postgresql
         * Caching models function in memory.
         * Global static folder defined which is in projects root.
@@ -91,39 +91,23 @@
     2. Models
         0- Models detail:
             . Customise models setting using Meta sub class, save method.
-            . Upload Image on server.
+            . Upload Image on server which is in server or web-server serving specifid.
             . Using database signal functions for delete files from server according to db deletion.
             . customizing save method of models.
             . Have initial models data validation and sorting records.
             . Fields validation using fields validators parameter or clean method and call validator function.
-            . Using self relation models such as in menus and sub-menus creation.
+            . Using self relation models such as in menus and sub-menus creation. (SettingMenus model)
             . Audit Log center using signal models actions.
         1- Create base classes in the "common" application.
             . Creating an abstract model for inheritance its common fields in all another models.
             . Make auto_now editable false.
             . Using TextField data type in django models for long lenght encoded data will entry, sith setting "admin.widgets.AdminTextareaWidget(attrs={'rows': 1})" class in admin.py for change TextField view in model profile data entry to text box and using Media class to use css settings for it be same the CharField.
-            . Using @property and setter and getter with save method for auto encoder, decoder data entry or export in database.
-            . Using TextField datatype for encoded fields because has large encoded data with css for admin profile whitch uses to textbox fields in add.
-            . Creating Translate model for translate phrase or each units of language to another language.
             . Creating SettingMenus which has Self-referential ForeignKey, modeing menu and submenu items.
             . Using PhoneNumberField from phonenumber_field.modelfields package for models phone numbers validation check.
-        2- Developing treatment application models in not regular structure!
-            . Using  abstract inheritance from common's model modules and ForeignKey relation to them.
-            . Create packeage for medels, contains separated model files are inside.
-            . Create specialist package in models package and madules contain related models under.
-        3- Developing accommodation models.py
         4- Developing administration models.py
-        5- Developing communication models.py
-        6- Developing financialhub models.py
-        7- Developing food models.py
-        8- Developing nursing models.py
-        9- Developing shopping models.py
-        10- Developing tourism models.py
-        11- Developing transportation models.py
-        12- Initialy some recorrds are added to tables, using models structure.
+        5- Initialy some recorrds are added to tables, using models structure.
     3. Templates
        1. common application.
-            . localizing Bootstrap and React and swiper css and js and ... files.
             . generating swiper pictures with lazy loading.
             . Using multilevel dropdown menus.
             . Include Django template codes in central template.
@@ -187,4 +171,4 @@
                 - Access permissions are checked using a custom Django template tag called 'has_permission', which is located in the common.permissions.py module.
                 - Additionally, the manipulation of models in the dynamic table application is handled with view CRUD permission checking.
                 - This is done using the DRF CustomModelPermission class, also located in the common.permissions.py module.
-                - This class grants user access to those who are authorized."
+                - This class grants user access to those who are authorized.

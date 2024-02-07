@@ -917,9 +917,9 @@ class Pictures(CommonModel):
         upload_to='images/',
         null=True,
         blank=True,
-        max_length=255,  # حداکثر طول مسیر ذخیره شده در پایگاه داده
-        height_field='image_height',  # فیلد مربوط به ارتفاع تصویر
-        width_field='image_width',  # فیلد مربوط به عرض تصویر
+        max_length=255,
+        height_field='image_height',
+        width_field='image_width',
     )
     image_width = models.PositiveIntegerField(null=True, blank=True, default='image_width')
     image_height = models.PositiveIntegerField(null=True, blank=True, default='image_width')
@@ -927,9 +927,15 @@ class Pictures(CommonModel):
     # class Meta:
     #     unique_together = ('user', 'name','deleted_at')
 
+    def delete(self, *args, **kwargs):
+        self.has_deleted = True
+        super().delete(*args, **kwargs)
+
     def save(self, user=None, *args, **kwargs):
-        if Pictures.objects.filter(user=self.user, name=self.name, is_deleted=False).exists():
-            raise ValidationError("An instance with this user and name already exists.")
+        has_deleted = getattr(self, 'has_deleted', None)
+        if not has_deleted:
+            if Pictures.objects.filter(user=self.user, name=self.name, is_deleted=False).exists():
+                raise ValidationError("An instance with this user and name already exists.")
 
         if user:
             self.user = user
@@ -943,19 +949,15 @@ class Pictures(CommonModel):
                 
                 shutil.move(self.image.path, destination)
         else:
-            # از مقادیر مدل ImageSettings استفاده می‌کنیم
             max_upload_size = self.image_settings.max_image_file_size_bytes
             formats = self.image_settings.allowed_image_formats
             max_image_size = (self.image_settings.max_image_size_width, self.image_settings.max_image_size_height)
 
-            # اختصاص مقادیر به فیلد image
-            self.image.max_upload_size = max_upload_size  # حداکثر حجم فایل
-            self.image.formats = formats  # فرمت‌های مجاز
+            self.image.max_upload_size = max_upload_size
+            self.image.formats = formats
             
-            if not self.pk:  # بررسی برای ایجاد
-                # تولید نام منحصر به فرد برای فایل جدید
+            if not self.pk:
                 self.image.name = os.path.splitext(self.image.name)[0] + "_" + generate_unique_image_filename(self.image)
-                # ذخیره تصویر با استفاده از متد save از والدین ImageField
                 self.image.save(self.image.name, self.image.file, save=False)
         
         super(Pictures, self).save(*args, **kwargs)
